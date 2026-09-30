@@ -1,0 +1,37 @@
+HALVORSEN THERMAL SYSTEMS
+AQUAFLUX HX-440 HEAT INTERFACE UNIT
+Installation and Commissioning Manual - Section 4: Mechanical Installation
+
+Applies to: HX-440-S (single plate), HX-440-D (twin plate), HX-440-DX (twin plate with metering kit)
+Order codes: 88-4401-S, 88-4401-D, 88-4401-DX
+Controller firmware: v3.8.2 or later. Units shipped before week 14 of 2025 carry v3.6.1 and must be updated before commissioning.
+
+WARNING - Primary flow temperatures of up to 85 C are present at the strainer and the plate heat exchanger. Isolate both primary and secondary circuits and allow the unit to cool for at least 20 minutes before removing the front cover. Failure to do so may result in serious scalding.
+
+4.1 Before you begin
+The HX-440 is certified to BS EN 60335-1 and BS EN 60335-2-51, with EMC compliance to BS EN 61000-6-3. The enclosure is rated IP21 and must not be installed in a location where it may be subject to splashing. Installation in the United Kingdom must comply with BS 7671:2018+A2:2022 and with Building Regulations Part L. The unit is supplied with a declaration of conformity referencing notified body number 0086.
+
+Minimum clearances: 150 mm above the casing, 100 mm below, 25 mm at each side, and 500 mm at the front for servicing. The unit weighs 24.6 kg dry and 27.1 kg when filled.
+
+4.2 Wall fixing
+1. Offer the mounting bracket (spare part 88-4490-BRK) to the wall and mark the four fixing centres. Horizontal centres are 420 mm, vertical centres 340 mm.
+2. Drill and plug for M8 fixings. Masonry fixings are not supplied. Where the unit is mounted on a stud partition, a 18 mm plywood backing board spanning at least three studs is required.
+3. Tighten the bracket fixings to 18 Nm. Do not exceed 22 Nm.
+4. Lift the unit onto the bracket and secure with the two captive M6 retaining screws, tightened to 6 Nm.
+
+4.3 Hydraulic connections
+Primary flow and return are 22 mm compression, secondary heating flow and return are 22 mm, domestic cold inlet and hot outlet are 15 mm. Connection torques: 22 mm nuts 35 Nm, 15 mm nuts 25 Nm. Overtightening will distort the olive and void the warranty.
+
+A strainer with a 0.6 mm mesh is fitted to the primary return and must be cleaned after the first 30 days of operation and annually thereafter. Maximum primary working pressure is 10 bar, maximum secondary 3 bar. The pressure relief valve (part 88-4412-PRV) is set at 6 bar and must be discharged to a safe, visible point in accordance with BS 6700.
+
+4.4 Electrical connections
+Supply: 230 V AC, 50 Hz, 3 A, fused at 5 A. The unit draws 42 W in standby and 96 W at full modulation. Terminal block TB1 accepts conductors of 0.5 to 2.5 mm2. Torque the terminal screws to 0.5 Nm. The volt-free room stat input at TB2 terminals 7 and 8 must not be connected to any mains potential.
+
+CAUTION - Do not energise the unit until both circuits have been filled, vented and pressure tested at 1.5 times working pressure for 30 minutes.
+
+4.5 Commissioning record
+Record the serial number from the label inside the front cover (format HX440-YYWW-NNNNN), the measured primary differential at 60 percent load, and the domestic hot water setpoint. The default setpoint is 55 C with a maximum adjustable value of 65 C. Return the completed record card within 28 days to validate the 5 year parts warranty.
+
+Spares and technical support: quote the unit serial number and the order code shown above. Replacement plate packs are supplied as kit 88-4430-PLK (single) or 88-4431-PLK (twin).
+
+Document HTS-IM-0440, Issue 7, 12 March 2026. Supersedes Issue 6 of 04 August 2025. Halvorsen Thermal Systems, Unit 12 Brantwood Trading Estate, Kelsington, KL9 4TR.

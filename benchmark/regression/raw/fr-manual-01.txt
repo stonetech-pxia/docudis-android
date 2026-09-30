@@ -1,0 +1,41 @@
+THERMALIS INDUSTRIE - Notice de montage et de mise en service
+Groupe de circulation sanitaire VOLTARIS 4200
+Référence article : TH-VLT-4200-B | Notice NM-4200, révision D
+
+1. IDENTIFICATION DU MATÉRIEL
+Le numéro de série figure sur l'étiquette signalétique collée sur le flanc droit du caisson, au format VLT42-AA-00000 (exemple : VLT42-KJ-01873). Relevez-le avant tout contact avec le service après-vente. La version de firmware du régulateur embarqué s'affiche au démarrage sur l'écran de façade ; les présentes instructions correspondent aux versions 3.2.1 et supérieures. Les appareils livrés en version 2.x doivent être mis à jour au moyen de la clé de service TH-USB-07 avant la mise en service.
+
+2. CARACTÉRISTIQUES PRINCIPALES
+Alimentation : 230 V~ ±10 %, 50 Hz, 1,8 A
+Puissance absorbée maximale : 410 W
+Pression de service : 1,5 à 6 bar (pression d'épreuve 10 bar)
+Plage de température du fluide : 5 °C à 85 °C
+Indice de protection : IP 44, ou IP 55 avec le capot d'étanchéité TH-CAP-155
+Classe d'isolation : I
+Niveau sonore : 42 dB(A) à 1 m
+Masse à vide : 18,6 kg
+
+3. CONFORMITÉ
+L'appareil porte le marquage CE. Il est conforme aux normes NF EN 60335-1, NF EN 60335-2-51 et EN 61000-6-3 pour la compatibilité électromagnétique, ainsi qu'à la norme NF EN 1717 pour la protection du réseau d'eau potable contre les retours de fluide. Les performances hydrauliques sont vérifiées selon la norme ISO 9906, classe 2. L'installation électrique doit respecter la norme NF C 15-100 en vigueur.
+
+AVERTISSEMENT
+Toute intervention sur la partie électrique est réservée à un professionnel qualifié. Coupez l'alimentation au disjoncteur et vérifiez l'absence de tension avant d'ouvrir le caisson. La mise à la terre est obligatoire : le fonctionnement sans liaison équipotentielle annule la garantie contractuelle de 24 mois.
+
+4. OUTILLAGE NÉCESSAIRE
+Clé dynamométrique 5-25 N.m, clé plate de 24, tournevis isolé plat 3,5 mm, niveau à bulle, joints plats neufs du sachet TH-JNT-02 livré avec l'appareil.
+
+5. MONTAGE
+Étape 1 - Fixez la platine murale à l'aide des quatre chevilles Ø 8 mm fournies. Entraxes : 240 mm en horizontal, 180 mm en vertical. Vérifiez l'horizontalité à ±1 mm.
+Étape 2 - Présentez le groupe sur la platine et engagez les deux ergots supérieurs jusqu'en butée.
+Étape 3 - Raccordez l'entrée (repère bleu, G 1") et la sortie (repère rouge, G 3/4") en interposant les joints neufs. Couple de serrage : 18 N.m sur l'entrée, 14 N.m sur la sortie. Ne dépassez jamais 22 N.m, au risque de fissurer le corps en laiton.
+Étape 4 - Raccordez le bornier : phase sur L, neutre sur N, conducteur de protection sur le repère vert. Couple de serrage des bornes : 0,5 N.m.
+Étape 5 - Refermez le caisson, quatre vis serrées à 2,5 N.m, avant toute remise sous tension.
+
+6. MISE EN SERVICE
+Ouvrez lentement la vanne amont, purgez par la vis de dégazage pendant une trentaine de secondes, puis remettez sous tension. Le voyant vert clignote pendant le cycle d'auto-test, d'une durée d'environ 90 secondes, puis devient fixe. Le code E-14 signale un manque d'eau : coupez l'alimentation et reprenez la purge. Le code E-22 indique une température de fluide supérieure à 90 °C et impose l'arrêt immédiat de l'installation.
+
+7. ENTRETIEN
+Nettoyez le préfiltre tous les six mois, remplacez la cartouche TH-FLT-40 tous les 24 mois ou après 8 000 heures de fonctionnement, valeur consultable dans le menu Information de l'écran de façade.
+
+Notice NM-4200 révision D - édition du 4 mars 2026 - remplace la révision C de septembre 2025.
+THERMALIS INDUSTRIE - ZA des Quatre Sillons, 12 rue de la Fonderie, 41260 Sarnay-sur-Cisse

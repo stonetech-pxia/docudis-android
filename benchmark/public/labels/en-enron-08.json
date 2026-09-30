@@ -1,0 +1,61 @@
+{
+ "id": "en-enron-08",
+ "expected": [
+  {
+   "value": "jeff.dasovich@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "james.steffes@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "paul.kaufman@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "susan.mara@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "kristin.walsh@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "david.delainey@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "greg.whalley@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "2001-07-10",
+   "type": "DATE"
+  },
+  {
+   "value": "California",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "07.09.01",
+   "type": "DATE"
+  },
+  {
+   "value": "Burton",
+   "type": "PERSON"
+  },
+  {
+   "value": "Hertzberg",
+   "type": "PERSON"
+  },
+  {
+   "value": "Dunn",
+   "type": "PERSON"
+  },
+  {
+   "value": "Jeff",
+   "type": "PERSON"
+  }
+ ]
+}

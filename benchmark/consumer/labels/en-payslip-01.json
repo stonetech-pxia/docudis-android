@@ -1,0 +1,158 @@
+{
+ "id": "en-payslip-01",
+ "expected": [
+  {
+   "value": "LAKESHORE COLD STORAGE & LOGISTICS, INC.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "4410 W. Roosevelt Road",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Hillside, IL 60162",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "(708) 555-0120",
+   "type": "PHONE"
+  },
+  {
+   "value": "36-4418207",
+   "type": "ID"
+  },
+  {
+   "value": "5184630",
+   "type": "ID"
+  },
+  {
+   "value": "NWOSU, CHIAMAKA A.",
+   "type": "PERSON"
+  },
+  {
+   "value": "2217 S. Harlem Avenue, Apt 3B",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Berwyn, IL 60402",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "0048213",
+   "type": "ID"
+  },
+  {
+   "value": "299-79-6876",
+   "type": "ID"
+  },
+  {
+   "value": "T. Brzezinski",
+   "type": "PERSON"
+  },
+  {
+   "value": "03/11/2019",
+   "type": "DATE"
+  },
+  {
+   "value": "$27.4500",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "08/16/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "08/29/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "09/04/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "DD-00917745",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "$2,000",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "$0.00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "First Midwest Bank",
+   "type": "COMPANY"
+  },
+  {
+   "value": "071923284",
+   "type": "ID"
+  },
+  {
+   "value": "000483914471",
+   "type": "ID"
+  },
+  {
+   "value": "Alliant Credit Union",
+   "type": "COMPANY"
+  },
+  {
+   "value": "271081528",
+   "type": "ID"
+  },
+  {
+   "value": "xxxxxx9026",
+   "type": "ID"
+  },
+  {
+   "value": "October 12",
+   "type": "DATE"
+  },
+  {
+   "value": "October 30",
+   "type": "DATE"
+  },
+  {
+   "value": "October 1",
+   "type": "DATE"
+  },
+  {
+   "value": "Chiamaka",
+   "type": "PERSON"
+  },
+  {
+   "value": "11/14/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Tomasz",
+   "type": "PERSON"
+  },
+  {
+   "value": "Marisol Quintanilla",
+   "type": "PERSON"
+  },
+  {
+   "value": "(708) 555-0143",
+   "type": "PHONE"
+  },
+  {
+   "value": "payroll@lakeshorecold.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Lakeshore Cold Storage & Logistics, Inc.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "4410 W. Roosevelt Road, Hillside, IL 60162",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "CHIAMAKA A NWOSU",
+   "type": "PERSON"
+  }
+ ]
+}

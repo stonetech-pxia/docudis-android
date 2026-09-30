@@ -1,0 +1,121 @@
+{
+ "id": "es-borme-05-1",
+ "expected": [
+  {
+   "value": "12 de septiembre de 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "DOGSTEL LA CANINA S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "MARTN",
+   "type": "PERSON"
+  },
+  {
+   "value": "MARTIN",
+   "type": "PERSON"
+  },
+  {
+   "value": "H B 558948",
+   "type": "ID"
+  },
+  {
+   "value": "17.02.21",
+   "type": "DATE"
+  },
+  {
+   "value": "INMOBILIARIA HUCART SL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "MERCEDES HUGUET ROVIRA",
+   "type": "PERSON"
+  },
+  {
+   "value": "H B 54162",
+   "type": "ID"
+  },
+  {
+   "value": "22.03.24",
+   "type": "DATE"
+  },
+  {
+   "value": "NEKIR SL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "MARIA GADOR CANO ENCISO",
+   "type": "PERSON"
+  },
+  {
+   "value": "H B 41406",
+   "type": "ID"
+  },
+  {
+   "value": "20.04.12",
+   "type": "DATE"
+  },
+  {
+   "value": "CONTRATAS VALLES 2000 S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "DENIS ANTOLIN,DANIEL",
+   "type": "PERSON"
+  },
+  {
+   "value": "DANIEL DENIS ANTOLIN MANZANO",
+   "type": "PERSON"
+  },
+  {
+   "value": "H B 512867",
+   "type": "ID"
+  },
+  {
+   "value": "1.06.21",
+   "type": "DATE"
+  },
+  {
+   "value": "TINT-JET SL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "MARIA GRACIA CONGOST PALOMERAS",
+   "type": "PERSON"
+  },
+  {
+   "value": "MARIA GARCIA CONGOST PALOMERAS",
+   "type": "PERSON"
+  },
+  {
+   "value": "H B 410556",
+   "type": "ID"
+  },
+  {
+   "value": "30.05.11",
+   "type": "DATE"
+  },
+  {
+   "value": "PLATING GLOBAL VENTURES S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "ANDREU COMA",
+   "type": "PERSON"
+  },
+  {
+   "value": "FRANCESC ANDREU COMA",
+   "type": "PERSON"
+  },
+  {
+   "value": "H B 510781",
+   "type": "ID"
+  },
+  {
+   "value": "11.07.24",
+   "type": "DATE"
+  }
+ ]
+}

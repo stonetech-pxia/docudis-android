@@ -1,0 +1,61 @@
+{
+ "id": "en-gazette-02",
+ "expected": [
+  {
+   "value": "INTERIOR FORM INSTALLATIONS LTD",
+   "type": "COMPANY"
+  },
+  {
+   "value": "11469875",
+   "type": "ID"
+  },
+  {
+   "value": "Walter Dawson & Son",
+   "type": "COMPANY"
+  },
+  {
+   "value": "1 Valley Court, Canal Road, Bradford, West Yorkshire, BD1 4SP",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "New North Road, Heckmondwike, West Yorkshire, WF16 9DH",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "10 September 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Richard Marchinton",
+   "type": "PERSON"
+  },
+  {
+   "value": "29010",
+   "type": "ID"
+  },
+  {
+   "value": "Conselia Limited",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Dalton House, 1 Hawksworth Street, Ilkley, West Yorkshire, LS29 9DU",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "0113 318 1533",
+   "type": "PHONE"
+  },
+  {
+   "value": "Ben Whiteley",
+   "type": "PERSON"
+  },
+  {
+   "value": "ben.whiteley@conseliauk.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "14 September 2026",
+   "type": "DATE"
+  }
+ ]
+}

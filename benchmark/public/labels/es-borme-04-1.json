@@ -1,0 +1,97 @@
+{
+ "id": "es-borme-04-1",
+ "expected": [
+  {
+   "value": "12 de septiembre de 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "TROPIMAX MADERA, S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "EIVISSA",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Z2146076C",
+   "type": "ID"
+  },
+  {
+   "value": "H IB 21116",
+   "type": "ID"
+  },
+  {
+   "value": "29.07.24",
+   "type": "DATE"
+  },
+  {
+   "value": "Lance Terweij",
+   "type": "PERSON"
+  },
+  {
+   "value": "Z21406076C",
+   "type": "ID"
+  },
+  {
+   "value": "5.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "CRISMAER INVERSIONES, SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "SALA TORRES JOSE",
+   "type": "PERSON"
+  },
+  {
+   "value": "H IB 5871",
+   "type": "ID"
+  },
+  {
+   "value": "TURISTICA INVERSIONES ES PUET, S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "H IB 18084",
+   "type": "ID"
+  },
+  {
+   "value": "OUTSITE SPAIN SL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "AVDA PUNTA ARABI, 146, CANA (ES) 07849 (SANTA EULALIA DEL RIO)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "H IB 21181",
+   "type": "ID"
+  },
+  {
+   "value": "ZEYNEP BEAUTY IBIZA, SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "2.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "C/ FAISAN, 10-LOCAL 2, NUESTRA SEÑORA DE JESUS 078 (SANTA EULALIA DEL RIO)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "3.000,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "SCHLUTER ZEYNEP",
+   "type": "PERSON"
+  },
+  {
+   "value": "H IB 21182",
+   "type": "ID"
+  }
+ ]
+}

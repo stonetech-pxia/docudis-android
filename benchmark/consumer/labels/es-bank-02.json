@@ -1,0 +1,82 @@
+{
+ "id": "es-bank-02",
+ "expected": [
+  {
+   "value": "ABANCA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "avisos@comunicaciones.abanca.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "uxiasouto84@gmail.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "15 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "TRF-2026-09-0048817362",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Uxía",
+   "type": "PERSON"
+  },
+  {
+   "value": "Uxía Souto Vilariño",
+   "type": "PERSON"
+  },
+  {
+   "value": "ES62 5533 **** **** **** 0127",
+   "type": "IBAN"
+  },
+  {
+   "value": "Yolanda Quispe Mamani",
+   "type": "PERSON"
+  },
+  {
+   "value": "ES28 8671 5934 9824 6110 4706",
+   "type": "IBAN"
+  },
+  {
+   "value": "Rúa do Hórreo 74, 3º D",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "1.350,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "0,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "15/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "16/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Brais Couceiro Abad",
+   "type": "PERSON"
+  },
+  {
+   "value": "981 55 27 43",
+   "type": "PHONE"
+  },
+  {
+   "value": "900 815 374",
+   "type": "PHONE"
+  },
+  {
+   "value": "Rúa do Xeneral Pardiñas 12, 15701 Santiago de Compostela",
+   "type": "ADDRESS"
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "en-gazette-07",
+ "expected": [
+  {
+   "value": "MUJI'S FOODS LTD",
+   "type": "COMPANY"
+  },
+  {
+   "value": "15051391",
+   "type": "ID"
+  },
+  {
+   "value": "71 Church Road, Manchester, M22 4WD",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "6 October 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Simon Weir",
+   "type": "PERSON"
+  },
+  {
+   "value": "DSi Business Recovery",
+   "type": "COMPANY"
+  },
+  {
+   "value": "2 Lakeside, Calder Island Way, Wakefield, WF2 7AW",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "01924 790880",
+   "type": "PHONE"
+  },
+  {
+   "value": "info@dsinsol.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Nabil Anwar",
+   "type": "PERSON"
+  },
+  {
+   "value": "16 September 2026",
+   "type": "DATE"
+  }
+ ]
+}

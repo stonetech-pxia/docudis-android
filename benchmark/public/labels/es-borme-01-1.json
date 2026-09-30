@@ -1,0 +1,113 @@
+{
+ "id": "es-borme-01-1",
+ "expected": [
+  {
+   "value": "12 de septiembre de 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "J. J. WEN SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "LOPEZ CORCOLES MIGUEL ANGEL",
+   "type": "PERSON"
+  },
+  {
+   "value": "MARTINEZ NAVARRO WENCESLAO",
+   "type": "PERSON"
+  },
+  {
+   "value": "LOPEZ CORCOLES JUAN",
+   "type": "PERSON"
+  },
+  {
+   "value": "LOPEZ CORCOLES JOSE VICENTE",
+   "type": "PERSON"
+  },
+  {
+   "value": "C/ PONTEVEDRA, 1 4º D 02003 (ALBACETE)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "H AB 23576",
+   "type": "ID"
+  },
+  {
+   "value": "4.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "ARECAR SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "ARENAS LLAMAS JAVIER",
+   "type": "PERSON"
+  },
+  {
+   "value": "ARENAS SAEZ CIPRIANO",
+   "type": "PERSON"
+  },
+  {
+   "value": "H AB 13653",
+   "type": "ID"
+  },
+  {
+   "value": "GASOLEOS HERMANOS RODRIGUEZ SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "SANCHEZ ORTEGA MARIA",
+   "type": "PERSON"
+  },
+  {
+   "value": "H AB 7602",
+   "type": "ID"
+  },
+  {
+   "value": "MOIX MOTOR SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "60.000,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "63.000,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "H AB 26275",
+   "type": "ID"
+  },
+  {
+   "value": "VECOIS SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "CANO SANCHEZ JUAN FRANCISCO",
+   "type": "PERSON"
+  },
+  {
+   "value": "CANO SANCHEZ JOSE LUIS",
+   "type": "PERSON"
+  },
+  {
+   "value": "CANO SANCHEZ BIENVENIDO",
+   "type": "PERSON"
+  },
+  {
+   "value": "H AB 21422",
+   "type": "ID"
+  },
+  {
+   "value": "VISION Y PROYECTOS 2008 SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "H AB 18463",
+   "type": "ID"
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+  "pages": [
+    { "id": "page-1", "name": "Clay · chosen direction" },
+    { "id": "page-2", "name": "Other directions" }
+  ],
+  "artboards": [
+    { "file": "DirectionClay.dc.html", "title": "F · Clay (chosen)", "x": 0, "y": 0, "w": 390, "h": 844, "page": "page-1" },
+    { "file": "Main.dc.html", "title": "Home (Harbor, to restyle)", "x": 600, "y": 0, "w": 390, "h": 844, "page": "page-1" },
+    { "file": "Review.dc.html", "title": "Review detections (Harbor, to restyle)", "x": 1070, "y": 0, "w": 390, "h": 844, "page": "page-1" },
+    { "file": "Result.dc.html", "title": "Protected copy (Harbor, to restyle)", "x": 1540, "y": 0, "w": 390, "h": 844, "page": "page-1" },
+    { "file": "Restore.dc.html", "title": "Restore originals (Harbor, to restyle)", "x": 2010, "y": 0, "w": 390, "h": 844, "page": "page-1" },
+    { "file": "Tokens.dc.html", "title": "Style sheet (Harbor, to restyle)", "x": 600, "y": 1024, "w": 900, "h": 780, "page": "page-1" },
+    { "file": "DirectionVault.dc.html", "title": "A · Vault (dark)", "x": 0, "y": 0, "w": 390, "h": 844, "page": "page-2" },
+    { "file": "DirectionLedger.dc.html", "title": "B · Ledger (warm paper)", "x": 470, "y": 0, "w": 390, "h": 844, "page": "page-2" },
+    { "file": "DirectionAurora.dc.html", "title": "C · Aurora (glass)", "x": 940, "y": 0, "w": 390, "h": 844, "page": "page-2" },
+    { "file": "DirectionSwiss.dc.html", "title": "D · Swiss (mono)", "x": 1410, "y": 0, "w": 390, "h": 844, "page": "page-2" },
+    { "file": "DirectionBloom.dc.html", "title": "E · Bloom (pastel)", "x": 1880, "y": 0, "w": 390, "h": 844, "page": "page-2" },
+    { "file": "DirectionSplit.dc.html", "title": "G · Split (navy hero)", "x": 2350, "y": 0, "w": 390, "h": 844, "page": "page-2" }
+  ],
+  "annotations": [
+    { "id": "chosen-note", "x": 0, "y": -170, "w": 480, "page": "page-1", "text": "Chosen: F · Clay\nSand #F5EFE8 background, cream #FFFCF8 surfaces, terracotta #C8623A primary, sage #6B7F62 secondary, tan #B8926A tertiary. Sora headings, Karla body. Radius 22, soft warm shadows, organic blob accent.\nThe four flow screens to the right still wear the earlier Harbor style; they get restyled in Clay once your edits are in." },
+    { "id": "others-note", "x": 0, "y": -130, "w": 480, "page": "page-2", "text": "Not chosen, kept for reference: A Vault, B Ledger, C Aurora, D Swiss, E Bloom, G Split." }
+  ],
+  "launch": { "view": "canvas", "page": "page-1" }
+}

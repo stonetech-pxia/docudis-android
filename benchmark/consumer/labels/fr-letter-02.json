@@ -1,0 +1,101 @@
+{
+ "id": "fr-letter-02",
+ "expected": [
+  {
+   "value": "Élodie Marchetti",
+   "type": "PERSON"
+  },
+  {
+   "value": "Élo",
+   "type": "PERSON"
+  },
+  {
+   "value": "elo.marchetti@laposte.net",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Mai-Linh Pham",
+   "type": "PERSON"
+  },
+  {
+   "value": "Mai-Linh",
+   "type": "PERSON"
+  },
+  {
+   "value": "20 sept. 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Nantes",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "8 impasse des Lavandières, 44400 Rezé",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Rui",
+   "type": "PERSON"
+  },
+  {
+   "value": "Tiago",
+   "type": "PERSON"
+  },
+  {
+   "value": "Rose",
+   "type": "PERSON"
+  },
+  {
+   "value": "Timéo",
+   "type": "PERSON"
+  },
+  {
+   "value": "Lucie-Aubrac",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Guéguen",
+   "type": "PERSON"
+  },
+  {
+   "value": "Diallo",
+   "type": "PERSON"
+  },
+  {
+   "value": "Sylla",
+   "type": "PERSON"
+  },
+  {
+   "value": "Anne",
+   "type": "PERSON"
+  },
+  {
+   "value": "Kerleroux",
+   "type": "PERSON"
+  },
+  {
+   "value": "Yannick Le Bihan",
+   "type": "PERSON"
+  },
+  {
+   "value": "Pornic",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "1 180 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "17 octobre",
+   "type": "DATE"
+  },
+  {
+   "value": "06 73 18 44 92",
+   "type": "PHONE"
+  },
+  {
+   "value": "Bastien",
+   "type": "PERSON"
+  }
+ ]
+}

@@ -1,0 +1,185 @@
+{
+  "id": "en-invoice-01",
+  "expected": [
+    {
+      "value": "OKONKWO & DALE",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Unit 4, Sheepscar Court, Meanwood Road",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Leeds LS7 2BB",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Leeds",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "0113 496 0182",
+      "type": "PHONE"
+    },
+    {
+      "value": "07700 900417",
+      "type": "PHONE"
+    },
+    {
+      "value": "accounts@okonkwodale.co.uk",
+      "type": "EMAIL"
+    },
+    {
+      "value": "www.okonkwodale.co.uk",
+      "type": "URL"
+    },
+    {
+      "value": "612884",
+      "type": "ID"
+    },
+    {
+      "value": "047731",
+      "type": "ID"
+    },
+    {
+      "value": "OD-24781",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "14 March 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "J/2026/0319",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "Delroy",
+      "type": "PERSON"
+    },
+    {
+      "value": "A. Wisniewska",
+      "type": "PERSON"
+    },
+    {
+      "value": "27 Gledhow Park Drive",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Chapel Allerton",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "LS7 4JT",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "0113 496 0655",
+      "type": "PHONE"
+    },
+    {
+      "value": "aga.wisniewska@btinternet.com",
+      "type": "EMAIL"
+    },
+    {
+      "value": "11 March 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "Q-1187",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "Wisniewski",
+      "type": "PERSON"
+    },
+    {
+      "value": "24/02/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "D. Okonkwo",
+      "type": "PERSON"
+    },
+    {
+      "value": "£3,600.60",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "02/03/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "£2,850.60",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "28 March 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "O&D Building Services Ltd",
+      "type": "COMPANY"
+    },
+    {
+      "value": "HSBC UK",
+      "type": "COMPANY"
+    },
+    {
+      "value": "33 Park Row, Leeds",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "38-57-08",
+      "type": "ID"
+    },
+    {
+      "value": "39347357",
+      "type": "ID"
+    },
+    {
+      "value": "GB30 MIDL 3857 0839 3473 57",
+      "type": "IBAN"
+    },
+    {
+      "value": "WISNIEWSKA",
+      "type": "PERSON"
+    },
+    {
+      "value": "7733600094-218-03562",
+      "type": "ID"
+    },
+    {
+      "value": "30984417",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "Karen",
+      "type": "PERSON"
+    },
+    {
+      "value": "Delroy Okonkwo",
+      "type": "PERSON"
+    },
+    {
+      "value": "Okonkwo & Dale",
+      "type": "COMPANY"
+    },
+    {
+      "value": "09417736",
+      "type": "ID"
+    },
+    {
+      "value": "Unit 4, Sheepscar Court, Meanwood Road, Leeds LS7 2BB",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "GB 483 7152 30",
+      "type": "ID"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text-selection toolbar entry (ProcessTextActivity). -->
+    <string name="process_text_label">Anonymize</string>
+    <string name="process_text_working">Anonymizing…</string>
+    <string name="process_text_copied">Anonymized text copied</string>
+    <string name="process_text_failed">Anonymization failed</string>
+    <string name="tile_label">Anonymize clipboard</string>
+    <string name="clipboard_no_text">The clipboard has no text.</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="process_text_label">匿名化</string>
+    <string name="process_text_working">匿名化中…</string>
+    <string name="process_text_copied">已复制匿名化文本</string>
+    <string name="process_text_failed">匿名化失败</string>
+    <string name="tile_label">匿名化剪贴板</string>
+    <string name="clipboard_no_text">剪贴板里没有文字。</string>
+</resources>

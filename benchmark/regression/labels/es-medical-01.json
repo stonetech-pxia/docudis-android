@@ -1,0 +1,54 @@
+{
+ "id": "es-medical-01",
+ "expected": [
+  {
+   "value": "HOSPITAL UNIVERSITARIO DE GETAFE",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Carretera de Toledo, km 12,500",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "28905 Getafe (Madrid)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Amadou Cissé Fernández",
+   "type": "PERSON"
+  },
+  {
+   "value": "24/11/1978",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "Y4553168X",
+   "type": "ID"
+  },
+  {
+   "value": "0847213",
+   "type": "ID"
+  },
+  {
+   "value": "AACF781124036",
+   "type": "ID"
+  },
+  {
+   "value": "15/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "2026/CEX/55219",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "J. Bencomo Padilla",
+   "type": "PERSON"
+  },
+  {
+   "value": "28/4419788",
+   "type": "ID"
+  }
+ ]
+}

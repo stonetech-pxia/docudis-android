@@ -1,0 +1,362 @@
+[
+ {
+  "id": "en-bank-01",
+  "lang": "en",
+  "category": "bank",
+  "source": "written"
+ },
+ {
+  "id": "en-bank-02",
+  "lang": "en",
+  "category": "bank",
+  "source": "written"
+ },
+ {
+  "id": "en-chat-01",
+  "lang": "en",
+  "category": "chat",
+  "source": "written"
+ },
+ {
+  "id": "en-chat-02",
+  "lang": "en",
+  "category": "chat",
+  "source": "written"
+ },
+ {
+  "id": "en-cv-01",
+  "lang": "en",
+  "category": "cv",
+  "source": "written"
+ },
+ {
+  "id": "en-cv-02",
+  "lang": "en",
+  "category": "cv",
+  "source": "written"
+ },
+ {
+  "id": "en-insurance-01",
+  "lang": "en",
+  "category": "insurance",
+  "source": "written"
+ },
+ {
+  "id": "en-insurance-02",
+  "lang": "en",
+  "category": "insurance",
+  "source": "written"
+ },
+ {
+  "id": "en-invoice-01",
+  "lang": "en",
+  "category": "invoice",
+  "source": "written"
+ },
+ {
+  "id": "en-invoice-02",
+  "lang": "en",
+  "category": "invoice",
+  "source": "written"
+ },
+ {
+  "id": "en-lease-01",
+  "lang": "en",
+  "category": "lease",
+  "source": "written"
+ },
+ {
+  "id": "en-lease-02",
+  "lang": "en",
+  "category": "lease",
+  "source": "written"
+ },
+ {
+  "id": "en-letter-01",
+  "lang": "en",
+  "category": "letter",
+  "source": "written"
+ },
+ {
+  "id": "en-letter-02",
+  "lang": "en",
+  "category": "letter",
+  "source": "written"
+ },
+ {
+  "id": "en-medical-01",
+  "lang": "en",
+  "category": "medical",
+  "source": "written"
+ },
+ {
+  "id": "en-medical-02",
+  "lang": "en",
+  "category": "medical",
+  "source": "written"
+ },
+ {
+  "id": "en-payslip-01",
+  "lang": "en",
+  "category": "payslip",
+  "source": "written"
+ },
+ {
+  "id": "en-payslip-02",
+  "lang": "en",
+  "category": "payslip",
+  "source": "written"
+ },
+ {
+  "id": "en-support-01",
+  "lang": "en",
+  "category": "support",
+  "source": "written"
+ },
+ {
+  "id": "en-support-02",
+  "lang": "en",
+  "category": "support",
+  "source": "written"
+ },
+ {
+  "id": "es-bank-01",
+  "lang": "es",
+  "category": "bank",
+  "source": "written"
+ },
+ {
+  "id": "es-bank-02",
+  "lang": "es",
+  "category": "bank",
+  "source": "written"
+ },
+ {
+  "id": "es-chat-01",
+  "lang": "es",
+  "category": "chat",
+  "source": "written"
+ },
+ {
+  "id": "es-chat-02",
+  "lang": "es",
+  "category": "chat",
+  "source": "written"
+ },
+ {
+  "id": "es-cv-01",
+  "lang": "es",
+  "category": "cv",
+  "source": "written"
+ },
+ {
+  "id": "es-cv-02",
+  "lang": "es",
+  "category": "cv",
+  "source": "written"
+ },
+ {
+  "id": "es-insurance-01",
+  "lang": "es",
+  "category": "insurance",
+  "source": "written"
+ },
+ {
+  "id": "es-insurance-02",
+  "lang": "es",
+  "category": "insurance",
+  "source": "written"
+ },
+ {
+  "id": "es-invoice-01",
+  "lang": "es",
+  "category": "invoice",
+  "source": "written"
+ },
+ {
+  "id": "es-invoice-02",
+  "lang": "es",
+  "category": "invoice",
+  "source": "written"
+ },
+ {
+  "id": "es-lease-01",
+  "lang": "es",
+  "category": "lease",
+  "source": "written"
+ },
+ {
+  "id": "es-lease-02",
+  "lang": "es",
+  "category": "lease",
+  "source": "written"
+ },
+ {
+  "id": "es-letter-01",
+  "lang": "es",
+  "category": "letter",
+  "source": "written"
+ },
+ {
+  "id": "es-letter-02",
+  "lang": "es",
+  "category": "letter",
+  "source": "written"
+ },
+ {
+  "id": "es-medical-01",
+  "lang": "es",
+  "category": "medical",
+  "source": "written"
+ },
+ {
+  "id": "es-medical-02",
+  "lang": "es",
+  "category": "medical",
+  "source": "written"
+ },
+ {
+  "id": "es-payslip-01",
+  "lang": "es",
+  "category": "payslip",
+  "source": "written"
+ },
+ {
+  "id": "es-payslip-02",
+  "lang": "es",
+  "category": "payslip",
+  "source": "written"
+ },
+ {
+  "id": "es-support-01",
+  "lang": "es",
+  "category": "support",
+  "source": "written"
+ },
+ {
+  "id": "es-support-02",
+  "lang": "es",
+  "category": "support",
+  "source": "written"
+ },
+ {
+  "id": "fr-bank-01",
+  "lang": "fr",
+  "category": "bank",
+  "source": "written"
+ },
+ {
+  "id": "fr-bank-02",
+  "lang": "fr",
+  "category": "bank",
+  "source": "written"
+ },
+ {
+  "id": "fr-chat-01",
+  "lang": "fr",
+  "category": "chat",
+  "source": "written"
+ },
+ {
+  "id": "fr-chat-02",
+  "lang": "fr",
+  "category": "chat",
+  "source": "written"
+ },
+ {
+  "id": "fr-cv-01",
+  "lang": "fr",
+  "category": "cv",
+  "source": "written"
+ },
+ {
+  "id": "fr-cv-02",
+  "lang": "fr",
+  "category": "cv",
+  "source": "written"
+ },
+ {
+  "id": "fr-insurance-01",
+  "lang": "fr",
+  "category": "insurance",
+  "source": "written"
+ },
+ {
+  "id": "fr-insurance-02",
+  "lang": "fr",
+  "category": "insurance",
+  "source": "written"
+ },
+ {
+  "id": "fr-invoice-01",
+  "lang": "fr",
+  "category": "invoice",
+  "source": "written"
+ },
+ {
+  "id": "fr-invoice-02",
+  "lang": "fr",
+  "category": "invoice",
+  "source": "written"
+ },
+ {
+  "id": "fr-lease-01",
+  "lang": "fr",
+  "category": "lease",
+  "source": "written"
+ },
+ {
+  "id": "fr-lease-02",
+  "lang": "fr",
+  "category": "lease",
+  "source": "written"
+ },
+ {
+  "id": "fr-letter-01",
+  "lang": "fr",
+  "category": "letter",
+  "source": "written"
+ },
+ {
+  "id": "fr-letter-02",
+  "lang": "fr",
+  "category": "letter",
+  "source": "written"
+ },
+ {
+  "id": "fr-medical-01",
+  "lang": "fr",
+  "category": "medical",
+  "source": "written"
+ },
+ {
+  "id": "fr-medical-02",
+  "lang": "fr",
+  "category": "medical",
+  "source": "written"
+ },
+ {
+  "id": "fr-payslip-01",
+  "lang": "fr",
+  "category": "payslip",
+  "source": "written"
+ },
+ {
+  "id": "fr-payslip-02",
+  "lang": "fr",
+  "category": "payslip",
+  "source": "written"
+ },
+ {
+  "id": "fr-support-01",
+  "lang": "fr",
+  "category": "support",
+  "source": "written"
+ },
+ {
+  "id": "fr-support-02",
+  "lang": "fr",
+  "category": "support",
+  "source": "written"
+ }
+]

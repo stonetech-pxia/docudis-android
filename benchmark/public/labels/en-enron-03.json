@@ -1,0 +1,65 @@
+{
+ "id": "en-enron-03",
+ "expected": [
+  {
+   "value": "leonardo.pacheco@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "kenneth.lay@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "jeff.skilling@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "cliff.baxter@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "mike.mcconnell@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "jay.fitzgerald@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "mark.palmer@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "2000-12-08",
+   "type": "DATE"
+  },
+  {
+   "value": "EnronOnline",
+   "type": "COMPANY"
+  },
+  {
+   "value": "December 7, 2000",
+   "type": "DATE"
+  },
+  {
+   "value": "12/07/00",
+   "type": "DATE"
+  },
+  {
+   "value": "Enron North America",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Enron Europe Limited",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Global Products",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Enron Metals",
+   "type": "COMPANY"
+  }
+ ]
+}

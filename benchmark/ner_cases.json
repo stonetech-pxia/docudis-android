@@ -1,0 +1,1063 @@
+{
+ "version": 1,
+ "description": "Reusable NER/PII benchmark for Docudis. Each case: language, category, text, expected entities (value + type). Types use engine placeholder names. Cases tagged rulesOnly test the regex packs; the rest exercise the model.",
+ "cases": [
+  {
+   "id": "zh-name-01",
+   "lang": "zh",
+   "category": "names",
+   "text": "张三昨天把报告发给了李四和王五。",
+   "expected": [
+    {
+     "value": "张三",
+     "type": "PERSON"
+    },
+    {
+     "value": "李四",
+     "type": "PERSON"
+    },
+    {
+     "value": "王五",
+     "type": "PERSON"
+    }
+   ]
+  },
+  {
+   "id": "zh-name-02",
+   "lang": "zh",
+   "category": "names",
+   "text": "请转告欧阳娜娜女士，会议改到周五。",
+   "expected": [
+    {
+     "value": "欧阳娜娜",
+     "type": "PERSON"
+    }
+   ]
+  },
+  {
+   "id": "zh-name-03",
+   "lang": "zh",
+   "category": "names",
+   "text": "负责人：陈志强（销售部），联系人：刘婷婷。",
+   "expected": [
+    {
+     "value": "陈志强",
+     "type": "PERSON"
+    },
+    {
+     "value": "刘婷婷",
+     "type": "PERSON"
+    }
+   ]
+  },
+  {
+   "id": "zh-org-01",
+   "lang": "zh",
+   "category": "organizations",
+   "text": "华为技术有限公司与清华大学签署了合作协议。",
+   "expected": [
+    {
+     "value": "华为技术有限公司",
+     "type": "COMPANY"
+    },
+    {
+     "value": "清华大学",
+     "type": "COMPANY"
+    }
+   ]
+  },
+  {
+   "id": "zh-loc-01",
+   "lang": "zh",
+   "category": "locations",
+   "text": "他从北京飞往上海，再转车去杭州。",
+   "expected": [
+    {
+     "value": "北京",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "上海",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "杭州",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "zh-addr-01",
+   "lang": "zh",
+   "category": "addresses",
+   "text": "收货地址：广东省深圳市南山区科技园南路88号3栋502室。",
+   "expected": [
+    {
+     "value": "广东省深圳市南山区科技园南路88号3栋502室",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "zh-contact-01",
+   "lang": "zh",
+   "category": "contacts",
+   "rulesOnly": true,
+   "text": "手机 13812345678，座机 010-88886666，邮箱 zhangsan@example.com。",
+   "expected": [
+    {
+     "value": "13812345678",
+     "type": "PHONE"
+    },
+    {
+     "value": "010-88886666",
+     "type": "PHONE"
+    },
+    {
+     "value": "zhangsan@example.com",
+     "type": "EMAIL"
+    }
+   ]
+  },
+  {
+   "id": "zh-id-01",
+   "lang": "zh",
+   "category": "identifiers",
+   "rulesOnly": true,
+   "text": "身份证号 110101199003070003，银行卡 6222021234567890123。",
+   "expected": [
+    {
+     "value": "110101199003070003",
+     "type": "ID"
+    },
+    {
+     "value": "6222021234567890123",
+     "type": "OTHER"
+    }
+   ]
+  },
+  {
+   "id": "zh-mixed-01",
+   "lang": "zh",
+   "category": "mixed",
+   "text": "尊敬的王建国先生：您在招商银行的账户已于2024年3月15日完成变更，如有疑问请致电13900001111或前往上海市浦东新区世纪大道100号网点咨询。",
+   "expected": [
+    {
+     "value": "王建国",
+     "type": "PERSON"
+    },
+    {
+     "value": "招商银行",
+     "type": "COMPANY"
+    },
+    {
+     "value": "2024年3月15日",
+     "type": "DATE"
+    },
+    {
+     "value": "13900001111",
+     "type": "PHONE"
+    },
+    {
+     "value": "上海市浦东新区世纪大道100号",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "zh-negative-01",
+   "lang": "zh",
+   "category": "negatives",
+   "text": "今天天气很好，我们去公园散步，然后回家做饭。",
+   "expected": []
+  },
+  {
+   "id": "zh-trad-01",
+   "lang": "zh-Hant",
+   "category": "names",
+   "text": "陳大文先生與林美玲小姐將於臺北市信義區出席會議。",
+   "expected": [
+    {
+     "value": "陳大文",
+     "type": "PERSON"
+    },
+    {
+     "value": "林美玲",
+     "type": "PERSON"
+    },
+    {
+     "value": "臺北市信義區",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "en-name-01",
+   "lang": "en",
+   "category": "names",
+   "text": "Yesterday John Smith emailed Maria Garcia about the invoice.",
+   "expected": [
+    {
+     "value": "John Smith",
+     "type": "PERSON"
+    },
+    {
+     "value": "Maria Garcia",
+     "type": "PERSON"
+    }
+   ]
+  },
+  {
+   "id": "en-name-02",
+   "lang": "en",
+   "category": "names",
+   "text": "Dr. Emily O'Connor will see Mr. Kowalski at 3 pm.",
+   "expected": [
+    {
+     "value": "Emily O'Connor",
+     "type": "PERSON"
+    },
+    {
+     "value": "Kowalski",
+     "type": "PERSON"
+    }
+   ]
+  },
+  {
+   "id": "en-name-03",
+   "lang": "en",
+   "category": "names",
+   "text": "cc: aisha khan, ben lee (lowercase names in an email header)",
+   "expected": [
+    {
+     "value": "aisha khan",
+     "type": "PERSON"
+    },
+    {
+     "value": "ben lee",
+     "type": "PERSON"
+    }
+   ]
+  },
+  {
+   "id": "en-org-01",
+   "lang": "en",
+   "category": "organizations",
+   "text": "Microsoft and the University of Oxford announced a joint lab.",
+   "expected": [
+    {
+     "value": "Microsoft",
+     "type": "COMPANY"
+    },
+    {
+     "value": "University of Oxford",
+     "type": "COMPANY"
+    }
+   ]
+  },
+  {
+   "id": "en-loc-01",
+   "lang": "en",
+   "category": "locations",
+   "text": "She moved from Toronto to Berlin, then visited Kyoto.",
+   "expected": [
+    {
+     "value": "Toronto",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Berlin",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Kyoto",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "en-addr-01",
+   "lang": "en",
+   "category": "addresses",
+   "text": "Ship to: 221B Baker Street, London NW1 6XE, United Kingdom.",
+   "expected": [
+    {
+     "value": "221B Baker Street",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "London",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "United Kingdom",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "NW1 6XE",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "en-contact-01",
+   "lang": "en",
+   "category": "contacts",
+   "rulesOnly": true,
+   "text": "Call +1 415-555-0132 or write to jane.doe@acme.co; IBAN GB82 WEST 1234 5698 7654 32.",
+   "expected": [
+    {
+     "value": "+1 415-555-0132",
+     "type": "PHONE"
+    },
+    {
+     "value": "jane.doe@acme.co",
+     "type": "EMAIL"
+    },
+    {
+     "value": "GB82 WEST 1234 5698 7654 32",
+     "type": "IBAN"
+    }
+   ]
+  },
+  {
+   "id": "en-id-01",
+   "lang": "en",
+   "category": "identifiers",
+   "rulesOnly": true,
+   "text": "SSN 123-45-6789, card 4111 1111 1111 1111, server 192.168.1.20.",
+   "expected": [
+    {
+     "value": "123-45-6789",
+     "type": "ID"
+    },
+    {
+     "value": "4111 1111 1111 1111",
+     "type": "CARD"
+    },
+    {
+     "value": "192.168.1.20",
+     "type": "IP"
+    }
+   ]
+  },
+  {
+   "id": "en-date-01",
+   "lang": "en",
+   "category": "dates",
+   "text": "The contract was signed on 12 March 2024 and expires on 2025-03-11.",
+   "expected": [
+    {
+     "value": "12 March 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "2025-03-11",
+     "type": "DATE"
+    }
+   ]
+  },
+  {
+   "id": "en-mixed-01",
+   "lang": "en",
+   "category": "mixed",
+   "text": "Dear Ms. Patel, your appointment with Dr. Alan Turing at Manchester Royal Infirmary is confirmed for 4 June 2024. Please bring your NHS number 943 476 5919 and call 0161 276 1234 if you need to reschedule.",
+   "expected": [
+    {
+     "value": "Patel",
+     "type": "PERSON"
+    },
+    {
+     "value": "Alan Turing",
+     "type": "PERSON"
+    },
+    {
+     "value": "Manchester Royal Infirmary",
+     "type": "COMPANY"
+    },
+    {
+     "value": "4 June 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "943 476 5919",
+     "type": "ID"
+    },
+    {
+     "value": "0161 276 1234",
+     "type": "PHONE"
+    }
+   ]
+  },
+  {
+   "id": "en-negative-01",
+   "lang": "en",
+   "category": "negatives",
+   "text": "The quick brown fox jumps over the lazy dog while the sun sets slowly.",
+   "expected": []
+  },
+  {
+   "id": "en-negative-02",
+   "lang": "en",
+   "category": "negatives",
+   "text": "Please review the attached quarterly figures and let me know your thoughts by Friday.",
+   "expected": []
+  },
+  {
+   "id": "en-ocr-01",
+   "lang": "en",
+   "category": "noisy",
+   "text": "INVOICE  No 4471\nBill to : Rob ert   Johnson\nAcme Corp oration\n12  High  Street ,  Bristol\nTotal :  £1,250.00",
+   "expected": [
+    {
+     "value": "Johnson",
+     "type": "PERSON"
+    },
+    {
+     "value": "Bristol",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "£1,250.00",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "Acme Corp oration",
+     "type": "COMPANY"
+    },
+    {
+     "value": "12  High  Street",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "fr-name-01",
+   "lang": "fr",
+   "category": "names",
+   "text": "Hier, Jean Dupont a rencontré Marie-Claire Lefèvre à la mairie.",
+   "expected": [
+    {
+     "value": "Jean Dupont",
+     "type": "PERSON"
+    },
+    {
+     "value": "Marie-Claire Lefèvre",
+     "type": "PERSON"
+    }
+   ]
+  },
+  {
+   "id": "fr-org-01",
+   "lang": "fr",
+   "category": "organizations",
+   "text": "La Société Générale et l'Université de Lyon ont signé un accord.",
+   "expected": [
+    {
+     "value": "Société Générale",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Université de Lyon",
+     "type": "COMPANY"
+    }
+   ]
+  },
+  {
+   "id": "fr-loc-01",
+   "lang": "fr",
+   "category": "locations",
+   "text": "Elle habite à Marseille mais travaille à Aix-en-Provence.",
+   "expected": [
+    {
+     "value": "Marseille",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Aix-en-Provence",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "fr-contact-01",
+   "lang": "fr",
+   "category": "contacts",
+   "rulesOnly": true,
+   "text": "Téléphone : 06 12 34 56 78, e-mail : pierre.martin@exemple.fr, NIR 1 85 05 78 006 084 36.",
+   "expected": [
+    {
+     "value": "06 12 34 56 78",
+     "type": "PHONE"
+    },
+    {
+     "value": "pierre.martin@exemple.fr",
+     "type": "EMAIL"
+    },
+    {
+     "value": "1 85 05 78 006 084 36",
+     "type": "ID"
+    }
+   ]
+  },
+  {
+   "id": "fr-mixed-01",
+   "lang": "fr",
+   "category": "mixed",
+   "text": "Madame Sophie Bernard, née le 3 avril 1987 à Bordeaux, est employée chez Airbus depuis le 1er septembre 2015. Adresse : 14 rue de la Paix, 75002 Paris.",
+   "expected": [
+    {
+     "value": "Sophie Bernard",
+     "type": "PERSON"
+    },
+    {
+     "value": "3 avril 1987",
+     "type": "BIRTH_DATE"
+    },
+    {
+     "value": "Bordeaux",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Airbus",
+     "type": "COMPANY"
+    },
+    {
+     "value": "1er septembre 2015",
+     "type": "DATE"
+    },
+    {
+     "value": "14 rue de la Paix",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "75002 Paris",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "fr-negative-01",
+   "lang": "fr",
+   "category": "negatives",
+   "text": "Il fait beau aujourd'hui, nous irons nous promener après le déjeuner.",
+   "expected": []
+  },
+  {
+   "id": "fr-business-01",
+   "lang": "fr",
+   "category": "business",
+   "text": "Facture n° 202603 pour la commande 450012 : trois ordinateurs, montant total 12 450,00 €, payable sous 30 jours. Le ticket 845210 est clos. Au troisième trimestre, 125000 unités vendues dans 120 magasins. Contact : Claire Dubois, 01 42 68 53 00.",
+   "expected": [
+    {
+     "value": "12 450,00 €",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "Claire Dubois",
+     "type": "PERSON"
+    },
+    {
+     "value": "01 42 68 53 00",
+     "type": "PHONE"
+    },
+    {
+     "value": "845210",
+     "type": "ID"
+    }
+   ]
+  },
+  {
+   "id": "es-name-01",
+   "lang": "es",
+   "category": "names",
+   "text": "Ayer Carlos Hernández habló con Lucía Fernández sobre el proyecto.",
+   "expected": [
+    {
+     "value": "Carlos Hernández",
+     "type": "PERSON"
+    },
+    {
+     "value": "Lucía Fernández",
+     "type": "PERSON"
+    }
+   ]
+  },
+  {
+   "id": "es-org-01",
+   "lang": "es",
+   "category": "organizations",
+   "text": "Telefónica y la Universidad de Salamanca firmaron un convenio.",
+   "expected": [
+    {
+     "value": "Telefónica",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Universidad de Salamanca",
+     "type": "COMPANY"
+    }
+   ]
+  },
+  {
+   "id": "es-loc-01",
+   "lang": "es",
+   "category": "locations",
+   "text": "Viajó de Madrid a Buenos Aires pasando por Ciudad de México.",
+   "expected": [
+    {
+     "value": "Madrid",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Buenos Aires",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Ciudad de México",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "es-contact-01",
+   "lang": "es",
+   "category": "contacts",
+   "rulesOnly": true,
+   "text": "Móvil 612 345 678, correo ana.lopez@ejemplo.es, DNI 12345678Z.",
+   "expected": [
+    {
+     "value": "612 345 678",
+     "type": "PHONE"
+    },
+    {
+     "value": "ana.lopez@ejemplo.es",
+     "type": "EMAIL"
+    },
+    {
+     "value": "12345678Z",
+     "type": "ID"
+    }
+   ]
+  },
+  {
+   "id": "es-mixed-01",
+   "lang": "es",
+   "category": "mixed",
+   "text": "Estimado Sr. Miguel Ángel Ruiz: su pedido en El Corte Inglés será entregado el 20 de mayo de 2024 en Calle Mayor 5, Sevilla.",
+   "expected": [
+    {
+     "value": "Miguel Ángel Ruiz",
+     "type": "PERSON"
+    },
+    {
+     "value": "El Corte Inglés",
+     "type": "COMPANY"
+    },
+    {
+     "value": "20 de mayo de 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "Calle Mayor 5",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Sevilla",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "es-negative-01",
+   "lang": "es",
+   "category": "negatives",
+   "text": "Mañana por la tarde iremos al cine y después cenaremos en casa.",
+   "expected": []
+  },
+  {
+   "id": "hi-name-01",
+   "lang": "hi",
+   "category": "names",
+   "text": "कल राहुल शर्मा ने प्रिया वर्मा से मुलाकात की।",
+   "expected": [
+    {
+     "value": "राहुल शर्मा",
+     "type": "PERSON"
+    },
+    {
+     "value": "प्रिया वर्मा",
+     "type": "PERSON"
+    }
+   ]
+  },
+  {
+   "id": "hi-org-01",
+   "lang": "hi",
+   "category": "organizations",
+   "text": "टाटा समूह और दिल्ली विश्वविद्यालय ने समझौता किया।",
+   "expected": [
+    {
+     "value": "टाटा समूह",
+     "type": "COMPANY"
+    },
+    {
+     "value": "दिल्ली विश्वविद्यालय",
+     "type": "COMPANY"
+    }
+   ]
+  },
+  {
+   "id": "hi-loc-01",
+   "lang": "hi",
+   "category": "locations",
+   "text": "वह मुंबई से बेंगलुरु गया और फिर जयपुर पहुँचा।",
+   "expected": [
+    {
+     "value": "मुंबई",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "बेंगलुरु",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "जयपुर",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "hi-contact-01",
+   "lang": "hi",
+   "category": "contacts",
+   "rulesOnly": true,
+   "text": "फ़ोन +91 98765 43210, ईमेल rahul.sharma@example.in",
+   "expected": [
+    {
+     "value": "+91 98765 43210",
+     "type": "PHONE"
+    },
+    {
+     "value": "rahul.sharma@example.in",
+     "type": "EMAIL"
+    }
+   ]
+  },
+  {
+   "id": "hi-negative-01",
+   "lang": "hi",
+   "category": "negatives",
+   "text": "आज मौसम अच्छा है, हम शाम को टहलने जाएँगे।",
+   "expected": []
+  },
+  {
+   "id": "de-name-01",
+   "lang": "de",
+   "category": "names",
+   "text": "Gestern traf Hans Müller Frau Anna Schmidt in München.",
+   "expected": [
+    {
+     "value": "Hans Müller",
+     "type": "PERSON"
+    },
+    {
+     "value": "Anna Schmidt",
+     "type": "PERSON"
+    },
+    {
+     "value": "München",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "ja-name-01",
+   "lang": "ja",
+   "category": "names",
+   "text": "昨日、山田太郎さんは東京で佐藤花子さんに会いました。",
+   "expected": [
+    {
+     "value": "山田太郎",
+     "type": "PERSON"
+    },
+    {
+     "value": "東京",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "佐藤花子",
+     "type": "PERSON"
+    }
+   ]
+  },
+  {
+   "id": "multi-mixed-01",
+   "lang": "multi",
+   "category": "mixed",
+   "text": "Meeting notes / 会议纪要: John Smith (Acme Ltd) and 王芳 (深圳华强科技) agreed to meet in Singapore on 2024-07-01. Contact: wang.fang@hq.cn, +86 139 0000 1234.",
+   "expected": [
+    {
+     "value": "John Smith",
+     "type": "PERSON"
+    },
+    {
+     "value": "Acme Ltd",
+     "type": "COMPANY"
+    },
+    {
+     "value": "王芳",
+     "type": "PERSON"
+    },
+    {
+     "value": "深圳华强科技",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Singapore",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "2024-07-01",
+     "type": "DATE"
+    },
+    {
+     "value": "wang.fang@hq.cn",
+     "type": "EMAIL"
+    },
+    {
+     "value": "+86 139 0000 1234",
+     "type": "PHONE"
+    }
+   ]
+  },
+  {
+   "id": "en-long-01",
+   "lang": "en",
+   "category": "long",
+   "text": "MINUTES OF THE BOARD MEETING\nHeld at the offices of Northwind Traders, 45 Harbour Road, Auckland, on 18 April 2024.\n\nPresent: Margaret Chen (Chair), Daniel Okafor (CFO), Sofia Rossi (Secretary), and guest speaker Dr. Ahmed Al-Sayed from the University of Auckland.\n\n1. Apologies were received from Priya Nair, who is travelling in Melbourne this week.\n\n2. The Chair welcomed Dr. Al-Sayed, who presented the findings of the joint research programme with Fonterra. The programme will continue until 31 December 2025, subject to funding approval from Callaghan Innovation.\n\n3. Financial report. Mr. Okafor reported that revenue for the quarter reached NZD 4.2 million. Outstanding invoices from Contoso Pharmaceuticals (Wellington) and Fabrikam Logistics (Sydney) are being chased; contact persons are Laura Bianchi and Tom Nguyen respectively.\n\n4. Personnel. Ms. Rossi confirmed that James Whitaker will join as Head of Operations on 1 June 2024, relocating from Christchurch. His employment contract was reviewed by Russell McVeagh.\n\n5. Any other business. Ms. Chen thanked Daniel Okafor for organising the site visit to the Tauranga warehouse. The next meeting will be held on 23 May 2024 at 10:00 in the Queen Street boardroom.\n\nThe meeting closed at 12:15. Minutes recorded by Sofia Rossi and approved by Margaret Chen.",
+   "expected": [
+    {
+     "value": "Northwind Traders",
+     "type": "COMPANY"
+    },
+    {
+     "value": "45 Harbour Road",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Auckland",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "18 April 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "Margaret Chen",
+     "type": "PERSON"
+    },
+    {
+     "value": "Daniel Okafor",
+     "type": "PERSON"
+    },
+    {
+     "value": "Sofia Rossi",
+     "type": "PERSON"
+    },
+    {
+     "value": "Ahmed Al-Sayed",
+     "type": "PERSON"
+    },
+    {
+     "value": "University of Auckland",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Priya Nair",
+     "type": "PERSON"
+    },
+    {
+     "value": "Melbourne",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Fonterra",
+     "type": "COMPANY"
+    },
+    {
+     "value": "31 December 2025",
+     "type": "DATE"
+    },
+    {
+     "value": "Callaghan Innovation",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Contoso Pharmaceuticals",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Wellington",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Fabrikam Logistics",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Sydney",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Laura Bianchi",
+     "type": "PERSON"
+    },
+    {
+     "value": "Tom Nguyen",
+     "type": "PERSON"
+    },
+    {
+     "value": "James Whitaker",
+     "type": "PERSON"
+    },
+    {
+     "value": "1 June 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "Christchurch",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Russell McVeagh",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Tauranga",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "23 May 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "Queen Street",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "NZD 4.2 million",
+     "type": "AMOUNT"
+    }
+   ]
+  },
+  {
+   "id": "en-business-01",
+   "lang": "en",
+   "category": "business",
+   "text": "Invoice 482913 for order 450012: three laptops, total $12,450.00, payment due within 30 days. Support ticket #845210 is closed. Q3 revenue reached 350000 units across 120 stores. Questions? Contact Laura Bennett at l.bennett@northwind.co.uk.",
+   "expected": [
+    {
+     "value": "$12,450.00",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "Laura Bennett",
+     "type": "PERSON"
+    },
+    {
+     "value": "l.bennett@northwind.co.uk",
+     "type": "EMAIL"
+    },
+    {
+     "value": "845210",
+     "type": "ID"
+    }
+   ]
+  },
+  {
+   "id": "zh-long-01",
+   "lang": "zh",
+   "category": "long",
+   "text": "关于第三季度供应商评审会议的纪要\n\n时间：2024年9月12日上午十点\n地点：杭州市余杭区文一西路969号阿里巴巴西溪园区三号楼会议室\n\n出席人员：采购总监周晓华、财务经理孙立群、法务顾问郑雨薇，以及来自宁波恒远塑业有限公司的销售代表吴国强和技术顾问黄美芳。\n\n一、周晓华首先通报了本季度的采购完成情况。截至2024年8月31日，累计采购金额为人民币三千二百万元，其中来自宁波恒远塑业的部分占比约百分之十八。\n\n二、吴国强介绍了新一代环保包装材料的测试结果，并表示样品已于9月3日寄往苏州工业园区的检测中心。孙立群询问了付款周期问题，双方同意维持现有的六十天账期。\n\n三、郑雨薇提醒，现行合同将于2025年1月31日到期，续约草案需在11月底前提交给深圳总部法务部审核。她建议由黄美芳牵头整理技术附件。\n\n四、会议决定下次评审安排在2024年10月17日，地点改为上海市静安区南京西路1266号恒隆广场办公室。周晓华负责通知常州和武汉两地的分公司代表参加。\n\n纪要人：孙立群\n审核：周晓华",
+   "expected": [
+    {
+     "value": "2024年9月12日",
+     "type": "DATE"
+    },
+    {
+     "value": "杭州市余杭区文一西路969号",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "阿里巴巴",
+     "type": "COMPANY"
+    },
+    {
+     "value": "周晓华",
+     "type": "PERSON"
+    },
+    {
+     "value": "孙立群",
+     "type": "PERSON"
+    },
+    {
+     "value": "郑雨薇",
+     "type": "PERSON"
+    },
+    {
+     "value": "宁波恒远塑业有限公司",
+     "type": "COMPANY"
+    },
+    {
+     "value": "吴国强",
+     "type": "PERSON"
+    },
+    {
+     "value": "黄美芳",
+     "type": "PERSON"
+    },
+    {
+     "value": "2024年8月31日",
+     "type": "DATE"
+    },
+    {
+     "value": "9月3日",
+     "type": "DATE"
+    },
+    {
+     "value": "苏州工业园区",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "2025年1月31日",
+     "type": "DATE"
+    },
+    {
+     "value": "深圳",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "2024年10月17日",
+     "type": "DATE"
+    },
+    {
+     "value": "上海市静安区南京西路1266号",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "常州",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "武汉",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "三千二百万元",
+     "type": "AMOUNT"
+    }
+   ]
+  }
+ ]
+}

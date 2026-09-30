@@ -1,0 +1,16 @@
+{"id": "en-jobad-01", "expected": [
+  {"value": "Calderwych Bay Health Partnership", "type": "COMPANY"},
+  {"value": "Calderwych Bay General Hospital", "type": "COMPANY"},
+  {"value": "Thornlow Road, Calderwych Bay CB14 3PN", "type": "ADDRESS"},
+  {"value": "Calderwych Bay", "type": "ADDRESS"},
+  {"value": "CBH-2026-1147", "type": "ID", "sub": "reference"},
+  {"value": "11 October 2026", "type": "DATE"},
+  {"value": "22 October 2026", "type": "DATE"},
+  {"value": "14 October 2026", "type": "DATE"},
+  {"value": "18 September 2026", "type": "DATE"},
+  {"value": "GBP 38,682", "type": "AMOUNT"},
+  {"value": "GBP 46,580", "type": "AMOUNT"},
+  {"value": "GBP 800", "type": "AMOUNT"},
+  {"value": "Marianne Ollerton", "type": "PERSON"},
+  {"value": "clinical.engineering@calderwychbayhp.example", "type": "EMAIL"}
+]}

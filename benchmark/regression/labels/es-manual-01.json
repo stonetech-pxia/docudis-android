@@ -1,0 +1,1 @@
+{"id": "es-manual-01", "expected": [{"value": "Termavent Ibérica, S.L.U.", "type": "COMPANY"}, {"value": "Polígono Industrial Las Cañadas, nave 17, 50820 Villamayor (Zaragoza)", "type": "ADDRESS"}, {"value": "14 de marzo de 2025", "type": "DATE"}, {"value": "976 00 11 22", "type": "PHONE"}, {"value": "sat@termavent-iberica.example", "type": "EMAIL"}]}

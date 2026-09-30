@@ -1,0 +1,187 @@
+{
+ "id": "en-lease-01",
+ "expected": [
+  {
+   "value": "July 14, 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "TAMARACK STREET PROPERTIES, LLC",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Ohio",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Curtis Hallgren",
+   "type": "PERSON"
+  },
+  {
+   "value": "Hallgren Property Management",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Wei-Ling Zhao",
+   "type": "PERSON"
+  },
+  {
+   "value": "Zhao",
+   "type": "PERSON"
+  },
+  {
+   "value": "02/17/1996",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "UT482913",
+   "type": "ID"
+  },
+  {
+   "value": "Marcus J. Desrosiers",
+   "type": "PERSON"
+  },
+  {
+   "value": "Desrosiers",
+   "type": "PERSON"
+  },
+  {
+   "value": "10/30/1994",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "RK170652",
+   "type": "ID"
+  },
+  {
+   "value": "1184 Neil Avenue, Apt. 2C, Columbus, OH 43201",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "August 1, 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "July 31, 2027",
+   "type": "DATE"
+  },
+  {
+   "value": "$1,625.00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "pay.hallgrenpm.com",
+   "type": "URL"
+  },
+  {
+   "value": "$75.00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "$35.00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "26-0714-03",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "5500218",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Huntington National Bank",
+   "type": "COMPANY"
+  },
+  {
+   "value": "$300.00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "AEP Ohio",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Columbia Gas",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Tamarack Street Properties, LLC",
+   "type": "COMPANY"
+  },
+  {
+   "value": "250 E. Broad Street, Suite 1420",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Columbus, OH 43215",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "(614) 555-0136",
+   "type": "PHONE"
+  },
+  {
+   "value": "curtis@hallgrenpm.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "wlzhao96@outlook.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "m.desrosiers@proton.me",
+   "type": "EMAIL"
+  },
+  {
+   "value": "(614) 555-0192",
+   "type": "PHONE"
+  },
+  {
+   "value": "+1 (380) 555-0148",
+   "type": "PHONE"
+  },
+  {
+   "value": "(614) 555-0110",
+   "type": "PHONE"
+  },
+  {
+   "value": "Reggie",
+   "type": "PERSON"
+  },
+  {
+   "value": "1180 Neil Avenue",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "ZHAO Meifeng",
+   "type": "PERSON"
+  },
+  {
+   "value": "318 W. Las Tunas Drive, San Gabriel, CA 91776",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "(626) 555-0177",
+   "type": "PHONE"
+  },
+  {
+   "value": "07/14/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Marcus Desrosiers",
+   "type": "PERSON"
+  },
+  {
+   "value": "07/16/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "A. Okafor-Lindqvist",
+   "type": "PERSON"
+  }
+ ]
+}

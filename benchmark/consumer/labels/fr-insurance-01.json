@@ -1,0 +1,290 @@
+{
+ "id": "fr-insurance-01",
+ "expected": [
+  {
+   "value": "MMA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Cabinet Philippe Moretti",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Philippe Moretti",
+   "type": "PERSON"
+  },
+  {
+   "value": "07 012 846",
+   "type": "ID"
+  },
+  {
+   "value": "112 cours Émile Zola",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "69100 Villeurbanne",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Villeurbanne",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "04 78 93 52 40",
+   "type": "PHONE"
+  },
+  {
+   "value": "cabinet.moretti@mma.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Samia Khelifi",
+   "type": "PERSON"
+  },
+  {
+   "value": "Samia",
+   "type": "PERSON"
+  },
+  {
+   "value": "04 78 93 52 47",
+   "type": "PHONE"
+  },
+  {
+   "value": "Kim-Anh TRAN",
+   "type": "PERSON"
+  },
+  {
+   "value": "38 rue Francis de Pressensé",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Allée B, 3e étage",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "69100 VILLEURBANNE",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "18 septembre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "AU 7482913 C",
+   "type": "ID"
+  },
+  {
+   "value": "0069 318 442",
+   "type": "ID"
+  },
+  {
+   "value": "1er novembre",
+   "type": "DATE"
+  },
+  {
+   "value": "01/11/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "31/10/2027",
+   "type": "DATE"
+  },
+  {
+   "value": "Tran",
+   "type": "PERSON"
+  },
+  {
+   "value": "1er novembre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "01/11/2025",
+   "type": "DATE"
+  },
+  {
+   "value": "GH-482-LQ",
+   "type": "ID"
+  },
+  {
+   "value": "14/03/2022",
+   "type": "DATE"
+  },
+  {
+   "value": "38 rue Francis de Pressensé, 69100 Villeurbanne",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "TRAN, Kim-Anh",
+   "type": "PERSON"
+  },
+  {
+   "value": "23/11/1979",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "Lyon 3e",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "970669102358",
+   "type": "ID"
+  },
+  {
+   "value": "12/06/1998",
+   "type": "DATE"
+  },
+  {
+   "value": "VASSEUR, Grégory",
+   "type": "PERSON"
+  },
+  {
+   "value": "05/02/1977",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "Roubaix",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "950259300871",
+   "type": "ID"
+  },
+  {
+   "value": "19/09/1995",
+   "type": "DATE"
+  },
+  {
+   "value": "380 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "75 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "500 000 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "733,75 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "6,50 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "154,82 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "888,57 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "74,05 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "74,02 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "05/11/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "VASSEUR G.",
+   "type": "PERSON"
+  },
+  {
+   "value": "TRAN K.A.",
+   "type": "PERSON"
+  },
+  {
+   "value": "FR76 1350 5600 5348 0692 2673 670",
+   "type": "IBAN"
+  },
+  {
+   "value": "CEPAFRPP382",
+   "type": "ID"
+  },
+  {
+   "value": "MMA-AU7482913C-001",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "20 octobre",
+   "type": "DATE"
+  },
+  {
+   "value": "TRAN Kim-Anh",
+   "type": "PERSON"
+  },
+  {
+   "value": "MMA IARD Assurances Mutuelles",
+   "type": "COMPANY"
+  },
+  {
+   "value": "MMA IARD",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Kim-Anh Tran",
+   "type": "PERSON"
+  },
+  {
+   "value": "1er avril 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "01 40 25 59 59",
+   "type": "PHONE"
+  },
+  {
+   "value": "+33 1 40 25 59 59",
+   "type": "PHONE"
+  },
+  {
+   "value": "sinistres.cabinet-moretti@mma.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Vasseur",
+   "type": "PERSON"
+  },
+  {
+   "value": "3 septembre",
+   "type": "DATE"
+  },
+  {
+   "value": "Maïlys",
+   "type": "PERSON"
+  },
+  {
+   "value": "750 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Le Mans",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "775 652 126",
+   "type": "ID"
+  },
+  {
+   "value": "537 052 368 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "440 048 882",
+   "type": "ID"
+  },
+  {
+   "value": "160 rue Henri Champion, 72030 Le Mans Cedex 9",
+   "type": "ADDRESS"
+  }
+ ]
+}

@@ -1,0 +1,149 @@
+{
+ "id": "fr-cv-02",
+ "expected": [
+  {
+   "value": "ARBEN KRASNIQI",
+   "type": "PERSON"
+  },
+  {
+   "value": "Chemin des Clochetons 18",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "1004 Lausanne",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "+41 78 614 27 39",
+   "type": "PHONE"
+  },
+  {
+   "value": "arben.krasniqi88@bluewin.ch",
+   "type": "EMAIL"
+  },
+  {
+   "value": "14.03.1988",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "Gjilan",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Duvoisin Constructions SA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Crissier",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Plaines-du-Loup",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "BTR Sàrl",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Yverdon-les-Bains",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Nord vaudois",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Entreprise Générale Gino Bertolucci & Fils",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Bulle",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Fribourg",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Savary Bâtiment SA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Romont",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "École de la construction",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Tolochenaz",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Fédération vaudoise des entrepreneurs",
+   "type": "COMPANY"
+  },
+  {
+   "value": "FVE",
+   "type": "COMPANY"
+  },
+  {
+   "value": "École professionnelle artisanale et industrielle",
+   "type": "COMPANY"
+  },
+  {
+   "value": "EPAI",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Suisse",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Morat",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Guin",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "FC Prilly Sports",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Laurent Petit",
+   "type": "PERSON"
+  },
+  {
+   "value": "021 634 58 12",
+   "type": "PHONE"
+  },
+  {
+   "value": "l.petit@duvoisin-constructions.ch",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Catarina Oliveira Santos",
+   "type": "PERSON"
+  },
+  {
+   "value": "024 426 71 30",
+   "type": "PHONE"
+  },
+  {
+   "value": "079 305 66 48",
+   "type": "PHONE"
+  },
+  {
+   "value": "c.oliveira@btr-sarl.ch",
+   "type": "EMAIL"
+  },
+  {
+   "value": "CHF 8'200",
+   "type": "AMOUNT"
+  }
+ ]
+}

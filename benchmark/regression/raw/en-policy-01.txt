@@ -1,0 +1,40 @@
+NORTHLARK INSTRUMENTS, INC.
+2400 SW Halverson Loop, Beaverton, OR 97006
+INTERNAL - STAFF NOTICE
+
+ENDPOINT AND INFORMATION SECURITY POLICY
+Policy number NL-ISP-014 | Revision 4.2 | Effective January 5, 2027
+Supersedes Revision 4.1 (June 2, 2026) | Next scheduled review: December 2027
+Owner: Information Security, reporting to the Chief Financial Officer
+Approved by: Renata Alcott, Chief Financial Officer
+
+1. PURPOSE AND SCOPE
+1.1 This policy applies to all employees, contingent workers and contractors who use Northlark computing equipment or who access Northlark systems from any device. It covers the controls we are required to hold under ISO/IEC 27001:2022 Annex A and, for our federal subcontracts, NIST SP 800-171 Rev. 3.
+1.2 Section 6 additionally applies to anyone handling cardholder data through the web store, which is assessed annually against PCI DSS v4.0.
+
+2. COMPANY EQUIPMENT
+2.1 Standard issue is asset class LAP-3 (14-inch notebook, model NB-5450) or LAP-4 (16-inch, model NB-7620). Both are built from the approved image IMG-WIN-2026.3 and hardened to the CIS Benchmark v3.0.0 Level 1 profile.
+2.2 Every device is tagged with a six-digit asset number on the underside. Quote that number on any ticket to the IT Service Desk.
+2.3 Full disk encryption is enabled at build and must not be suspended. Devices that have not checked in to management for 45 days are disabled automatically.
+2.4 Engineering workstations attached to VERIDIAN 400 and VERIDIAN 800 test benches run a separate image and sit on VLAN 340. Do not connect them to the general corporate network, and do not install ATLAS firmware builds from anywhere other than the signed release share.
+
+3. ACCOUNTS AND AUTHENTICATION
+3.1 Passphrases follow NIST SP 800-63B: a minimum of 14 characters, screened against the breached-credential list, with no scheduled expiry.
+3.2 Multi-factor authentication is mandatory on all externally reachable services. Hardware security keys are issued on request through Procurement at a charge of $32.00 per key to the department cost center.
+3.3 Shared accounts are prohibited except where listed in Appendix B, and each exception carries a named owner and an annual recertification by Internal Audit.
+
+4. DATA HANDLING
+4.1 Classify documents as PUBLIC, INTERNAL, CONFIDENTIAL or RESTRICTED per the matrix in Appendix A, paragraph 2.
+4.2 CONFIDENTIAL and RESTRICTED material may not be placed in personal cloud storage, personal email or unapproved AI services.
+4.3 Calibration records and customer test data are retained for 7 years under the retention schedule RET-2024-01 and are then destroyed by the Records team.
+
+5. TRAVEL AND LOSS
+5.1 Report a lost or stolen device to the IT Service Desk within 4 hours, and to your manager the same working day. Out of hours, use the 24-hour line listed on the back of your badge.
+5.2 Devices returned from field service are shipped to the Beaverton depot by FedEx using the prepaid label in the service kit. Do not ship a device with removable media still fitted.
+
+6. NON-COMPLIANCE
+6.1 Deviations are logged as exceptions with a maximum life of 90 days and require sign-off from the Head of Information Security.
+6.2 Repeated or deliberate breach is handled under the disciplinary procedure at section 11 of the Employee Handbook.
+
+Questions about this notice should go to the IT Service Desk (extension 4400) or to the Information Security mailbox.
+Northlark Instruments, Inc. | Document NL-ISP-014 Rev 4.2 | Page 1 of 4 | Internal use only

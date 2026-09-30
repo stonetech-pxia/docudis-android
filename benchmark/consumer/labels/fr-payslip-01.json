@@ -1,0 +1,165 @@
+{
+ "id": "fr-payslip-01",
+ "expected": [
+  {
+   "value": "01/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "31/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "BISCUITERIE HEINRICH SAS",
+   "type": "COMPANY"
+  },
+  {
+   "value": "12 rue de l'Industrie - ZA du Ried",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "BP 40118",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "67150 Erstein",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "778 972 976 00014",
+   "type": "ID"
+  },
+  {
+   "value": "Strasbourg",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "427 100 2345678",
+   "type": "ID"
+  },
+  {
+   "value": "Sylvie Wendling",
+   "type": "PERSON"
+  },
+  {
+   "value": "03 88 64 27 15",
+   "type": "PHONE"
+  },
+  {
+   "value": "paie@biscuiterie-heinrich.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "OUEDRAOGO Aïssata",
+   "type": "PERSON"
+  },
+  {
+   "value": "7 rue des Vosges",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Appartement 12, 2e étage",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "67230 Benfeld",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "2 88 01 31 340 298 80",
+   "type": "ID"
+  },
+  {
+   "value": "00417",
+   "type": "ID"
+  },
+  {
+   "value": "04/03/2019",
+   "type": "DATE"
+  },
+  {
+   "value": "Erstein",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Kieffer",
+   "type": "PERSON"
+  },
+  {
+   "value": "Mutuelle Alsace Prévoyance",
+   "type": "COMPANY"
+  },
+  {
+   "value": "AG2R",
+   "type": "COMPANY"
+  },
+  {
+   "value": "4,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "1 654,13 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Aïssata Ouedraogo",
+   "type": "PERSON"
+  },
+  {
+   "value": "FR76 1453 4902 7694 9801 5882 128",
+   "type": "IBAN"
+  },
+  {
+   "value": "CMCIFR2A",
+   "type": "ID"
+  },
+  {
+   "value": "10/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "14/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "2 858,58 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "1er septembre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "06 4471 902",
+   "type": "ID"
+  },
+  {
+   "value": "Wendling",
+   "type": "PERSON"
+  },
+  {
+   "value": "Bas-Rhin",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "BISCUITERIE HEINRICH",
+   "type": "COMPANY"
+  },
+  {
+   "value": "450 000 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "12 rue de l'Industrie, 67150 Erstein",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "778 972 976",
+   "type": "ID"
+  },
+  {
+   "value": "FR81778972976",
+   "type": "ID"
+  }
+ ]
+}

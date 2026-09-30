@@ -1,0 +1,549 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NER benchmark (desktop, Python onnxruntime)</title>
+<style>:root{color-scheme:light}
+body{margin:0;font:14px/1.5 -apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;color:#2a2420;background:#f5efe8}
+header{padding:20px 24px 8px}h1{margin:0 0 4px;font-size:22px}.meta{margin:0;color:#6b5f55}
+.overall{font-size:16px}.legend{color:#6b5f55}.legend mark,.legend span{margin-right:8px}
+section.summary{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 24px}
+@media(max-width:900px){section.summary{grid-template-columns:1fr}}
+h2{font-size:16px;margin:8px 0}table{border-collapse:collapse;width:100%;background:#fffcf8;font-size:13px}
+th,td{padding:4px 8px;border-bottom:1px solid #e8dfd4;text-align:right}th:first-child,td:first-child{text-align:left}
+.filters{position:sticky;top:0;background:#f5efe8;padding:10px 24px;border-bottom:1px solid #e8dfd4;display:flex;gap:16px;align-items:center;z-index:2}
+main{padding:12px 24px 40px}
+article.case{background:#fffcf8;border-radius:14px;padding:12px 16px;margin:12px 0;box-shadow:0 6px 20px rgba(120,90,60,.08)}
+article.case[data-fail="true"] h3::before{content:"⚠ ";color:#dc2626}
+h3{margin:0 0 8px;font-size:15px;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+h3 small{color:#8a7b6f;font-weight:400}h3 .stats{margin-left:auto;font-weight:400;color:#6b5f55;font-size:12px}
+.panes{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:900px){.panes{grid-template-columns:1fr}}
+.pane h4{margin:0 0 4px;font-size:12px;color:#8a7b6f;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+pre{white-space:pre-wrap;word-break:break-word;margin:0;padding:10px;background:#faf6f1;border-radius:8px;font:14px/1.7 inherit}
+mark{border-radius:4px;padding:0 2px;color:inherit}
+mark.fp{background:#fee2e2!important;border-bottom:2px solid #dc2626!important;text-decoration:line-through}
+mark.wrong{background:#fef3c7!important;border-bottom:2px dotted #b45309!important}
+mark.partial{outline:1px dashed #6b5f55}
+mark.off{background:transparent!important;border-bottom-style:dotted!important}
+span.missed{border-bottom:2px dashed #dc2626;background:#fff1f1}
+mark.ph{padding:0 5px;border-radius:6px;font-weight:600;font-size:12px}
+ul.issues{margin:8px 0 0;padding-left:18px;color:#6b5f55}ul.issues .src{color:#a89a8e;font-size:12px}
+.grade{display:inline-block;min-width:18px;text-align:center;border-radius:6px;padding:0 6px;font-weight:700;color:#fff;font-size:12px}
+.g-A{background:#4e6644}.g-B{background:#6b7f62}.g-C{background:#b8926a}.g-D{background:#a84e2c}
+.hidden{display:none}
+mark.t-PERSON{background:#c8623a22;border-bottom:2px solid #c8623a}mark.ph.t-PERSON{background:#c8623a;color:#fff;border:0}
+mark.t-EMAIL{background:#2563eb22;border-bottom:2px solid #2563eb}mark.ph.t-EMAIL{background:#2563eb;color:#fff;border:0}
+mark.t-PHONE{background:#0d948822;border-bottom:2px solid #0d9488}mark.ph.t-PHONE{background:#0d9488;color:#fff;border:0}
+mark.t-ID{background:#b4530922;border-bottom:2px solid #b45309}mark.ph.t-ID{background:#b45309;color:#fff;border:0}
+mark.t-NUMBER{background:#92400e22;border-bottom:2px solid #92400e}mark.ph.t-NUMBER{background:#92400e;color:#fff;border:0}
+mark.t-CARD{background:#ca8a0422;border-bottom:2px solid #ca8a04}mark.ph.t-CARD{background:#ca8a04;color:#fff;border:0}
+mark.t-IBAN{background:#a1620722;border-bottom:2px solid #a16207}mark.ph.t-IBAN{background:#a16207;color:#fff;border:0}
+mark.t-DATE{background:#6d28d922;border-bottom:2px solid #6d28d9}mark.ph.t-DATE{background:#6d28d9;color:#fff;border:0}
+mark.t-BIRTH_DATE{background:#4c1d9522;border-bottom:2px solid #4c1d95}mark.ph.t-BIRTH_DATE{background:#4c1d95;color:#fff;border:0}
+mark.t-AMOUNT{background:#ea580c22;border-bottom:2px solid #ea580c}mark.ph.t-AMOUNT{background:#ea580c;color:#fff;border:0}
+mark.t-IP{background:#0284c722;border-bottom:2px solid #0284c7}mark.ph.t-IP{background:#0284c7;color:#fff;border:0}
+mark.t-URL{background:#0369a122;border-bottom:2px solid #0369a1}mark.ph.t-URL{background:#0369a1;color:#fff;border:0}
+mark.t-ADDRESS{background:#dc262622;border-bottom:2px solid #dc2626}mark.ph.t-ADDRESS{background:#dc2626;color:#fff;border:0}
+mark.t-COMPANY{background:#db277722;border-bottom:2px solid #db2777}mark.ph.t-COMPANY{background:#db2777;color:#fff;border:0}
+mark.t-SECRET{background:#e11d4822;border-bottom:2px solid #e11d48}mark.ph.t-SECRET{background:#e11d48;color:#fff;border:0}
+mark.t-API_KEY{background:#05966922;border-bottom:2px solid #059669}mark.ph.t-API_KEY{background:#059669;color:#fff;border:0}
+mark.t-CUSTOM{background:#6b7f6222;border-bottom:2px solid #6b7f62}mark.ph.t-CUSTOM{background:#6b7f62;color:#fff;border:0}
+mark.t-OTHER{background:#6b728022;border-bottom:2px solid #6b7280}mark.ph.t-OTHER{background:#6b7280;color:#fff;border:0}
+</style></head><body>
+<header><h1>NER benchmark (desktop, Python onnxruntime)</h1>
+<p class="meta">模型 <b>xlm-roberta-base-ner-docudis</b> · windows "Windows 11 Famille" 10.0 (Build 26200), CPU, onnxruntime via bench_server.py · 48 条用例 · 168 个预期实体</p>
+<p class="overall">总体：召回 89% · 精确 98% · F1 94% <span class="grade g-A">A</span> · 164 ms/千字符 <span class="grade g-A">A</span></p>
+<p class="legend">图例：<mark class="t-PERSON">检测到的实体（按类型着色）</mark> <span class="missed">漏检（预期但未找到）</span> <mark class="fp">误报</mark> <mark class="wrong">类型错误</mark> <mark class="partial t-PERSON">部分命中</mark> <mark class="off t-DATE">检出但默认不遮（金额、非出生日期）</mark></p>
+</header>
+<section class="summary"><div>
+<h2>按语言</h2><table><thead><tr><th>组</th><th>用例</th><th>预期</th><th>找到</th><th>误报</th><th>召回</th><th>精确</th><th>F1</th><th>可靠度</th><th>ms/千字</th><th>速度</th></tr></thead><tbody>
+<tr><td>zh</td><td>11</td><td>41</td><td>36</td><td>1</td><td>88%</td><td>98%</td><td>93%</td><td><span class="grade g-A">A</span></td><td>275</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>zh-Hant</td><td>1</td><td>3</td><td>2</td><td>0</td><td>67%</td><td>100%</td><td>80%</td><td><span class="grade g-B">B</span></td><td>514</td><td><span class="grade g-B">B</span></td></tr>
+<tr><td>en</td><td>15</td><td>66</td><td>60</td><td>2</td><td>91%</td><td>97%</td><td>94%</td><td><span class="grade g-A">A</span></td><td>110</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>fr</td><td>7</td><td>20</td><td>18</td><td>0</td><td>90%</td><td>100%</td><td>95%</td><td><span class="grade g-A">A</span></td><td>168</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>es</td><td>6</td><td>15</td><td>14</td><td>0</td><td>93%</td><td>100%</td><td>97%</td><td><span class="grade g-A">A</span></td><td>170</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>hi</td><td>5</td><td>9</td><td>7</td><td>0</td><td>78%</td><td>100%</td><td>88%</td><td><span class="grade g-B">B</span></td><td>237</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>de</td><td>1</td><td>3</td><td>3</td><td>0</td><td>100%</td><td>100%</td><td>100%</td><td><span class="grade g-A">A</span></td><td>273</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>ja</td><td>1</td><td>3</td><td>2</td><td>0</td><td>67%</td><td>100%</td><td>80%</td><td><span class="grade g-B">B</span></td><td>457</td><td><span class="grade g-B">B</span></td></tr>
+<tr><td>multi</td><td>1</td><td>8</td><td>8</td><td>0</td><td>100%</td><td>100%</td><td>100%</td><td><span class="grade g-A">A</span></td><td>224</td><td><span class="grade g-A">A</span></td></tr>
+</tbody></table>
+</div><div>
+<h2>按类别</h2><table><thead><tr><th>组</th><th>用例</th><th>预期</th><th>找到</th><th>误报</th><th>召回</th><th>精确</th><th>F1</th><th>可靠度</th><th>ms/千字</th><th>速度</th></tr></thead><tbody>
+<tr><td>names</td><td>12</td><td>27</td><td>23</td><td>0</td><td>85%</td><td>100%</td><td>92%</td><td><span class="grade g-A">A</span></td><td>345</td><td><span class="grade g-B">B</span></td></tr>
+<tr><td>organizations</td><td>5</td><td>10</td><td>5</td><td>0</td><td>50%</td><td>100%</td><td>67%</td><td><span class="grade g-C">C</span></td><td>238</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>locations</td><td>5</td><td>14</td><td>14</td><td>0</td><td>100%</td><td>100%</td><td>100%</td><td><span class="grade g-A">A</span></td><td>272</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>addresses</td><td>2</td><td>5</td><td>3</td><td>1</td><td>60%</td><td>75%</td><td>67%</td><td><span class="grade g-C">C</span></td><td>315</td><td><span class="grade g-B">B</span></td></tr>
+<tr><td>contacts</td><td>5</td><td>14</td><td>14</td><td>0</td><td>100%</td><td>100%</td><td>100%</td><td><span class="grade g-A">A</span></td><td>215</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>identifiers</td><td>2</td><td>5</td><td>5</td><td>0</td><td>100%</td><td>100%</td><td>100%</td><td><span class="grade g-A">A</span></td><td>343</td><td><span class="grade g-B">B</span></td></tr>
+<tr><td>mixed</td><td>5</td><td>31</td><td>30</td><td>0</td><td>97%</td><td>100%</td><td>98%</td><td><span class="grade g-A">A</span></td><td>137</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>negatives</td><td>6</td><td>0</td><td>0</td><td>0</td><td>100%</td><td>100%</td><td>100%</td><td><span class="grade g-A">A</span></td><td>205</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>dates</td><td>1</td><td>2</td><td>2</td><td>0</td><td>100%</td><td>100%</td><td>100%</td><td><span class="grade g-A">A</span></td><td>186</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>noisy</td><td>1</td><td>5</td><td>4</td><td>1</td><td>80%</td><td>80%</td><td>80%</td><td><span class="grade g-B">B</span></td><td>165</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>business</td><td>2</td><td>8</td><td>7</td><td>0</td><td>88%</td><td>100%</td><td>93%</td><td><span class="grade g-A">A</span></td><td>110</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>long</td><td>2</td><td>47</td><td>43</td><td>1</td><td>91%</td><td>98%</td><td>95%</td><td><span class="grade g-A">A</span></td><td>75</td><td><span class="grade g-A">A</span></td></tr>
+</tbody></table>
+</div></section>
+<section class="filters">
+<label>语言 <select id="lang"><option value="">全部</option><option>zh</option><option>zh-Hant</option><option>en</option><option>fr</option><option>es</option><option>hi</option><option>de</option><option>ja</option><option>multi</option></select></label>
+<label>类别 <select id="cat"><option value="">全部</option><option>names</option><option>organizations</option><option>locations</option><option>addresses</option><option>contacts</option><option>identifiers</option><option>mixed</option><option>negatives</option><option>dates</option><option>noisy</option><option>business</option><option>long</option></select></label>
+<label><input type="checkbox" id="fail"> 只看有问题的用例</label>
+<span id="count"></span>
+</section>
+<main>
+<article class="case" data-lang="zh" data-cat="names" data-fail="true">
+<h3>zh-name-01 <small>zh · names</small><span class="stats">F1 50% <span class="grade g-C">C</span> · 22 ms · 16 字符 · 预期 3 / 命中 1 / 部分 0 / 漏检 2 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 98%">张三</mark>昨天把报告发给了<span class="missed" title="漏检 PERSON">李四</span>和<span class="missed" title="漏检 PERSON">王五</span>。</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-PERSON">[PERSON_1]</mark>昨天把报告发给了李四和王五。</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> 李四 <i>PERSON</i></li>
+<li><b>漏检</b> 王五 <i>PERSON</i></li>
+</ul>
+</article>
+<article class="case" data-lang="zh" data-cat="names" data-fail="false">
+<h3>zh-name-02 <small>zh · names</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 11 ms · 17 字符 · 预期 1 / 命中 1 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>请转告<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">欧阳娜娜</mark>女士，会议改到周五。</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>请转告<mark class="ph t-PERSON">[PERSON_1]</mark>女士，会议改到周五。</pre></div>
+</div>
+</article>
+<article class="case" data-lang="zh" data-cat="names" data-fail="false">
+<h3>zh-name-03 <small>zh · names</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 13 ms · 21 字符 · 预期 2 / 命中 2 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>负责人：<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">陈志强</mark>（销售部），联系人：<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">刘婷婷</mark>。</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>负责人：<mark class="ph t-PERSON">[PERSON_1]</mark>（销售部），联系人：<mark class="ph t-PERSON">[PERSON_2]</mark>。</pre></div>
+</div>
+</article>
+<article class="case" data-lang="zh" data-cat="organizations" data-fail="true">
+<h3>zh-org-01 <small>zh · organizations</small><span class="stats">F1 67% <span class="grade g-C">C</span> · 14 ms · 21 字符 · 预期 2 / 命中 1 / 部分 0 / 漏检 1 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:cn:company · 90%">华为技术有限公司</mark>与<span class="missed" title="漏检 COMPANY">清华大学</span>签署了合作协议。</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>与清华大学签署了合作协议。</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> 清华大学 <i>COMPANY</i></li>
+</ul>
+</article>
+<article class="case" data-lang="zh" data-cat="locations" data-fail="false">
+<h3>zh-loc-01 <small>zh · locations</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 15 ms · 16 字符 · 预期 3 / 命中 3 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>他从<mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 99%">北京</mark>飞往<mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">上海</mark>，再转车去<mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">杭州</mark>。</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>他从<mark class="ph t-ADDRESS">[ADDRESS_1]</mark>飞往<mark class="ph t-ADDRESS">[ADDRESS_2]</mark>，再转车去<mark class="ph t-ADDRESS">[ADDRESS_3]</mark>。</pre></div>
+</div>
+</article>
+<article class="case" data-lang="zh" data-cat="addresses" data-fail="false">
+<h3>zh-addr-01 <small>zh · addresses</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 13 ms · 29 字符 · 预期 1 / 命中 1 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>收货地址：<mark class="t-ADDRESS" title="ADDRESS · regex:cn:address · 85%">广东省深圳市南山区科技园南路88号3栋502室</mark>。</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>收货地址：<mark class="ph t-ADDRESS">[ADDRESS_1]</mark>。</pre></div>
+</div>
+</article>
+<article class="case" data-lang="zh" data-cat="contacts" data-fail="false">
+<h3>zh-contact-01 <small>zh · contacts · 仅规则</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 16 ms · 55 字符 · 预期 3 / 命中 3 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>手机 <mark class="t-PHONE" title="PHONE · regex:cn:phone_mobile · 85%">13812345678</mark>，座机 <mark class="t-PHONE" title="PHONE · regex:cn:phone_landline · 80%">010-88886666</mark>，邮箱 <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">zhangsan@example.com</mark>。</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>手机 <mark class="ph t-PHONE">[PHONE_1]</mark>，座机 <mark class="ph t-PHONE">[PHONE_2]</mark>，邮箱 <mark class="ph t-EMAIL">[EMAIL_1]</mark>。</pre></div>
+</div>
+</article>
+<article class="case" data-lang="zh" data-cat="identifiers" data-fail="false">
+<h3>zh-id-01 <small>zh · identifiers · 仅规则</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 15 ms · 48 字符 · 预期 2 / 命中 2 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>身份证号 <mark class="t-ID" title="ID · regex:cn:resident_id · 90%">110101199003070003</mark>，银行卡 <mark class="t-NUMBER" title="NUMBER · regex:universal:long_number · 50%">6222021234567890123</mark>。</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>身份证号 <mark class="ph t-ID">[ID_1]</mark>，银行卡 <mark class="ph t-NUMBER">[NUMBER_1]</mark>。</pre></div>
+</div>
+</article>
+<article class="case" data-lang="zh" data-cat="mixed" data-fail="true">
+<h3>zh-mixed-01 <small>zh · mixed</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 17 ms · 76 字符 · 预期 5 / 命中 4 / 部分 1 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>尊敬的<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">王建国</mark>先生：您在<mark class="t-COMPANY" title="COMPANY · list:company · 90%">招商银行</mark>的账户已于<mark class="off t-DATE" title="DATE（默认不遮） · regex:cn:date_cjk · 90%">2024年3月15日</mark>完成变更，如有疑问请致电<mark class="t-PHONE" title="PHONE · regex:cn:phone_mobile · 85%">13900001111</mark>或<mark class="partial t-ADDRESS" title="ADDRESS · regex:cn:address · 85%">前往上海市浦东新区世纪大道100号</mark>网点咨询。</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>尊敬的<mark class="ph t-PERSON">[PERSON_1]</mark>先生：您在<mark class="ph t-COMPANY">[COMPANY_1]</mark>的账户已于2024年3月15日完成变更，如有疑问请致电<mark class="ph t-PHONE">[PHONE_1]</mark>或<mark class="ph t-ADDRESS">[ADDRESS_1]</mark>网点咨询。</pre></div>
+</div>
+</article>
+<article class="case" data-lang="zh" data-cat="negatives" data-fail="false">
+<h3>zh-negative-01 <small>zh · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 22 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>今天天气很好，我们去公园散步，然后回家做饭。</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>今天天气很好，我们去公园散步，然后回家做饭。</pre></div>
+</div>
+</article>
+<article class="case" data-lang="zh-Hant" data-cat="names" data-fail="true">
+<h3>zh-trad-01 <small>zh-Hant · names</small><span class="stats">F1 80% <span class="grade g-B">B</span> · 12 ms · 24 字符 · 预期 3 / 命中 1 / 部分 1 / 漏检 1 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><span class="missed" title="漏检 PERSON">陳大文</span>先生與<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">林美玲</mark>小姐<mark class="partial t-ADDRESS" title="ADDRESS · regex:cn:address · 85%">將於臺北市信義區</mark>出席會議。</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>陳大文先生與<mark class="ph t-PERSON">[PERSON_1]</mark>小姐<mark class="ph t-ADDRESS">[ADDRESS_1]</mark>出席會議。</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> 陳大文 <i>PERSON</i></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="names" data-fail="false">
+<h3>en-name-01 <small>en · names</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 17 ms · 60 字符 · 预期 2 / 命中 2 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Yesterday <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">John Smith</mark> emailed <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Maria Garcia</mark> about the invoice.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Yesterday <mark class="ph t-PERSON">[PERSON_1]</mark> emailed <mark class="ph t-PERSON">[PERSON_2]</mark> about the invoice.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="names" data-fail="false">
+<h3>en-name-02 <small>en · names</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 49 字符 · 预期 2 / 命中 2 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Dr. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Emily O'Connor</mark> will see Mr. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Kowalski</mark> at 3 pm.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Dr. <mark class="ph t-PERSON">[PERSON_1]</mark> will see Mr. <mark class="ph t-PERSON">[PERSON_2]</mark> at 3 pm.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="names" data-fail="false">
+<h3>en-name-03 <small>en · names</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 60 字符 · 预期 2 / 命中 2 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>cc: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">aisha khan</mark>, <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 84%">ben lee</mark> (lowercase names in an email header)</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>cc: <mark class="ph t-PERSON">[PERSON_1]</mark>, <mark class="ph t-PERSON">[PERSON_2]</mark> (lowercase names in an email header)</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="organizations" data-fail="true">
+<h3>en-org-01 <small>en · organizations</small><span class="stats">F1 67% <span class="grade g-C">C</span> · 10 ms · 61 字符 · 预期 2 / 命中 1 / 部分 0 / 漏检 1 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Microsoft</mark> and the University of <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 82%">Oxford</mark> announced a joint lab.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark> and the University of <mark class="ph t-COMPANY">[COMPANY_2]</mark> announced a joint lab.</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> University of Oxford <i>COMPANY</i></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="locations" data-fail="false">
+<h3>en-loc-01 <small>en · locations</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 13 ms · 53 字符 · 预期 3 / 命中 3 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>She moved from <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Toronto</mark> to <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Berlin</mark>, then visited <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Kyoto</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>She moved from <mark class="ph t-ADDRESS">[ADDRESS_1]</mark> to <mark class="ph t-ADDRESS">[ADDRESS_2]</mark>, then visited <mark class="ph t-ADDRESS">[ADDRESS_3]</mark>.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="addresses" data-fail="true">
+<h3>en-addr-01 <small>en · addresses</small><span class="stats">F1 57% <span class="grade g-C">C</span> · 14 ms · 59 字符 · 预期 4 / 命中 0 / 部分 2 / 漏检 2 / 误报 1 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Ship to: <mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">221B Baker Street, London </mark><mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">NW1 6XE, </mark><mark class="fp t-COMPANY" title="COMPANY · list:company · 90%">United</mark> Kingdom.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Ship to: <mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark><mark class="ph t-COMPANY">[COMPANY_1]</mark> Kingdom.</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> London <i>ADDRESS</i></li>
+<li><b>漏检</b> United Kingdom <i>ADDRESS</i></li>
+<li><b>误报</b> United <i>COMPANY</i> <span class="src">list:company 90%</span></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="contacts" data-fail="false">
+<h3>en-contact-01 <small>en · contacts · 仅规则</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 14 ms · 84 字符 · 预期 3 / 命中 3 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Call <mark class="t-PHONE" title="PHONE · regex:universal:phone_intl · 85%">+1 415-555-0132</mark> or write to <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">jane.doe@acme.co</mark>; IBAN <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">GB82 WEST 1234 5698 7654 32</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Call <mark class="ph t-PHONE">[PHONE_1]</mark> or write to <mark class="ph t-EMAIL">[EMAIL_1]</mark>; IBAN <mark class="ph t-IBAN">[IBAN_1]</mark>.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="identifiers" data-fail="false">
+<h3>en-id-01 <small>en · identifiers · 仅规则</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 22 ms · 63 字符 · 预期 3 / 命中 3 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>SSN <mark class="t-ID" title="ID · regex:us:ssn · 92%">123-45-6789</mark>, card <mark class="t-CARD" title="CARD · regex:universal:credit_card · 90%">4111 1111 1111 1111</mark>, server <mark class="t-IP" title="IP · regex:universal:ipv4 · 90%">192.168.1.20</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>SSN <mark class="ph t-ID">[ID_1]</mark>, card <mark class="ph t-CARD">[CARD_1]</mark>, server <mark class="ph t-IP">[IP_1]</mark>.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="dates" data-fail="false">
+<h3>en-date-01 <small>en · dates</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 67 字符 · 预期 2 / 命中 2 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>The contract was signed on <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">12 March 2024</mark> and expires on <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_iso · 80%">2025-03-11</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>The contract was signed on 12 March 2024 and expires on 2025-03-11.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="mixed" data-fail="false">
+<h3>en-mixed-01 <small>en · mixed</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 17 ms · 205 字符 · 预期 6 / 命中 6 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Dear Ms. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Patel</mark>, your appointment with Dr. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Alan Turing</mark> at <mark class="t-COMPANY" title="COMPANY · regex:universal:institution_en · 85%">Manchester Royal Infirmary</mark> is confirmed for <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">4 June 2024</mark>. Please bring your NHS number <mark class="t-ID" title="ID · regex:gb:nhs · 60%">943 476 5919</mark> and call <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">0161 276 1234</mark> if you need to reschedule.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Dear Ms. <mark class="ph t-PERSON">[PERSON_1]</mark>, your appointment with Dr. <mark class="ph t-PERSON">[PERSON_2]</mark> at <mark class="ph t-COMPANY">[COMPANY_1]</mark> is confirmed for 4 June 2024. Please bring your NHS number <mark class="ph t-ID">[ID_1]</mark> and call <mark class="ph t-PHONE">[PHONE_1]</mark> if you need to reschedule.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="negatives" data-fail="false">
+<h3>en-negative-01 <small>en · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 70 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>The quick brown fox jumps over the lazy dog while the sun sets slowly.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>The quick brown fox jumps over the lazy dog while the sun sets slowly.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="negatives" data-fail="false">
+<h3>en-negative-02 <small>en · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 85 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Please review the attached quarterly figures and let me know your thoughts by Friday.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Please review the attached quarterly figures and let me know your thoughts by Friday.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="noisy" data-fail="true">
+<h3>en-ocr-01 <small>en · noisy</small><span class="stats">F1 80% <span class="grade g-B">B</span> · 17 ms · 109 字符 · 预期 5 / 命中 2 / 部分 2 / 漏检 1 / 误报 1 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>INVOICE  No 4471
+Bill to : <mark class="fp t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 99%">Rob ert   Johnson</mark>
+<mark class="partial t-COMPANY" title="COMPANY · regex:us:company · 85%">Acme Corp</mark> oration
+<mark class="t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">12  High  Street</mark> <mark class="partial t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 83%">,  Bristol</mark>
+Total :  <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£1,250.00</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>INVOICE  No 4471
+Bill to : <mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-COMPANY">[COMPANY_1]</mark> oration
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark> <mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+Total :  £1,250.00</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> Johnson <i>PERSON</i></li>
+<li><b>误报</b> Rob ert   Johnson <i>PERSON</i> <span class="src">ner:xlm-roberta-base-ner-docudis 99%</span></li>
+</ul>
+</article>
+<article class="case" data-lang="fr" data-cat="names" data-fail="false">
+<h3>fr-name-01 <small>fr · names</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 18 ms · 63 字符 · 预期 2 / 命中 2 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Hier, <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Jean Dupont</mark> a rencontré <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Marie-Claire Lefèvre</mark> à la mairie.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Hier, <mark class="ph t-PERSON">[PERSON_1]</mark> a rencontré <mark class="ph t-PERSON">[PERSON_2]</mark> à la mairie.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="organizations" data-fail="true">
+<h3>fr-org-01 <small>fr · organizations</small><span class="stats">F1 67% <span class="grade g-C">C</span> · 13 ms · 64 字符 · 预期 2 / 命中 1 / 部分 0 / 漏检 1 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>La <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 98%">Société Générale</mark> et l'Université de <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 89%">Lyon</mark> ont signé un accord.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>La <mark class="ph t-COMPANY">[COMPANY_1]</mark> et l'Université de <mark class="ph t-COMPANY">[COMPANY_2]</mark> ont signé un accord.</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> Université de Lyon <i>COMPANY</i></li>
+</ul>
+</article>
+<article class="case" data-lang="fr" data-cat="locations" data-fail="false">
+<h3>fr-loc-01 <small>fr · locations</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 57 字符 · 预期 2 / 命中 2 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Elle habite à <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Marseille</mark> mais travaille à <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Aix-en-Provence</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Elle habite à <mark class="ph t-ADDRESS">[ADDRESS_1]</mark> mais travaille à <mark class="ph t-ADDRESS">[ADDRESS_2]</mark>.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="contacts" data-fail="false">
+<h3>fr-contact-01 <small>fr · contacts · 仅规则</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 16 ms · 89 字符 · 预期 3 / 命中 3 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Téléphone : <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">06 12 34 56 78</mark>, e-mail : <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">pierre.martin@exemple.fr</mark>, NIR <mark class="t-NUMBER" title="NUMBER · regex:universal:long_number · 50%">1 85 05 78 006 084 36</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Téléphone : <mark class="ph t-PHONE">[PHONE_1]</mark>, e-mail : <mark class="ph t-EMAIL">[EMAIL_1]</mark>, NIR <mark class="ph t-NUMBER">[NUMBER_1]</mark>.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="mixed" data-fail="true">
+<h3>fr-mixed-01 <small>fr · mixed</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 15 ms · 151 字符 · 预期 7 / 命中 6 / 部分 1 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Madame <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Sophie Bernard</mark>, née le <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:fr:date_words · 85%">3 avril 1987</mark> à <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Bordeaux</mark>, est employée chez <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Airbus</mark> depuis le <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">1er septembre 2015</mark>. Adresse : <mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">14 rue de la Paix, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">75002 Paris</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Madame <mark class="ph t-PERSON">[PERSON_1]</mark>, née le <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark> à <mark class="ph t-ADDRESS">[ADDRESS_1]</mark>, est employée chez <mark class="ph t-COMPANY">[COMPANY_1]</mark> depuis le 1er septembre 2015. Adresse : <mark class="ph t-ADDRESS">[ADDRESS_2]</mark><mark class="ph t-ADDRESS">[ADDRESS_3]</mark>.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="negatives" data-fail="false">
+<h3>fr-negative-01 <small>fr · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 69 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Il fait beau aujourd'hui, nous irons nous promener après le déjeuner.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Il fait beau aujourd'hui, nous irons nous promener après le déjeuner.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="business" data-fail="true">
+<h3>fr-business-01 <small>fr · business</small><span class="stats">F1 86% <span class="grade g-B">B</span> · 34 ms · 245 字符 · 预期 4 / 命中 3 / 部分 0 / 漏检 1 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Facture n° 202603 pour la commande 450012 : trois ordinateurs, montant total <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">12 450,00 €</mark>, payable sous 30 jours. Le ticket <span class="missed" title="漏检 ID">845210</span> est clos. Au troisième trimestre, 125000 unités vendues dans 120 magasins. Contact : <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Claire Dubois</mark>, <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">01 42 68 53 00</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Facture n° 202603 pour la commande 450012 : trois ordinateurs, montant total 12 450,00 €, payable sous 30 jours. Le ticket 845210 est clos. Au troisième trimestre, 125000 unités vendues dans 120 magasins. Contact : <mark class="ph t-PERSON">[PERSON_1]</mark>, <mark class="ph t-PHONE">[PHONE_1]</mark>.</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> 845210 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="es" data-cat="names" data-fail="false">
+<h3>es-name-01 <small>es · names</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 14 ms · 66 字符 · 预期 2 / 命中 2 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Ayer <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Carlos Hernández</mark> habló con <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Lucía Fernández</mark> sobre el proyecto.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Ayer <mark class="ph t-PERSON">[PERSON_1]</mark> habló con <mark class="ph t-PERSON">[PERSON_2]</mark> sobre el proyecto.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="organizations" data-fail="false">
+<h3>es-org-01 <small>es · organizations</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 11 ms · 62 字符 · 预期 2 / 命中 2 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Telefónica</mark> y la <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 94%">Universidad de Salamanca</mark> firmaron un convenio.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark> y la <mark class="ph t-COMPANY">[COMPANY_2]</mark> firmaron un convenio.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="locations" data-fail="false">
+<h3>es-loc-01 <small>es · locations</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 11 ms · 60 字符 · 预期 3 / 命中 3 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Viajó de <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Madrid</mark> a <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Buenos Aires</mark> pasando por <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 98%">Ciudad de México</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Viajó de <mark class="ph t-ADDRESS">[ADDRESS_1]</mark> a <mark class="ph t-ADDRESS">[ADDRESS_2]</mark> pasando por <mark class="ph t-ADDRESS">[ADDRESS_3]</mark>.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="contacts" data-fail="false">
+<h3>es-contact-01 <small>es · contacts · 仅规则</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 62 字符 · 预期 3 / 命中 3 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Móvil <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">612 345 678</mark>, correo <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">ana.lopez@ejemplo.es</mark>, DNI <mark class="t-ID" title="ID · regex:es:dni · 90%">12345678Z</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Móvil <mark class="ph t-PHONE">[PHONE_1]</mark>, correo <mark class="ph t-EMAIL">[EMAIL_1]</mark>, DNI <mark class="ph t-ID">[ID_1]</mark>.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="mixed" data-fail="true">
+<h3>es-mixed-01 <small>es · mixed</small><span class="stats">F1 89% <span class="grade g-B">B</span> · 13 ms · 124 字符 · 预期 5 / 命中 3 / 部分 1 / 漏检 1 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Estimado Sr. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Miguel Ángel Ruiz</mark>: su pedido en <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 92%">El Corte Inglés</mark> será entregado el <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">20 de mayo de 2024</mark> en <mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Calle Mayor 5, Sevilla</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Estimado Sr. <mark class="ph t-PERSON">[PERSON_1]</mark>: su pedido en <mark class="ph t-COMPANY">[COMPANY_1]</mark> será entregado el 20 de mayo de 2024 en <mark class="ph t-ADDRESS">[ADDRESS_1]</mark>.</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> Sevilla <i>ADDRESS</i></li>
+</ul>
+</article>
+<article class="case" data-lang="es" data-cat="negatives" data-fail="false">
+<h3>es-negative-01 <small>es · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 11 ms · 63 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Mañana por la tarde iremos al cine y después cenaremos en casa.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Mañana por la tarde iremos al cine y después cenaremos en casa.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="hi" data-cat="names" data-fail="false">
+<h3>hi-name-01 <small>hi · names</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 10 ms · 45 字符 · 预期 2 / 命中 2 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>कल <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">राहुल शर्मा</mark> ने <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">प्रिया वर्मा</mark> से मुलाकात की।</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>कल <mark class="ph t-PERSON">[PERSON_1]</mark> ने <mark class="ph t-PERSON">[PERSON_2]</mark> से मुलाकात की।</pre></div>
+</div>
+</article>
+<article class="case" data-lang="hi" data-cat="organizations" data-fail="true">
+<h3>hi-org-01 <small>hi · organizations</small><span class="stats">F1 0% <span class="grade g-D">D</span> · 10 ms · 49 字符 · 预期 2 / 命中 0 / 部分 0 / 漏检 2 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 96%">टाटा</mark> समूह और <span class="missed" title="漏检 COMPANY">दिल्ली विश्वविद्यालय</span> ने समझौता किया।</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark> समूह और दिल्ली विश्वविद्यालय ने समझौता किया।</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> टाटा समूह <i>COMPANY</i></li>
+<li><b>漏检</b> दिल्ली विश्वविद्यालय <i>COMPANY</i></li>
+</ul>
+</article>
+<article class="case" data-lang="hi" data-cat="locations" data-fail="false">
+<h3>hi-loc-01 <small>hi · locations</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 10 ms · 45 字符 · 预期 3 / 命中 3 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>वह <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">मुंबई</mark> से <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">बेंगलुरु</mark> गया और फिर <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">जयपुर</mark> पहुँचा।</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>वह <mark class="ph t-ADDRESS">[ADDRESS_1]</mark> से <mark class="ph t-ADDRESS">[ADDRESS_2]</mark> गया और फिर <mark class="ph t-ADDRESS">[ADDRESS_3]</mark> पहुँचा।</pre></div>
+</div>
+</article>
+<article class="case" data-lang="hi" data-cat="contacts" data-fail="false">
+<h3>hi-contact-01 <small>hi · contacts · 仅规则</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 50 字符 · 预期 2 / 命中 2 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>फ़ोन <mark class="t-PHONE" title="PHONE · regex:universal:phone_intl · 85%">+91 98765 43210</mark>, ईमेल <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">rahul.sharma@example.in</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>फ़ोन <mark class="ph t-PHONE">[PHONE_1]</mark>, ईमेल <mark class="ph t-EMAIL">[EMAIL_1]</mark></pre></div>
+</div>
+</article>
+<article class="case" data-lang="hi" data-cat="negatives" data-fail="false">
+<h3>hi-negative-01 <small>hi · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 10 ms · 41 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>आज मौसम अच्छा है, हम शाम को टहलने जाएँगे।</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>आज मौसम अच्छा है, हम शाम को टहलने जाएँगे।</pre></div>
+</div>
+</article>
+<article class="case" data-lang="de" data-cat="names" data-fail="false">
+<h3>de-name-01 <small>de · names</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 14 ms · 54 字符 · 预期 3 / 命中 3 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Gestern traf <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Hans Müller</mark> Frau <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Anna Schmidt</mark> in <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">München</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Gestern traf <mark class="ph t-PERSON">[PERSON_1]</mark> Frau <mark class="ph t-PERSON">[PERSON_2]</mark> in <mark class="ph t-ADDRESS">[ADDRESS_1]</mark>.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="ja" data-cat="names" data-fail="true">
+<h3>ja-name-01 <small>ja · names</small><span class="stats">F1 80% <span class="grade g-B">B</span> · 11 ms · 26 字符 · 预期 3 / 命中 2 / 部分 0 / 漏检 1 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>昨日、<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">山田太郎</mark>さんは<span class="missed" title="漏检 ADDRESS">東京</span>で<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">佐藤花子</mark>さんに会いました。</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>昨日、<mark class="ph t-PERSON">[PERSON_1]</mark>さんは東京で<mark class="ph t-PERSON">[PERSON_2]</mark>さんに会いました。</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> 東京 <i>ADDRESS</i></li>
+</ul>
+</article>
+<article class="case" data-lang="multi" data-cat="mixed" data-fail="false">
+<h3>multi-mixed-01 <small>multi · mixed</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 32 ms · 147 字符 · 预期 8 / 命中 8 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Meeting notes / 会议纪要: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">John Smith</mark> (<mark class="t-COMPANY" title="COMPANY · regex:gb:company · 85%">Acme Ltd</mark>) and <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">王芳</mark> (<mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 99%">深圳华强科技</mark>) agreed to meet in <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Singapore</mark> on <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_iso · 80%">2024-07-01</mark>. Contact: <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">wang.fang@hq.cn</mark>, <mark class="t-PHONE" title="PHONE · regex:universal:phone_intl · 85%">+86 139 0000 1234</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Meeting notes / 会议纪要: <mark class="ph t-PERSON">[PERSON_1]</mark> (<mark class="ph t-COMPANY">[COMPANY_1]</mark>) and <mark class="ph t-PERSON">[PERSON_2]</mark> (<mark class="ph t-COMPANY">[COMPANY_2]</mark>) agreed to meet in <mark class="ph t-ADDRESS">[ADDRESS_1]</mark> on 2024-07-01. Contact: <mark class="ph t-EMAIL">[EMAIL_1]</mark>, <mark class="ph t-PHONE">[PHONE_1]</mark>.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="long" data-fail="true">
+<h3>en-long-01 <small>en · long</small><span class="stats">F1 95% <span class="grade g-A">A</span> · 75 ms · 1321 字符 · 预期 28 / 命中 25 / 部分 1 / 漏检 1 / 误报 0 / 类型错 1</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>MINUTES OF THE BOARD MEETING
+Held at the offices of <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Northwind Traders</mark>, <mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">45 Harbour Road, Auckland</mark>, on <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">18 April 2024</mark>.
+
+Present: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Margaret Chen</mark> (Chair), <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Daniel Okafor</mark> (CFO), <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Sofia Rossi</mark> (Secretary), and guest speaker Dr. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Ahmed Al-Sayed</mark> from the <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 99%">University of Auckland</mark>.
+
+1. Apologies were received from <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Priya Nair</mark>, who is travelling in <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Melbourne</mark> this week.
+
+2. The Chair welcomed Dr. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Al-Sayed</mark>, who presented the findings of the joint research programme with <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Fonterra</mark>. The programme will continue until <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">31 December 2025</mark>, subject to funding approval from <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Callaghan Innovation</mark>.
+
+3. Financial report. Mr. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Okafor</mark> reported that revenue for the quarter reached <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_code_prefix · 80%">NZD 4.2 million</mark>. Outstanding invoices from <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Contoso Pharmaceuticals</mark> (<mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Wellington</mark>) and <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Fabrikam Logistics</mark> (<mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Sydney</mark>) are being chased; contact persons are <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Laura Bianchi</mark> and <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Tom Nguyen</mark> respectively.
+
+4. Personnel. Ms. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Rossi</mark> confirmed that <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">James Whitaker</mark> will join as Head of Operations on <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">1 June 2024</mark>, relocating from <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Christchurch</mark>. His employment contract was reviewed by <mark class="wrong t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Russell McVeagh</mark>.
+
+5. Any other business. Ms. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Chen</mark> thanked <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Daniel Okafor</mark> for organising the site visit to the <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 99%">Tauranga</mark> warehouse. The next meeting will be held on <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">23 May 2024</mark> at 10:00 in the <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Queen Street</mark> boardroom.
+
+The meeting closed at 12:15. Minutes recorded by <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Sofia Rossi</mark> and approved by <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Margaret Chen</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>MINUTES OF THE BOARD MEETING
+Held at the offices of <mark class="ph t-COMPANY">[COMPANY_1]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_1]</mark>, on 18 April 2024.
+
+Present: <mark class="ph t-PERSON">[PERSON_1]</mark> (Chair), <mark class="ph t-PERSON">[PERSON_2]</mark> (CFO), <mark class="ph t-PERSON">[PERSON_3]</mark> (Secretary), and guest speaker Dr. <mark class="ph t-PERSON">[PERSON_4]</mark> from the <mark class="ph t-COMPANY">[COMPANY_2]</mark>.
+
+1. Apologies were received from <mark class="ph t-PERSON">[PERSON_5]</mark>, who is travelling in <mark class="ph t-ADDRESS">[ADDRESS_2]</mark> this week.
+
+2. The Chair welcomed Dr. <mark class="ph t-PERSON">[PERSON_4]</mark>, who presented the findings of the joint research programme with <mark class="ph t-COMPANY">[COMPANY_3]</mark>. The programme will continue until 31 December 2025, subject to funding approval from <mark class="ph t-COMPANY">[COMPANY_4]</mark>.
+
+3. Financial report. Mr. <mark class="ph t-PERSON">[PERSON_2]</mark> reported that revenue for the quarter reached NZD 4.2 million. Outstanding invoices from <mark class="ph t-COMPANY">[COMPANY_5]</mark> (<mark class="ph t-ADDRESS">[ADDRESS_3]</mark>) and <mark class="ph t-COMPANY">[COMPANY_6]</mark> (<mark class="ph t-ADDRESS">[ADDRESS_4]</mark>) are being chased; contact persons are <mark class="ph t-PERSON">[PERSON_6]</mark> and <mark class="ph t-PERSON">[PERSON_7]</mark> respectively.
+
+4. Personnel. Ms. <mark class="ph t-PERSON">[PERSON_3]</mark> confirmed that <mark class="ph t-PERSON">[PERSON_8]</mark> will join as Head of Operations on 1 June 2024, relocating from <mark class="ph t-ADDRESS">[ADDRESS_5]</mark>. His employment contract was reviewed by <mark class="ph t-PERSON">[PERSON_9]</mark>.
+
+5. Any other business. Ms. <mark class="ph t-PERSON">[PERSON_1]</mark> thanked <mark class="ph t-PERSON">[PERSON_2]</mark> for organising the site visit to the <mark class="ph t-ADDRESS">[ADDRESS_6]</mark> warehouse. The next meeting will be held on 23 May 2024 at 10:00 in the <mark class="ph t-ADDRESS">[ADDRESS_7]</mark> boardroom.
+
+The meeting closed at 12:15. Minutes recorded by <mark class="ph t-PERSON">[PERSON_3]</mark> and approved by <mark class="ph t-PERSON">[PERSON_1]</mark>.</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> Auckland <i>ADDRESS</i></li>
+<li><b>类型错误</b> Russell McVeagh 应为 <i>COMPANY</i></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="business" data-fail="false">
+<h3>en-business-01 <small>en · business</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 19 ms · 241 字符 · 预期 4 / 命中 4 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Invoice 482913 for order 450012: three laptops, total <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">$12,450.00</mark>, payment due within 30 days. Support ticket #<mark class="t-NUMBER" title="NUMBER · regex:universal:labeled_id · 70%">845210</mark> is closed. Q3 revenue reached 350000 units across 120 stores. Questions? Contact <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Laura Bennett</mark> at <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">l.bennett@northwind.co.uk</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Invoice 482913 for order 450012: three laptops, total $12,450.00, payment due within 30 days. Support ticket #<mark class="ph t-NUMBER">[NUMBER_1]</mark> is closed. Q3 revenue reached 350000 units across 120 stores. Questions? Contact <mark class="ph t-PERSON">[PERSON_1]</mark> at <mark class="ph t-EMAIL">[EMAIL_1]</mark>.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="zh" data-cat="long" data-fail="true">
+<h3>zh-long-01 <small>zh · long</small><span class="stats">F1 93% <span class="grade g-A">A</span> · 57 ms · 444 字符 · 预期 19 / 命中 15 / 部分 2 / 漏检 2 / 误报 1 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>关于第三季度供应商评审会议的纪要
+
+时间：<mark class="off t-DATE" title="DATE（默认不遮） · regex:cn:date_cjk · 90%">2024年9月12日</mark>上午十点
+地点：<mark class="t-ADDRESS" title="ADDRESS · regex:cn:address · 85%">杭州市余杭区文一西路969号</mark><mark class="fp t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 96%">阿里巴巴西溪园区三号楼会议室</mark>
+
+出席人员：采购总监<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">周晓华</mark>、财务经理<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">孙立群</mark>、法务顾问<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">郑雨薇</mark>，<mark class="partial t-COMPANY" title="COMPANY · regex:cn:company · 90%">以及来自宁波恒远塑业有限公司</mark>的销售代表<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">吴国强</mark>和技术顾问<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">黄美芳</mark>。
+
+一、<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">周晓华</mark>首先通报了本季度的采购完成情况。截至<mark class="off t-DATE" title="DATE（默认不遮） · regex:cn:date_cjk · 90%">2024年8月31日</mark>，累计采购金额为人民币<mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:cn:currency_hanzi · 90%">三千二百万元</mark>，其中来自<mark class="partial t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 93%">宁波恒远塑业</mark>的部分占比约百分之十八。
+
+二、<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">吴国强</mark>介绍了新一代环保包装材料的测试结果，并表示样品已于<mark class="off t-DATE" title="DATE（默认不遮） · regex:cn:date_month_day · 70%">9月3日</mark>寄往<mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">苏州</mark>工业园区的检测中心。<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">孙立群</mark>询问了付款周期问题，双方同意维持现有的六十天账期。
+
+三、<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">郑雨薇</mark>提醒，现行合同将于<mark class="off t-DATE" title="DATE（默认不遮） · regex:cn:date_cjk · 90%">2025年1月31日</mark>到期，续约草案需在11月底前提交给<mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 99%">深圳</mark>总部法务部审核。她建议由<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">黄美芳</mark>牵头整理技术附件。
+
+四、会议决定下次评审安排在<mark class="off t-DATE" title="DATE（默认不遮） · regex:cn:date_cjk · 90%">2024年10月17日</mark>，地点<mark class="partial t-ADDRESS" title="ADDRESS · regex:cn:address · 85%">改为上海市静安区南京西路1266号恒隆广场办公室</mark>。<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">周晓华</mark>负责通知<mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">常州</mark>和<mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">武汉</mark>两地的分公司代表参加。
+
+纪要人：<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">孙立群</mark>
+审核：<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">周晓华</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>关于第三季度供应商评审会议的纪要
+
+时间：2024年9月12日上午十点
+地点：<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+
+出席人员：采购总监<mark class="ph t-PERSON">[PERSON_1]</mark>、财务经理<mark class="ph t-PERSON">[PERSON_2]</mark>、法务顾问<mark class="ph t-PERSON">[PERSON_3]</mark>，<mark class="ph t-COMPANY">[COMPANY_1]</mark>的销售代表<mark class="ph t-PERSON">[PERSON_4]</mark>和技术顾问<mark class="ph t-PERSON">[PERSON_5]</mark>。
+
+一、<mark class="ph t-PERSON">[PERSON_1]</mark>首先通报了本季度的采购完成情况。截至2024年8月31日，累计采购金额为人民币三千二百万元，其中来自<mark class="ph t-COMPANY">[COMPANY_2]</mark>的部分占比约百分之十八。
+
+二、<mark class="ph t-PERSON">[PERSON_4]</mark>介绍了新一代环保包装材料的测试结果，并表示样品已于9月3日寄往<mark class="ph t-ADDRESS">[ADDRESS_3]</mark>工业园区的检测中心。<mark class="ph t-PERSON">[PERSON_2]</mark>询问了付款周期问题，双方同意维持现有的六十天账期。
+
+三、<mark class="ph t-PERSON">[PERSON_3]</mark>提醒，现行合同将于2025年1月31日到期，续约草案需在11月底前提交给<mark class="ph t-ADDRESS">[ADDRESS_4]</mark>总部法务部审核。她建议由<mark class="ph t-PERSON">[PERSON_5]</mark>牵头整理技术附件。
+
+四、会议决定下次评审安排在2024年10月17日，地点<mark class="ph t-ADDRESS">[ADDRESS_5]</mark>。<mark class="ph t-PERSON">[PERSON_1]</mark>负责通知<mark class="ph t-ADDRESS">[ADDRESS_6]</mark>和<mark class="ph t-ADDRESS">[ADDRESS_7]</mark>两地的分公司代表参加。
+
+纪要人：<mark class="ph t-PERSON">[PERSON_2]</mark>
+审核：<mark class="ph t-PERSON">[PERSON_1]</mark></pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> 阿里巴巴 <i>COMPANY</i></li>
+<li><b>漏检</b> 苏州工业园区 <i>ADDRESS</i></li>
+<li><b>误报</b> 阿里巴巴西溪园区三号楼会议室 <i>ADDRESS</i> <span class="src">ner:xlm-roberta-base-ner-docudis 96%</span></li>
+</ul>
+</article>
+</main>
+<script>const lang=document.getElementById('lang'),cat=document.getElementById('cat'),fail=document.getElementById('fail'),count=document.getElementById('count');
+function apply(){let n=0;for(const c of document.querySelectorAll('article.case')){const show=(!lang.value||c.dataset.lang===lang.value)&&(!cat.value||c.dataset.cat===cat.value)&&(!fail.checked||c.dataset.fail==='true');c.classList.toggle('hidden',!show);if(show)n++;}count.textContent='显示 '+n+' 条';}
+lang.onchange=cat.onchange=fail.onchange=apply;apply();
+</script>
+</body></html>

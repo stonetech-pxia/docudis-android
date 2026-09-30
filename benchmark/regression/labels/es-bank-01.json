@@ -1,0 +1,194 @@
+{
+ "id": "es-bank-01",
+ "expected": [
+  {
+   "value": "Banco Santander, S.A.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Avda. de los Jazmines, 14",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "28903 Getafe (Madrid)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "916 44 02 18",
+   "type": "PHONE"
+  },
+  {
+   "value": "Nadia El Amrani Puig",
+   "type": "PERSON"
+  },
+  {
+   "value": "C/ Almendro de la Vega, 27, 3.º B",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Urbanización Los Olmos Altos",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "28942 Fuenlabrada (Madrid)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Getafe",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "4 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "COM/2451/0098-2026",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "2451-889034",
+   "type": "ID"
+  },
+  {
+   "value": "96294111B",
+   "type": "ID"
+  },
+  {
+   "value": "19/03/1985",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "ES29 2451 1245 3135 9677 1427",
+   "type": "IBAN"
+  },
+  {
+   "value": "01/07/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "30/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "El Amrani",
+   "type": "PERSON"
+  },
+  {
+   "value": "1.265,62 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "INVERNADEROS EL SAUCAL SL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "03/07/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Finques Roure",
+   "type": "COMPANY"
+  },
+  {
+   "value": "10/07/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Yamina Sekkouri",
+   "type": "PERSON"
+  },
+  {
+   "value": "28/07/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "01/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "14/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "6046",
+   "type": "CARD"
+  },
+  {
+   "value": "Ferretería Baldosa",
+   "type": "COMPANY"
+  },
+  {
+   "value": "18/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "25/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Idrissa Camará",
+   "type": "PERSON"
+  },
+  {
+   "value": "01/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "02/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "15/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Iberdrola",
+   "type": "COMPANY"
+  },
+  {
+   "value": "5136 0507 1807 6046",
+   "type": "CARD"
+  },
+  {
+   "value": "20 de octubre",
+   "type": "DATE"
+  },
+  {
+   "value": "n.elamrani@tremeda.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "649 03 27 85",
+   "type": "PHONE"
+  },
+  {
+   "value": "PR-2451-0074392",
+   "type": "ID"
+  },
+  {
+   "value": "4.310,55 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "186,40 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "05/10/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "1 de noviembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "0 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "J. Mendizábal Sarasola",
+   "type": "PERSON"
+  }
+ ]
+}

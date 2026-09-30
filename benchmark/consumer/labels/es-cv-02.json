@@ -1,0 +1,121 @@
+{
+ "id": "es-cv-02",
+ "expected": [
+  {
+   "value": "DAYANA MILENA OSPINA CARDONA",
+   "type": "PERSON"
+  },
+  {
+   "value": "C/ Delicias 63, 2º D - 50017 Zaragoza",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "642 18 35 90",
+   "type": "PHONE"
+  },
+  {
+   "value": "dayana.ospina88@gmail.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "14/03/1988",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "Pereira, Colombia",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Z4269973M",
+   "type": "ID"
+  },
+  {
+   "value": "50/09162740/40",
+   "type": "ID"
+  },
+  {
+   "value": "Zaragoza",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Restaurante Casa Lacambra",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Hotel Puerta del Ebro",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Grupo Hostelero Aljafería, S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Catering Moncayo",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Utebo, Zaragoza",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Hotel Sorrento Plaza",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Restaurante El Guadual de Doña Amparo",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Dosquebradas, Colombia",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Academia Torrero Formación",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Aragón",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Aula de Cata Ribera Alta",
+   "type": "COMPANY"
+  },
+  {
+   "value": "SENA Regional Risaralda",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Pereira",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Ernesto Blanco Sancho",
+   "type": "PERSON"
+  },
+  {
+   "value": "976 43 28 17",
+   "type": "PHONE"
+  },
+  {
+   "value": "ernesto@casalacambra.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Loredana Munteanu",
+   "type": "PERSON"
+  },
+  {
+   "value": "976 20 51 44",
+   "type": "PHONE"
+  },
+  {
+   "value": "619 07 72 38",
+   "type": "PHONE"
+  },
+  {
+   "value": "l.munteanu@puertadelebro.com",
+   "type": "EMAIL"
+  }
+ ]
+}

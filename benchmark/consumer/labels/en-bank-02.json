@@ -1,0 +1,95 @@
+{
+ "id": "en-bank-02",
+ "expected": [
+  {
+   "value": "wires@marlowpinebank.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Gregory Vandermolen",
+   "type": "PERSON"
+  },
+  {
+   "value": "Vandermolen",
+   "type": "PERSON"
+  },
+  {
+   "value": "g.vandermolen@outlook.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Sep 10, 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "WT260910-004418",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "GREGORY T VANDERMOLEN",
+   "type": "PERSON"
+  },
+  {
+   "value": "7702",
+   "type": "ID"
+  },
+  {
+   "value": "$18,450.00 USD",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "$30.00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Luz Marina Restrepo Cardenas",
+   "type": "PERSON"
+  },
+  {
+   "value": "3905 NW 7th St Apt 12B, Miami, FL 33126",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "JPMorgan Chase Bank, N.A.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "New York, NY",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "021000021",
+   "type": "ID"
+  },
+  {
+   "value": "CHASUS33",
+   "type": "ID"
+  },
+  {
+   "value": "4839072156",
+   "type": "ID"
+  },
+  {
+   "value": "0817",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Priya Raghunathan",
+   "type": "PERSON"
+  },
+  {
+   "value": "Harrisburg",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "(717) 364-0192",
+   "type": "PHONE"
+  },
+  {
+   "value": "Marlow & Pine Savings Bank",
+   "type": "COMPANY"
+  }
+ ]
+}

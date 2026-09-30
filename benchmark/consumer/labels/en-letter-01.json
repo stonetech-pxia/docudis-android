@@ -1,0 +1,174 @@
+{
+ "id": "en-letter-01",
+ "expected": [
+  {
+   "value": "Tomasz Kowalczyk",
+   "type": "PERSON"
+  },
+  {
+   "value": "Flat 2, 58 Narborough Road",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Leicester",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "LE3 0BR",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "07700 900862",
+   "type": "PHONE"
+  },
+  {
+   "value": "t.kowalczyk84@outlook.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "D. Whitlock",
+   "type": "PERSON"
+  },
+  {
+   "value": "Whitlock",
+   "type": "PERSON"
+  },
+  {
+   "value": "Harcourt & Webb Lettings Ltd",
+   "type": "COMPANY"
+  },
+  {
+   "value": "12 Market Street",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Leicester LE1 6DP",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "17 September 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "HWL/NAR58-2/0319",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "complaints@harcourtwebb.co.uk",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Agnieszka Nowak",
+   "type": "PERSON"
+  },
+  {
+   "value": "1 March 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "31 August 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "£895.00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "£1,032.00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Gurdip Singh Sandhu",
+   "type": "PERSON"
+  },
+  {
+   "value": "6 January 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Priya Chauhan",
+   "type": "PERSON"
+  },
+  {
+   "value": "Chauhan",
+   "type": "PERSON"
+  },
+  {
+   "value": "Soar Valley Heating & Plumbing",
+   "type": "COMPANY"
+  },
+  {
+   "value": "15 January",
+   "type": "DATE"
+  },
+  {
+   "value": "2 February",
+   "type": "DATE"
+  },
+  {
+   "value": "16 March",
+   "type": "DATE"
+  },
+  {
+   "value": "30 March",
+   "type": "DATE"
+  },
+  {
+   "value": "Leanne",
+   "type": "PERSON"
+  },
+  {
+   "value": "0116 496 0125",
+   "type": "PHONE"
+  },
+  {
+   "value": "9 April",
+   "type": "DATE"
+  },
+  {
+   "value": "£164.97",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "22 June",
+   "type": "DATE"
+  },
+  {
+   "value": "Kwabena Asante",
+   "type": "PERSON"
+  },
+  {
+   "value": "10 September",
+   "type": "DATE"
+  },
+  {
+   "value": "£640.00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "R J Pickard Inventories",
+   "type": "COMPANY"
+  },
+  {
+   "value": "£559.07",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "1 October 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "T Kowalczyk",
+   "type": "PERSON"
+  },
+  {
+   "value": "40-28-17",
+   "type": "ID"
+  },
+  {
+   "value": "61420938",
+   "type": "ID"
+  }
+ ]
+}

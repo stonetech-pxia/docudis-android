@@ -1,0 +1,90 @@
+{
+ "id": "en-lease-02",
+ "expected": [
+  {
+   "value": "0214",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Wei Ling Zhou",
+   "type": "PERSON"
+  },
+  {
+   "value": "Wei Ling",
+   "type": "PERSON"
+  },
+  {
+   "value": "Tariq Al-Masri",
+   "type": "PERSON"
+  },
+  {
+   "value": "Tariq",
+   "type": "PERSON"
+  },
+  {
+   "value": "Flat 3, 41 Harold's Cross Road, Dublin 6W, D6W XK72",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Flat 3, 41 Harold's Cross Road",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "€1,650.00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "1 September 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "30 September 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "01/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "RT-0122-00486317",
+   "type": "ID"
+  },
+  {
+   "value": "G. Ní Dhomhnaill",
+   "type": "PERSON"
+  },
+  {
+   "value": "12 September 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "€1,683.00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "1 January 2027",
+   "type": "DATE"
+  },
+  {
+   "value": "1 January 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Gráinne Ní Dhomhnaill",
+   "type": "PERSON"
+  },
+  {
+   "value": "17 Cnoc na Cathrach, Knocknacarra, Galway, H91 T2RV",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "087 614 2093",
+   "type": "PHONE"
+  },
+  {
+   "value": "grainne.nidhomhnaill@eircom.net",
+   "type": "EMAIL"
+  }
+ ]
+}

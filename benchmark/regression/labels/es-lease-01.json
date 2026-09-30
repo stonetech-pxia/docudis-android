@@ -1,0 +1,106 @@
+{
+ "id": "es-lease-01",
+ "expected": [
+  {
+   "value": "ARR-2024/0318",
+   "type": "ID"
+  },
+  {
+   "value": "València",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "3 de febrero de 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "Rosa María Villalba Pons",
+   "type": "PERSON"
+  },
+  {
+   "value": "99877103V",
+   "type": "ID"
+  },
+  {
+   "value": "Carrer del Palleter, 47, 3º",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "izquierda, 46008 València (Valencia)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "963 85 21 77",
+   "type": "PHONE"
+  },
+  {
+   "value": "Youssef El Amrani Bouzid",
+   "type": "PERSON"
+  },
+  {
+   "value": "Y2519276P",
+   "type": "ID"
+  },
+  {
+   "value": "09/03/1986",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "y.elamrani.bouzid@correulliure.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Avinguda del",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Port, 112, escalera B, 5ª puerta C, 46023 València",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "7382901YJ2778S0012KP",
+   "type": "ID"
+  },
+  {
+   "value": "41.228",
+   "type": "ID"
+  },
+  {
+   "value": "15 de febrero de 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "14 de febrero de 2029",
+   "type": "DATE"
+  },
+  {
+   "value": "785,00 euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "ES82 6513 0968 3515 9042 1254",
+   "type": "IBAN"
+  },
+  {
+   "value": "31",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "785,00 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "42,50 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "827,50 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "03/08/2026",
+   "type": "DATE"
+  }
+ ]
+}

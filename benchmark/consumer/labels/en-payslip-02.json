@@ -1,0 +1,117 @@
+{
+  "id": "en-payslip-02",
+  "expected": [
+    {
+      "value": "HARCASTLE JOINERY",
+      "type": "COMPANY"
+    },
+    {
+      "value": "SHOPFITTING LTD",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Unit 7 Meadow Lane Ind Est",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Loughborough",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Leics LE11 1JX",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "567/HA41207",
+      "type": "ID"
+    },
+    {
+      "value": "28/08/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "Kowalczyk, M.",
+      "type": "PERSON"
+    },
+    {
+      "value": "004417",
+      "type": "ID"
+    },
+    {
+      "value": "AJ 36 50 20 B",
+      "type": "ID"
+    },
+    {
+      "value": "01/08/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "31/08/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "Marcin Kowalczyk",
+      "type": "PERSON"
+    },
+    {
+      "value": "Flat 2, 58 Ashby Road",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "LE11 3AE",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "£2,181.77",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "20-49",
+      "type": "ID"
+    },
+    {
+      "value": "3817",
+      "type": "ID"
+    },
+    {
+      "value": "M KOWALCZYK",
+      "type": "PERSON"
+    },
+    {
+      "value": "29/05/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "02/08",
+      "type": "DATE"
+    },
+    {
+      "value": "16/08",
+      "type": "DATE"
+    },
+    {
+      "value": "G. Tansley",
+      "type": "PERSON"
+    },
+    {
+      "value": "Denise Hallworth",
+      "type": "PERSON"
+    },
+    {
+      "value": "01509 274 618",
+      "type": "PHONE"
+    },
+    {
+      "value": "payroll@harcastlejoinery.co.uk",
+      "type": "EMAIL"
+    },
+    {
+      "value": "Harcastle Joinery & Shopfitting Ltd",
+      "type": "COMPANY"
+    },
+    {
+      "value": "06618342",
+      "type": "ID"
+    }
+  ]
+}

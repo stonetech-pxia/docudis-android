@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; color: #E6EDF7; -webkit-font-smoothing: antialiased; }
+    a { color: #3DDC97; text-decoration: none; } a:hover { color: #2FC384; }
+    .mono { font-family: 'IBM Plex Mono', 'Consolas', ui-monospace, monospace; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #0B1220; display: flex; flex-direction: column; overflow: hidden; position: relative;">
+  <div style="flex: 1 1 0; display: flex; flex-direction: column; gap: 22px; padding: 60px 20px 20px 20px;">
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+      <span style="font-size: 18px; font-weight: 700; letter-spacing: -0.01em;">Docudis</span>
+      <span class="mono" style="font-size: 11px; padding: 6px 10px; border-radius: 6px; border: 1px solid #1E2A3F; color: #3DDC97;">OFFLINE · OK</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-size: 30px; line-height: 1.1; font-weight: 700; letter-spacing: -0.03em; text-wrap: pretty;">Nothing leaves this phone.</span>
+      <span style="font-size: 14px; line-height: 1.5; color: #8B9AB5;">Strip names, numbers and keys before you talk to any AI.</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 14px; height: 72px; padding: 0 16px; border-radius: 12px; background: #111B2E; border: 1px solid #1E2A3F;">
+        <div style="width: 40px; height: 40px; border-radius: 10px; background: #16233A; border: 1px dashed #2A3A57;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px; flex: 1 1 0;"><span style="font-size: 15px; font-weight: 600;">Paste text</span><span style="width: 120px; height: 8px; border-radius: 4px; background: #1E2A3F;"></span></div>
+      </div>
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 14px; height: 72px; padding: 0 16px; border-radius: 12px; background: #111B2E; border: 1px solid #1E2A3F;">
+        <div style="width: 40px; height: 40px; border-radius: 10px; background: #16233A; border: 1px dashed #2A3A57;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px; flex: 1 1 0;"><span style="font-size: 15px; font-weight: 600;">Upload a document</span><span style="width: 160px; height: 8px; border-radius: 4px; background: #1E2A3F;"></span></div>
+      </div>
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 14px; height: 72px; padding: 0 16px; border-radius: 12px; background: #111B2E; border: 1px solid #1E2A3F;">
+        <div style="width: 40px; height: 40px; border-radius: 10px; background: #16233A; border: 1px dashed #2A3A57;"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px; flex: 1 1 0;"><span style="font-size: 15px; font-weight: 600;">Scan a photo</span><span style="width: 100px; height: 8px; border-radius: 4px; background: #1E2A3F;"></span></div>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 12px; background: #0E1A2B; border: 1px solid #1E2A3F;">
+      <span class="mono" style="font-size: 11px; color: #8B9AB5;">LAST RUN</span>
+      <span style="font-size: 14px; line-height: 1.6; color: #C7D2E3;">Hi <span class="mono" style="color: #3DDC97;">[PERSON_1]</span>, invoice for <span class="mono" style="color: #3DDC97;">[AMOUNT_1]</span> sent to <span class="mono" style="color: #3DDC97;">[EMAIL_1]</span></span>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; height: 52px; border-radius: 10px; background: #3DDC97; color: #06110C; font-size: 16px; font-weight: 700; margin-top: auto;">Protect a document</div>
+  </div>
+  <div style="display: flex; flex-direction: row; justify-content: space-around; height: 84px; padding-top: 12px; border-top: 1px solid #1E2A3F; color: #8B9AB5; font-size: 11px; font-weight: 600;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; color: #3DDC97;"><span style="width: 22px; height: 22px; border-radius: 6px; background: #3DDC97;"></span>Protect</div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;"><span style="width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid #8B9AB5;"></span>History</div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;"><span style="width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid #8B9AB5;"></span>Account</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

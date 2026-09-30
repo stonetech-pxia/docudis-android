@@ -1,0 +1,156 @@
+{
+ "id": "es-support-01",
+ "expected": [
+  {
+   "value": "Vueling",
+   "type": "COMPANY"
+  },
+  {
+   "value": "reclamaciones@clientes.vueling.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "José Antonio Cabrera",
+   "type": "PERSON"
+  },
+  {
+   "value": "Cabrera",
+   "type": "PERSON"
+  },
+  {
+   "value": "jacabrera.montano@hotmail.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Sevilla",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Barcelona",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "QK7M2D",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "08841527",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "17 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "28 de agosto",
+   "type": "DATE"
+  },
+  {
+   "value": "250 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "750 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "412,87 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "8036",
+   "type": "CARD"
+  },
+  {
+   "value": "ES64 2808 1567 8148 7642 1043",
+   "type": "IBAN"
+  },
+  {
+   "value": "Vásquez",
+   "type": "PERSON"
+  },
+  {
+   "value": "96,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Óscar Villalobos",
+   "type": "PERSON"
+  },
+  {
+   "value": "931 51 81 58",
+   "type": "PHONE"
+  },
+  {
+   "value": "Naiara Beltrán",
+   "type": "PERSON"
+  },
+  {
+   "value": "Vueling Airlines, S.A.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "31 de agosto de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Rocío",
+   "type": "PERSON"
+  },
+  {
+   "value": "Hostal Puerta Carmona",
+   "type": "COMPANY"
+  },
+  {
+   "value": "3100-5582-9047",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "José Antonio Cabrera Montaño",
+   "type": "PERSON"
+  },
+  {
+   "value": "64632206K",
+   "type": "ID"
+  },
+  {
+   "value": "María del Carmen Pineda Halcón",
+   "type": "PERSON"
+  },
+  {
+   "value": "73733275J",
+   "type": "ID"
+  },
+  {
+   "value": "Adriana Lucía Vásquez Ocampo",
+   "type": "PERSON"
+  },
+  {
+   "value": "Y4171116B",
+   "type": "ID"
+  },
+  {
+   "value": "C/ Asunción, 62, 2º C",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "41011 Sevilla",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "954 27 61 38",
+   "type": "PHONE"
+  },
+  {
+   "value": "655 90 23 14",
+   "type": "PHONE"
+  },
+  {
+   "value": "J. A. Cabrera",
+   "type": "PERSON"
+  }
+ ]
+}

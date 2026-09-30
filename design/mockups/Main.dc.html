@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+  <style>
+    body { margin: 0; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; color: #0F1B2D; -webkit-font-smoothing: antialiased; }
+    a { color: #1E5FB8; text-decoration: none; } a:hover { color: #17509E; }
+    .h { font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; }
+    .mono { font-family: 'IBM Plex Mono', 'Consolas', ui-monospace, monospace; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #F4F6F9; display: flex; flex-direction: column; overflow: hidden; position: relative;">
+  <div style="flex: 1 1 0; overflow: auto; display: flex; flex-direction: column; gap: 20px; padding: 60px 20px 20px 20px;">
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 8px; color: #1E5FB8;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        <span class="h" style="font-size: 18px; font-weight: 800; letter-spacing: -0.01em; color: #0F1B2D;">Docudis</span>
+      </div>
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: #E6F4EC; color: #1F7A4D;">
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: #1F7A4D;"></span>
+        <span style="font-size: 12px; font-weight: 600;">On-device</span>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <h1 class="h" style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em; color: #0F1B2D; text-wrap: pretty;">Share documents with AI, without the sensitive parts.</h1>
+      <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4A5568; text-wrap: pretty;">Names, emails, numbers and keys are replaced before anything leaves this phone.</p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 14px; padding: 16px; background: #FFFFFF; border: 1px solid #E3E8EF; border-radius: 16px; box-shadow: 0 1px 2px rgba(15, 27, 45, 0.04);">
+        <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: #E7EFFB; color: #1E5FB8; flex-shrink: 0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"></rect><path d="M9 4V3h6v1"></path><path d="M9 11h6M9 15h4"></path></svg>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 2px; flex: 1 1 0;">
+          <span class="h" style="font-size: 16px; font-weight: 700; color: #0F1B2D;">Paste text</span>
+          <span style="font-size: 13px; color: #64748B;">Emails, notes, chat logs</span>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+      </div>
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 14px; padding: 16px; background: #FFFFFF; border: 1px solid #E3E8EF; border-radius: 16px; box-shadow: 0 1px 2px rgba(15, 27, 45, 0.04);">
+        <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: #E7EFFB; color: #1E5FB8; flex-shrink: 0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v13H7z"></path><path d="M14 3v5h5"></path></svg>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 2px; flex: 1 1 0;">
+          <span class="h" style="font-size: 16px; font-weight: 700; color: #0F1B2D;">Upload a document</span>
+          <span style="font-size: 13px; color: #64748B;">PDF, DOCX, TXT · formatting kept</span>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+      </div>
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 14px; padding: 16px; background: #FFFFFF; border: 1px solid #E3E8EF; border-radius: 16px; box-shadow: 0 1px 2px rgba(15, 27, 45, 0.04);">
+        <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: #E7EFFB; color: #1E5FB8; flex-shrink: 0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3"></circle></svg>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 2px; flex: 1 1 0;">
+          <span class="h" style="font-size: 16px; font-weight: 700; color: #0F1B2D;">Scan a photo</span>
+          <span style="font-size: 13px; color: #64748B;">Text is read on this phone</span>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+        <span class="h" style="font-size: 14px; font-weight: 700; color: #0F1B2D;">Recent</span>
+        <a href="#" style="font-size: 13px; font-weight: 600;">See all</a>
+      </div>
+      <div style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E8EF; border-radius: 16px; overflow: hidden;">
+        <div style="display: flex; flex-direction: row; align-items: center; gap: 12px; padding: 14px 16px; min-height: 56px; border-bottom: 1px solid #EEF2F6;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v13H7z"></path><path d="M14 3v5h5"></path></svg>
+          <div style="display: flex; flex-direction: column; gap: 2px; flex: 1 1 0;">
+            <span style="font-size: 14px; font-weight: 600; color: #0F1B2D;">Contract_Meyer.docx</span>
+            <span style="font-size: 12px; color: #64748B;">14 items hidden · 2 h ago</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: row; align-items: center; gap: 12px; padding: 14px 16px; min-height: 56px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"></rect><path d="M9 4V3h6v1"></path><path d="M9 11h6M9 15h4"></path></svg>
+          <div style="display: flex; flex-direction: column; gap: 2px; flex: 1 1 0;">
+            <span style="font-size: 14px; font-weight: 600; color: #0F1B2D;">Clipboard text</span>
+            <span style="font-size: 12px; color: #64748B;">3 items hidden · Yesterday</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: row; align-items: flex-start; justify-content: space-around; height: 84px; padding: 10px 8px 0 8px; background: #FFFFFF; border-top: 1px solid #E3E8EF; flex-shrink: 0;">
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; width: 88px; height: 44px; color: #1E5FB8;">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z"></path><path d="M9 12l2 2 4-4"></path></svg>
+    <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.01em;">Protect</span>
+  </div>
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; width: 88px; height: 44px; color: #64748B;">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg>
+    <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.01em;">History</span>
+  </div>
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; width: 88px; height: 44px; color: #64748B;">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg>
+    <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.01em;">Account</span>
+  </div>
+</div>
+
+</div>
+</x-dc>
+</body>
+</html>

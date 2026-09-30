@@ -1,0 +1,45 @@
+{
+ "id": "en-chat-02",
+ "expected": [
+  {
+   "value": "Marcus Oyelaran",
+   "type": "PERSON"
+  },
+  {
+   "value": "brightwater",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Priya Raman",
+   "type": "PERSON"
+  },
+  {
+   "value": "dana",
+   "type": "PERSON"
+  },
+  {
+   "value": "halvorsen",
+   "type": "COMPANY"
+  },
+  {
+   "value": "dana.whitfield@halvorsengrp.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Luis Ortega",
+   "type": "PERSON"
+  },
+  {
+   "value": "reggie",
+   "type": "PERSON"
+  },
+  {
+   "value": "(612) 384-2290",
+   "type": "PHONE"
+  },
+  {
+   "value": "faith",
+   "type": "PERSON"
+  }
+ ]
+}

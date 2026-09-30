@@ -1,0 +1,213 @@
+{
+ "id": "en-enron-02",
+ "expected": [
+  {
+   "value": "tom.delaney@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "tom.alonso@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "2000-06-12",
+   "type": "DATE"
+  },
+  {
+   "value": "CAISO",
+   "type": "COMPANY"
+  },
+  {
+   "value": "tom",
+   "type": "PERSON"
+  },
+  {
+   "value": "Tom Delaney",
+   "type": "PERSON"
+  },
+  {
+   "value": "06/12/2000",
+   "type": "DATE"
+  },
+  {
+   "value": "Carl Imparato",
+   "type": "PERSON"
+  },
+  {
+   "value": "cfi1@tca-us.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "06/02/2000",
+   "type": "DATE"
+  },
+  {
+   "value": "lebarrett@duke-energy.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "sslavigne@duke-energy.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "dcn@netwrx.net",
+   "type": "EMAIL"
+  },
+  {
+   "value": "tfitchitt@newenergy.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "cmiessner@newenergy.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "zalaywan@caiso.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "eschmid@caiso.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "crobinson@caiso.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "cdeise@apsc.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "tdelawder@tucsonelectric.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "ebeck@tucsonelectric.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "dbrown1@pnm.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "gmiller@pnm.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "bob_anderson@apses.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "barbara_klemstine@apses.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "rllamkin@seiworldwide.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "steve.huhman@southernenergy.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "tom_delaney@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "marcie_milner@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "smara@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "scott.miller@gen.pge.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "rreilley@coral-energy.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "lcampbell@csllp.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "locb@rt66.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "john_r_orr@reliantenergy.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "kewh@dynegy.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "jmpa@dynegy.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "mbochotorena@calpx.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "gackerman@wptf.org",
+   "type": "EMAIL"
+  },
+  {
+   "value": "jdavis@apx.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "jim_kritikson@calpx.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "dmberry@calpx.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "frank.derosa@gen.pge.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "jim.filippi@gen.pge.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "brian.kunz@gen.pge.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "June 5",
+   "type": "DATE"
+  },
+  {
+   "value": "Enron",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Phoenix",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "4742 N. 24th Street",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Suite 165",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Marcie Milner",
+   "type": "PERSON"
+  },
+  {
+   "value": "602-840-3800",
+   "type": "PHONE"
+  }
+ ]
+}

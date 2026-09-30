@@ -1,0 +1,170 @@
+{
+  "id": "fr-bank-01",
+  "expected": [
+    {
+      "value": "Crédit Agricole Île-de-France",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Vincennes-Château",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "28 avenue de la Pépinière",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "94300 Vincennes",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "01 43 62 07 51",
+      "type": "PHONE"
+    },
+    {
+      "value": "Awa Diallo-Renard",
+      "type": "PERSON"
+    },
+    {
+      "value": "Résidence Le Clos Sainte-Anne",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "14 rue des Cinq-Diamants",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "bâtiment C, appartement 42",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Vincennes",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "4 septembre 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "3187 449 021",
+      "type": "ID"
+    },
+    {
+      "value": "00049996263",
+      "type": "ID"
+    },
+    {
+      "value": "FR76 6443 5625 6530 9499 6263 791",
+      "type": "IBAN"
+    },
+    {
+      "value": "RE/2026-09/4412",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "12 août 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "600,00 EUR",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "3 février 2021",
+      "type": "DATE"
+    },
+    {
+      "value": "31 août 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "1 042,86 EUR",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "02/08/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "Enedis",
+      "type": "COMPANY"
+    },
+    {
+      "value": "05/08/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "cabinet Lorquin & associés",
+      "type": "COMPANY"
+    },
+    {
+      "value": "07/08/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "SCI Beauregard",
+      "type": "COMPANY"
+    },
+    {
+      "value": "11/08/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "Grand Frais",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Fontenay",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "19/08/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "26/08/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "29/08/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "30 septembre 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "5223 3907 1590 3766",
+      "type": "CARD"
+    },
+    {
+      "value": "31/10/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "10 octobre",
+      "type": "DATE"
+    },
+    {
+      "value": "134,00 EUR",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "15 novembre 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "K. Mbengue",
+      "type": "PERSON"
+    },
+    {
+      "value": "k.mbengue@ca-paris-idf.fr",
+      "type": "EMAIL"
+    },
+    {
+      "value": "26 quai de la Rapée, 75012 Paris",
+      "type": "ADDRESS"
+    }
+  ]
+}

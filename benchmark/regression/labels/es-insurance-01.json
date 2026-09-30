@@ -1,0 +1,127 @@
+{
+  "id": "es-insurance-01",
+  "expected": [
+    {
+      "value": "MAPFRE ESPAÑA, S.A.",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Paseo de la Alameda Vieja, 9, planta 3",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "50008 Zaragoza",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Oleksandr Hrytsenko Marín",
+      "type": "PERSON"
+    },
+    {
+      "value": "Calle Mayor de Torrero, 231, bloque 4",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "bajo C",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "50007 Zaragoza",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Zaragoza",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "8 de septiembre de 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "SIN-2026-0473812/HM",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "0087-4419652",
+      "type": "ID"
+    },
+    {
+      "value": "2026/ZAR/033118",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "Y4340585Q",
+      "type": "ID"
+    },
+    {
+      "value": "Calle Mayor de Torrero, 231, bajo C, 50007 Zaragoza",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "26/08/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "Hrytsenko",
+      "type": "PERSON"
+    },
+    {
+      "value": "26 de agosto",
+      "type": "DATE"
+    },
+    {
+      "value": "Rubén Achterberg Lillo",
+      "type": "PERSON"
+    },
+    {
+      "value": "2 de septiembre",
+      "type": "DATE"
+    },
+    {
+      "value": "318,00 €",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "1.104,00 €",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "570,00 €",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "1.992,00 €",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "150,00 €",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "1.842,00 €",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "18 de septiembre",
+      "type": "DATE"
+    },
+    {
+      "value": "ES16 4627 1456 1634 0584 4424",
+      "type": "IBAN"
+    },
+    {
+      "value": "M. Trujillo Abad",
+      "type": "PERSON"
+    },
+    {
+      "value": "976 20 44 90",
+      "type": "PHONE"
+    },
+    {
+      "value": "siniestros.zaragoza@mapfre.com",
+      "type": "EMAIL"
+    }
+  ]
+}

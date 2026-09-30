@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="process_text_label">Anonimizar</string>
+    <string name="process_text_working">Anonimizando…</string>
+    <string name="process_text_copied">Texto anonimizado copiado</string>
+    <string name="process_text_failed">No se ha podido anonimizar</string>
+    <string name="tile_label">Anonimizar el portapapeles</string>
+    <string name="clipboard_no_text">El portapapeles no tiene texto.</string>
+</resources>

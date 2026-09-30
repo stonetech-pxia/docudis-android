@@ -1,0 +1,166 @@
+{
+ "id": "es-medical-01",
+ "expected": [
+  {
+   "value": "Vigo",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Hospital Álvaro Cunqueiro",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Estrada Clara Campoamor, 341 - 36312 Vigo (Pontevedra)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "986 81 11 11",
+   "type": "PHONE"
+  },
+  {
+   "value": "Ramiro Seoane Villaverde",
+   "type": "PERSON"
+  },
+  {
+   "value": "OTERO BOUZAS",
+   "type": "PERSON"
+  },
+  {
+   "value": "Xosé Manuel",
+   "type": "PERSON"
+  },
+  {
+   "value": "14/03/1951",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "84825073S",
+   "type": "ID"
+  },
+  {
+   "value": "36/88673066/37",
+   "type": "ID"
+  },
+  {
+   "value": "1184207",
+   "type": "ID"
+  },
+  {
+   "value": "Rúa Tomás A. Alonso, 118, 4º D",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "36208 Vigo (Pontevedra)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "986 23 41 07",
+   "type": "PHONE"
+  },
+  {
+   "value": "626 71 40 93",
+   "type": "PHONE"
+  },
+  {
+   "value": "Noelia Otero Sanmartín",
+   "type": "PERSON"
+  },
+  {
+   "value": "655 08 32 19",
+   "type": "PHONE"
+  },
+  {
+   "value": "Centro de Saúde de Coia",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Iria Carballeira Nóvoa",
+   "type": "PERSON"
+  },
+  {
+   "value": "02/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "02/09",
+   "type": "DATE"
+  },
+  {
+   "value": "11/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "2026/0457713",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Xosé Manuel Otero",
+   "type": "PERSON"
+  },
+  {
+   "value": "Costel Munteanu",
+   "type": "PERSON"
+  },
+  {
+   "value": "Clínica Cardiovascular Rías Baixas, S.L.P.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Rúa Urzáiz, 77, Vigo",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "María del Carmen Sanmartín Piñeiro",
+   "type": "PERSON"
+  },
+  {
+   "value": "04/09",
+   "type": "DATE"
+  },
+  {
+   "value": "El Idrissi",
+   "type": "PERSON"
+  },
+  {
+   "value": "Sabela Freire Lourido",
+   "type": "PERSON"
+  },
+  {
+   "value": "Figueiroa",
+   "type": "PERSON"
+  },
+  {
+   "value": "06/10/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "986 81 11 38",
+   "type": "PHONE"
+  },
+  {
+   "value": "ic.cardioloxia.vigo@sergas.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "11 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Anxo Figueiroa Lestón",
+   "type": "PERSON"
+  },
+  {
+   "value": "36/3607152",
+   "type": "ID"
+  },
+  {
+   "value": "Yasmina El Idrissi Benali",
+   "type": "PERSON"
+  },
+  {
+   "value": "36/3611894",
+   "type": "ID"
+  }
+ ]
+}

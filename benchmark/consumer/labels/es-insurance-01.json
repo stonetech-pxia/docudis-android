@@ -1,0 +1,219 @@
+{
+ "id": "es-insurance-01",
+ "expected": [
+  {
+   "value": "GENERALI ESPAÑA, S.A. DE SEGUROS Y REASEGUROS",
+   "type": "COMPANY"
+  },
+  {
+   "value": "7G-48-210.556.931",
+   "type": "ID"
+  },
+  {
+   "value": "2026-09-44718203",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "01/10/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "30/09/2027",
+   "type": "DATE"
+  },
+  {
+   "value": "Santamaría Ortuño Correduría de Seguros, S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "J-2841",
+   "type": "ID"
+  },
+  {
+   "value": "Avda. de la Libertad, 6, entlo. B",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "30009 Murcia",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "968 23 41 07",
+   "type": "PHONE"
+  },
+  {
+   "value": "siniestros@santamariaortuno.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Ángel Santamaría Ortuño",
+   "type": "PERSON"
+  },
+  {
+   "value": "629 47 05 12",
+   "type": "PHONE"
+  },
+  {
+   "value": "Wilmer Andrés CÁRDENAS OSPINA",
+   "type": "PERSON"
+  },
+  {
+   "value": "82722366-Z",
+   "type": "ID"
+  },
+  {
+   "value": "17/03/1988",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "82722366Z",
+   "type": "ID"
+  },
+  {
+   "value": "22/11/2012",
+   "type": "DATE"
+  },
+  {
+   "value": "C/ Pintor Pedro Flores, 18, 2º D",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "30820 Alcantarilla (Murcia)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "642 18 90 37",
+   "type": "PHONE"
+  },
+  {
+   "value": "wilmer.cardenas88@gmail.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Ionela Mădălina DUMITRESCU",
+   "type": "PERSON"
+  },
+  {
+   "value": "Y9277029Q",
+   "type": "ID"
+  },
+  {
+   "value": "5 de agosto de 1993",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "14/06/2019",
+   "type": "DATE"
+  },
+  {
+   "value": "4817 LKM",
+   "type": "ID"
+  },
+  {
+   "value": "VSSZZZKLZNR041877",
+   "type": "ID"
+  },
+  {
+   "value": "09/02/2022",
+   "type": "DATE"
+  },
+  {
+   "value": "50.000.000 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "3.000 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "30.000 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "412,36 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "32,99 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "5,84 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "0,62 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "451,81 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Wilmer Andrés Cárdenas Ospina",
+   "type": "PERSON"
+  },
+  {
+   "value": "ES64 9493 4864 9629 2663 1711",
+   "type": "IBAN"
+  },
+  {
+   "value": "CaixaBank",
+   "type": "COMPANY"
+  },
+  {
+   "value": "GEN-AUT-0021055693",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "600,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Cárdenas",
+   "type": "PERSON"
+  },
+  {
+   "value": "900 27 14 63",
+   "type": "PHONE"
+  },
+  {
+   "value": "Conchi",
+   "type": "PERSON"
+  },
+  {
+   "value": "conchi.belmonte@santamariaortuno.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Murcia",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "8 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "W. A. Cárdenas Ospina",
+   "type": "PERSON"
+  },
+  {
+   "value": "Íñigo Aldecoa Murguía",
+   "type": "PERSON"
+  },
+  {
+   "value": "Generali España, S.A. de Seguros y Reaseguros",
+   "type": "COMPANY"
+  },
+  {
+   "value": "B73518264",
+   "type": "ID"
+  },
+  {
+   "value": "MU-80.417",
+   "type": "ID"
+  }
+ ]
+}

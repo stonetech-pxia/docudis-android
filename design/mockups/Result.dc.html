@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+  <style>
+    body { margin: 0; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; color: #0F1B2D; -webkit-font-smoothing: antialiased; }
+    a { color: #1E5FB8; text-decoration: none; } a:hover { color: #17509E; }
+    .h { font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; }
+    .mono { font-family: 'IBM Plex Mono', 'Consolas', ui-monospace, monospace; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #F4F6F9; display: flex; flex-direction: column; overflow: hidden; position: relative;">
+  <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding: 56px 12px 8px 12px; flex-shrink: 0;">
+    <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #0F1B2D;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+    </div>
+    <span class="h" style="font-size: 17px; font-weight: 700; color: #0F1B2D;">Protected copy</span>
+    <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #0F1B2D;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="M8 7l4-4 4 4"></path><path d="M5 12v8h14v-8"></path></svg>
+    </div>
+  </div>
+
+  <div style="flex: 1 1 0; overflow: auto; display: flex; flex-direction: column; gap: 16px; padding: 8px 20px 20px 20px;">
+    <div style="display: flex; flex-direction: row; padding: 4px; background: #E8ECF2; border-radius: 12px;">
+      <div class="h" style="display: flex; align-items: center; justify-content: center; flex: 1 1 0; height: 36px; border-radius: 9px; background: #FFFFFF; font-size: 14px; font-weight: 700; color: #0F1B2D; box-shadow: 0 1px 2px rgba(15, 27, 45, 0.08);">Anonymized</div>
+      <div class="h" style="display: flex; align-items: center; justify-content: center; flex: 1 1 0; height: 36px; border-radius: 9px; font-size: 14px; font-weight: 600; color: #64748B;">Original</div>
+    </div>
+
+    <div style="display: flex; flex-direction: row; align-items: center; gap: 12px; padding: 14px 16px; background: #E6F4EC; border-radius: 14px; color: #1F6A46;">
+      <div style="display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #1F7A4D; color: #FFFFFF; flex-shrink: 0;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"></path></svg>
+      </div>
+      <span style="font-size: 14px; line-height: 1.4; font-weight: 500;">12 items replaced. Safe to paste into any AI assistant.</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; padding: 18px; background: #FFFFFF; border: 1px solid #E3E8EF; border-radius: 16px;">
+      <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #64748B;">Contract_Meyer.docx</span>
+        <span style="font-size: 12px; color: #94A3B8;">Page 1 of 3</span>
+      </div>
+      <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #0F1B2D; text-wrap: pretty;">Hi <span class="mono" style="padding: 1px 6px; border-radius: 6px; background: #E7EFFB; color: #1E5FB8; font-size: 13px;">[PERSON_1]</span>, following our call on <span class="mono" style="padding: 1px 6px; border-radius: 6px; background: #E7EFFB; color: #1E5FB8; font-size: 13px;">[DATE_1]</span>, please find the invoice for <span class="mono" style="padding: 1px 6px; border-radius: 6px; background: #E7EFFB; color: #1E5FB8; font-size: 13px;">[AMOUNT_1]</span>. You can reach me at <span class="mono" style="padding: 1px 6px; border-radius: 6px; background: #E7EFFB; color: #1E5FB8; font-size: 13px;">[EMAIL_1]</span> or <span class="mono" style="padding: 1px 6px; border-radius: 6px; background: #E7EFFB; color: #1E5FB8; font-size: 13px;">[PHONE_1]</span>. Payment to <span class="mono" style="padding: 1px 6px; border-radius: 6px; background: #E7EFFB; color: #1E5FB8; font-size: 13px;">[IBAN_1]</span>.</p>
+      <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #0F1B2D; text-wrap: pretty;">Best regards,<br><span class="mono" style="padding: 1px 6px; border-radius: 6px; background: #E7EFFB; color: #1E5FB8; font-size: 13px;">[PERSON_2]</span> · <span class="mono" style="padding: 1px 6px; border-radius: 6px; background: #E7EFFB; color: #1E5FB8; font-size: 13px;">[COMPANY_1]</span><br><span class="mono" style="padding: 1px 6px; border-radius: 6px; background: #E7EFFB; color: #1E5FB8; font-size: 13px;">[ADDRESS_1]</span></p>
+    </div>
+
+    <div style="display: flex; flex-direction: row; align-items: center; gap: 12px; padding: 14px 16px; background: #FFFFFF; border: 1px solid #E3E8EF; border-radius: 16px;">
+      <div style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 12px; background: #F1F4F8; color: #4A5568; flex-shrink: 0;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"></circle><path d="M10.8 12.2L20 3"></path><path d="M17 6l2 2"></path><path d="M14 9l2 2"></path></svg>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 2px; flex: 1 1 0;">
+        <span style="font-size: 14px; font-weight: 600; color: #0F1B2D;">Restore key kept on this phone</span>
+        <span style="font-size: 12px; color: #64748B;">12 pairs · never uploaded · delete anytime</span>
+      </div>
+      <a href="#" style="font-size: 13px; font-weight: 600;">Restore</a>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: row; gap: 10px; padding: 12px 20px 34px 20px; background: #FFFFFF; border-top: 1px solid #E3E8EF; flex-shrink: 0;">
+    <div class="h" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 8px; flex: 1 1 0; height: 52px; border-radius: 14px; background: #1E5FB8; color: #FFFFFF; font-size: 16px; font-weight: 700;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15V5h10"></path></svg>
+      Copy text
+    </div>
+    <div class="h" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 8px; height: 52px; padding: 0 20px; border-radius: 14px; background: #FFFFFF; border: 1.5px solid #CBD5E1; color: #0F1B2D; font-size: 16px; font-weight: 700;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v13H7z"></path><path d="M14 3v5h5"></path></svg>
+      Share file
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

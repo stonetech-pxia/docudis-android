@@ -1,0 +1,29 @@
+{
+ "id": "fr-bodacc-modification-03",
+ "expected": [
+  {
+   "value": "18/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Nantes",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "538 379 785",
+   "type": "ID"
+  },
+  {
+   "value": "Atlantique Budo",
+   "type": "COMPANY"
+  },
+  {
+   "value": "5000 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "110 rue des Meuniers, 44270 La Marne",
+   "type": "ADDRESS"
+  }
+ ]
+}

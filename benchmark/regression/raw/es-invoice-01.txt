@@ -1,0 +1,29 @@
+Aitor Zabaleta Nwachukwu
+Electricidad y mantenimiento
+Barrio Ugarte, 7, lonja
+48901 Barakaldo (Bizkaia)
+NIF: 85437585Z
+Tel. 688 21 55 74 · aitor@zabaleta-instal.es
+
+FACTURA
+
+Factura n.º 2026/118
+Fecha de emisión: 15/09/2026
+Vencimiento: 30/09/2026
+
+Cliente: Ignacio Duarte Sobral
+DNI: 50098688L
+C/ Zumalabe Kalea, 12, 5.º C
+48902 Barakaldo (Bizkaia)
+
+Concepto	Cantidad	Precio	Importe
+Sustitución del cuadro eléctrico	1	310,00	310,00
+Material (magnetotérmicos y diferencial)	1	128,40	128,40
+Mano de obra adicional	2 h	32,00	64,00
+
+Base imponible	502,40 €
+IVA 21%	105,50 €
+TOTAL A PAGAR	607,90 €
+
+Forma de pago: transferencia a ES76 2818 6982 9309 4304 9808
+Indique el número de factura en el concepto del ingreso.

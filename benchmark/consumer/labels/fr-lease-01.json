@@ -1,0 +1,292 @@
+{
+ "id": "fr-lease-01",
+ "expected": [
+  {
+   "value": "6 juillet 1989",
+   "type": "DATE"
+  },
+  {
+   "value": "G-2019-0458",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "204",
+   "type": "ID"
+  },
+  {
+   "value": "SCI FIGUEROLLES PATRIMOINE",
+   "type": "COMPANY"
+  },
+  {
+   "value": "1 000 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "18 avenue de Lodève, 34070 Montpellier",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Montpellier",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "477 897 292",
+   "type": "ID"
+  },
+  {
+   "value": "Dominique SANTONI",
+   "type": "PERSON"
+  },
+  {
+   "value": "AOGI",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Agence Occitane de Gestion Immobilière",
+   "type": "COMPANY"
+  },
+  {
+   "value": "15 000 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "27 rue Foch, 34000 Montpellier",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "433 002 565 00045",
+   "type": "ID"
+  },
+  {
+   "value": "433 002 565",
+   "type": "ID"
+  },
+  {
+   "value": "CPI 3402 2018 000 031 472",
+   "type": "ID"
+  },
+  {
+   "value": "Hérault",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Élodie Cazals",
+   "type": "PERSON"
+  },
+  {
+   "value": "Cazals",
+   "type": "PERSON"
+  },
+  {
+   "value": "04 67 58 23 71",
+   "type": "PHONE"
+  },
+  {
+   "value": "e.cazals@aogi-immobilier.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "SYLLA Mamadou Lamine",
+   "type": "PERSON"
+  },
+  {
+   "value": "SYLLA",
+   "type": "PERSON"
+  },
+  {
+   "value": "17 avril 1994",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "Dakar",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Sénégal",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "5 rue de la Méditerranée, 34000 Montpellier",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "07 68 31 90 42",
+   "type": "PHONE"
+  },
+  {
+   "value": "ml.sylla@protonmail.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "FERREIRA DOS SANTOS Inès",
+   "type": "PERSON"
+  },
+  {
+   "value": "FERREIRA",
+   "type": "PERSON"
+  },
+  {
+   "value": "2 septembre 1996",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "Créteil",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Val-de-Marne",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "CHU de Montpellier",
+   "type": "COMPANY"
+  },
+  {
+   "value": "+33 6 24 17 53 86",
+   "type": "PHONE"
+  },
+  {
+   "value": "ines.fds96@gmail.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Résidence Le Clos des Arceaux, 14 rue Marioge, 34000 Montpellier",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Bâtiment : B     Étage : 2e     Porte : 204",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "341720876543",
+   "type": "ID"
+  },
+  {
+   "value": "1er octobre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "1er octobre",
+   "type": "DATE"
+  },
+  {
+   "value": "30 septembre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "842,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "68,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "910,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "0038215",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Banque Populaire du Sud",
+   "type": "COMPANY"
+  },
+  {
+   "value": "759,20 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "FR76 1469 2688 4393 9099 9029 146",
+   "type": "IBAN"
+  },
+  {
+   "value": "CCBPFRPPPPG",
+   "type": "ID"
+  },
+  {
+   "value": "António FERREIRA DOS SANTOS",
+   "type": "PERSON"
+  },
+  {
+   "value": "28 juin 1966",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "Braga",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Portugal",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "41 avenue Roger Salengro, Escalier 2, 94500 Champigny-sur-Marne",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "01 48 80 62 19",
+   "type": "PHONE"
+  },
+  {
+   "value": "65 520,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "soixante-cinq mille cinq cent vingt euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Ferreira dos Santos",
+   "type": "PERSON"
+  },
+  {
+   "value": "Macif",
+   "type": "COMPANY"
+  },
+  {
+   "value": "18 204 557",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Sylla",
+   "type": "PERSON"
+  },
+  {
+   "value": "04 67 58 23 70",
+   "type": "PHONE"
+  },
+  {
+   "value": "Sanchez Dépannage",
+   "type": "COMPANY"
+  },
+  {
+   "value": "06 11 45 78 02",
+   "type": "PHONE"
+  },
+  {
+   "value": "15 septembre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Mamadou Lamine Sylla",
+   "type": "PERSON"
+  },
+  {
+   "value": "Inès Ferreira dos Santos",
+   "type": "PERSON"
+  },
+  {
+   "value": "A. Ferreira dos Santos",
+   "type": "PERSON"
+  },
+  {
+   "value": "FNAIM",
+   "type": "COMPANY"
+  }
+ ]
+}

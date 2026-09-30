@@ -1,0 +1,6 @@
+# Imported public corpora, generated benchmark reports, and third-party
+# license texts intentionally preserve their upstream whitespace byte-for-byte.
+*.txt -whitespace
+docs/benchmark/** -whitespace
+docs/HANDOFF-*.md -whitespace
+docs/ner-benchmark-*.md -whitespace

@@ -1,0 +1,111 @@
+{
+ "id": "es-invoice-01",
+ "expected": [
+  {
+   "value": "FONTANERÍA Y CALEFACCIÓN ETXEBERRIA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Iker Etxeberria Zubiaur",
+   "type": "PERSON"
+  },
+  {
+   "value": "63517319-J",
+   "type": "ID"
+  },
+  {
+   "value": "C/ Telletxe, 12, bajo · 48991 Getxo (Bizkaia)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "944 60 31 27",
+   "type": "PHONE"
+  },
+  {
+   "value": "688 41 27 93",
+   "type": "PHONE"
+  },
+  {
+   "value": "iker@fontaneriaetxeberria.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "2026/0187",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "11/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "9 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Yolanda Quishpe Andrango",
+   "type": "PERSON"
+  },
+  {
+   "value": "Yolanda",
+   "type": "PERSON"
+  },
+  {
+   "value": "94026063Q",
+   "type": "ID"
+  },
+  {
+   "value": "C/ Sabino Arana, 23, 2º C",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "48940 Leioa (Bizkaia)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "636 58 20 14",
+   "type": "PHONE"
+  },
+  {
+   "value": "P-26/0412",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "04/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "436,90 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "91,75 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "528,65 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "ES61 6787 3941 1438 2178 4024",
+   "type": "IBAN"
+  },
+  {
+   "value": "Laboral Kutxa",
+   "type": "COMPANY"
+  },
+  {
+   "value": "48/IF-02917",
+   "type": "ID"
+  },
+  {
+   "value": "Seguros Lagun Aro",
+   "type": "COMPANY"
+  },
+  {
+   "value": "RC-3307419",
+   "type": "ID"
+  }
+ ]
+}

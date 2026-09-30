@@ -1,0 +1,141 @@
+{
+ "id": "es-borme-04-3",
+ "expected": [
+  {
+   "value": "12 de septiembre de 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "COMPAÑIA DE INVERSIONES NAVALES, SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "EIVISSA",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "MARTIN COROMINA ANTONIO RAMON",
+   "type": "PERSON"
+  },
+  {
+   "value": "H IB 6160",
+   "type": "ID"
+  },
+  {
+   "value": "5.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "LA COMUNAUTEE, SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "MOREL REGINE-JEANNE-CLAUDE",
+   "type": "PERSON"
+  },
+  {
+   "value": "MOREL REGINE-JEANNE",
+   "type": "PERSON"
+  },
+  {
+   "value": "CLAUDE",
+   "type": "PERSON"
+  },
+  {
+   "value": "FOTI CONTRERAS DIEGO-MARTIN",
+   "type": "PERSON"
+  },
+  {
+   "value": "H IB 13385",
+   "type": "ID"
+  },
+  {
+   "value": "PHOTOPILLS CORE SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "MAHON",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "25-07-2024",
+   "type": "DATE"
+  },
+  {
+   "value": "Ciutadella",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Luis Miguel Ferrer García",
+   "type": "PERSON"
+  },
+  {
+   "value": "H IM 7952",
+   "type": "ID"
+  },
+  {
+   "value": "2.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "MARCAINA BALEARS GESTIO DE TRANSPORTS SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "9.07.24",
+   "type": "DATE"
+  },
+  {
+   "value": "C/ SANT BARTOMEU, 1 07760 (CIUTADELLA DE MENORCA)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "3.000,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "MARCAINA SOCIETAT D'INVERSIONS SL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "VALLS RODRIGUEZ JOAQUIN",
+   "type": "PERSON"
+  },
+  {
+   "value": "H IM 8190",
+   "type": "ID"
+  },
+  {
+   "value": "CAMPERITZACIONS MENORCA SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "AMETLLER BAGUR LLORENS",
+   "type": "PERSON"
+  },
+  {
+   "value": "PLENS ANGLADA ANGEL JOSE",
+   "type": "PERSON"
+  },
+  {
+   "value": "H IM 7846",
+   "type": "ID"
+  },
+  {
+   "value": "LA FINCA TORTUGA SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "ISOARDI MARIA LUISA",
+   "type": "PERSON"
+  },
+  {
+   "value": "MATTEO RABINO",
+   "type": "PERSON"
+  },
+  {
+   "value": "H IM 3517",
+   "type": "ID"
+  }
+ ]
+}

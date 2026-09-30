@@ -1,0 +1,69 @@
+{
+ "id": "fr-bodacc-vente-04",
+ "expected": [
+  {
+   "value": "18/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Grenoble",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "108 184 912",
+   "type": "ID"
+  },
+  {
+   "value": "Epicerie Saint Phillibert",
+   "type": "COMPANY"
+  },
+  {
+   "value": "5000.00 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "38330 Saint-Ismier",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "200000 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Place De l'Eglise, 38330 Saint-Ismier",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "452 805 666",
+   "type": "ID"
+  },
+  {
+   "value": "RESTAURANT LE MARTINET",
+   "type": "COMPANY"
+  },
+  {
+   "value": "02/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Place de l'Eglise 38330 SAINT-ISMIER",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "6 Place de l'Eglise 38330 SAINT-ISMIER",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "11/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Selarl PERROT TIRRE et ASSOCIES",
+   "type": "COMPANY"
+  },
+  {
+   "value": "24 Boulevard de la Chantoune 38700 LA TRONCHE",
+   "type": "ADDRESS"
+  }
+ ]
+}

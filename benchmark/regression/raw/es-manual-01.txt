@@ -1,0 +1,47 @@
+AEROLUX PRO AX-2400 — Recuperador de calor de doble flujo
+Manual de instalación y puesta en marcha. Sección 4: montaje y conexionado
+Documento MI-AX2400-ES, edición 7, revisión de 14 de marzo de 2025
+
+Fabricante: Termavent Ibérica, S.L.U. — Polígono Industrial Las Cañadas, nave 17, 50820 Villamayor (Zaragoza)
+Referencia de artículo: 41-2400-B (unidad estándar) / 41-2400-BH (variante AX-2400-H con batería eléctrica de apoyo)
+Placa de control: versión de firmware 3.6.2 o superior. Las unidades con firmware 3.4.x deben actualizarse antes de la puesta en marcha.
+Número de serie: grabado en la placa de características, en la cara inferior del equipo, con el formato AX24-AAMM-NNNNN.
+
+4.1 Características declaradas
+
+Caudal nominal: 240 m³/h a 100 Pa de presión disponible
+Rendimiento térmico del intercambiador: 89 % según UNE-EN 13141-7
+Potencia absorbida en punto nominal: 62 W
+Nivel de presión sonora a 3 m: 34 dB(A)
+Grado de protección: IP X4 en la envolvente, IP X2 en la caja de bornes
+Clase de filtración: ePM1 55 % (impulsión) y Grueso 65 % (retorno), según UNE-EN ISO 16890
+Tensión de alimentación: 230 V, 50 Hz, monofásica
+Peso en vacío: 38 kg
+
+El equipo lleva marcado CE y cumple lo establecido en la norma armonizada UNE-EN 60335-2-80 y en el Reglamento de Instalaciones Térmicas en los Edificios, instrucción técnica IT 1.1.4.2.
+
+ADVERTENCIA
+Riesgo de descarga eléctrica. Corte la alimentación en el cuadro secundario y verifique ausencia de tensión antes de abrir la tapa de registro. El condensador del variador puede mantener tensión residual durante 120 segundos tras el corte.
+
+4.2 Secuencia de montaje
+
+1. Compruebe que el hueco técnico permite un espacio libre de 600 mm en el frente del equipo para el cambio de filtros.
+2. Fije el bastidor de suspensión a un forjado con capacidad portante mínima de 150 kg. Utilice cuatro anclajes M10 de expansión. Par de apriete: 24 N·m.
+3. Cuelgue la unidad sobre los silentblocks suministrados (referencia 41-9007-S, juego de cuatro). No sustituya los silentblocks por arandelas rígidas: la transmisión de vibración al forjado supera entonces el límite admisible.
+4. Conecte los cuatro conductos mediante manguitos flexibles de 160 mm. Apriete las abrazaderas a 4 N·m. Un apriete superior deforma el collarín y provoca fugas de caudal.
+5. Conduzca el desagüe de condensados con una pendiente mínima del 2 % hasta un sifón de altura igual o superior a 60 mm.
+6. Realice el conexionado eléctrico en la regleta X1. Sección mínima del cable: 3 x 1,5 mm². Par de apriete de los bornes: 0,6 N·m.
+7. Conecte la sonda de calidad de aire al bus Modbus RTU en los bornes A y B de la regleta X4. Resistencia de terminación de 120 ohmios en el último dispositivo del bus.
+
+ATENCIÓN
+No ponga el equipo en marcha sin filtros instalados. El polvo de obra daña el intercambiador de forma irreversible y la garantía no cubre esta avería.
+
+4.3 Puesta en marcha
+
+Acceda al menú de servicio manteniendo pulsada la tecla de modo durante 5 segundos e introduzca el código de instalador 4821. Ajuste el caudal de cada nivel de ventilación en el parámetro P-12 y equilibre impulsión y retorno con una diferencia inferior al 5 %. Registre los valores medidos en el acta de puesta en marcha, formulario APM-04, y entregue copia a la propiedad.
+
+Los filtros deben sustituirse cada 6 meses o cuando el indicador de colmatación alcance el 90 %. Recambios: juego ePM1 referencia 41-9101-F, juego Grueso referencia 41-9102-F.
+
+Servicio de Asistencia Técnica — Departamento de Postventa
+Termavent Ibérica, S.L.U. — Tel. 976 00 11 22 — sat@termavent-iberica.example
+MI-AX2400-ES · edición 7 · página 12 de 48

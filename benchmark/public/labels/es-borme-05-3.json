@@ -1,0 +1,137 @@
+{
+ "id": "es-borme-05-3",
+ "expected": [
+  {
+   "value": "12 de septiembre de 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "JBCB TRANSPORTS S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "5.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "CL LLIBERTAT NUM.105 (PARETS DEL VALLES)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "15.000,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "CASTRO BALLESTEROS JUAN BAUTISTA",
+   "type": "PERSON"
+  },
+  {
+   "value": "H B 621253",
+   "type": "ID"
+  },
+  {
+   "value": "OASIS DEL SOÑADOR S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "4.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "CL GRAN VIA CARLES III NUM.98 P.10 (BARCELONA)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "3.000,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "PEÑA CADIZ MARIA DOLORES",
+   "type": "PERSON"
+  },
+  {
+   "value": "MARIA DOLORES PEÑA CADIZ",
+   "type": "PERSON"
+  },
+  {
+   "value": "H B 621255",
+   "type": "ID"
+  },
+  {
+   "value": "CREATIVE BUSINESS SOLUTIONS S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "CL SANTIGA NUM.116 (SABADELL)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "BUSQUETS OJEDA EDGAR",
+   "type": "PERSON"
+  },
+  {
+   "value": "H B 621256",
+   "type": "ID"
+  },
+  {
+   "value": "ZAIQA 572 S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "CL PADRO NUM.87 P.0 (RIPOLLET)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "6.700,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "SHAHBAZ YOUSAF",
+   "type": "PERSON"
+  },
+  {
+   "value": "H B 621257",
+   "type": "ID"
+  },
+  {
+   "value": "GUINART TIME S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "CL PROVENZA NUM.541 (BARCELONA)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "PINCHAS ROZEN",
+   "type": "PERSON"
+  },
+  {
+   "value": "H B 621277",
+   "type": "ID"
+  },
+  {
+   "value": "INFAM WELLINGTON S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "6.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "CL LLEDONERS NUM.17 (CABRILS)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "QUINTANS OSeS ALEJANDRO",
+   "type": "PERSON"
+  },
+  {
+   "value": "ALEJANDRO QUINTANS OSeS",
+   "type": "PERSON"
+  },
+  {
+   "value": "H B 621259",
+   "type": "ID"
+  }
+ ]
+}

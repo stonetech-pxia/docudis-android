@@ -1,0 +1,95 @@
+Lumbre Energía
+FACTURA DE ELECTRICIDAD                                   Página 1 de 2
+
+Nº de factura: LE26-08-00417733
+Fecha de emisión: 14/08/2026
+Periodo de facturación: del 12/07/2026 al 11/08/2026 (31 días)
+Fecha prevista de cargo: 21/08/2026
+
+IMPORTE TOTAL DE LA FACTURA: 56,51 €
+
+DATOS DEL CLIENTE
+Nº de cliente: 70448126
+Nº de contrato: 3300918457
+Titular: ENEKO ZUBIZARRETA OLABARRIA
+NIF: 27968794N
+Dirección postal:
+ENEKO ZUBIZARRETA OLABARRIA
+Avda. Lehendakari Aguirre 87, 5º C
+48015 Bilbao (Bizkaia)
+Correo para la factura electrónica: eneko.zubi@euskalnet-mail.eus
+Teléfono de contacto: 688 30 14 92
+
+DATOS DEL SUMINISTRO
+Dirección de suministro: C/ Mayor 41, 2º Izda., 22700 Jaca (Huesca)
+CUPS: ES0031 4065 8821 3007 KX
+Nº de contador: 0187734421
+Tarifa contratada: Plan Estable Hogar
+Peaje de acceso: 2.0TD
+Potencia contratada: P1 (punta) 3,45 kW   P2 (valle) 3,45 kW
+Empresa distribuidora: E-Distribución Redes Digitales, S.L.U.
+Fin del contrato de suministro: 11/03/2027 (renovación anual automática)
+
+Estimado Sr. Zubizarreta:
+Le enviamos la factura de su vivienda de Jaca correspondiente al periodo indicado. Su consumo ha sido de 251 kWh, un 12 % menos que en el mismo periodo del año anterior. Le recordamos que desde el 1 de julio de 2026 las facturas se envían únicamente a la dirección postal de Bilbao que nos facilitó, y no a la dirección de suministro.
+
+RESUMEN DE LA FACTURA
+Por potencia contratada ........ 10,32 €
+Por energía consumida .......... 32,94 €
+Impuesto sobre la electricidad .. 2,21 €
+Alquiler de equipos de medida ... 0,83 €
+Financiación del bono social .... 0,40 €
+IVA (21 % s/ 46,70 €) ........... 9,81 €
+TOTAL IMPORTE FACTURA .......... 56,51 €
+
+Lumbre Energía · Factura LE26-08-00417733 · Cliente 70448126          Página 2 de 2
+
+DETALLE DE LA FACTURA
+
+LECTURAS Y CONSUMOS
+Periodo    Lectura anterior (12/07/2026)   Lectura actual (11/08/2026)   Consumo
+Punta P1   4.812     4.874    62 kWh
+Llano P2    3.950   4.008     58 kWh
+Valle P3   9.377    9.508   131 kWh
+Total consumo del periodo   251 kWh
+Lecturas reales obtenidas por telegestión.
+
+FACTURACIÓN POR POTENCIA
+P1  3,45 kW x 31 días x 0,083921 €/kW día    8,98 €
+P2  3,45 kW x 31 días x 0,012575 €/kW día   1,34 €
+
+FACTURACIÓN POR ENERGÍA
+Punta  62 kWh x 0,189450 €/kWh   11,75 €
+Llano   58 kWh x 0,142310 €/kWh    8,25 €
+Valle  131 kWh x 0,098760 €/kWh  12,94 €
+
+OTROS CONCEPTOS
+Impuesto electricidad  5,11269632 % s/ 43,26 €   2,21 €
+Alquiler equipos  31 días x 0,026630 €/día   0,83 €
+Bono social  31 días x 0,012742 €/día    0,40 €
+
+EVOLUCIÓN DEL CONSUMO (kWh)
+feb-26 412   mar-26 366  abr-26 198   may-26 94  jun-26 121   jul-26 236  ago-26 251
+Consumo medio diario en este periodo: 8,10 kWh. Coste medio diario: 1,82 €.
+
+FORMA DE PAGO
+Domiciliación bancaria
+Titular de la cuenta: Miren Itziar Arteaga Lizarralde
+IBAN: ES60 2368 **** **** **** 4146
+Referencia del mandato SEPA: LE-MND-0070448126-02
+El importe se cargará en su cuenta a partir del 21/08/2026. Si el recibo es devuelto se aplicará un recargo de 3,50 € por gastos de gestión.
+
+ATENCIÓN AL CLIENTE
+Teléfono gratuito: 900 814 227 (lunes a viernes de 8:00 a 21:00, sábados de 9:00 a 14:00)
+Desde el extranjero: +34 976 30 41 85
+Correo: clientes@lumbreenergia.es
+Área de clientes: www.lumbreenergia.es/mi-cuenta
+Averías y urgencias (distribuidora): 900 371 552, 24 horas
+Oficina comercial en Huesca: Coso Bajo 63, bajo, 22001 Huesca
+
+RECLAMACIONES
+Puede presentar su reclamación en el teléfono y correo anteriores o por escrito a Lumbre Energía, Servicio de Reclamaciones, Apartado de Correos 4127, 50080 Zaragoza. Si en el plazo de un mes no ha recibido respuesta o no está conforme, puede dirigirse a la Junta Arbitral de Consumo de Aragón o a la Dirección General de Energía y Minas del Gobierno de Aragón, Pº María Agustín 36, 50004 Zaragoza.
+
+Origen de la electricidad 2025: renovable 71,4 %, cogeneración de alta eficiencia 3,2 %, ciclo combinado de gas natural 14,9 %, nuclear 8,8 %, otras 1,7 %. Emisiones de CO2: 0,09 kg/kWh (clase B).
+
+Lumbre Energía, S.L.U. Domicilio social: Pº de la Independencia 24, 4ª planta, 50004 Zaragoza. Inscrita en el Registro Mercantil de Zaragoza, Tomo 4.312, Folio 87, Hoja Z-61204, Inscripción 1ª. CIF B99418263. Sus datos personales son tratados por Lumbre Energía, S.L.U. para la gestión del contrato; puede ejercer sus derechos escribiendo a protecciondedatos@lumbreenergia.es.

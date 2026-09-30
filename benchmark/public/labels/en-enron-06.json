@@ -1,0 +1,81 @@
+{
+ "id": "en-enron-06",
+ "expected": [
+  {
+   "value": "will.smith@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "diana.scholtes@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "2002-01-10",
+   "type": "DATE"
+  },
+  {
+   "value": "Diana",
+   "type": "PERSON"
+  },
+  {
+   "value": "713-417-4679",
+   "type": "PHONE"
+  },
+  {
+   "value": "Duong Luu",
+   "type": "PERSON"
+  },
+  {
+   "value": "Bill Crooks",
+   "type": "PERSON"
+  },
+  {
+   "value": "Will",
+   "type": "PERSON"
+  },
+  {
+   "value": "Scholtes, Diana",
+   "type": "PERSON"
+  },
+  {
+   "value": "January 09, 2002",
+   "type": "DATE"
+  },
+  {
+   "value": "Smith, Will",
+   "type": "PERSON"
+  },
+  {
+   "value": "EPMI",
+   "type": "COMPANY"
+  },
+  {
+   "value": "January 03, 2002",
+   "type": "DATE"
+  },
+  {
+   "value": "12/14/2001",
+   "type": "DATE"
+  },
+  {
+   "value": "12/28/2001",
+   "type": "DATE"
+  },
+  {
+   "value": "4/2/1996",
+   "type": "DATE"
+  },
+  {
+   "value": "12/13/2001",
+   "type": "DATE"
+  },
+  {
+   "value": "Diana Scholtes",
+   "type": "PERSON"
+  },
+  {
+   "value": "503-464-3807",
+   "type": "PHONE"
+  }
+ ]
+}

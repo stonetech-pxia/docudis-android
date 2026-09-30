@@ -1,0 +1,86 @@
+{
+ "id": "es-support-02",
+ "expected": [
+  {
+   "value": "Fátima El Idrissi",
+   "type": "PERSON"
+  },
+  {
+   "value": "fatima.elidrissi.b@gmail.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "15 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Iberdrola",
+   "type": "COMPANY"
+  },
+  {
+   "value": "21260831047795",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "481337902",
+   "type": "ID"
+  },
+  {
+   "value": "312,47 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "14/07/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "13/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "1 de agosto",
+   "type": "DATE"
+  },
+  {
+   "value": "Dolores Cabanillas Prieto",
+   "type": "PERSON"
+  },
+  {
+   "value": "3 de agosto",
+   "type": "DATE"
+  },
+  {
+   "value": "Rubén",
+   "type": "PERSON"
+  },
+  {
+   "value": "Fátima El Idrissi Benali",
+   "type": "PERSON"
+  },
+  {
+   "value": "14248994B",
+   "type": "ID"
+  },
+  {
+   "value": "ES0021000014839276KX",
+   "type": "ID"
+  },
+  {
+   "value": "Avda. de la Constitución 112, 4º C, 28850 Torrejón de Ardoz (Madrid)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "633 50 19 46",
+   "type": "PHONE"
+  },
+  {
+   "value": "91 676 40 28",
+   "type": "PHONE"
+  },
+  {
+   "value": "ES59 0916 2740 4096 4033 5223",
+   "type": "IBAN"
+  }
+ ]
+}

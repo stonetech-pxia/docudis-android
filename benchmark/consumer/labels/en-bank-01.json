@@ -1,0 +1,155 @@
+{
+  "id": "en-bank-01",
+  "expected": [
+    {
+      "value": "NatWest",
+      "type": "COMPANY"
+    },
+    {
+      "value": "PO Box 4418, Bristol BS1 9XQ",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Bristol",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Tariq Al-Masri",
+      "type": "PERSON"
+    },
+    {
+      "value": "Al-Masri",
+      "type": "PERSON"
+    },
+    {
+      "value": "Flat 2",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "18 Cotham Brow",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "BS6 6AE",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "7 April 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "AOD/PB/7740192",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "1407884402",
+      "type": "ID"
+    },
+    {
+      "value": "2 April",
+      "type": "DATE"
+    },
+    {
+      "value": "T H AL-MASRI",
+      "type": "PERSON"
+    },
+    {
+      "value": "43-21-78",
+      "type": "ID"
+    },
+    {
+      "value": "53753663",
+      "type": "ID"
+    },
+    {
+      "value": "GB88 NWBK 4321 7853 7536 63",
+      "type": "IBAN"
+    },
+    {
+      "value": "NWBKGB2L",
+      "type": "ID"
+    },
+    {
+      "value": "£1,500",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "£2,000",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "9 April 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "9 April 2027",
+      "type": "DATE"
+    },
+    {
+      "value": "Severn Vale Lettings",
+      "type": "COMPANY"
+    },
+    {
+      "value": "SVL-002931-AM",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "£865.00",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "1 April",
+      "type": "DATE"
+    },
+    {
+      "value": "0117 496 0871",
+      "type": "PHONE"
+    },
+    {
+      "value": "Harbourside Analytics Ltd",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Priya Raghunathan",
+      "type": "PERSON"
+    },
+    {
+      "value": "0117 496 0153",
+      "type": "PHONE"
+    },
+    {
+      "value": "07700 900268",
+      "type": "PHONE"
+    },
+    {
+      "value": "priya.raghunathan@natwest.com",
+      "type": "EMAIL"
+    },
+    {
+      "value": "03457 888 444",
+      "type": "PHONE"
+    },
+    {
+      "value": "+44 131 549 8888",
+      "type": "PHONE"
+    },
+    {
+      "value": "Gareth Llewellyn",
+      "type": "PERSON"
+    },
+    {
+      "value": "National Westminster Bank Plc",
+      "type": "COMPANY"
+    },
+    {
+      "value": "929027",
+      "type": "ID"
+    },
+    {
+      "value": "250 Bishopsgate, London EC2M 4AA",
+      "type": "ADDRESS"
+    }
+  ]
+}

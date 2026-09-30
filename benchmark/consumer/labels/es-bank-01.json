@@ -1,0 +1,154 @@
+{
+ "id": "es-bank-01",
+ "expected": [
+  {
+   "value": "Banco Sabadell",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Terrassa",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Rambla d'Ègara",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Rambla d'Ègara, 235",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "08224 Terrassa (Barcelona)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Abdelkader Benali El Idrissi",
+   "type": "PERSON"
+  },
+  {
+   "value": "C/ de Galileu, 214, 1r 2a",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "08224 Terrassa",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "BARCELONA",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "14 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "004178-2209316",
+   "type": "ID"
+  },
+  {
+   "value": "CG/2026/08831",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Benali",
+   "type": "PERSON"
+  },
+  {
+   "value": "1 de octubre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Ernest Bonastre",
+   "type": "PERSON"
+  },
+  {
+   "value": "Sabadell",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Via Massagué",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Meritxell Puigdomènech Ferrer",
+   "type": "PERSON"
+  },
+  {
+   "value": "ES38 9501 5261 7107 4610 1461",
+   "type": "IBAN"
+  },
+  {
+   "value": "0417-5528104-77",
+   "type": "ID"
+  },
+  {
+   "value": "4410",
+   "type": "CARD"
+  },
+  {
+   "value": "93 736 41 58",
+   "type": "PHONE"
+  },
+  {
+   "value": "671 20 93 45",
+   "type": "PHONE"
+  },
+  {
+   "value": "mpuigdomenech@bancsabadell.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Bonastre",
+   "type": "PERSON"
+  },
+  {
+   "value": "6 de octubre",
+   "type": "DATE"
+  },
+  {
+   "value": "M. Puigdomènech",
+   "type": "PERSON"
+  },
+  {
+   "value": "612 84 05 39",
+   "type": "PHONE"
+  },
+  {
+   "value": "93 736 41 50",
+   "type": "PHONE"
+  },
+  {
+   "value": "963 085 000",
+   "type": "PHONE"
+  },
+  {
+   "value": "Montserrat Agustí Callís",
+   "type": "PERSON"
+  },
+  {
+   "value": "Vallès Occidental",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Banco de Sabadell, S.A.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Av. Óscar Esplá, 37, 03007 Alicante",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Alicante",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "A-156980",
+   "type": "ID"
+  },
+  {
+   "value": "A08000143",
+   "type": "ID"
+  }
+ ]
+}

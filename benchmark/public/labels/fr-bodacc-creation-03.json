@@ -1,0 +1,37 @@
+{
+ "id": "fr-bodacc-creation-03",
+ "expected": [
+  {
+   "value": "18/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Boulogne-sur-Mer",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "109 954 446",
+   "type": "ID"
+  },
+  {
+   "value": "KHALFAOUI Khemais",
+   "type": "PERSON"
+  },
+  {
+   "value": "Livreur Uber eat",
+   "type": "COMPANY"
+  },
+  {
+   "value": "156 Rue de Tunis, 62100 Calais",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "15/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "13/09/2026",
+   "type": "DATE"
+  }
+ ]
+}

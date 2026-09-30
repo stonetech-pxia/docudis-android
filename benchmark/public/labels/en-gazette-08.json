@@ -1,0 +1,49 @@
+{
+ "id": "en-gazette-08",
+ "expected": [
+  {
+   "value": "GAS HEATING AND PLUMBING SOLUTIONS LTD",
+   "type": "COMPANY"
+  },
+  {
+   "value": "10282059",
+   "type": "ID"
+  },
+  {
+   "value": "Caledon Community Centre, Caledon Road, London Colney, St Albans, Hertfordshire AL2 1PU",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Francis Greene",
+   "type": "PERSON"
+  },
+  {
+   "value": "22 September 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Turpin Barker Armstrong",
+   "type": "COMPANY"
+  },
+  {
+   "value": "15 Horizon Business Village, 1 Brooklands Road, Weybridge, Surrey, KT13 0TJ",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "01932 336149",
+   "type": "PHONE"
+  },
+  {
+   "value": "chris.warner@turpinba.co.uk",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Kelly Abrey",
+   "type": "PERSON"
+  },
+  {
+   "value": "14 September 2026",
+   "type": "DATE"
+  }
+ ]
+}

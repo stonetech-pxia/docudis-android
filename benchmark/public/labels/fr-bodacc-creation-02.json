@@ -1,0 +1,37 @@
+{
+ "id": "fr-bodacc-creation-02",
+ "expected": [
+  {
+   "value": "18/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Boulogne-sur-Mer",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "109 790 832",
+   "type": "ID"
+  },
+  {
+   "value": "BOSQUET Cassandra, Stéphanie, Christiane",
+   "type": "PERSON"
+  },
+  {
+   "value": "Cassis shop",
+   "type": "COMPANY"
+  },
+  {
+   "value": "7b Rue de Fruges, 62560 Fauquembergues",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "14/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "25/09/2026",
+   "type": "DATE"
+  }
+ ]
+}

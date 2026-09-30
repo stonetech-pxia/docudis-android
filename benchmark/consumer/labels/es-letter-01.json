@@ -1,0 +1,140 @@
+{
+ "id": "es-letter-01",
+ "expected": [
+  {
+   "value": "Vicent Ferrandis Monzó",
+   "type": "PERSON"
+  },
+  {
+   "value": "82345817K",
+   "type": "ID"
+  },
+  {
+   "value": "C/ Literato Azorín, 28, pta. 9",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "46006 València",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "València",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Administraciones Turia Levante, S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Salvador Peris Blasco",
+   "type": "PERSON"
+  },
+  {
+   "value": "3.412",
+   "type": "ID"
+  },
+  {
+   "value": "Gran Vía Marqués del Turia, 52, 1º",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "46005 València",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "9 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "ATL-2026/0381",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "1 de marzo de 2023",
+   "type": "DATE"
+  },
+  {
+   "value": "46-7720915",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Ionela Dragomir",
+   "type": "PERSON"
+  },
+  {
+   "value": "X7343101Y",
+   "type": "ID"
+  },
+  {
+   "value": "María Desamparados Gisbert Ródenas",
+   "type": "PERSON"
+  },
+  {
+   "value": "12 de mayo",
+   "type": "DATE"
+  },
+  {
+   "value": "Amparo Tortajada",
+   "type": "PERSON"
+  },
+  {
+   "value": "3 de junio",
+   "type": "DATE"
+  },
+  {
+   "value": "Borja Alapont",
+   "type": "PERSON"
+  },
+  {
+   "value": "19 de junio",
+   "type": "DATE"
+  },
+  {
+   "value": "Reformas y Cubiertas Hnos. Sancho, S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Rachid Bouzidi",
+   "type": "PERSON"
+  },
+  {
+   "value": "29 de agosto",
+   "type": "DATE"
+  },
+  {
+   "value": "1.240,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "2 de septiembre",
+   "type": "DATE"
+  },
+  {
+   "value": "00118-2026-094512",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "ES55 8886 7306 3263 8651 8039",
+   "type": "IBAN"
+  },
+  {
+   "value": "780 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Neus Albiach Soler",
+   "type": "PERSON"
+  },
+  {
+   "value": "661 37 20 84",
+   "type": "PHONE"
+  },
+  {
+   "value": "vicent.ferrandis.m@gmail.com",
+   "type": "EMAIL"
+  }
+ ]
+}

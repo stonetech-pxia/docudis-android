@@ -1,0 +1,85 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+pubspec_overrides.yaml
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+packages/*/build/
+/coverage/
+/target/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Widget Preview related
+.widget_preview/
+
+# Secrets and per-developer configuration (see README.md)
+.env
+lib/firebase_options.dart
+**/google-services.json
+**/GoogleService-Info.plist
+ios/firebase_app_id_file.json
+
+# On-device ML model files downloaded from Hugging Face (see assets/models/README.md);
+# model.json specs stay tracked.
+assets/models/**/*.onnx
+assets/models/**/tokenizer.json
+assets/models/**/vocab.txt
+assets/models/**/config.json
+assets/models/**/tokenizer_config.json
+assets/models/**/label_map.json
+assets/models/**/special_tokens_map.json
+
+# Model files synced into the Android asset pack at build time
+android/model_pack/src/main/assets/
+# Gradle problem reports for the android project
+android/build/
+android/app/.cxx/
+
+# Benchmark raw outputs (large; regenerate with the runners)
+docs/benchmark/*.json
+docs/benchmark/*.log
+
+# Golden-test failure dumps
+test/failures/
+test/store/failures/
+
+# Generated training data (large; rebuild with training/build.py)
+training/out/

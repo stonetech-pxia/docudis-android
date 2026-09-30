@@ -1,0 +1,41 @@
+{
+ "id": "fr-bodacc-creation-04",
+ "expected": [
+  {
+   "value": "18/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Boulogne-sur-Mer",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "130 037 054",
+   "type": "ID"
+  },
+  {
+   "value": "LB INVEST",
+   "type": "COMPANY"
+  },
+  {
+   "value": "BROUTIER Louis, Maxime, Guy",
+   "type": "PERSON"
+  },
+  {
+   "value": "1000.00 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "27 Rue de Montechor, 62170 Montcavrel",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "15/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "01/09/2026",
+   "type": "DATE"
+  }
+ ]
+}

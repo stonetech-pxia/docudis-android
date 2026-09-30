@@ -1,0 +1,41 @@
+{
+ "id": "fr-chat-02",
+ "expected": [
+  {
+   "value": "Thibault Le Goff",
+   "type": "PERSON"
+  },
+  {
+   "value": "novalis",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Aylin Demir",
+   "type": "PERSON"
+  },
+  {
+   "value": "hugo blanc",
+   "type": "PERSON"
+  },
+  {
+   "value": "h.blanc@novalis-habitat.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "06 58 30 17 44",
+   "type": "PHONE"
+  },
+  {
+   "value": "sandrine",
+   "type": "PERSON"
+  },
+  {
+   "value": "batimat ouest",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Ousmane Traoré",
+   "type": "PERSON"
+  }
+ ]
+}

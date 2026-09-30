@@ -1,0 +1,121 @@
+{
+ "id": "es-borme-02-2",
+ "expected": [
+  {
+   "value": "12 de septiembre de 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "PEFER E HIJOS SOCIEDAD ANONIMA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "DIAZ FERNANDEZ ANA ROCIO",
+   "type": "PERSON"
+  },
+  {
+   "value": "H AL 5509",
+   "type": "ID"
+  },
+  {
+   "value": "5.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "PARQUE CIENTIFICO-TECNOLOGICO DE ALMERIA (PITA) SOCIEDAD ANONIMA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "JIMENEZ GARRIDO JOSE",
+   "type": "PERSON"
+  },
+  {
+   "value": "SOCIEDAD PARA LA PROMOCION Y RECONVERSION ECONOMIC",
+   "type": "COMPANY"
+  },
+  {
+   "value": "CERVANTES MERINO JAVIER JUAN",
+   "type": "PERSON"
+  },
+  {
+   "value": "MARTIN MOYA MARIA ARANZAZU",
+   "type": "PERSON"
+  },
+  {
+   "value": "H AL 17795",
+   "type": "ID"
+  },
+  {
+   "value": "CLINICA SOLVAS Y RODRIGUEZ SL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "H AL 56362",
+   "type": "ID"
+  },
+  {
+   "value": "JIMENEZ CAPARROS, SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "H AL 49090",
+   "type": "ID"
+  },
+  {
+   "value": "JUAN JESUS MAESTRE CHAPA-PINTURA Y RESTAURACION SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "30.000,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "33.000,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "TREINTA Y TRES MIL EUROS",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "33. 000, 00E",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "DIEZ EUROS",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "10E",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "H AL 46817",
+   "type": "ID"
+  },
+  {
+   "value": "CAJAMAR CAJA RURAL SOCIEDAD COOPERATIVA DE CREDITO",
+   "type": "COMPANY"
+  },
+  {
+   "value": "RODRIGUEZ JURADO FRANCISCO JAVIER",
+   "type": "PERSON"
+  },
+  {
+   "value": "DE PARELLADA DURAN ANTONIO",
+   "type": "PERSON"
+  },
+  {
+   "value": "ANDUJAR LAZARO FRANCISCO JOSE",
+   "type": "PERSON"
+  },
+  {
+   "value": "LOPEZ FERNANDEZ MARIA",
+   "type": "PERSON"
+  },
+  {
+   "value": "H AL 40338",
+   "type": "ID"
+  }
+ ]
+}

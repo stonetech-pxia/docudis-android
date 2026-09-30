@@ -1,0 +1,69 @@
+{
+ "id": "en-enron-01",
+ "expected": [
+  {
+   "value": "phillip.allen@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "ina.rangel@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "2001-04-18",
+   "type": "DATE"
+  },
+  {
+   "value": "Ina",
+   "type": "PERSON"
+  },
+  {
+   "value": "Mog",
+   "type": "PERSON"
+  },
+  {
+   "value": "Phillip",
+   "type": "PERSON"
+  },
+  {
+   "value": "Phillip K Allen",
+   "type": "PERSON"
+  },
+  {
+   "value": "04/18/2001",
+   "type": "DATE"
+  },
+  {
+   "value": "Karen Buckley",
+   "type": "PERSON"
+  },
+  {
+   "value": "Philip",
+   "type": "PERSON"
+  },
+  {
+   "value": "Mog Heu",
+   "type": "PERSON"
+  },
+  {
+   "value": "New York",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "karen",
+   "type": "PERSON"
+  },
+  {
+   "value": "Allen, Phillip",
+   "type": "PERSON"
+  },
+  {
+   "value": "April 18, 2001",
+   "type": "DATE"
+  },
+  {
+   "value": "Buckley, Karen",
+   "type": "PERSON"
+  }
+ ]
+}

@@ -1,0 +1,176 @@
+{
+ "id": "fr-letter-01",
+ "expected": [
+  {
+   "value": "Joaquim FERREIRA DA COSTA",
+   "type": "PERSON"
+  },
+  {
+   "value": "Résidence Le Clos des Charmilles",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Bât. B, 3e étage, porte 32",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "27 rue Francis de Pressensé",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "69100 Villeurbanne",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Villeurbanne",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "06 47 81 29 53",
+   "type": "PHONE"
+  },
+  {
+   "value": "joaquim.ferreiradacosta@laposte.net",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Régie Montbrillant SAS",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Bérénice AUBRUN",
+   "type": "PERSON"
+  },
+  {
+   "value": "114 cours Lafayette",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "69003 Lyon",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Lyon",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "14 septembre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "1A 204 817 3352 6",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "01/03/2021",
+   "type": "DATE"
+  },
+  {
+   "value": "0417-B32",
+   "type": "ID"
+  },
+  {
+   "value": "SIN-2026-01893",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "1er mars 2021",
+   "type": "DATE"
+  },
+  {
+   "value": "22 juin 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Thibault Chazal",
+   "type": "PERSON"
+  },
+  {
+   "value": "Chazal",
+   "type": "PERSON"
+  },
+  {
+   "value": "30 juin",
+   "type": "DATE"
+  },
+  {
+   "value": "Aydın Plomberie-Chauffage SARL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Aydın",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Emre Aydın",
+   "type": "PERSON"
+  },
+  {
+   "value": "9 juillet",
+   "type": "DATE"
+  },
+  {
+   "value": "D-2607-118",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "1 842,50 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "21 juillet",
+   "type": "DATE"
+  },
+  {
+   "value": "6 août",
+   "type": "DATE"
+  },
+  {
+   "value": "28 août",
+   "type": "DATE"
+  },
+  {
+   "value": "Lacombe",
+   "type": "PERSON"
+  },
+  {
+   "value": "Inês",
+   "type": "PERSON"
+  },
+  {
+   "value": "Luciana",
+   "type": "PERSON"
+  },
+  {
+   "value": "6 juillet 1989",
+   "type": "DATE"
+  },
+  {
+   "value": "180 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "219,90 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "FR76 7267 0834 7774 0210 6402 314",
+   "type": "IBAN"
+  },
+  {
+   "value": "4182736",
+   "type": "ID"
+  },
+  {
+   "value": "Joaquim Ferreira da Costa",
+   "type": "PERSON"
+  },
+  {
+   "value": "Didier Perrachon",
+   "type": "PERSON"
+  }
+ ]
+}

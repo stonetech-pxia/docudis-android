@@ -1,0 +1,101 @@
+{
+ "id": "es-lease-02",
+ "expected": [
+  {
+   "value": "Valentina Restrepo Cardona",
+   "type": "PERSON"
+  },
+  {
+   "value": "Valentina",
+   "type": "PERSON"
+  },
+  {
+   "value": "Y1931869K",
+   "type": "ID"
+  },
+  {
+   "value": "Álvaro Benítez Cañete",
+   "type": "PERSON"
+  },
+  {
+   "value": "Álvaro",
+   "type": "PERSON"
+  },
+  {
+   "value": "77460838N",
+   "type": "ID"
+  },
+  {
+   "value": "640,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "C/ Alfonso XIII, 14, 2º B, 14001 Córdoba",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "38,50 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "678,50 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "03/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "ES84 7131 9693 2890 0224 2444",
+   "type": "IBAN"
+  },
+  {
+   "value": "Lucena",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "4 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Francisco Javier Montilla Arjona",
+   "type": "PERSON"
+  },
+  {
+   "value": "67298041H",
+   "type": "ID"
+  },
+  {
+   "value": "1 de octubre de 2022",
+   "type": "DATE"
+  },
+  {
+   "value": "1 de octubre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "654,72 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "F. J. Montilla",
+   "type": "PERSON"
+  },
+  {
+   "value": "C/ El Peso 27, 1º, 14900 Lucena (Córdoba)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "957 50 18 34",
+   "type": "PHONE"
+  },
+  {
+   "value": "627 41 09 55",
+   "type": "PHONE"
+  },
+  {
+   "value": "fjmontilla.arjona@hotmail.com",
+   "type": "EMAIL"
+  }
+ ]
+}

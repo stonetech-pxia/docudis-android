@@ -1,0 +1,117 @@
+{
+ "id": "es-borme-01-2",
+ "expected": [
+  {
+   "value": "12 de septiembre de 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "CURSOS PREMIUM SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "6.06.24",
+   "type": "DATE"
+  },
+  {
+   "value": "C/ SAN SEBASTIAN, 31 3º B 02005 (ALBACETE)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "3.000,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "ROBLES MAGAN JUAN CARLOS",
+   "type": "PERSON"
+  },
+  {
+   "value": "H AB 30904",
+   "type": "ID"
+  },
+  {
+   "value": "4.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "GRUPO FHA VIA VIARIA SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "HERRAEZ ABELLAN FRANCISCO JAVIER",
+   "type": "PERSON"
+  },
+  {
+   "value": "HERRAEZ ABELLAN ROBERTO",
+   "type": "PERSON"
+  },
+  {
+   "value": "H AB 17806",
+   "type": "ID"
+  },
+  {
+   "value": "YESOS EL BONI SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "JIMENEZ PEREZ JUAN MANUEL",
+   "type": "PERSON"
+  },
+  {
+   "value": "GIMENEZ PEREZ JUAN MANUEL",
+   "type": "PERSON"
+  },
+  {
+   "value": "GANDIA NAVALON ANTONIO",
+   "type": "PERSON"
+  },
+  {
+   "value": "AVDA DE VALENCIA, 8 02660 (CAUDETE)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "H AB 19246",
+   "type": "ID"
+  },
+  {
+   "value": "CALZADOS MISTER SOCIEDAD ANONIMA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "VILLAESCUSA CALATAYUD MIGUEL",
+   "type": "PERSON"
+  },
+  {
+   "value": "H AB 2092",
+   "type": "ID"
+  },
+  {
+   "value": "CLINICA MEDICA CAPITOL SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "ANDUJAR ORTUÑO RAFAEL",
+   "type": "PERSON"
+  },
+  {
+   "value": "GARCIA GOMEZ SARA",
+   "type": "PERSON"
+  },
+  {
+   "value": "H AB 3986",
+   "type": "ID"
+  },
+  {
+   "value": "HORTISANO SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "CANOVAS RUIZ JOSE",
+   "type": "PERSON"
+  },
+  {
+   "value": "H AB 8236",
+   "type": "ID"
+  }
+ ]
+}

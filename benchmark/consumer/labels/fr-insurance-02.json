@@ -1,0 +1,162 @@
+{
+ "id": "fr-insurance-02",
+ "expected": [
+  {
+   "value": "MASO Assurances",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Mutuelle d'Assurance du Sud-Ouest",
+   "type": "COMPANY"
+  },
+  {
+   "value": "TSA 41207 - 33077 Bordeaux Cedex",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Bordeaux",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Thi Lan NGUYEN",
+   "type": "PERSON"
+  },
+  {
+   "value": "Bastien ETCHEVERRY",
+   "type": "PERSON"
+  },
+  {
+   "value": "Résidence Les Hauts de Marracq",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Bât. C - 3e étage - Appt 32",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "17 allée des Tamaris",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "64100 BAYONNE",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "10 septembre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "2026-DDE-0738214",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "HAB 4 417 902 66",
+   "type": "ID"
+  },
+  {
+   "value": "8 215 047",
+   "type": "ID"
+  },
+  {
+   "value": "NGUYEN Thi Lan",
+   "type": "PERSON"
+  },
+  {
+   "value": "ETCHEVERRY Bastien",
+   "type": "PERSON"
+  },
+  {
+   "value": "17 allée des Tamaris, Bât. C, appt 32, 64100 Bayonne",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "29/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "31 août 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Youssef El Amrani",
+   "type": "PERSON"
+  },
+  {
+   "value": "appt 42",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Agence Immobilière Darrigrand",
+   "type": "COMPANY"
+  },
+  {
+   "value": "05 59 46 12 08",
+   "type": "PHONE"
+  },
+  {
+   "value": "Peintures Hiriart",
+   "type": "COMPANY"
+  },
+  {
+   "value": "04/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "2 364,80 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "1 600 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Lacoste & Mendiburu Expertises",
+   "type": "COMPANY"
+  },
+  {
+   "value": "3 place des Gascons, 64100 Bayonne",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Rodrigue Césaire-Lubin",
+   "type": "PERSON"
+  },
+  {
+   "value": "06.47.82.19.35",
+   "type": "PHONE"
+  },
+  {
+   "value": "r.cesaire-lubin@lacoste-mendiburu.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "22 septembre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "150,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "05 56 93 40 17",
+   "type": "PHONE"
+  },
+  {
+   "value": "sinistres.habitation@maso-assurances.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Sandrine Vasseur",
+   "type": "PERSON"
+  },
+  {
+   "value": "28 cours du Chapeau-Rouge, 33000 Bordeaux",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "785 233 438",
+   "type": "ID"
+  }
+ ]
+}

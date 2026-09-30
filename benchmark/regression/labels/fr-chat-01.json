@@ -1,0 +1,49 @@
+{
+  "id": "fr-chat-01",
+  "expected": [
+    {
+      "value": "15/09/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "Bruxelles",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "lena",
+      "type": "PERSON"
+    },
+    {
+      "value": "karim",
+      "type": "PERSON"
+    },
+    {
+      "value": "13/09/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "Liège",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "rue Jean-Baptiste Decock 14, boîte 3, 1080 Molenbeek",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "04/11/1994",
+      "type": "BIRTH_DATE"
+    },
+    {
+      "value": "0478 21 66 04",
+      "type": "PHONE"
+    },
+    {
+      "value": "+32 2 414 87 39",
+      "type": "PHONE"
+    },
+    {
+      "value": "lena.vanhoutte@pandora-mail.be",
+      "type": "EMAIL"
+    }
+  ]
+}

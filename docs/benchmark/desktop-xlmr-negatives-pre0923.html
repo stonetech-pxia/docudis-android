@@ -1,0 +1,572 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NER benchmark (desktop, Python onnxruntime)</title>
+<style>:root{color-scheme:light}
+body{margin:0;font:14px/1.5 -apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;color:#2a2420;background:#f5efe8}
+header{padding:20px 24px 8px}h1{margin:0 0 4px;font-size:22px}.meta{margin:0;color:#6b5f55}
+.overall{font-size:16px}.legend{color:#6b5f55}.legend mark,.legend span{margin-right:8px}
+section.summary{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 24px}
+@media(max-width:900px){section.summary{grid-template-columns:1fr}}
+h2{font-size:16px;margin:8px 0}table{border-collapse:collapse;width:100%;background:#fffcf8;font-size:13px}
+th,td{padding:4px 8px;border-bottom:1px solid #e8dfd4;text-align:right}th:first-child,td:first-child{text-align:left}
+.filters{position:sticky;top:0;background:#f5efe8;padding:10px 24px;border-bottom:1px solid #e8dfd4;display:flex;gap:16px;align-items:center;z-index:2}
+main{padding:12px 24px 40px}
+article.case{background:#fffcf8;border-radius:14px;padding:12px 16px;margin:12px 0;box-shadow:0 6px 20px rgba(120,90,60,.08)}
+article.case[data-fail="true"] h3::before{content:"⚠ ";color:#dc2626}
+h3{margin:0 0 8px;font-size:15px;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+h3 small{color:#8a7b6f;font-weight:400}h3 .stats{margin-left:auto;font-weight:400;color:#6b5f55;font-size:12px}
+.panes{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:900px){.panes{grid-template-columns:1fr}}
+.pane h4{margin:0 0 4px;font-size:12px;color:#8a7b6f;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+pre{white-space:pre-wrap;word-break:break-word;margin:0;padding:10px;background:#faf6f1;border-radius:8px;font:14px/1.7 inherit}
+mark{border-radius:4px;padding:0 2px;color:inherit}
+mark.fp{background:#fee2e2!important;border-bottom:2px solid #dc2626!important;text-decoration:line-through}
+mark.wrong{background:#fef3c7!important;border-bottom:2px dotted #b45309!important}
+mark.partial{outline:1px dashed #6b5f55}
+mark.off{background:transparent!important;border-bottom-style:dotted!important}
+span.missed{border-bottom:2px dashed #dc2626;background:#fff1f1}
+mark.ph{padding:0 5px;border-radius:6px;font-weight:600;font-size:12px}
+ul.issues{margin:8px 0 0;padding-left:18px;color:#6b5f55}ul.issues .src{color:#a89a8e;font-size:12px}
+.grade{display:inline-block;min-width:18px;text-align:center;border-radius:6px;padding:0 6px;font-weight:700;color:#fff;font-size:12px}
+.g-A{background:#4e6644}.g-B{background:#6b7f62}.g-C{background:#b8926a}.g-D{background:#a84e2c}
+.hidden{display:none}
+mark.t-PERSON{background:#c8623a22;border-bottom:2px solid #c8623a}mark.ph.t-PERSON{background:#c8623a;color:#fff;border:0}
+mark.t-EMAIL{background:#2563eb22;border-bottom:2px solid #2563eb}mark.ph.t-EMAIL{background:#2563eb;color:#fff;border:0}
+mark.t-PHONE{background:#0d948822;border-bottom:2px solid #0d9488}mark.ph.t-PHONE{background:#0d9488;color:#fff;border:0}
+mark.t-ID{background:#b4530922;border-bottom:2px solid #b45309}mark.ph.t-ID{background:#b45309;color:#fff;border:0}
+mark.t-NUMBER{background:#92400e22;border-bottom:2px solid #92400e}mark.ph.t-NUMBER{background:#92400e;color:#fff;border:0}
+mark.t-CARD{background:#ca8a0422;border-bottom:2px solid #ca8a04}mark.ph.t-CARD{background:#ca8a04;color:#fff;border:0}
+mark.t-IBAN{background:#a1620722;border-bottom:2px solid #a16207}mark.ph.t-IBAN{background:#a16207;color:#fff;border:0}
+mark.t-DATE{background:#6d28d922;border-bottom:2px solid #6d28d9}mark.ph.t-DATE{background:#6d28d9;color:#fff;border:0}
+mark.t-BIRTH_DATE{background:#4c1d9522;border-bottom:2px solid #4c1d95}mark.ph.t-BIRTH_DATE{background:#4c1d95;color:#fff;border:0}
+mark.t-AMOUNT{background:#ea580c22;border-bottom:2px solid #ea580c}mark.ph.t-AMOUNT{background:#ea580c;color:#fff;border:0}
+mark.t-IP{background:#0284c722;border-bottom:2px solid #0284c7}mark.ph.t-IP{background:#0284c7;color:#fff;border:0}
+mark.t-URL{background:#0369a122;border-bottom:2px solid #0369a1}mark.ph.t-URL{background:#0369a1;color:#fff;border:0}
+mark.t-ADDRESS{background:#dc262622;border-bottom:2px solid #dc2626}mark.ph.t-ADDRESS{background:#dc2626;color:#fff;border:0}
+mark.t-COMPANY{background:#db277722;border-bottom:2px solid #db2777}mark.ph.t-COMPANY{background:#db2777;color:#fff;border:0}
+mark.t-SECRET{background:#e11d4822;border-bottom:2px solid #e11d48}mark.ph.t-SECRET{background:#e11d48;color:#fff;border:0}
+mark.t-API_KEY{background:#05966922;border-bottom:2px solid #059669}mark.ph.t-API_KEY{background:#059669;color:#fff;border:0}
+mark.t-CUSTOM{background:#6b7f6222;border-bottom:2px solid #6b7f62}mark.ph.t-CUSTOM{background:#6b7f62;color:#fff;border:0}
+mark.t-OTHER{background:#6b728022;border-bottom:2px solid #6b7280}mark.ph.t-OTHER{background:#6b7280;color:#fff;border:0}
+</style></head><body>
+<header><h1>NER benchmark (desktop, Python onnxruntime)</h1>
+<p class="meta">模型 <b>xlm-roberta-base-ner-docudis</b> · windows "Windows 11 Famille" 10.0 (Build 26200), CPU, onnxruntime via bench_server.py · 63 条用例 · 0 个预期实体</p>
+<p class="overall">总体：召回 100% · 精确 0% · F1 0% <span class="grade g-D">D</span> · 116 ms/千字符 <span class="grade g-A">A</span></p>
+<p class="legend">图例：<mark class="t-PERSON">检测到的实体（按类型着色）</mark> <span class="missed">漏检（预期但未找到）</span> <mark class="fp">误报</mark> <mark class="wrong">类型错误</mark> <mark class="partial t-PERSON">部分命中</mark> <mark class="off t-DATE">检出但默认不遮（金额、非出生日期）</mark></p>
+</header>
+<section class="summary"><div>
+<h2>按语言</h2><table><thead><tr><th>组</th><th>用例</th><th>预期</th><th>找到</th><th>误报</th><th>召回</th><th>精确</th><th>F1</th><th>可靠度</th><th>ms/千字</th><th>速度</th></tr></thead><tbody>
+<tr><td>en</td><td>21</td><td>0</td><td>0</td><td>0</td><td>100%</td><td>100%</td><td>100%</td><td><span class="grade g-A">A</span></td><td>108</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>fr</td><td>21</td><td>0</td><td>0</td><td>0</td><td>100%</td><td>100%</td><td>100%</td><td><span class="grade g-A">A</span></td><td>125</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>es</td><td>21</td><td>0</td><td>0</td><td>1</td><td>100%</td><td>0%</td><td>0%</td><td><span class="grade g-D">D</span></td><td>117</td><td><span class="grade g-A">A</span></td></tr>
+</tbody></table>
+</div><div>
+<h2>按类别</h2><table><thead><tr><th>组</th><th>用例</th><th>预期</th><th>找到</th><th>误报</th><th>召回</th><th>精确</th><th>F1</th><th>可靠度</th><th>ms/千字</th><th>速度</th></tr></thead><tbody>
+<tr><td>negatives</td><td>18</td><td>0</td><td>0</td><td>1</td><td>100%</td><td>0%</td><td>0%</td><td><span class="grade g-D">D</span></td><td>103</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>name-words</td><td>45</td><td>0</td><td>0</td><td>0</td><td>100%</td><td>100%</td><td>100%</td><td><span class="grade g-A">A</span></td><td>127</td><td><span class="grade g-A">A</span></td></tr>
+</tbody></table>
+</div></section>
+<section class="filters">
+<label>语言 <select id="lang"><option value="">全部</option><option>en</option><option>fr</option><option>es</option></select></label>
+<label>类别 <select id="cat"><option value="">全部</option><option>negatives</option><option>name-words</option></select></label>
+<label><input type="checkbox" id="fail"> 只看有问题的用例</label>
+<span id="count"></span>
+</section>
+<main>
+<article class="case" data-lang="en" data-cat="negatives" data-fail="false">
+<h3>en-neg-years <small>en · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 24 ms · 189 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>The 2024 Annual report shows that 3500 Units were shipped, up from 2900 Units in 2023. Chapter 12 covers the 1500 Series pumps and the 2000 Watt model. In 2025 Sales are expected to double.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>The 2024 Annual report shows that 3500 Units were shipped, up from 2900 Units in 2023. Chapter 12 covers the 1500 Series pumps and the 2000 Watt model. In 2025 Sales are expected to double.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="negatives" data-fail="false">
+<h3>en-neg-versions <small>en · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 20 ms · 181 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Version 4.09.24 of the firmware fixes the issue described in section 3.2.1. Build 1.12.22 remains supported until release 10.0.12. See clause 12.3.19 and figure 7.11.05 for details.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Version 4.09.24 of the firmware fixes the issue described in section 3.2.1. Build 1.12.22 remains supported until release 10.0.12. See clause 12.3.19 and figure 7.11.05 for details.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="negatives" data-fail="false">
+<h3>en-neg-units <small>en · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 15 ms · 202 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>The parcel weighs 30 pounds and measures 45 by 60 cm. Add 250 grams of flour, 3 eggs and bake for 40 minutes at 180 degrees. The tank holds 1200 litres, roughly 300 gallons, and costs nothing to refill.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>The parcel weighs 30 pounds and measures 45 by 60 cm. Add 250 grams of flour, 3 eggs and bake for 40 minutes at 180 degrees. The tank holds 1200 litres, roughly 300 gallons, and costs nothing to refill.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="negatives" data-fail="false">
+<h3>en-neg-form <small>en · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 15 ms · 220 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Name of Company: to be completed
+Company Number: not yet issued
+Type of Liquidation: not applicable
+Nature of Business: see attached schedule
+Employer: pending
+Invoice date: to be confirmed        Payment due: on receipt</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Name of Company: to be completed
+Company Number: not yet issued
+Type of Liquidation: not applicable
+Nature of Business: see attached schedule
+Employer: pending
+Invoice date: to be confirmed        Payment due: on receipt</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="negatives" data-fail="false">
+<h3>en-neg-ranges <small>en · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 14 ms · 165 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>EXPERIENCE
+Senior analyst (2017 - 2021)
+Graduate trainee (2016 - 2017)
+Opening hours 9:00 - 17:30. Pages 120 - 135 cover the appendix. Rows 1000 - 2000 were skipped.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>EXPERIENCE
+Senior analyst (2017 - 2021)
+Graduate trainee (2016 - 2017)
+Opening hours 9:00 - 17:30. Pages 120 - 135 cover the appendix. Rows 1000 - 2000 were skipped.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="negatives" data-fail="false">
+<h3>en-neg-words <small>en · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 18 ms · 201 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>May 5 people attend the briefing? March past the gate at 8. The total came to 45 points out of 60, a score of 75 per cent. Visit the help centre or read the manual.pdf file; the old readme.txt is gone.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>May 5 people attend the briefing? March past the gate at 8. The total came to 45 points out of 60, a score of 75 per cent. Visit the help centre or read the manual.pdf file; the old readme.txt is gone.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="negatives" data-fail="false">
+<h3>fr-neg-years <small>fr · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 18 ms · 190 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>En 2024 Le chiffre d'affaires a progressé de 12 % et 3500 Pièces ont été livrées. Le modèle 2000 Watts reste le plus vendu. Depuis 2019 Notre activité se concentre sur la série 1500 Confort.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>En 2024 Le chiffre d'affaires a progressé de 12 % et 3500 Pièces ont été livrées. Le modèle 2000 Watts reste le plus vendu. Depuis 2019 Notre activité se concentre sur la série 1500 Confort.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="negatives" data-fail="false">
+<h3>fr-neg-table <small>fr · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 36 ms · 228 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Désignation                 Qté    Code
+Pose sur mesure              3     00098    Code interne
+Déplacement                  1     12345    Total des lignes
+Article 1234 Du règlement, alinéa 3. Page 75 Voir aussi le tableau 12.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Désignation                 Qté    Code
+Pose sur mesure              3     00098    Code interne
+Déplacement                  1     12345    Total des lignes
+Article 1234 Du règlement, alinéa 3. Page 75 Voir aussi le tableau 12.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="negatives" data-fail="false">
+<h3>fr-neg-versions <small>fr · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 20 ms · 158 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>La version 4.09.24 corrige le défaut décrit au point 3.2.1. La révision 1.12.22 reste prise en charge. Le colis pèse 12 kilos et mesure 45 sur 60 centimètres.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>La version 4.09.24 corrige le défaut décrit au point 3.2.1. La révision 1.12.22 reste prise en charge. Le colis pèse 12 kilos et mesure 45 sur 60 centimètres.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="negatives" data-fail="false">
+<h3>fr-neg-form <small>fr · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 21 ms · 225 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Dénomination : à compléter
+Forme juridique : sans objet
+Enseigne : néant
+Capital : non communiqué
+Horaires 9 h 00 - 17 h 30. Période 2017 - 2021 puis 2016 - 2017.
+Date de facturation : à préciser        Échéance : à réception</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Dénomination : à compléter
+Forme juridique : sans objet
+Enseigne : néant
+Capital : non communiqué
+Horaires 9 h 00 - 17 h 30. Période 2017 - 2021 puis 2016 - 2017.
+Date de facturation : à préciser        Échéance : à réception</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="negatives" data-fail="false">
+<h3>fr-neg-units <small>fr · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 34 ms · 172 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Le rendez-vous dure 30 minutes. Prévoir 250 grammes de farine, 3 œufs et 40 minutes de cuisson à 180 degrés. La cuve contient 1200 litres et le local fait 85 mètres carrés.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Le rendez-vous dure 30 minutes. Prévoir 250 grammes de farine, 3 œufs et 40 minutes de cuisson à 180 degrés. La cuve contient 1200 litres et le local fait 85 mètres carrés.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="negatives" data-fail="false">
+<h3>fr-neg-words <small>fr · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 18 ms · 203 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Le service est ouvert du lundi au vendredi. La direction rappelle que le règlement intérieur s'applique à tous. Consultez la notice.pdf ou la rubrique aide du site ; le fichier lisezmoi.txt a été retiré.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Le service est ouvert du lundi au vendredi. La direction rappelle que le règlement intérieur s'applique à tous. Consultez la notice.pdf ou la rubrique aide du site ; le fichier lisezmoi.txt a été retiré.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="negatives" data-fail="false">
+<h3>es-neg-years <small>es · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 18 ms · 184 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>En 2024 La facturación creció un 12 % y se entregaron 3500 Unidades. El modelo 2000 Vatios sigue siendo el más vendido. Desde 2019 Nuestra actividad se centra en la serie 1500 Confort.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>En 2024 La facturación creció un 12 % y se entregaron 3500 Unidades. El modelo 2000 Vatios sigue siendo el más vendido. Desde 2019 Nuestra actividad se centra en la serie 1500 Confort.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="negatives" data-fail="false">
+<h3>es-neg-table <small>es · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 22 ms · 242 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Concepto                    Cant.   Código
+Revisión de equipos           3     00098    Código interno
+Portes y embalaje             1     12345    Total de líneas
+Artículo 1234 Del reglamento, apartado 3. Página 75 Véase también la tabla 12.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Concepto                    Cant.   Código
+Revisión de equipos           3     00098    Código interno
+Portes y embalaje             1     12345    Total de líneas
+Artículo 1234 Del reglamento, apartado 3. Página 75 Véase también la tabla 12.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="negatives" data-fail="false">
+<h3>es-neg-versions <small>es · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 16 ms · 162 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>La versión 4.09.24 corrige el fallo descrito en el punto 3.2.1. La revisión 1.12.22 sigue teniendo soporte. El paquete pesa 12 kilos y mide 45 por 60 centímetros.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>La versión 4.09.24 corrige el fallo descrito en el punto 3.2.1. La revisión 1.12.22 sigue teniendo soporte. El paquete pesa 12 kilos y mide 45 por 60 centímetros.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="negatives" data-fail="false">
+<h3>es-neg-form <small>es · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 16 ms · 238 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Denominación social: por completar
+Forma jurídica: no procede
+Domicilio: pendiente
+Capital: no comunicado
+Horario 9:00 - 17:30. Periodo 2017 - 2021 y después 2016 - 2017.
+Fecha de emisión: por determinar        Vencimiento: a la recepción</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Denominación social: por completar
+Forma jurídica: no procede
+Domicilio: pendiente
+Capital: no comunicado
+Horario 9:00 - 17:30. Periodo 2017 - 2021 y después 2016 - 2017.
+Fecha de emisión: por determinar        Vencimiento: a la recepción</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="negatives" data-fail="false">
+<h3>es-neg-units <small>es · negatives</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 14 ms · 164 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>La cita dura 30 minutos. Añadir 250 gramos de harina, 3 huevos y hornear 40 minutos a 180 grados. El depósito tiene 1200 litros y el local mide 85 metros cuadrados.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>La cita dura 30 minutos. Añadir 250 gramos de harina, 3 huevos y hornear 40 minutos a 180 grados. El depósito tiene 1200 litros y el local mide 85 metros cuadrados.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="negatives" data-fail="true">
+<h3>es-neg-words <small>es · negatives</small><span class="stats">F1 0% <span class="grade g-D">D</span> · 19 ms · 237 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 1 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>El servicio abre de lunes a viernes. La dirección recuerda que el reglamento interno se aplica a todos. Consulte el manual.pdf o la sección de ayuda del sitio; el archivo leeme.txt se ha retirado. <mark class="fp t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 98%">C. Domicilio</mark> no consta en el expediente.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>El servicio abre de lunes a viernes. La dirección recuerda que el reglamento interno se aplica a todos. Consulte el manual.pdf o la sección de ayuda del sitio; el archivo leeme.txt se ha retirado. <mark class="ph t-PERSON">[PERSON_1]</mark> no consta en el expediente.</pre></div>
+</div>
+<ul class="issues">
+<li><b>误报</b> C. Domicilio <i>PERSON</i> <span class="src">ner:xlm-roberta-base-ner-docudis 98%</span></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="name-words" data-fail="false">
+<h3>en-nameword-01 <small>en · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 13 ms · 112 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Will you bring the jack up from the shed? The spare is under the mat and the car may tilt if the ground is soft.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Will you bring the jack up from the shed? The spare is under the mat and the car may tilt if the ground is soft.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="name-words" data-fail="false">
+<h3>en-nameword-02 <small>en · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 13 ms · 120 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>The dough rose faster than usual in the warm kitchen. Cut the loaf once it cools, and give the rose on the sill a drink.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>The dough rose faster than usual in the warm kitchen. Cut the loaf once it cools, and give the rose on the sill a drink.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="name-words" data-fail="false">
+<h3>en-nameword-03 <small>en · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 110 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>The bill came to less than we feared, so I paid the balance and dropped the last penny in the tin by the door.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>The bill came to less than we feared, so I paid the balance and dropped the last penny in the tin by the door.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="name-words" data-fail="false">
+<h3>en-nameword-04 <small>en · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 13 ms · 118 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Mark the box that says fragile and chase the courier for a collection slot. They may try to leave it with a neighbour.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Mark the box that says fragile and chase the courier for a collection slot. They may try to leave it with a neighbour.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="name-words" data-fail="false">
+<h3>en-nameword-05 <small>en · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 14 ms · 128 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>A heather border and two daisy trays would suit the front bed. A robin already nests in the hedge, so leave the ivy where it is.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>A heather border and two daisy trays would suit the front bed. A robin already nests in the hedge, so leave the ivy where it is.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="name-words" data-fail="false">
+<h3>en-nameword-06 <small>en · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 11 ms · 67 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>The amber light stays on from dusk until the dawn sensor resets it.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>The amber light stays on from dusk until the dawn sensor resets it.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="name-words" data-fail="false">
+<h3>en-nameword-07 <small>en · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 10 ms · 92 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Ask the baker for a rich fruit loaf and tell the cook we need two trays of rolls, not three.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Ask the baker for a rich fruit loaf and tell the cook we need two trays of rolls, not three.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="name-words" data-fail="false">
+<h3>en-nameword-08 <small>en · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 116 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>We spent most of last summer clearing the brook behind the fence. The water runs clear again and the ducks are back.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>We spent most of last summer clearing the brook behind the fence. The water runs clear again and the ducks are back.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="name-words" data-fail="false">
+<h3>en-nameword-09 <small>en · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 14 ms · 108 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>The price includes a sterling silver clasp and a single pearl on the catch, in a plain box with no wrapping.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>The price includes a sterling silver clasp and a single pearl on the catch, in a plain box with no wrapping.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="name-words" data-fail="false">
+<h3>en-nameword-10 <small>en · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 13 ms · 125 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>May I chase the quote once more? The hunter green paint was meant to come with the second coat and we are still 2 tins short.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>May I chase the quote once more? The hunter green paint was meant to come with the second coat and we are still 2 tins short.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="name-words" data-fail="false">
+<h3>en-nameword-11 <small>en · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 92 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>He is a careful mason, and the carpenter he works with framed the whole roof in 4 days flat.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>He is a careful mason, and the carpenter he works with framed the whole roof in 4 days flat.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="name-words" data-fail="false">
+<h3>en-nameword-12 <small>en · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 11 ms · 95 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>I lost faith in that brand after the second repair, though I hope the new one lasts the winter.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>I lost faith in that brand after the second repair, though I hope the new one lasts the winter.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="name-words" data-fail="false">
+<h3>en-nameword-13 <small>en · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 111 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>The tailor took in the seam for nothing, and the fisher on the quay sold us two mackerel straight off the boat.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>The tailor took in the seam for nothing, and the fisher on the quay sold us two mackerel straight off the boat.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="name-words" data-fail="false">
+<h3>en-nameword-14 <small>en · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 131 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>A sunny room with a ray of light across the boards, a shelf for the art books, and a frank word about the rent before anyone signs.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>A sunny room with a ray of light across the boards, a shelf for the art books, and a frank word about the rent before anyone signs.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="name-words" data-fail="false">
+<h3>en-nameword-15 <small>en · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 120 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Add a grace note at the end of the melody and I will mark the change of key in pencil. It should hold together at speed.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Add a grace note at the end of the melody and I will mark the change of key in pencil. It should hold together at speed.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="name-words" data-fail="false">
+<h3>fr-nameword-01 <small>fr · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 11 ms · 100 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Le mur en pierre est encore humide. Il faut le laisser sécher une semaine avant de peindre en blanc.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Le mur en pierre est encore humide. Il faut le laisser sécher une semaine avant de peindre en blanc.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="name-words" data-fail="false">
+<h3>fr-nameword-02 <small>fr · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 11 ms · 94 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Prends un petit pot d'olive noire et une tranche de pain de campagne, ça suffira pour ce soir.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Prends un petit pot d'olive noire et une tranche de pain de campagne, ça suffira pour ce soir.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="name-words" data-fail="false">
+<h3>fr-nameword-03 <small>fr · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 14 ms · 89 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Par prudence, j'ai gardé le reçu. Le vendeur s'est montré clément sur le délai de retour.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Par prudence, j'ai gardé le reçu. Le vendeur s'est montré clément sur le délai de retour.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="name-words" data-fail="false">
+<h3>fr-nameword-04 <small>fr · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 97 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>La rose du jardin a repris malgré le gel, et la colombe revient chaque matin se poser sur le fil.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>La rose du jardin a repris malgré le gel, et la colombe revient chaque matin se poser sur le fil.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="name-words" data-fail="false">
+<h3>fr-nameword-05 <small>fr · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 13 ms · 137 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Le boucher m'a conseillé une pièce plus petite pour quatre personnes. Il faudra aussi boucher le trou du mur avant de repeindre en blanc.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Le boucher m'a conseillé une pièce plus petite pour quatre personnes. Il faudra aussi boucher le trou du mur avant de repeindre en blanc.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="name-words" data-fail="false">
+<h3>fr-nameword-06 <small>fr · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 105 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Ce n'est pas un bijou de technologie, mais le four reste constant en température, ce qui est l'essentiel.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Ce n'est pas un bijou de technologie, mais le four reste constant en température, ce qui est l'essentiel.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="name-words" data-fail="false">
+<h3>fr-nameword-07 <small>fr · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 11 ms · 70 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Pull marin bleu et blanc, coton épais, taille petite, porté deux fois.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Pull marin bleu et blanc, coton épais, taille petite, porté deux fois.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="name-words" data-fail="false">
+<h3>fr-nameword-08 <small>fr · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 122 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Le chat est redevenu sauvage depuis qu'il dort dehors. Il chasse le pigeon sur le toit du voisin et ne rentre plus manger.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Le chat est redevenu sauvage depuis qu'il dort dehors. Il chasse le pigeon sur le toit du voisin et ne rentre plus manger.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="name-words" data-fail="false">
+<h3>fr-nameword-09 <small>fr · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 107 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Le salon a un petit côté bourgeois qui ne me plaît pas du tout : trop de velours, et des rideaux rose pâle.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Le salon a un petit côté bourgeois qui ne me plaît pas du tout : trop de velours, et des rideaux rose pâle.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="name-words" data-fail="false">
+<h3>fr-nameword-10 <small>fr · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 105 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Ce vieux fauteuil, très aimé des enfants, a perdu un pied. La pierre sous le plancher a bougé elle aussi.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Ce vieux fauteuil, très aimé des enfants, a perdu un pied. La pierre sous le plancher a bougé elle aussi.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="name-words" data-fail="false">
+<h3>fr-nameword-11 <small>fr · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 79 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>La reine des abeilles n'a pas passé l'hiver et la petite ruche est vide depuis.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>La reine des abeilles n'a pas passé l'hiver et la petite ruche est vide depuis.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="name-words" data-fail="false">
+<h3>fr-nameword-12 <small>fr · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 13 ms · 91 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Un vin blanc sec, servi bien frais, avec un filet d'huile d'olive douce sur le pain grillé.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Un vin blanc sec, servi bien frais, avec un filet d'huile d'olive douce sur le pain grillé.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="name-words" data-fail="false">
+<h3>fr-nameword-13 <small>fr · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 13 ms · 124 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Le temps est clément aujourd'hui, on peut marcher le long du quai sans manteau. Par prudence, prends quand même une écharpe.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Le temps est clément aujourd'hui, on peut marcher le long du quai sans manteau. Par prudence, prends quand même une écharpe.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="name-words" data-fail="false">
+<h3>fr-nameword-14 <small>fr · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 13 ms · 115 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Le petit compresseur garde un débit constant tant que la pompe tourne. Au-delà de 6 bars, le voyant blanc s'éteint.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Le petit compresseur garde un débit constant tant que la pompe tourne. Au-delà de 6 bars, le voyant blanc s'éteint.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="name-words" data-fail="false">
+<h3>fr-nameword-15 <small>fr · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 13 ms · 114 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Je ne veux pas passer pour un pigeon. Par prudence, j'ai demandé un devis écrit avant de laisser quoi que ce soit.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Je ne veux pas passer pour un pigeon. Par prudence, j'ai demandé un devis écrit avant de laisser quoi que ce soit.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="name-words" data-fail="false">
+<h3>es-nameword-01 <small>es · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 13 ms · 97 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>El pilar del salón está torcido y la pared quedó de un blanco sucio, nada que ver con la muestra.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>El pilar del salón está torcido y la pared quedó de un blanco sucio, nada que ver con la muestra.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="name-words" data-fail="false">
+<h3>es-nameword-02 <small>es · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 108 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Tengo dolores de espalda desde la mudanza. Al menos en casa hay paz por las tardes y puedo tumbarme un rato.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Tengo dolores de espalda desde la mudanza. Al menos en casa hay paz por las tardes y puedo tumbarme un rato.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="name-words" data-fail="false">
+<h3>es-nameword-03 <small>es · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 11 ms · 71 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>El perro es muy leal y sigue la luz de la linterna por todo el pasillo.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>El perro es muy leal y sigue la luz de la linterna por todo el pasillo.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="name-words" data-fail="false">
+<h3>es-nameword-04 <small>es · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 90 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Camisa rosa de algodón delgado, talla mediana, sin estrenar y con las 2 etiquetas puestas.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Camisa rosa de algodón delgado, talla mediana, sin estrenar y con las 2 etiquetas puestas.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="name-words" data-fail="false">
+<h3>es-nameword-05 <small>es · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 13 ms · 114 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>El sol da de lleno en la terraza al mediodía y no hay sombra. De noche, en cambio, se está en paz y corre el aire.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>El sol da de lleno en la terraza al mediodía y no hay sombra. De noche, en cambio, se está en paz y corre el aire.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="name-words" data-fail="false">
+<h3>es-nameword-06 <small>es · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 13 ms · 115 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Puse romero y un chorro de aceite de olivo en la bandeja antes de hornear, y salió mucho mejor que la vez anterior.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Puse romero y un chorro de aceite de olivo en la bandeja antes de hornear, y salió mucho mejor que la vez anterior.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="name-words" data-fail="false">
+<h3>es-nameword-07 <small>es · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 101 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>El herrero arregló la reja en una mañana y el sastre me subió el bajo del pantalón mientras esperaba.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>El herrero arregló la reja en una mañana y el sastre me subió el bajo del pantalón mientras esperaba.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="name-words" data-fail="false">
+<h3>es-nameword-08 <small>es · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 65 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>El gato es rubio y muy delgado, aunque come lo mismo que el otro.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>El gato es rubio y muy delgado, aunque come lo mismo que el otro.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="name-words" data-fail="false">
+<h3>es-nameword-09 <small>es · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 80 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Las nieves llegan tarde este año y el camino sigue helado hasta que sale el sol.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Las nieves llegan tarde este año y el camino sigue helado hasta que sale el sol.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="name-words" data-fail="false">
+<h3>es-nameword-10 <small>es · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 13 ms · 88 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>No me queda más consuelo que el de haber avisado a tiempo. Ahora al menos duermo en paz.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>No me queda más consuelo que el de haber avisado a tiempo. Ahora al menos duermo en paz.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="name-words" data-fail="false">
+<h3>es-nameword-11 <small>es · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 12 ms · 82 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Marque con una cruz la casilla que corresponda y deje en blanco lo que no proceda.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Marque con una cruz la casilla que corresponda y deje en blanco lo que no proceda.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="name-words" data-fail="false">
+<h3>es-nameword-12 <small>es · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 14 ms · 101 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>Tiene mucho ángel para tratar con la gente y nunca se le notan los dolores, por mal que haya dormido.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>Tiene mucho ángel para tratar con la gente y nunca se le notan los dolores, por mal que haya dormido.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="name-words" data-fail="false">
+<h3>es-nameword-13 <small>es · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 14 ms · 81 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>El molinero muele todavía a la vieja usanza y el pan sale con un punto de romero.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>El molinero muele todavía a la vieja usanza y el pan sale con un punto de romero.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="name-words" data-fail="false">
+<h3>es-nameword-14 <small>es · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 16 ms · 106 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>No espero mercedes de nadie. Me basta con un trato leal y con que me devuelvan la herramienta como estaba.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>No espero mercedes de nadie. Me basta con un trato leal y con que me devuelvan la herramienta como estaba.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="name-words" data-fail="false">
+<h3>es-nameword-15 <small>es · name-words</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 14 ms · 103 字符 · 预期 0 / 命中 0 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>La luz del pasillo parpadea desde el domingo y el pilar de la entrada tiene una grieta fina de 3 dedos.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>La luz del pasillo parpadea desde el domingo y el pilar de la entrada tiene una grieta fina de 3 dedos.</pre></div>
+</div>
+</article>
+</main>
+<script>const lang=document.getElementById('lang'),cat=document.getElementById('cat'),fail=document.getElementById('fail'),count=document.getElementById('count');
+function apply(){let n=0;for(const c of document.querySelectorAll('article.case')){const show=(!lang.value||c.dataset.lang===lang.value)&&(!cat.value||c.dataset.cat===cat.value)&&(!fail.checked||c.dataset.fail==='true');c.classList.toggle('hidden',!show);if(show)n++;}count.textContent='显示 '+n+' 条';}
+lang.onchange=cat.onchange=fail.onchange=apply;apply();
+</script>
+</body></html>

@@ -1,0 +1,125 @@
+{
+ "id": "es-borme-02-1",
+ "expected": [
+  {
+   "value": "12 de septiembre de 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "PARAJE LA CERRA SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "330.000,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "357.110,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "TRESCIENTOS CINCUENTA Y SIETE MIL CIENTO DIEZ EUROS",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "357.110,00E",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "UN EURO",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "1,00E",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "H AL 42793",
+   "type": "ID"
+  },
+  {
+   "value": "5.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "RECHE FERNANDEZ EMILIO JOSE",
+   "type": "PERSON"
+  },
+  {
+   "value": "FERNANDEZ CARRION EMILIO JOSE",
+   "type": "PERSON"
+  },
+  {
+   "value": "VIRSA MULTISERVICIOS SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "DEL AGUILA CAZORLA MARIA DEL MAR",
+   "type": "PERSON"
+  },
+  {
+   "value": "H AL 36663",
+   "type": "ID"
+  },
+  {
+   "value": "FINANCIAL RUBI SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "268.000,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "32.000,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "TREINTA Y DOS MIL EUROS",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "32.000 E",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "1 E",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "H AL 59943",
+   "type": "ID"
+  },
+  {
+   "value": "EXPLOTACIONES HOTELERAS COMPLEJO CONTINENTAL SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "GARCIA GOMEZ MARIA DOLORES",
+   "type": "PERSON"
+  },
+  {
+   "value": "GARCIA GOMEZ ISABEL",
+   "type": "PERSON"
+  },
+  {
+   "value": "H AL 30036",
+   "type": "ID"
+  },
+  {
+   "value": "NUEVAS DIGITALES SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "DE ROJAS MARIN MARIA PILAR",
+   "type": "PERSON"
+  },
+  {
+   "value": "TEJADA FILGAIRA FRANCISCO JOSE",
+   "type": "PERSON"
+  },
+  {
+   "value": "H AL 40787",
+   "type": "ID"
+  }
+ ]
+}

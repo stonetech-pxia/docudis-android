@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="process_text_label">Anonymiser</string>
+    <string name="process_text_working">Anonymisation…</string>
+    <string name="process_text_copied">Texte anonymisé copié</string>
+    <string name="process_text_failed">Échec de l\'anonymisation</string>
+    <string name="tile_label">Anonymiser le presse-papiers</string>
+    <string name="clipboard_no_text">Le presse-papiers ne contient pas de texte.</string>
+</resources>

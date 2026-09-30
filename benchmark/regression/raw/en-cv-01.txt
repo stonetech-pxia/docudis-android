@@ -1,0 +1,65 @@
+NAVEEN BALASUBRAMANIAN
+2184 Cedarbrook Trail, Apt 3C
+Round Rock, TX 78664
+Mobile: (512) 386-4417
+Email: n.balasubramanian@bellrosemail.com
+
+FEDERAL RESUME - submitted for Announcement Number HHS-FDA-DE-26-11840298
+
+APPLICANT INFORMATION
+Citizenship: United States
+Date of Birth: 03/07/1989
+Social Security Number: 554-72-1038
+Veterans' Preference: 5-point (DD-214 attached)
+Highest Federal Grade Held: GS-12, Step 4, Department of Veterans Affairs, 2019-2022
+Security Clearance: Public Trust (Tier 2), reinvestigation completed 04/2025
+Willing to relocate: Yes
+
+PROFESSIONAL SUMMARY
+Data and quality analyst with eleven years of experience in regulated manufacturing and public health reporting. Built the batch-release reporting pipeline for a 340-employee contract manufacturer and led the CAPA data review that closed sixteen open findings in one inspection cycle.
+
+PROFESSIONAL EXPERIENCE
+
+Senior Quality Data Analyst
+Kestrel Ridge Biologics, Inc., 900 Loop Crossing Drive, Georgetown, TX 78626
+March 2022 - present
+Salary: $112,400 per year | Hours per week: 40
+Supervisor: Tanya Vuković, Director of Quality, (512) 209-7731 - may be contacted
+- Own the deviation and CAPA dataset for two fill-finish lines; reduced median investigation closure from 47 days to 22 days.
+- Rebuilt the batch-release dashboard in SQL and Power BI, replacing eleven hand-kept spreadsheets.
+- Wrote and validated 23 SOPs for data integrity under 21 CFR Part 11; served as the data-integrity point of contact during the FDA inspection of June 2024.
+
+Health Systems Analyst, GS-12
+Department of Veterans Affairs, Central Texas Veterans Health Care System, Temple, TX
+August 2019 - February 2022
+Salary: $89,100 per year | Hours per week: 40
+Supervisor: R. Delacroix-Pham, Chief of Health Informatics, (254) 778-3160 - may be contacted
+- Produced the quarterly access-to-care reporting package for 14 community clinics.
+- Led the migration of 2.1 million legacy scheduling records, with no reported data loss.
+
+Quality Technician II
+Mallory & Sons Plastics, 47 Rockwell Bend Road, Killeen, TX 76541
+June 2015 - July 2019
+Salary: $54,600 per year | Hours per week: 40
+- Ran incoming inspection, gage calibration, and first-article reporting for automotive trim parts.
+
+MILITARY SERVICE
+United States Army, 68K Medical Laboratory Specialist, June 2011 - May 2015. Honorable discharge, rank SGT/E-5.
+
+EDUCATION
+The University of Texas at Austin - B.S. Statistics, 2018. GPA 3.62/4.00. 122 semester hours.
+Austin Community College - A.A.S. Quality Technology, 2014.
+Cedar Park High School, Cedar Park, TX - diploma, 2007.
+
+CERTIFICATIONS AND TRAINING
+ASQ Certified Quality Engineer, certificate number CQE-218774, expires 11/2027
+Lean Six Sigma Green Belt, Kestrel Ridge internal program, 2023
+Texas driver's license, class C
+
+REFERENCES
+T. Whitfield, Principal Consultant, Harrowgate Compliance Partners, (737) 441-0982, t.whitfield@harrowgatecp.com
+Nkechi Adeyemi-Brandt, former colleague, Kestrel Ridge Biologics, (512) 774-6205
+Miguel Santoro, Quality Manager, Mallory & Sons Plastics, miguel.santoro@mallorysons.com
+
+I certify that the information in this resume is true and complete to the best of my knowledge.
+Naveen Balasubramanian, 06/22/2026

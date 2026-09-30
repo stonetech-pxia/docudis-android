@@ -1,0 +1,37 @@
+{
+ "id": "fr-bodacc-modification-02",
+ "expected": [
+  {
+   "value": "18/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Tours",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "530 873 504",
+   "type": "ID"
+  },
+  {
+   "value": "SCI STONE",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Roche, Jean-François Jules",
+   "type": "PERSON"
+  },
+  {
+   "value": "1500 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "1 impasse des Mesanges, 37500 Chinon",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "2026-08-31",
+   "type": "DATE"
+  }
+ ]
+}

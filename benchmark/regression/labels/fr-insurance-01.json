@@ -1,0 +1,123 @@
+{
+  "id": "fr-insurance-01",
+  "expected": [
+    {
+      "value": "Harmonie Mutuelle",
+      "type": "COMPANY"
+    },
+    {
+      "value": "TSA 70124",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "31093 Toulouse Cedex 9",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Élodie Marchand",
+      "type": "PERSON"
+    },
+    {
+      "value": "Ferreira",
+      "type": "PERSON"
+    },
+    {
+      "value": "7 impasse des Tisserands",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "lieu-dit Le Bourdieu",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "47240 Bon-Encontre",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Toulouse",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "8 septembre 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "78 114 209 3",
+      "type": "ID"
+    },
+    {
+      "value": "H4-2211879",
+      "type": "ID"
+    },
+    {
+      "value": "2026/AC/55031",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "2 57 03 59 184 544 71",
+      "type": "ID"
+    },
+    {
+      "value": "21/03/1957",
+      "type": "BIRTH_DATE"
+    },
+    {
+      "value": "GSO-55031/ML",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "26 août 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "12 août 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "13 août",
+      "type": "DATE"
+    },
+    {
+      "value": "centre hospitalier d'Agen",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Agen",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "12/08/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "24/08/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "32,33 EUR",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "FR76 5594 8630 9869 1568 3502 355",
+      "type": "IBAN"
+    },
+    {
+      "value": "12,00 EUR",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "24 août",
+      "type": "DATE"
+    },
+    {
+      "value": "09 69 39 29 13",
+      "type": "PHONE"
+    },
+    {
+      "value": "Sabrina Lecomte-Vasseur",
+      "type": "PERSON"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+ "id": "es-payslip-02",
+ "expected": [
+  {
+   "value": "EMBUTIDOS Y SALAZONES",
+   "type": "COMPANY"
+  },
+  {
+   "value": "ARLANZÓN, S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Pol. Ind. Villalonquéjar",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Villalonquéjar",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "C/ López Bravo, 58",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "09001 BURGOS",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "B09347715",
+   "type": "ID"
+  },
+  {
+   "value": "09/1048823/61",
+   "type": "ID"
+  },
+  {
+   "value": "CIOBANU, ANDREI MIHAI",
+   "type": "PERSON"
+  },
+  {
+   "value": "X4476906W",
+   "type": "ID"
+  },
+  {
+   "value": "09/36870343/14",
+   "type": "ID"
+  },
+  {
+   "value": "14/03/2021",
+   "type": "DATE"
+  },
+  {
+   "value": "01/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "31/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "1.434,51 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "ES67 2267 9593 1149 9751 2495",
+   "type": "IBAN"
+  },
+  {
+   "value": "Andrei Mihai",
+   "type": "PERSON"
+  },
+  {
+   "value": "Ciobanu",
+   "type": "PERSON"
+  },
+  {
+   "value": "20 de septiembre",
+   "type": "DATE"
+  },
+  {
+   "value": "Txomin Arrieta",
+   "type": "PERSON"
+  },
+  {
+   "value": "Burgos",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "31 de agosto de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Mª Begoña Ortega Villanueva",
+   "type": "PERSON"
+  },
+  {
+   "value": "947 29 81 06",
+   "type": "PHONE"
+  },
+  {
+   "value": "nominas@embutidosarlanzon.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "A. M. Ciobanu",
+   "type": "PERSON"
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+HYDRALIS TECHNIQUES CLIMATIQUES SAS
+14, rue des Ateliers du Plessis - ZI de la Motte-Sablon
+44803 Saint-Herblain Cedex
+
+CONDITIONS GENERALES DE SERVICE
+Contrat-cadre de maintenance des installations de traitement d'air
+Réf. CGS-CTA-2026 - Indice de révision D - Édition du 2 janvier 2026 - Page 3 sur 7
+
+Article 4 - Objet et périmètre
+Le présent contrat couvre la maintenance préventive et corrective des centrales de traitement d'air des gammes AEROLYS 200, AEROLYS 400 et VENTIROC HP installées sur les sites listés à l'annexe 1. Les caissons de filtration terminale relevant de la norme NF EN 1822 font l'objet d'une prestation distincte, décrite à l'annexe 2. Tout équipement ne figurant pas à l'annexe 1 est exclu du forfait et ne peut y être intégré que par avenant signé des deux parties.
+
+Article 5 - Visites périodiques
+Quatre visites sont réalisées par année contractuelle, à intervalle de 90 jours avec une tolérance de plus ou moins 10 jours. Chaque visite comprend le remplacement des médias filtrants ePM10 50 % et ePM1 55 % selon la norme NF EN ISO 16890, le contrôle des pressostats différentiels, la mesure des débits avec une tolérance de 7 % par rapport aux valeurs de l'étude aéraulique, le resserrage des raccordements électriques et l'analyse vibratoire des moteurs de puissance supérieure à 7,5 kW. Le rapport d'intervention, établi sur le formulaire FI-04, est transmis au service exploitation du client dans les cinq jours ouvrés.
+
+Article 6 - Délais d'intervention corrective
+Les délais courent à compter de l'enregistrement de la demande sur le portail de supervision. Arrêt total d'une installation : 4 heures ouvrées. Fonctionnement en mode dégradé : 24 heures ouvrées. Autre anomalie : 5 jours ouvrés. Les heures ouvrées s'entendent de 8 h à 18 h du lundi au vendredi, hors jours fériés. L'astreinte 24 h / 24 fait l'objet de l'option décrite à l'annexe 3, avec une majoration de 35 % en semaine et de 75 % les dimanches et jours fériés.
+
+Article 7 - Pièces de rechange
+Seules sont posées des pièces d'origine constructeur, conformes au marquage CE et à la norme NF EN 1886 pour les éléments d'enveloppe. Un stock de sécurité est constitué chez le prestataire : courroies SPZ 1180 et SPZ 1400, deux jeux complets de filtres par centrale, un moteur de rechange 5,5 kW. Les pièces hors stock font l'objet d'un devis préalable, avec un délai indicatif de 10 jours ouvrés. La réserve de propriété prévue à l'article 18 s'applique jusqu'au paiement intégral.
+
+Article 8 - Prix, révision et paiement
+Le forfait annuel est révisé chaque 1er janvier selon la formule de l'annexe 4, établie à partir des index BT47 et ING publiés par l'INSEE. La facturation est trimestrielle, à terme échu. Le paiement intervient à 30 jours date de facture. Conformément à l'article L. 441-10 du code de commerce, tout retard entraîne des pénalités au taux de la Banque centrale européenne majoré de 10 points, ainsi qu'une indemnité forfaitaire de 40 euros pour frais de recouvrement.
+
+Article 9 - Responsabilité et assurance
+La responsabilité du prestataire est plafonnée au montant annuel hors taxes du contrat. Les dommages immatériels non consécutifs, notamment les pertes d'exploitation, sont exclus. Le prestataire justifie d'une assurance de responsabilité civile professionnelle d'un montant de 3 000 000 euros par sinistre ; l'attestation en cours de validité figure à l'annexe 5.
+
+Article 10 - Durée et résiliation
+Le contrat est conclu pour une durée ferme de 3 ans, reconductible tacitement par périodes de 12 mois. La dénonciation est notifiée par lettre recommandée avec accusé de réception, au plus tard 3 mois avant l'échéance.
+
+HYDRALIS TECHNIQUES CLIMATIQUES SAS - SAS au capital de 250 000 euros - RCS Nantes 812 494 037 - SIRET 812 494 037 00028 - TVA intracommunautaire FR 43 812 494 037 - Code APE 4322B - Qualification Qualibat 5312
+Document géré par le Service qualité. Version D, remplace la version C du 14 mars 2024. Diffusion : clients sous contrat.

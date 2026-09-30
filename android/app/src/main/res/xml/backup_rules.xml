@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 11 and below. Anonymization records (original text + restore
+     keys), the custom dictionary, the never-hide list and the copied ML model
+     never leave the phone. -->
+<full-backup-content>
+    <exclude domain="file" path="records" />
+    <exclude domain="file" path="dictionary.json" />
+    <exclude domain="file" path="never_hide.json" />
+    <exclude domain="file" path="models" />
+</full-backup-content>

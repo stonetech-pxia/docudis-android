@@ -1,0 +1,69 @@
+name: Android CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  CORE_REVISION: 396228b723cce78d98dc2873de05e862b02a3efb
+
+jobs:
+  analyze-test-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android,armv7-linux-androideabi,x86_64-linux-android
+      - uses: android-actions/setup-android@v3
+      - run: cargo install cargo-ndk --locked
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
+      - name: Dart reference engine
+        working-directory: packages/docudis_engine
+        run: dart test
+      - name: PDF package
+        working-directory: packages/docudis_pdf
+        run: dart test
+      - name: Verify Core data snapshot
+        run: |
+          git clone --no-checkout https://github.com/stonetech-pxia/docudis-core.git .dart_tool/pinned-core
+          git -C .dart_tool/pinned-core fetch --depth 1 origin "$CORE_REVISION"
+          git -C .dart_tool/pinned-core checkout --detach FETCH_HEAD
+          DOCUDIS_CORE_SOURCE="$PWD/.dart_tool/pinned-core" ./tool/verify_core_snapshot.sh
+          (cd packages/docudis_engine && dart run tool/embed_rules.dart && dart run tool/embed_lists.dart)
+          git diff --exit-code -- packages/docudis_engine
+      - name: Build debug APK with native Core
+        run: flutter build apk --debug
+      - run: ./tool/verify_android_package.sh build/app/outputs/flutter-apk/app-debug.apk arm64-v8a armeabi-v7a x86_64
+      - uses: actions/upload-artifact@v4
+        with:
+          name: docudis-debug-apk
+          path: build/app/outputs/flutter-apk/app-debug.apk
+
+  emulator-ffi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-linux-android
+      - run: cargo install cargo-ndk --locked
+      - run: flutter pub get
+      - uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          arch: x86_64
+          script: DOCUDIS_ANDROID_ABIS=x86_64 flutter test integration_test/docudis_core_ffi_test.dart -d emulator-5554

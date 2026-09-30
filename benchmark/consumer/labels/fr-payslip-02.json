@@ -1,0 +1,113 @@
+{
+ "id": "fr-payslip-02",
+ "expected": [
+  {
+   "value": "01/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "31/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "28/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Menuiseries Le Bihan & Fils SARL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "ZA de la Hallerais",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "8 rue des Charmilles",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "35770 Vern-sur-Seiche",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "925 617 177 00033",
+   "type": "ID"
+  },
+  {
+   "value": "Bretagne",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "KERVELLA Gwenaël",
+   "type": "PERSON"
+  },
+  {
+   "value": "00147",
+   "type": "ID"
+  },
+  {
+   "value": "1 83 04 35 136 350 78",
+   "type": "ID"
+  },
+  {
+   "value": "03/09/2012",
+   "type": "DATE"
+  },
+  {
+   "value": "27 bis rue de la Poterie",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Appt 4",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "35200 Rennes",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "PRO BTP",
+   "type": "COMPANY"
+  },
+  {
+   "value": "1 849,25 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Gwenaël Kervella",
+   "type": "PERSON"
+  },
+  {
+   "value": "FR76 6581 7752 7407 8278 6656 012",
+   "type": "IBAN"
+  },
+  {
+   "value": "CMBRFR2BXXX",
+   "type": "ID"
+  },
+  {
+   "value": "03/08",
+   "type": "DATE"
+  },
+  {
+   "value": "14/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Soizic Le Bihan",
+   "type": "PERSON"
+  },
+  {
+   "value": "02 99 62 18 40",
+   "type": "PHONE"
+  },
+  {
+   "value": "paie@menuiseries-lebihan.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "www.service-public.fr",
+   "type": "URL"
+  }
+ ]
+}

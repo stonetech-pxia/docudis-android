@@ -1,0 +1,86 @@
+{
+ "id": "fr-support-02",
+ "expected": [
+  {
+   "value": "Annelies Claessens",
+   "type": "PERSON"
+  },
+  {
+   "value": "annelies.claessens@telenet-mail.be",
+   "type": "EMAIL"
+  },
+  {
+   "value": "17 septembre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "service.clients@luminus.be",
+   "type": "EMAIL"
+  },
+  {
+   "value": "7300418852",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "2 104 557 831",
+   "type": "ID"
+  },
+  {
+   "value": "9 septembre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "1 284,37 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "1er mars 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Rue Saint-Léonard 212 boîte 3, 4000 Liège",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "14 octobre 2025",
+   "type": "DATE"
+  },
+  {
+   "value": "Rachid El Amrani",
+   "type": "PERSON"
+  },
+  {
+   "value": "Boulanger",
+   "type": "PERSON"
+  },
+  {
+   "value": "1er mars",
+   "type": "DATE"
+  },
+  {
+   "value": "541456700034826159",
+   "type": "ID"
+  },
+  {
+   "value": "31 775 204",
+   "type": "ID"
+  },
+  {
+   "value": "25/09",
+   "type": "DATE"
+  },
+  {
+   "value": "0486 31 72 09",
+   "type": "PHONE"
+  },
+  {
+   "value": "Rue Saint-Léonard 212/3",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "4000 Liège",
+   "type": "ADDRESS"
+  }
+ ]
+}

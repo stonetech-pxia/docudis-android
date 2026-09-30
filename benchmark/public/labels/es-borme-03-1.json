@@ -1,0 +1,113 @@
+{
+ "id": "es-borme-03-1",
+ "expected": [
+  {
+   "value": "12 de septiembre de 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "TRANSERAGRO S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "DIEGO GONZALEZ GOMEZ",
+   "type": "PERSON"
+  },
+  {
+   "value": "CARMEN GRAGERO GIL",
+   "type": "PERSON"
+  },
+  {
+   "value": "DIEGO GONZALEZ GRAGERO",
+   "type": "PERSON"
+  },
+  {
+   "value": "H BA 28813",
+   "type": "ID"
+  },
+  {
+   "value": "5.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "EVENTOS Y LUMINOSOS S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "MARIA ANGELES CRESPO GOMEZ",
+   "type": "PERSON"
+  },
+  {
+   "value": "ANDRES GUSTAVO TOMAS GARCIA",
+   "type": "PERSON"
+  },
+  {
+   "value": "H BA 26242",
+   "type": "ID"
+  },
+  {
+   "value": "JAMON EXCLUSIVE S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "27.08.24",
+   "type": "DATE"
+  },
+  {
+   "value": "AVDA DE LA PAZ, 39 3º A 06200 (ALMENDRALEJO)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "21.000,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "ANTONIO ACEDO BURGUILLOS",
+   "type": "PERSON"
+  },
+  {
+   "value": "DANIEL ACEDO CRUZ",
+   "type": "PERSON"
+  },
+  {
+   "value": "H BA 34635",
+   "type": "ID"
+  },
+  {
+   "value": "DESARROLLOS NAVALES E INDUSTRIALES NAIR SL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "ANTONIO MARTIN LOMEÑA GUERRERO",
+   "type": "PERSON"
+  },
+  {
+   "value": "H BA 32234",
+   "type": "ID"
+  },
+  {
+   "value": "ALFASERONA S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "ORTEGA MENDOZA JOSE ANTONIO",
+   "type": "PERSON"
+  },
+  {
+   "value": "ISABEL MARIA ORTEGA PINEDA",
+   "type": "PERSON"
+  },
+  {
+   "value": "H BA 27726",
+   "type": "ID"
+  },
+  {
+   "value": "ECOVERDIAL DE BADAJOZ S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "H BA 30024",
+   "type": "ID"
+  }
+ ]
+}

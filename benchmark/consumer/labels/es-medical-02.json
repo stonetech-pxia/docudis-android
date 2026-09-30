@@ -1,0 +1,90 @@
+{
+ "id": "es-medical-02",
+ "expected": [
+  {
+   "value": "Mª Pilar Lasheras Gracia",
+   "type": "PERSON"
+  },
+  {
+   "value": "50/5012874",
+   "type": "ID"
+  },
+  {
+   "value": "Pº Sagasta, 47, 2º izda.",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "50007 Zaragoza",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "976 22 58 14",
+   "type": "PHONE"
+  },
+  {
+   "value": "QUISPE MAMANI, Wilson Fernando",
+   "type": "PERSON"
+  },
+  {
+   "value": "22/08/1987",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "15038593C",
+   "type": "ID"
+  },
+  {
+   "value": "14/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "LABORATORIO IBARZ",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Analisis Clinicos Ibarz y Monreal S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Avda. Goya, 23, local  50006 Zaragoza",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "976 35 90 42",
+   "type": "PHONE"
+  },
+  {
+   "value": "resultados@labibarz.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "26-0917734",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "QUISPE MAMANI, Wilson F.",
+   "type": "PERSON"
+  },
+  {
+   "value": "Lasheras",
+   "type": "PERSON"
+  },
+  {
+   "value": "16/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "R. Urieta",
+   "type": "PERSON"
+  },
+  {
+   "value": "Lin Chen Wu",
+   "type": "PERSON"
+  },
+  {
+   "value": "50/5017306",
+   "type": "ID"
+  }
+ ]
+}

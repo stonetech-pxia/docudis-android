@@ -1,0 +1,93 @@
+{
+ "id": "es-borme-01-3",
+ "expected": [
+  {
+   "value": "12 de septiembre de 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "QVASERR PATRIMONIAL SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "RODRIGUEZ MARTINEZ ALFONSO",
+   "type": "PERSON"
+  },
+  {
+   "value": "FORTALEZA GLOBAL ENTERPRISES SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "RODRIGUEZ MARTINEZ, ALFONSO",
+   "type": "PERSON"
+  },
+  {
+   "value": "H AB 16159",
+   "type": "ID"
+  },
+  {
+   "value": "5.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "ACEVI ENTIDAD ACREDITADA SOCIEDAD ANONIMA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "CHINCHILLA NUÑO DE LA ROSA VICENTE",
+   "type": "PERSON"
+  },
+  {
+   "value": "AMADOR CORTES JUAN",
+   "type": "PERSON"
+  },
+  {
+   "value": "H AB 13113",
+   "type": "ID"
+  },
+  {
+   "value": "DF OBRAS Y ZANJEOS SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "YGARZA LORENZO MANUEL",
+   "type": "PERSON"
+  },
+  {
+   "value": "POVEDA TELLO JAVIER",
+   "type": "PERSON"
+  },
+  {
+   "value": "200.000,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "400.000,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "H AB 30045",
+   "type": "ID"
+  },
+  {
+   "value": "DIFIBRA OBRAS SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "LOPEZ PINAR DANIEL",
+   "type": "PERSON"
+  },
+  {
+   "value": "POVEDA TELLO, JAVIER",
+   "type": "PERSON"
+  },
+  {
+   "value": "INVERSIONES MANCHACAMPO 2014 SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "H AB 27298",
+   "type": "ID"
+  }
+ ]
+}

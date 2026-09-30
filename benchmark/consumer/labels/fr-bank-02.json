@@ -1,0 +1,83 @@
+{
+ "id": "fr-bank-02",
+ "expected": [
+  {
+   "value": "CIC Est",
+   "type": "COMPANY"
+  },
+  {
+   "value": "CIC",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Schiltigheim",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "ne-pas-repondre@cic.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "aminata.sangare67@gmail.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "17 sept. 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "17/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Sangaré",
+   "type": "PERSON"
+  },
+  {
+   "value": "AMINATA SANGARE",
+   "type": "PERSON"
+  },
+  {
+   "value": "FR76 8457 **** **** **** **31 349",
+   "type": "IBAN"
+  },
+  {
+   "value": "COUVERTURE ZINGUERIE SCHAEFFER SARL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "FR76 9431 2897 9079 9855 4616 593",
+   "type": "IBAN"
+  },
+  {
+   "value": "D-2026-0187",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "3 870,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "VIR-SEPA-260917-00582216",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Clément Oberlé",
+   "type": "PERSON"
+  },
+  {
+   "value": "03 88 41 27 65",
+   "type": "PHONE"
+  },
+  {
+   "value": "clement.oberle@cic.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "52 route de Bischwiller, 67300 Schiltigheim",
+   "type": "ADDRESS"
+  }
+ ]
+}

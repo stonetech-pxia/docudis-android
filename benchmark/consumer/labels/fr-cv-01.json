@@ -1,0 +1,233 @@
+{
+ "id": "fr-cv-01",
+ "expected": [
+  {
+   "value": "Maitena ETCHEVERRY",
+   "type": "PERSON"
+  },
+  {
+   "value": "48 rue Camille Godard, appt 7",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "33000 Bordeaux",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Bordeaux",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "06.34.71.58.02",
+   "type": "PHONE"
+  },
+  {
+   "value": "maitena.etcheverry@outlook.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "12 avril 1987",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "Bayonne",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "https://www.linkedin.com/in/maitena-etcheverry-logistique",
+   "type": "URL"
+  },
+  {
+   "value": "Nouvelle-Aquitaine",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Entrepôts Garonne Logistique SAS",
+   "type": "COMPANY"
+  },
+  {
+   "value": "EGL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Bassens",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Axiolis Conseil",
+   "type": "COMPANY"
+  },
+  {
+   "value": "4,2 M€",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Nadia Belkacem",
+   "type": "PERSON"
+  },
+  {
+   "value": "Transports Larralde & Fils",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Mouguerre",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Pays basque",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Landes",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Navarre",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Irun",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Pampelune",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Beñat",
+   "type": "PERSON"
+  },
+  {
+   "value": "Leroy Merlin",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Mérignac",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "J.-B. Santoni",
+   "type": "PERSON"
+  },
+  {
+   "value": "Conserverie Arrain SARL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Saint-Jean-de-Luz",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Allemagne",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Japon",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "ETCHEVERRY Maitena",
+   "type": "PERSON"
+  },
+  {
+   "value": "708 533 799 00027",
+   "type": "ID"
+  },
+  {
+   "value": "AFTRAL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "GRETA-CFA Aquitaine",
+   "type": "COMPANY"
+  },
+  {
+   "value": "KEDGE Business School",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Talence",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "IUT de Bordeaux",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Bordeaux-Bastide",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "IUT de Bayonne et du Pays basque",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Lycée René Cassin",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Kapito Harri",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Ustaritz",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Les Voisins du Jardin Public",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Patxi LARRALDE",
+   "type": "PERSON"
+  },
+  {
+   "value": "ZA Ametzondo, 64990 Mouguerre",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "05 59 31 84 27",
+   "type": "PHONE"
+  },
+  {
+   "value": "p.larralde@transports-larralde.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Nadia BELKACEM",
+   "type": "PERSON"
+  },
+  {
+   "value": "+33 5 56 77 40 12",
+   "type": "PHONE"
+  },
+  {
+   "value": "+33 6 12 09 53 88",
+   "type": "PHONE"
+  },
+  {
+   "value": "nadia.belkacem@egl-logistique.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Santoni, Jean-Baptiste",
+   "type": "PERSON"
+  },
+  {
+   "value": "Vinolog SA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Blanquefort",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "06 80 45 17 36",
+   "type": "PHONE"
+  },
+  {
+   "value": "jb.santoni@vinolog.fr",
+   "type": "EMAIL"
+  }
+ ]
+}

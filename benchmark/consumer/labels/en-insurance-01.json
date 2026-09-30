@@ -1,0 +1,291 @@
+{
+ "id": "en-insurance-01",
+ "expected": [
+  {
+   "value": "McGETTIGAN KEANE INSURANCES",
+   "type": "COMPANY"
+  },
+  {
+   "value": "14 Dominick Street Lower, Galway, H91 XK7P",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "091 550 172",
+   "type": "PHONE"
+  },
+  {
+   "value": "091 550 190",
+   "type": "PHONE"
+  },
+  {
+   "value": "info@mcgettigankeane.ie",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Aviva Insurance Ireland DAC",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Aviva",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Ireland",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "MPC/2291847/03",
+   "type": "ID"
+  },
+  {
+   "value": "AV-GY-00774126",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "NIDH001/MTR",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "01/10/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "30/09/2027",
+   "type": "DATE"
+  },
+  {
+   "value": "11/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "NÍ DHOMHNAILL Caoimhe",
+   "type": "PERSON"
+  },
+  {
+   "value": "7 Cois Cuain",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Bearna",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Co. Galway",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "H91 T2R8",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "23/05/1987",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "Coláiste na Coiribe",
+   "type": "COMPANY"
+  },
+  {
+   "value": "087 612 4490",
+   "type": "PHONE"
+  },
+  {
+   "value": "caoimhe.nidhomhnaill@gmail.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Caoimhe Ní Dhomhnaill",
+   "type": "PERSON"
+  },
+  {
+   "value": "640218557",
+   "type": "ID"
+  },
+  {
+   "value": "14/08/2006",
+   "type": "DATE"
+  },
+  {
+   "value": "Oluwaseun Adebayo",
+   "type": "PERSON"
+  },
+  {
+   "value": "Adebayo",
+   "type": "PERSON"
+  },
+  {
+   "value": "02/11/1985",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "718530942",
+   "type": "ID"
+  },
+  {
+   "value": "03/03/2012",
+   "type": "DATE"
+  },
+  {
+   "value": "Knocknacarra Pharmacy",
+   "type": "COMPANY"
+  },
+  {
+   "value": "19/01/2025",
+   "type": "DATE"
+  },
+  {
+   "value": "211-G-4827",
+   "type": "ID"
+  },
+  {
+   "value": "€21,500",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "408213",
+   "type": "ID"
+  },
+  {
+   "value": "€300",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "€50",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "1800 448 120",
+   "type": "PHONE"
+  },
+  {
+   "value": "€250",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "€650.00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "€32.50",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "€13.00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "€40.00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "€735.50",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "€702.10",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Premium Credit",
+   "type": "COMPANY"
+  },
+  {
+   "value": "€135.50",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "3308",
+   "type": "CARD"
+  },
+  {
+   "value": "10/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "€61.80",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "01/11/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Bank of Ireland",
+   "type": "COMPANY"
+  },
+  {
+   "value": "6120",
+   "type": "ID"
+  },
+  {
+   "value": "C Ní Dhomhnaill",
+   "type": "PERSON"
+  },
+  {
+   "value": "O Adebayo",
+   "type": "PERSON"
+  },
+  {
+   "value": "€753.50",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "€18.00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Pádraig",
+   "type": "PERSON"
+  },
+  {
+   "value": "1800 147 147",
+   "type": "PHONE"
+  },
+  {
+   "value": "+353 1 898 7950",
+   "type": "PHONE"
+  },
+  {
+   "value": "Pádraig Keane",
+   "type": "PERSON"
+  },
+  {
+   "value": "091 550 176",
+   "type": "PHONE"
+  },
+  {
+   "value": "padraig.keane@mcgettigankeane.ie",
+   "type": "EMAIL"
+  },
+  {
+   "value": "McGettigan Keane Insurances Ltd",
+   "type": "COMPANY"
+  },
+  {
+   "value": "McGettigan Keane Insurances",
+   "type": "COMPANY"
+  },
+  {
+   "value": "C48213",
+   "type": "ID"
+  },
+  {
+   "value": "318842",
+   "type": "ID"
+  },
+  {
+   "value": "S. McGettigan",
+   "type": "PERSON"
+  },
+  {
+   "value": "P. Keane",
+   "type": "PERSON"
+  },
+  {
+   "value": "M. Ní Fhlatharta",
+   "type": "PERSON"
+  }
+ ]
+}

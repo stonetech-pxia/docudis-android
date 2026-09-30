@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+  <style>
+    body { margin: 0; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; color: #0F1B2D; -webkit-font-smoothing: antialiased; }
+    a { color: #1E5FB8; text-decoration: none; } a:hover { color: #17509E; }
+    .h { font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; }
+    .mono { font-family: 'IBM Plex Mono', 'Consolas', ui-monospace, monospace; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #F4F6F9; display: flex; flex-direction: column; overflow: hidden; position: relative;">
+  <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding: 56px 12px 8px 12px; flex-shrink: 0;">
+    <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #0F1B2D;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+    </div>
+    <span class="h" style="font-size: 17px; font-weight: 700; color: #0F1B2D;">Review detections</span>
+    <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #0F1B2D;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h8M18 7h2M4 17h4M12 17h8"></path><circle cx="15" cy="7" r="2.5"></circle><circle cx="9" cy="17" r="2.5"></circle></svg>
+    </div>
+  </div>
+
+  <div style="flex: 1 1 0; overflow: auto; display: flex; flex-direction: column; gap: 16px; padding: 8px 20px 20px 20px;">
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <span class="h" style="font-size: 22px; font-weight: 800; letter-spacing: -0.02em; color: #0F1B2D;">12 sensitive items found</span>
+      <span style="font-size: 14px; line-height: 1.5; color: #4A5568;">Tap a highlight to keep it, change its type, or add something we missed.</span>
+    </div>
+
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px;">
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 6px; height: 32px; padding: 0 12px 0 10px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E3E8EF; font-size: 13px; font-weight: 600; color: #0F1B2D;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #C24E36;"></span>Person<span style="color: #64748B; font-weight: 500;">2</span></div>
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 6px; height: 32px; padding: 0 12px 0 10px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E3E8EF; font-size: 13px; font-weight: 600; color: #0F1B2D;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3B62B8;"></span>Email<span style="color: #64748B; font-weight: 500;">1</span></div>
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 6px; height: 32px; padding: 0 12px 0 10px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E3E8EF; font-size: 13px; font-weight: 600; color: #0F1B2D;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #2A8A5E;"></span>Phone<span style="color: #64748B; font-weight: 500;">1</span></div>
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 6px; height: 32px; padding: 0 12px 0 10px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E3E8EF; font-size: 13px; font-weight: 600; color: #0F1B2D;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #8A4BB5;"></span>IBAN<span style="color: #64748B; font-weight: 500;">1</span></div>
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 6px; height: 32px; padding: 0 12px 0 10px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E3E8EF; font-size: 13px; font-weight: 600; color: #0F1B2D;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #A0741C;"></span>Date<span style="color: #64748B; font-weight: 500;">1</span></div>
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 6px; height: 32px; padding: 0 12px 0 10px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E3E8EF; font-size: 13px; font-weight: 600; color: #0F1B2D;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #2A7A93;"></span>Address<span style="color: #64748B; font-weight: 500;">1</span></div>
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 6px; height: 32px; padding: 0 12px 0 10px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E3E8EF; font-size: 13px; font-weight: 600; color: #0F1B2D;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #5B6B85;"></span>Company<span style="color: #64748B; font-weight: 500;">1</span></div>
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 6px; height: 32px; padding: 0 12px 0 10px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E3E8EF; font-size: 13px; font-weight: 600; color: #0F1B2D;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #B2542E;"></span>Amount<span style="color: #64748B; font-weight: 500;">1</span></div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; padding: 18px; background: #FFFFFF; border: 1px solid #E3E8EF; border-radius: 16px;">
+      <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #64748B;">Contract_Meyer.docx</span>
+        <span style="font-size: 12px; color: #94A3B8;">Page 1 of 3</span>
+      </div>
+      <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #0F1B2D; text-wrap: pretty;">Hi <span style="padding: 1px 5px; border-radius: 5px; background: #FBE6E1; color: #9A3B2A; font-weight: 500; box-shadow: inset 0 -2px 0 #C24E36;">Sarah Meyer</span>, following our call on <span style="padding: 1px 5px; border-radius: 5px; background: #F6EED6; color: #7A5A10; font-weight: 500; box-shadow: inset 0 -2px 0 #A0741C;">12 March 2026</span>, please find the invoice for <span style="padding: 1px 5px; border-radius: 5px; background: #FBE9DF; color: #8A3E1E; font-weight: 500; box-shadow: inset 0 -2px 0 #B2542E;">€4,200</span>. You can reach me at <span style="padding: 1px 5px; border-radius: 5px; background: #E3EAFA; color: #2C4F9E; font-weight: 500; box-shadow: inset 0 -2px 0 #3B62B8;">s.meyer@acme.com</span> or <span style="padding: 1px 5px; border-radius: 5px; background: #DDF2E7; color: #1F6A46; font-weight: 500; box-shadow: inset 0 -2px 0 #2A8A5E;">+33 6 12 34 56 78</span>. Payment to <span style="padding: 1px 5px; border-radius: 5px; background: #F0E4F8; color: #6A3395; font-weight: 500; box-shadow: inset 0 -2px 0 #8A4BB5;">FR76 3000 6000 0112 3456 7890 189</span>.</p>
+      <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #0F1B2D; text-wrap: pretty;">Best regards,<br><span style="padding: 1px 5px; border-radius: 5px; background: #FBE6E1; color: #9A3B2A; font-weight: 500; box-shadow: inset 0 -2px 0 #C24E36;">Jonas Weber</span> · <span style="padding: 1px 5px; border-radius: 5px; background: #E9EDF3; color: #3F4C63; font-weight: 500; box-shadow: inset 0 -2px 0 #5B6B85;">Acme GmbH</span><br><span style="padding: 1px 5px; border-radius: 5px; background: #DDEEF4; color: #1C5F76; font-weight: 500; box-shadow: inset 0 -2px 0 #2A7A93;">14 Rue de Rivoli, 75001 Paris</span></p>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 10px; padding: 12px 20px 34px 20px; background: #FFFFFF; border-top: 1px solid #E3E8EF; flex-shrink: 0;">
+    <div class="h" style="display: flex; align-items: center; justify-content: center; height: 52px; border-radius: 14px; background: #1E5FB8; color: #FFFFFF; font-size: 16px; font-weight: 700;">Anonymize 12 items</div>
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 6px; font-size: 12px; color: #64748B;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 018 0v3"></path></svg>
+      <span>Replaced with labels like <span class="mono" style="color: #1E5FB8;">[PERSON_1]</span> so AI answers still make sense</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

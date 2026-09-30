@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Clay.bg (lib/theme/clay_theme.dart): shown until Flutter draws its first frame. -->
+    <color name="launch_background">#F5EFE8</color>
+</resources>

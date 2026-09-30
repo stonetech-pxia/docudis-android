@@ -1,0 +1,37 @@
+{
+ "id": "fr-bodacc-creation-01",
+ "expected": [
+  {
+   "value": "18/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Arras",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "109 680 694",
+   "type": "ID"
+  },
+  {
+   "value": "Rousseau Benjamin Andre Alfons",
+   "type": "PERSON"
+  },
+  {
+   "value": "BENJAMIN ROUSSEAU",
+   "type": "PERSON"
+  },
+  {
+   "value": "Appartement 3, 409 rue Florent Evrard, 62430 Sallaumines",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "09/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "22/09/2026",
+   "type": "DATE"
+  }
+ ]
+}

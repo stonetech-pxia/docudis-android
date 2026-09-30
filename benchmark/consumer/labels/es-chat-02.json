@@ -1,0 +1,41 @@
+{
+ "id": "es-chat-02",
+ "expected": [
+  {
+   "value": "Iulian Moldovan",
+   "type": "PERSON"
+  },
+  {
+   "value": "grupo alcor",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Marta Ferrándiz",
+   "type": "PERSON"
+  },
+  {
+   "value": "nuria",
+   "type": "PERSON"
+  },
+  {
+   "value": "transportes beltran",
+   "type": "COMPANY"
+  },
+  {
+   "value": "674 30 92 15",
+   "type": "PHONE"
+  },
+  {
+   "value": "nuria.casals@transbeltran.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Wei Chen",
+   "type": "PERSON"
+  },
+  {
+   "value": "andres pedraza",
+   "type": "PERSON"
+  }
+ ]
+}

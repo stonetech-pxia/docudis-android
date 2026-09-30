@@ -1,0 +1,78 @@
+{
+ "id": "fr-bodacc-vente-03",
+ "expected": [
+  {
+   "value": "18/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Marseille",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "107 137 887",
+   "type": "ID"
+  },
+  {
+   "value": "Alliance Sud Distribution",
+   "type": "COMPANY"
+  },
+  {
+   "value": "10000.00 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "13 Rue des Catalans, 13007 Marseille 7e Arrondissement",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "74400.00 euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "94 Avenue André Zenatti, 13008 Marseille 8e Arrondissement",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "809 297 807",
+   "type": "ID"
+  },
+  {
+   "value": "FF BONNEVEINE MENAGER",
+   "type": "COMPANY"
+  },
+  {
+   "value": "24/07/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "MARSEILLE",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "03/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "1314P61 2026 A 04288",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "94 Avenue André Zenatti 13008 Marseille 8e Arrondissement",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "14/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Adrien JOLY",
+   "type": "PERSON"
+  },
+  {
+   "value": "30 Cours Lieutaud 13001 Marseille 1er Arrondissement",
+   "type": "ADDRESS"
+  }
+ ]
+}

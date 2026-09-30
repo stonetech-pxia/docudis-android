@@ -1,0 +1,138 @@
+{
+ "id": "es-insurance-02",
+ "expected": [
+  {
+   "value": "Aseguradora Turia, S.A. de Seguros y Reaseguros",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Avda. de Aragón 30, planta 9 - 46021 València",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "València",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "96 310 47 22",
+   "type": "PHONE"
+  },
+  {
+   "value": "siniestros.hogar@aseguradoraturia.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Youssef El Amrani Bakkali",
+   "type": "PERSON"
+  },
+  {
+   "value": "Empar Ferrandis Monzó",
+   "type": "PERSON"
+  },
+  {
+   "value": "Ferrandis",
+   "type": "PERSON"
+  },
+  {
+   "value": "C/ Cuba 52, 3º pta. 6",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "46006 València",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "3 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "2026/HG/0381746",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "HG-46-00729518",
+   "type": "ID"
+  },
+  {
+   "value": "Y9432604L",
+   "type": "ID"
+  },
+  {
+   "value": "37815254B",
+   "type": "ID"
+  },
+  {
+   "value": "C/ Cuba 52, 3º pta. 6, 46006 València",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "28/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "29 de agosto",
+   "type": "DATE"
+  },
+  {
+   "value": "Chen Wenbo",
+   "type": "PERSON"
+  },
+  {
+   "value": "Sanchis, Beltrán y Asociados, S.L.P.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Vicent Beltrán Oliver",
+   "type": "PERSON"
+  },
+  {
+   "value": "10 de septiembre",
+   "type": "DATE"
+  },
+  {
+   "value": "655 20 83 17",
+   "type": "PHONE"
+  },
+  {
+   "value": "v.beltran@sanchisbeltran-peritos.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Fontanería Ruzafa 24h",
+   "type": "COMPANY"
+  },
+  {
+   "value": "186,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "150,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "ES90 8200 **** **** **** 4820",
+   "type": "IBAN"
+  },
+  {
+   "value": "900 264 118",
+   "type": "PHONE"
+  },
+  {
+   "value": "Rosa Mª Chuliá Peris",
+   "type": "PERSON"
+  },
+  {
+   "value": "Valencia",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "V-58817",
+   "type": "ID"
+  },
+  {
+   "value": "A46207739",
+   "type": "ID"
+  }
+ ]
+}

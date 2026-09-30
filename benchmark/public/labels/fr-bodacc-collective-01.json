@@ -1,0 +1,49 @@
+{
+ "id": "fr-bodacc-collective-01",
+ "expected": [
+  {
+   "value": "18/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Reims",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "838 805 653",
+   "type": "ID"
+  },
+  {
+   "value": "SAS BLENET-CHUL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "MECADISTRIB",
+   "type": "COMPANY"
+  },
+  {
+   "value": "7 rue de la République, 51700 Festigny",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "08/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "17 juillet 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Selarl Amandine Riquelme",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Amandine Riquelme",
+   "type": "PERSON"
+  },
+  {
+   "value": "13 bis Boulevard Foch Cs 40050 51722 Reims CEDEX",
+   "type": "ADDRESS"
+  }
+ ]
+}

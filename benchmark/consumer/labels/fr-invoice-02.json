@@ -1,0 +1,269 @@
+{
+ "id": "fr-invoice-02",
+ "expected": [
+  {
+   "value": "Lumio Énergie",
+   "type": "COMPANY"
+  },
+  {
+   "value": "26 09 104 775 382",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "8 septembre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "GONCALVES PEREIRA ANTONIO",
+   "type": "PERSON"
+  },
+  {
+   "value": "GONCALVES PEREIRA",
+   "type": "PERSON"
+  },
+  {
+   "value": "CARVALHO MARIA DE LURDES",
+   "type": "PERSON"
+  },
+  {
+   "value": "RESIDENCE LE BELVEDERE BAT A APPT 207",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "5 RUE DES AMIDONNIERS",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "31000 TOULOUSE",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "6 024 871 553",
+   "type": "ID"
+  },
+  {
+   "value": "5102338794",
+   "type": "ID"
+  },
+  {
+   "value": "06 58 21 47 93",
+   "type": "PHONE"
+  },
+  {
+   "value": "a.goncalvespereira@laposte.net",
+   "type": "EMAIL"
+  },
+  {
+   "value": "12 CHEMIN DE LA GARRIGUE",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "LIEU-DIT LES FEDIES",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "81600 GAILLAC",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "23458721903641",
+   "type": "ID"
+  },
+  {
+   "value": "021 764 398 855",
+   "type": "ID"
+  },
+  {
+   "value": "Gonçalves Pereira",
+   "type": "PERSON"
+  },
+  {
+   "value": "06/07/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "05/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Enedis",
+   "type": "COMPANY"
+  },
+  {
+   "value": "283,33 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "23/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "FR76 6193 **** **** **** **52 384",
+   "type": "IBAN"
+  },
+  {
+   "value": "LUMIO-6024871553-001",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "6024871553",
+   "type": "ID"
+  },
+  {
+   "value": "09/11/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "12 chemin de la Garrigue 81600 Gaillac",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "06/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "05/11/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "16,70 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "33,40 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "0,1635 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "107,58 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "0,1296 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "57,28 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "164,86 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "0,02998 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "32,98 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "4,87 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "236,11 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "47,22 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "09 69 36 27 45",
+   "type": "PHONE"
+  },
+  {
+   "value": "www.lumio-energie.fr/mon-espace",
+   "type": "URL"
+  },
+  {
+   "value": "TSA 30418 - 34967 Montpellier Cedex 2",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Montpellier",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "service.clients@lumio-energie.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "17/06/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Yasmina Belkacem",
+   "type": "PERSON"
+  },
+  {
+   "value": "RC-2026-448120",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "09 72 61 40 81",
+   "type": "PHONE"
+  },
+  {
+   "value": "TSA 30419 - 34967 Montpellier Cedex 2",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "www.energie-mediateur.fr",
+   "type": "URL"
+  },
+  {
+   "value": "Libre réponse n° 59252, 75443 Paris Cedex 09",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "5 RUE DES AMIDONNIERS - 31000 TOULOUSE",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "6024871553-775382",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Lumio Énergie SA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "FR76 3433 2476 3542 6890 2987 770",
+   "type": "IBAN"
+  },
+  {
+   "value": "TSA 70233 - 34967 Montpellier Cedex 2",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "12 480 000 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "245 avenue de la Pompignane, 34000 Montpellier",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "619 326 754",
+   "type": "ID"
+  },
+  {
+   "value": "FR 79 619326754",
+   "type": "ID"
+  },
+  {
+   "value": "7,50 €",
+   "type": "AMOUNT"
+  }
+ ]
+}

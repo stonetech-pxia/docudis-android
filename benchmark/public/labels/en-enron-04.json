@@ -1,0 +1,129 @@
+{
+ "id": "en-enron-04",
+ "expected": [
+  {
+   "value": "lisa.gang@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "kathryn.sheppard@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "2002-06-06",
+   "type": "DATE"
+  },
+  {
+   "value": "Kath",
+   "type": "PERSON"
+  },
+  {
+   "value": "Enron",
+   "type": "COMPANY"
+  },
+  {
+   "value": "lisa",
+   "type": "PERSON"
+  },
+  {
+   "value": "Sheppard, Kathryn",
+   "type": "PERSON"
+  },
+  {
+   "value": "June 06, 2002",
+   "type": "DATE"
+  },
+  {
+   "value": "Blackburn, Jody",
+   "type": "PERSON"
+  },
+  {
+   "value": "Cavanaugh, Darren",
+   "type": "PERSON"
+  },
+  {
+   "value": "Elafandi, Mo",
+   "type": "PERSON"
+  },
+  {
+   "value": "Emmert, Caroline",
+   "type": "PERSON"
+  },
+  {
+   "value": "Eriksson, Fredrik",
+   "type": "PERSON"
+  },
+  {
+   "value": "Erwin, Kenton",
+   "type": "PERSON"
+  },
+  {
+   "value": "Gang, Lisa",
+   "type": "PERSON"
+  },
+  {
+   "value": "Gilbert, Jim",
+   "type": "PERSON"
+  },
+  {
+   "value": "Hammond, Don",
+   "type": "PERSON"
+  },
+  {
+   "value": "Kane, Paul",
+   "type": "PERSON"
+  },
+  {
+   "value": "Mays, Wayne",
+   "type": "PERSON"
+  },
+  {
+   "value": "O'Neil, Murray P",
+   "type": "PERSON"
+  },
+  {
+   "value": "Sarnowski, Julie",
+   "type": "PERSON"
+  },
+  {
+   "value": "Slaughter, Jeff G",
+   "type": "PERSON"
+  },
+  {
+   "value": "Thome, Jennifer",
+   "type": "PERSON"
+  },
+  {
+   "value": "Thompson, Virginia",
+   "type": "PERSON"
+  },
+  {
+   "value": "Tully, Mike",
+   "type": "PERSON"
+  },
+  {
+   "value": "Williams, Bill",
+   "type": "PERSON"
+  },
+  {
+   "value": "Portland",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "UBS",
+   "type": "COMPANY"
+  },
+  {
+   "value": "PGE",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Khymberly Booth",
+   "type": "PERSON"
+  },
+  {
+   "value": "Kathy Sheppard",
+   "type": "PERSON"
+  }
+ ]
+}

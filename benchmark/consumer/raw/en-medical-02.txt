@@ -1,0 +1,46 @@
+CASTELLANO FAMILY PHARMACY
+1842 W Fullerton Ave
+Chicago, IL 60614
+Ph (773) 555-0136
+Rx# 7740291-03      Date filled 09/11/2026
+RAMIREZ, LUZ M
+3317 N Kedzie Ave Apt 2R
+Chicago IL 60618
+LEVOTHYROXINE 75 MCG TABLET
+TAKE 1 TABLET BY MOUTH EVERY
+MORNING ON AN EMPTY ST0MACH
+Qty 90    Refills 2 before 03/10/2027
+Prescriber: A. Haddad MD
+NPI 1548293764
+RPh: TJO    NDC 00378-1805-10
+Mfr: Mylan    Discard after 09/11/2027
+CAUTION: Federal law prohibits transfer
+of this drug to any person other than the
+patient for whom it was prescribed
+
+Lakeview Diagnostic Laboratory, LLC
+2650 N Lincoln Ave Ste 210, Chicago, IL 60614
+Tel 773-555-0189  Fax 773-555-0190
+CLIA 14D2087315
+FINAL REPORT                     Page 1 of 1
+Patient: RAMIREZ, LUZ MARIA
+DOB: 08/22/1971   Sex: F   Age: 55
+MRN: 00482917     Acct: LK-2291840
+Phone: (312) 555-0174
+Ordering: HADDAD, AMIRA MD
+Logan Square Internal Medicine
+Collected: 09/08/2026 07:42   Fasting: Y
+Received: 09/08/2026 11:15
+Reported: 09/09/2026 06:03
+TEST          RESULT  FLAG  REF RANGE
+TSH           6.81    H     0.40-4.50 mIU/L
+Free T4       0.9           0.8-1.8 ng/dL
+Glucose       104     H     70-99 mg/dL
+Hemoglobin A1c 5.8    H     <5.7 %
+Creatinine    0.78          0.50-1.05 mg/dL
+LDL Chol      131     H     <100 mg/dL
+Vitamin D 25-OH 22    L     30-100 ng/mL
+Comment: TSH elevated, suggest dose
+review. Results faxed to Dr Haddad's
+office 09/09/2026.
+Lab Director: Gregory P. Osei, MD, PhD

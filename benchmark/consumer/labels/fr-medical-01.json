@@ -1,0 +1,250 @@
+{
+ "id": "fr-medical-01",
+ "expected": [
+  {
+   "value": "GROUPE HOSPITALIER DU DOUAISIS",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Hôpital Saint-Vaast",
+   "type": "COMPANY"
+  },
+  {
+   "value": "214 route de Cambrai – 59500 DOUAI",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "03 27 55 41 86",
+   "type": "PHONE"
+  },
+  {
+   "value": "03 27 55 41 90",
+   "type": "PHONE"
+  },
+  {
+   "value": "cardiologie.secretariat@gh-douaisis.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Olivier DELATTRE",
+   "type": "PERSON"
+  },
+  {
+   "value": "Anne-Sophie VANDENBUSSCHE",
+   "type": "PERSON"
+  },
+  {
+   "value": "Rachid OUKACI",
+   "type": "PERSON"
+  },
+  {
+   "value": "Bénédicte LEMOINE-FACHE",
+   "type": "PERSON"
+  },
+  {
+   "value": "Valérie Dhainaut",
+   "type": "PERSON"
+  },
+  {
+   "value": "Douai",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "11 septembre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Karim BENSALEM",
+   "type": "PERSON"
+  },
+  {
+   "value": "Maison de santé des Épis",
+   "type": "COMPANY"
+  },
+  {
+   "value": "38 rue du Faubourg d'Esquerchin",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "59553 CUINCY",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "03/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "10/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "WOJCIK",
+   "type": "PERSON"
+  },
+  {
+   "value": "LECLERCQ",
+   "type": "PERSON"
+  },
+  {
+   "value": "Thérèse",
+   "type": "PERSON"
+  },
+  {
+   "value": "17/09/1952",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "2 52 09 59 104 244 08",
+   "type": "ID"
+  },
+  {
+   "value": "0004718265",
+   "type": "ID"
+  },
+  {
+   "value": "260903127",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Résidence Les Glycines, bât. C, appt 14",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "12 rue Jean Jaurès",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "59287 Guesnain",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "03 27 98 12 47",
+   "type": "PHONE"
+  },
+  {
+   "value": "06 71 22 08 93",
+   "type": "PHONE"
+  },
+  {
+   "value": "Céline HANNACHI",
+   "type": "PERSON"
+  },
+  {
+   "value": "06 58 40 17 62",
+   "type": "PHONE"
+  },
+  {
+   "value": "Thérèse LECLERCQ",
+   "type": "PERSON"
+  },
+  {
+   "value": "10 septembre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Mamadou DIARRA",
+   "type": "PERSON"
+  },
+  {
+   "value": "Clinique des Dentellières",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Valenciennes",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Ph. Caudron",
+   "type": "PERSON"
+  },
+  {
+   "value": "Polyclinique de la Scarpe",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Céline",
+   "type": "PERSON"
+  },
+  {
+   "value": "Sin-le-Noble",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "OUKACI",
+   "type": "PERSON"
+  },
+  {
+   "value": "04/09",
+   "type": "DATE"
+  },
+  {
+   "value": "Lucie Marescaux",
+   "type": "PERSON"
+  },
+  {
+   "value": "Sabrina Caron",
+   "type": "PERSON"
+  },
+  {
+   "value": "Guesnain",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "06 23 75 40 19",
+   "type": "PHONE"
+  },
+  {
+   "value": "VANDENBUSSCHE",
+   "type": "PERSON"
+  },
+  {
+   "value": "13 octobre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "03 27 55 41 88",
+   "type": "PHONE"
+  },
+  {
+   "value": "10003847265",
+   "type": "ID"
+  },
+  {
+   "value": "as.vandenbussche@gh-douaisis.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Thuy-Linh PHAM",
+   "type": "PERSON"
+  },
+  {
+   "value": "11/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Cuincy",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "6 avenue de Verdun, 59300 Valenciennes",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Pharmacie Lefebvre-Bocquet",
+   "type": "COMPANY"
+  },
+  {
+   "value": "3 place Roger Salengro, 59287 Guesnain",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "GH du Douaisis",
+   "type": "COMPANY"
+  },
+  {
+   "value": "590781423",
+   "type": "ID"
+  }
+ ]
+}

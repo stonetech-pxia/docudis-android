@@ -1,0 +1,69 @@
+{
+ "id": "fr-bodacc-vente-02",
+ "expected": [
+  {
+   "value": "18/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Nice",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "900 210 675",
+   "type": "ID"
+  },
+  {
+   "value": "JERVIS BAY",
+   "type": "COMPANY"
+  },
+  {
+   "value": "CHATAIN Amaury, Claude, Jean",
+   "type": "PERSON"
+  },
+  {
+   "value": "20000.00 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Le Saint-Roch, 24 - 26 Avenue Félix Faure, 06500 Menton",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "125000.00 euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "30 Avenue Félix Faure, 06500 Menton",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "401 686 878",
+   "type": "ID"
+  },
+  {
+   "value": "AIR DU TEMPS",
+   "type": "COMPANY"
+  },
+  {
+   "value": "27/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "30 Avenue Félix Faure 06500 Menton",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "09/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "DARTY",
+   "type": "PERSON"
+  },
+  {
+   "value": "27 Rue Carnot 06500 Menton",
+   "type": "ADDRESS"
+  }
+ ]
+}

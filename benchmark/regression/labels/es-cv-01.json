@@ -1,0 +1,77 @@
+{
+  "id": "es-cv-01",
+  "expected": [
+    {
+      "value": "BEATRIZ OLMEDO-QUINTANA VÁZQUEZ-PRIETO",
+      "type": "PERSON"
+    },
+    {
+      "value": "C/ Cordeleros del Arenal, 118, 2.º izq.",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "41010 Sevilla",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "671 38 94 06",
+      "type": "PHONE"
+    },
+    {
+      "value": "beatriz.olmedoq@zumaya-mail.es",
+      "type": "EMAIL"
+    },
+    {
+      "value": "83688468R",
+      "type": "ID"
+    },
+    {
+      "value": "12/11/1993",
+      "type": "BIRTH_DATE"
+    },
+    {
+      "value": "Sevilla",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "31/85518891/91",
+      "type": "ID"
+    },
+    {
+      "value": "Talleres Ribagorza e Hijos, S.L.",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Alcalá de Guadaíra",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Gestoría Sagnane y Rueda",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Distribuciones Almijara Fresh, S.L.",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Dos Hermanas",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "IES Puerta del Aljarafe",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Aula Bética",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Amadou Sagnane",
+      "type": "PERSON"
+    },
+    {
+      "value": "954 77 12 03",
+      "type": "PHONE"
+    }
+  ]
+}

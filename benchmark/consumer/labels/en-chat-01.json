@@ -1,0 +1,89 @@
+{
+ "id": "en-chat-01",
+ "expected": [
+  {
+   "value": "12/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Shaz",
+   "type": "PERSON"
+  },
+  {
+   "value": "26th sept",
+   "type": "DATE"
+  },
+  {
+   "value": "14 Birchfield Court, Evington Road, Leicester LE2 1HJ",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "imran",
+   "type": "PERSON"
+  },
+  {
+   "value": "Imran",
+   "type": "PERSON"
+  },
+  {
+   "value": "will",
+   "type": "PERSON"
+  },
+  {
+   "value": "karen",
+   "type": "PERSON"
+  },
+  {
+   "value": "tom",
+   "type": "PERSON"
+  },
+  {
+   "value": "Nadia Chaudhry",
+   "type": "PERSON"
+  },
+  {
+   "value": "Okonkwo",
+   "type": "PERSON"
+  },
+  {
+   "value": "473 191 6755",
+   "type": "ID"
+  },
+  {
+   "value": "luton",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "£180",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "£60",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "31-91-67",
+   "type": "ID"
+  },
+  {
+   "value": "51712390",
+   "type": "ID"
+  },
+  {
+   "value": "S Chaudhry",
+   "type": "PERSON"
+  },
+  {
+   "value": "GB81 HBUK 3191 6751 7123 90",
+   "type": "IBAN"
+  },
+  {
+   "value": "07812 443906",
+   "type": "PHONE"
+  },
+  {
+   "value": "delroy",
+   "type": "PERSON"
+  }
+ ]
+}

@@ -1,0 +1,61 @@
+{
+ "id": "es-chat-01",
+ "expected": [
+  {
+   "value": "12/9/26",
+   "type": "DATE"
+  },
+  {
+   "value": "Itziar",
+   "type": "PERSON"
+  },
+  {
+   "value": "Arrizabalaga",
+   "type": "PERSON"
+  },
+  {
+   "value": "Chiqui",
+   "type": "PERSON"
+  },
+  {
+   "value": "rocio",
+   "type": "PERSON"
+  },
+  {
+   "value": "paco",
+   "type": "PERSON"
+  },
+  {
+   "value": "yesenia",
+   "type": "PERSON"
+  },
+  {
+   "value": "644 21 87 03",
+   "type": "PHONE"
+  },
+  {
+   "value": "Koldo Etxaniz",
+   "type": "PERSON"
+  },
+  {
+   "value": "ES85 0331 9949 5986 2679 1488",
+   "type": "IBAN"
+  },
+  {
+   "value": "Yesenia Quispe Mamani",
+   "type": "PERSON"
+  },
+  {
+   "value": "380€",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Calle Iturribide 47, 2º izda, 48006 Bilbao",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "rosa",
+   "type": "PERSON"
+  }
+ ]
+}

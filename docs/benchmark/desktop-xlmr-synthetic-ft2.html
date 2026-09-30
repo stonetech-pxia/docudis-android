@@ -1,0 +1,2094 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NER benchmark (desktop, Python onnxruntime)</title>
+<style>:root{color-scheme:light}
+body{margin:0;font:14px/1.5 -apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;color:#2a2420;background:#f5efe8}
+header{padding:20px 24px 8px}h1{margin:0 0 4px;font-size:22px}.meta{margin:0;color:#6b5f55}
+.overall{font-size:16px}.legend{color:#6b5f55}.legend mark,.legend span{margin-right:8px}
+section.summary{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 24px}
+@media(max-width:900px){section.summary{grid-template-columns:1fr}}
+h2{font-size:16px;margin:8px 0}table{border-collapse:collapse;width:100%;background:#fffcf8;font-size:13px}
+th,td{padding:4px 8px;border-bottom:1px solid #e8dfd4;text-align:right}th:first-child,td:first-child{text-align:left}
+.filters{position:sticky;top:0;background:#f5efe8;padding:10px 24px;border-bottom:1px solid #e8dfd4;display:flex;gap:16px;align-items:center;z-index:2}
+main{padding:12px 24px 40px}
+article.case{background:#fffcf8;border-radius:14px;padding:12px 16px;margin:12px 0;box-shadow:0 6px 20px rgba(120,90,60,.08)}
+article.case[data-fail="true"] h3::before{content:"⚠ ";color:#dc2626}
+h3{margin:0 0 8px;font-size:15px;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+h3 small{color:#8a7b6f;font-weight:400}h3 .stats{margin-left:auto;font-weight:400;color:#6b5f55;font-size:12px}
+.panes{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:900px){.panes{grid-template-columns:1fr}}
+.pane h4{margin:0 0 4px;font-size:12px;color:#8a7b6f;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+pre{white-space:pre-wrap;word-break:break-word;margin:0;padding:10px;background:#faf6f1;border-radius:8px;font:14px/1.7 inherit}
+mark{border-radius:4px;padding:0 2px;color:inherit}
+mark.fp{background:#fee2e2!important;border-bottom:2px solid #dc2626!important;text-decoration:line-through}
+mark.wrong{background:#fef3c7!important;border-bottom:2px dotted #b45309!important}
+mark.partial{outline:1px dashed #6b5f55}
+mark.off{background:transparent!important;border-bottom-style:dotted!important}
+span.missed{border-bottom:2px dashed #dc2626;background:#fff1f1}
+mark.ph{padding:0 5px;border-radius:6px;font-weight:600;font-size:12px}
+ul.issues{margin:8px 0 0;padding-left:18px;color:#6b5f55}ul.issues .src{color:#a89a8e;font-size:12px}
+.grade{display:inline-block;min-width:18px;text-align:center;border-radius:6px;padding:0 6px;font-weight:700;color:#fff;font-size:12px}
+.g-A{background:#4e6644}.g-B{background:#6b7f62}.g-C{background:#b8926a}.g-D{background:#a84e2c}
+.hidden{display:none}
+mark.t-PERSON{background:#c8623a22;border-bottom:2px solid #c8623a}mark.ph.t-PERSON{background:#c8623a;color:#fff;border:0}
+mark.t-EMAIL{background:#2563eb22;border-bottom:2px solid #2563eb}mark.ph.t-EMAIL{background:#2563eb;color:#fff;border:0}
+mark.t-PHONE{background:#0d948822;border-bottom:2px solid #0d9488}mark.ph.t-PHONE{background:#0d9488;color:#fff;border:0}
+mark.t-ID{background:#b4530922;border-bottom:2px solid #b45309}mark.ph.t-ID{background:#b45309;color:#fff;border:0}
+mark.t-NUMBER{background:#92400e22;border-bottom:2px solid #92400e}mark.ph.t-NUMBER{background:#92400e;color:#fff;border:0}
+mark.t-CARD{background:#ca8a0422;border-bottom:2px solid #ca8a04}mark.ph.t-CARD{background:#ca8a04;color:#fff;border:0}
+mark.t-IBAN{background:#a1620722;border-bottom:2px solid #a16207}mark.ph.t-IBAN{background:#a16207;color:#fff;border:0}
+mark.t-DATE{background:#6d28d922;border-bottom:2px solid #6d28d9}mark.ph.t-DATE{background:#6d28d9;color:#fff;border:0}
+mark.t-BIRTH_DATE{background:#4c1d9522;border-bottom:2px solid #4c1d95}mark.ph.t-BIRTH_DATE{background:#4c1d95;color:#fff;border:0}
+mark.t-AMOUNT{background:#ea580c22;border-bottom:2px solid #ea580c}mark.ph.t-AMOUNT{background:#ea580c;color:#fff;border:0}
+mark.t-IP{background:#0284c722;border-bottom:2px solid #0284c7}mark.ph.t-IP{background:#0284c7;color:#fff;border:0}
+mark.t-URL{background:#0369a122;border-bottom:2px solid #0369a1}mark.ph.t-URL{background:#0369a1;color:#fff;border:0}
+mark.t-ADDRESS{background:#dc262622;border-bottom:2px solid #dc2626}mark.ph.t-ADDRESS{background:#dc2626;color:#fff;border:0}
+mark.t-COMPANY{background:#db277722;border-bottom:2px solid #db2777}mark.ph.t-COMPANY{background:#db2777;color:#fff;border:0}
+mark.t-SECRET{background:#e11d4822;border-bottom:2px solid #e11d48}mark.ph.t-SECRET{background:#e11d48;color:#fff;border:0}
+mark.t-API_KEY{background:#05966922;border-bottom:2px solid #059669}mark.ph.t-API_KEY{background:#059669;color:#fff;border:0}
+mark.t-CUSTOM{background:#6b7f6222;border-bottom:2px solid #6b7f62}mark.ph.t-CUSTOM{background:#6b7f62;color:#fff;border:0}
+mark.t-OTHER{background:#6b728022;border-bottom:2px solid #6b7280}mark.ph.t-OTHER{background:#6b7280;color:#fff;border:0}
+</style></head><body>
+<header><h1>NER benchmark (desktop, Python onnxruntime)</h1>
+<p class="meta">模型 <b>xlm-roberta-base-ner-docudis</b> · windows "Windows 11 Famille" 10.0 (Build 26200), CPU, onnxruntime via bench_server.py · 45 条用例 · 928 个预期实体</p>
+<p class="overall">总体：召回 93% · 精确 100% · F1 96% <span class="grade g-A">A</span> · 392 ms/千字符 <span class="grade g-B">B</span></p>
+<p class="legend">图例：<mark class="t-PERSON">检测到的实体（按类型着色）</mark> <span class="missed">漏检（预期但未找到）</span> <mark class="fp">误报</mark> <mark class="wrong">类型错误</mark> <mark class="partial t-PERSON">部分命中</mark> <mark class="off t-DATE">检出但默认不遮（金额、非出生日期）</mark></p>
+</header>
+<section class="summary"><div>
+<h2>按语言</h2><table><thead><tr><th>组</th><th>用例</th><th>预期</th><th>找到</th><th>误报</th><th>召回</th><th>精确</th><th>F1</th><th>可靠度</th><th>ms/千字</th><th>速度</th></tr></thead><tbody>
+<tr><td>en</td><td>15</td><td>317</td><td>277</td><td>4</td><td>87%</td><td>99%</td><td>93%</td><td><span class="grade g-A">A</span></td><td>63</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>fr</td><td>15</td><td>303</td><td>294</td><td>0</td><td>97%</td><td>100%</td><td>98%</td><td><span class="grade g-A">A</span></td><td>421</td><td><span class="grade g-B">B</span></td></tr>
+<tr><td>es</td><td>15</td><td>308</td><td>293</td><td>0</td><td>95%</td><td>100%</td><td>98%</td><td><span class="grade g-A">A</span></td><td>662</td><td><span class="grade g-B">B</span></td></tr>
+</tbody></table>
+</div><div>
+<h2>按类别</h2><table><thead><tr><th>组</th><th>用例</th><th>预期</th><th>找到</th><th>误报</th><th>召回</th><th>精确</th><th>F1</th><th>可靠度</th><th>ms/千字</th><th>速度</th></tr></thead><tbody>
+<tr><td>invoice</td><td>9</td><td>195</td><td>184</td><td>1</td><td>94%</td><td>99%</td><td>97%</td><td><span class="grade g-A">A</span></td><td>284</td><td><span class="grade g-A">A</span></td></tr>
+<tr><td>lease</td><td>9</td><td>205</td><td>194</td><td>2</td><td>95%</td><td>99%</td><td>97%</td><td><span class="grade g-A">A</span></td><td>312</td><td><span class="grade g-B">B</span></td></tr>
+<tr><td>payslip</td><td>9</td><td>186</td><td>165</td><td>0</td><td>89%</td><td>100%</td><td>94%</td><td><span class="grade g-A">A</span></td><td>383</td><td><span class="grade g-B">B</span></td></tr>
+<tr><td>medical</td><td>9</td><td>198</td><td>178</td><td>1</td><td>90%</td><td>99%</td><td>94%</td><td><span class="grade g-A">A</span></td><td>533</td><td><span class="grade g-B">B</span></td></tr>
+<tr><td>cv</td><td>9</td><td>144</td><td>143</td><td>0</td><td>99%</td><td>100%</td><td>100%</td><td><span class="grade g-A">A</span></td><td>461</td><td><span class="grade g-B">B</span></td></tr>
+</tbody></table>
+</div></section>
+<section class="filters">
+<label>语言 <select id="lang"><option value="">全部</option><option>en</option><option>fr</option><option>es</option></select></label>
+<label>类别 <select id="cat"><option value="">全部</option><option>invoice</option><option>lease</option><option>payslip</option><option>medical</option><option>cv</option></select></label>
+<label><input type="checkbox" id="fail"> 只看有问题的用例</label>
+<span id="count"></span>
+</section>
+<main>
+<article class="case" data-lang="en" data-cat="invoice" data-fail="true">
+<h3>en-syn-invoice-01 <small>en · invoice</small><span class="stats">F1 95% <span class="grade g-A">A</span> · 56 ms · 716 字符 · 预期 23 / 命中 18 / 部分 3 / 漏检 2 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:gb:company · 85%">Pennine Office Solutions Ltd</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">27 Clarendon Street, Nottingham, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">NG1 5JD</mark>
+VAT Reg No: <mark class="t-ID" title="ID · regex:gb:vat · 75%">GB396 7867 28</mark>   Tel: <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0653</mark>   <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">accounts.team@harrowgate-supplies.co.uk</mark>
+
+INVOICE INV-<mark class="partial t-NUMBER" title="NUMBER · regex:universal:long_number · 50%">2025-1948</mark>
+Invoice date: <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">18 February 2024</mark>          Payment due: <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">27 February 2024</mark>
+
+Bill to:
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Rajesh Venkataraman</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">8 Orchard Close, Bristol, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">BS8 4TH</mark>
+
+Description                          Qty    Unit price    Amount
+Site survey and measurement           3     <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£56.77</mark>      <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£170.31</mark>
+Delivery and handling                 1     <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£105.14</mark>      <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£105.14</mark>
+
+Net total: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£275.45</mark>
+VAT at 20%: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£55.09</mark>
+Total due: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£330.54</mark>
+
+Please pay by bank transfer to <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">GB58 BARC 5181 9093 7865 79</mark>, quoting the invoice number.
+Queries: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Callum Macpherson</mark>, Credit Control, <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0797</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+VAT Reg No: <mark class="ph t-ID">[ID_1]</mark>   Tel: <mark class="ph t-PHONE">[PHONE_1]</mark>   <mark class="ph t-EMAIL">[EMAIL_1]</mark>
+
+INVOICE INV-<mark class="ph t-NUMBER">[NUMBER_1]</mark>
+Invoice date: 18 February 2024          Payment due: 27 February 2024
+
+Bill to:
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+
+Description                          Qty    Unit price    Amount
+Site survey and measurement           3     £56.77      £170.31
+Delivery and handling                 1     £105.14      £105.14
+
+Net total: £275.45
+VAT at 20%: £55.09
+Total due: £330.54
+
+Please pay by bank transfer to <mark class="ph t-IBAN">[IBAN_1]</mark>, quoting the invoice number.
+Queries: <mark class="ph t-PERSON">[PERSON_2]</mark>, Credit Control, <mark class="ph t-PHONE">[PHONE_2]</mark>.</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> Nottingham <i>ADDRESS</i></li>
+<li><b>漏检</b> Bristol <i>ADDRESS</i></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="invoice" data-fail="true">
+<h3>en-syn-invoice-02 <small>en · invoice</small><span class="stats">F1 95% <span class="grade g-A">A</span> · 43 ms · 710 字符 · 预期 23 / 命中 18 / 部分 3 / 漏检 2 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:gb:company · 85%">Harrowgate Building Supplies Ltd</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">14 Marlborough Road, Leeds, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">LS6 2QT</mark>
+VAT Reg No: <mark class="t-ID" title="ID · regex:gb:vat · 75%">GB799 7233 39</mark>   Tel: <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0254</mark>   <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">accounts.team@harrowgate-supplies.co.uk</mark>
+
+INVOICE INV-<mark class="partial t-NUMBER" title="NUMBER · regex:universal:long_number · 50%">2025-1223</mark>
+Invoice date: <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">7 June 2025</mark>          Payment due: <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">10 June 2025</mark>
+
+Bill to:
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Olivia Pemberton</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">59 Albert Terrace, Glasgow, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">G12 8RX</mark>
+
+Description                          Qty    Unit price    Amount
+Site survey and measurement           3     <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£294.30</mark>      <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£882.90</mark>
+Delivery and handling                 1     <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£118.58</mark>      <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£118.58</mark>
+
+Net total: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£1,001.48</mark>
+VAT at 20%: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£200.30</mark>
+Total due: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£1,201.78</mark>
+
+Please pay by bank transfer to <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">GB83 HBUK 9244 0268 5995 28</mark>, quoting the invoice number.
+Queries: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Gareth Llewellyn</mark>, Credit Control, <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0577</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+VAT Reg No: <mark class="ph t-ID">[ID_1]</mark>   Tel: <mark class="ph t-PHONE">[PHONE_1]</mark>   <mark class="ph t-EMAIL">[EMAIL_1]</mark>
+
+INVOICE INV-<mark class="ph t-NUMBER">[NUMBER_1]</mark>
+Invoice date: 7 June 2025          Payment due: 10 June 2025
+
+Bill to:
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+
+Description                          Qty    Unit price    Amount
+Site survey and measurement           3     £294.30      £882.90
+Delivery and handling                 1     £118.58      £118.58
+
+Net total: £1,001.48
+VAT at 20%: £200.30
+Total due: £1,201.78
+
+Please pay by bank transfer to <mark class="ph t-IBAN">[IBAN_1]</mark>, quoting the invoice number.
+Queries: <mark class="ph t-PERSON">[PERSON_2]</mark>, Credit Control, <mark class="ph t-PHONE">[PHONE_2]</mark>.</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> Leeds <i>ADDRESS</i></li>
+<li><b>漏检</b> Glasgow <i>ADDRESS</i></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="invoice" data-fail="true">
+<h3>en-syn-invoice-03 <small>en · invoice</small><span class="stats">F1 88% <span class="grade g-B">B</span> · 45 ms · 709 字符 · 预期 23 / 命中 17 / 部分 2 / 漏检 4 / 误报 1 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:gb:company · 85%">Meridian Freight Services Ltd</mark>
+<mark class="fp t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">112 Kingsway, Manchester, M19 1BB</mark>
+VAT Reg No: <mark class="t-ID" title="ID · regex:gb:vat · 75%">GB907 4197 40</mark>   Tel: <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0937</mark>   <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">accounts.team@harrowgate-supplies.co.uk</mark>
+
+INVOICE INV-<mark class="partial t-NUMBER" title="NUMBER · regex:universal:long_number · 50%">2025-6338</mark>
+Invoice date: <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">22 July 2025</mark>          Payment due: <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">19 August 2025</mark>
+
+Bill to:
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Thomas Gallagher</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">27 Clarendon Street, Nottingham, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">NG1 5JD</mark>
+
+Description                          Qty    Unit price    Amount
+Site survey and measurement           3     <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£269.12</mark>      <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£807.36</mark>
+Delivery and handling                 1     <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£79.39</mark>      <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£79.39</mark>
+
+Net total: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£886.75</mark>
+VAT at 20%: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£177.35</mark>
+Total due: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£1,064.10</mark>
+
+Please pay by bank transfer to <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">GB28 NWBK 0474 3957 5513 13</mark>, quoting the invoice number.
+Queries: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Siobhan Kavanagh</mark>, Credit Control, <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0867</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark>
+VAT Reg No: <mark class="ph t-ID">[ID_1]</mark>   Tel: <mark class="ph t-PHONE">[PHONE_1]</mark>   <mark class="ph t-EMAIL">[EMAIL_1]</mark>
+
+INVOICE INV-<mark class="ph t-NUMBER">[NUMBER_1]</mark>
+Invoice date: 22 July 2025          Payment due: 19 August 2025
+
+Bill to:
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_2]</mark><mark class="ph t-ADDRESS">[ADDRESS_3]</mark>
+
+Description                          Qty    Unit price    Amount
+Site survey and measurement           3     £269.12      £807.36
+Delivery and handling                 1     £79.39      £79.39
+
+Net total: £886.75
+VAT at 20%: £177.35
+Total due: £1,064.10
+
+Please pay by bank transfer to <mark class="ph t-IBAN">[IBAN_1]</mark>, quoting the invoice number.
+Queries: <mark class="ph t-PERSON">[PERSON_2]</mark>, Credit Control, <mark class="ph t-PHONE">[PHONE_2]</mark>.</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> 112 Kingsway <i>ADDRESS</i></li>
+<li><b>漏检</b> Manchester <i>ADDRESS</i></li>
+<li><b>漏检</b> M19 1BB <i>ADDRESS</i></li>
+<li><b>漏检</b> Nottingham <i>ADDRESS</i></li>
+<li><b>误报</b> 112 Kingsway, Manchester, M19 1BB <i>ADDRESS</i> <span class="src">regex:gb:postcode 80%</span></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="lease" data-fail="true">
+<h3>en-syn-lease-01 <small>en · lease</small><span class="stats">F1 88% <span class="grade g-B">B</span> · 71 ms · 976 字符 · 预期 23 / 命中 18 / 部分 1 / 漏检 4 / 误报 1 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>ASSURED SHORTHOLD TENANCY AGREEMENT
+Reference: <span class="missed" title="漏检 ID">TEN/1805/25</span>
+
+This agreement is made on <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">7 April 2024</mark> between:
+
+The Landlord: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Rajesh Venkataraman</mark>, of <mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">8 Orchard Close, Bristol, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">BS8 4TH</mark> (telephone <mark class="t-PHONE" title="PHONE · regex:gb:phone_mobile · 85%">07700 900903</mark>, email <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">rajesh.venkataraman@outlook.com</mark>),
+and
+The Tenants: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Olivia Pemberton</mark>, born <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_word · 80%">7 May 1997</mark>, National Insurance number <mark class="t-ID" title="ID · regex:gb:nino · 90%">JG 22 74 67 A</mark>, and <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Hannah Lindqvist</mark>, born <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_word · 80%">20 September 1966</mark>.
+
+1. The Property. The Landlord lets to the Tenants the dwelling at <mark class="fp t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">112 Kingsway, Manchester, M19 1BB</mark> for a term of twelve months beginning on <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">14 May 2024</mark>.
+2. Rent. The rent is <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£826.95</mark> per calendar month, payable in advance by standing order to account <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">GB96 BARC 4788 7838 4837 26</mark>.
+3. Deposit. A deposit of <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£2,847.75</mark> is payable on signature and will be protected in an authorised scheme within thirty days.
+4. Managing agent. The Property is managed by <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 99%">Northfield Insurance Group</mark>; repairs should be reported to <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Darnell Whitaker</mark> on <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0738</mark>.
+
+Signed at <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 99%">Bristol</mark> by the parties named above.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>ASSURED SHORTHOLD TENANCY AGREEMENT
+Reference: TEN/1805/25
+
+This agreement is made on 7 April 2024 between:
+
+The Landlord: <mark class="ph t-PERSON">[PERSON_1]</mark>, of <mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark> (telephone <mark class="ph t-PHONE">[PHONE_1]</mark>, email <mark class="ph t-EMAIL">[EMAIL_1]</mark>),
+and
+The Tenants: <mark class="ph t-PERSON">[PERSON_2]</mark>, born <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>, National Insurance number <mark class="ph t-ID">[ID_1]</mark>, and <mark class="ph t-PERSON">[PERSON_3]</mark>, born <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_2]</mark>.
+
+1. The Property. The Landlord lets to the Tenants the dwelling at <mark class="ph t-ADDRESS">[ADDRESS_3]</mark> for a term of twelve months beginning on 14 May 2024.
+2. Rent. The rent is £826.95 per calendar month, payable in advance by standing order to account <mark class="ph t-IBAN">[IBAN_1]</mark>.
+3. Deposit. A deposit of £2,847.75 is payable on signature and will be protected in an authorised scheme within thirty days.
+4. Managing agent. The Property is managed by <mark class="ph t-COMPANY">[COMPANY_1]</mark>; repairs should be reported to <mark class="ph t-PERSON">[PERSON_4]</mark> on <mark class="ph t-PHONE">[PHONE_2]</mark>.
+
+Signed at <mark class="ph t-ADDRESS">[ADDRESS_4]</mark> by the parties named above.</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> 112 Kingsway <i>ADDRESS</i></li>
+<li><b>漏检</b> Manchester <i>ADDRESS</i></li>
+<li><b>漏检</b> M19 1BB <i>ADDRESS</i></li>
+<li><b>漏检</b> TEN/1805/25 <i>ID</i></li>
+<li><b>误报</b> 112 Kingsway, Manchester, M19 1BB <i>ADDRESS</i> <span class="src">regex:gb:postcode 80%</span></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="lease" data-fail="true">
+<h3>en-syn-lease-02 <small>en · lease</small><span class="stats">F1 86% <span class="grade g-B">B</span> · 72 ms · 983 字符 · 预期 24 / 命中 18 / 部分 1 / 漏检 5 / 误报 1 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>ASSURED SHORTHOLD TENANCY AGREEMENT
+Reference: <span class="missed" title="漏检 ID">TEN/4193/25</span>
+
+This agreement is made on <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">17 February 2025</mark> between:
+
+The Landlord: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Hannah Lindqvist</mark>, of <mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">27 Clarendon Street, Nottingham, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">NG1 5JD</mark> (telephone <mark class="t-PHONE" title="PHONE · regex:gb:phone_mobile · 85%">07700 900370</mark>, email <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">hannah.lindqvist@outlook.com</mark>),
+and
+The Tenants: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Rajesh Venkataraman</mark>, born <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_word · 80%">18 July 1991</mark>, National Insurance number <mark class="t-ID" title="ID · regex:gb:nino · 90%">NP 89 26 15 B</mark>, and <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Callum Macpherson</mark>, born <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_numeric · 85%">09/01/1969</mark>.
+
+1. The Property. The Landlord lets to the Tenants the dwelling at <mark class="fp t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">112 Kingsway, Manchester, M19 1BB</mark> for a term of twelve months beginning on <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">3 March 2025</mark>.
+2. Rent. The rent is <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£1,822.94</mark> per calendar month, payable in advance by standing order to account <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">GB49 BARC 4483 4782 4504 00</mark>.
+3. Deposit. A deposit of <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£2,886.10</mark> is payable on signature and will be protected in an authorised scheme within thirty days.
+4. Managing agent. The Property is managed by <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 99%">Northfield Insurance Group</mark>; repairs should be reported to <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Siobhan Kavanagh</mark> on <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0103</mark>.
+
+Signed at <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 99%">Bristol</mark> by the parties named above.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>ASSURED SHORTHOLD TENANCY AGREEMENT
+Reference: TEN/4193/25
+
+This agreement is made on 17 February 2025 between:
+
+The Landlord: <mark class="ph t-PERSON">[PERSON_1]</mark>, of <mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark> (telephone <mark class="ph t-PHONE">[PHONE_1]</mark>, email <mark class="ph t-EMAIL">[EMAIL_1]</mark>),
+and
+The Tenants: <mark class="ph t-PERSON">[PERSON_2]</mark>, born <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>, National Insurance number <mark class="ph t-ID">[ID_1]</mark>, and <mark class="ph t-PERSON">[PERSON_3]</mark>, born <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_2]</mark>.
+
+1. The Property. The Landlord lets to the Tenants the dwelling at <mark class="ph t-ADDRESS">[ADDRESS_3]</mark> for a term of twelve months beginning on 3 March 2025.
+2. Rent. The rent is £1,822.94 per calendar month, payable in advance by standing order to account <mark class="ph t-IBAN">[IBAN_1]</mark>.
+3. Deposit. A deposit of £2,886.10 is payable on signature and will be protected in an authorised scheme within thirty days.
+4. Managing agent. The Property is managed by <mark class="ph t-COMPANY">[COMPANY_1]</mark>; repairs should be reported to <mark class="ph t-PERSON">[PERSON_4]</mark> on <mark class="ph t-PHONE">[PHONE_2]</mark>.
+
+Signed at <mark class="ph t-ADDRESS">[ADDRESS_4]</mark> by the parties named above.</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> Nottingham <i>ADDRESS</i></li>
+<li><b>漏检</b> 112 Kingsway <i>ADDRESS</i></li>
+<li><b>漏检</b> Manchester <i>ADDRESS</i></li>
+<li><b>漏检</b> M19 1BB <i>ADDRESS</i></li>
+<li><b>漏检</b> TEN/4193/25 <i>ID</i></li>
+<li><b>误报</b> 112 Kingsway, Manchester, M19 1BB <i>ADDRESS</i> <span class="src">regex:gb:postcode 80%</span></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="lease" data-fail="true">
+<h3>en-syn-lease-03 <small>en · lease</small><span class="stats">F1 95% <span class="grade g-A">A</span> · 75 ms · 992 字符 · 预期 23 / 命中 19 / 部分 2 / 漏检 2 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>ASSURED SHORTHOLD TENANCY AGREEMENT
+Reference: <span class="missed" title="漏检 ID">TEN/9829/25</span>
+
+This agreement is made on <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">24 February 2025</mark> between:
+
+The Landlord: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Hannah Lindqvist</mark>, of <mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">59 Albert Terrace, Glasgow, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">G12 8RX</mark> (telephone <mark class="t-PHONE" title="PHONE · regex:gb:phone_mobile · 85%">07700 900882</mark>, email <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">hannah.lindqvist@btinternet.com</mark>),
+and
+The Tenants: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Rajesh Venkataraman</mark>, born <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_word · 80%">24 October 1993</mark>, National Insurance number <mark class="t-ID" title="ID · regex:gb:nino · 90%">SH 15 75 90 D</mark>, and <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Siobhan Kavanagh</mark>, born <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_word · 80%">17 September 1994</mark>.
+
+1. The Property. The Landlord lets to the Tenants the dwelling at <mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">3 Priory Lane, Cambridge, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">CB4 1DT</mark> for a term of twelve months beginning on <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">28 February 2025</mark>.
+2. Rent. The rent is <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£1,030.31</mark> per calendar month, payable in advance by standing order to account <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">GB68 BARC 1002 5167 8008 37</mark>.
+3. Deposit. A deposit of <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£1,882.02</mark> is payable on signature and will be protected in an authorised scheme within thirty days.
+4. Managing agent. The Property is managed by <mark class="t-COMPANY" title="COMPANY · regex:us:company · 85%">Cascade Analytics Inc.</mark>; repairs should be reported to <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Gareth Llewellyn</mark> on <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0825</mark>.
+
+Signed at <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Cambridge</mark> by the parties named above.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>ASSURED SHORTHOLD TENANCY AGREEMENT
+Reference: TEN/9829/25
+
+This agreement is made on 24 February 2025 between:
+
+The Landlord: <mark class="ph t-PERSON">[PERSON_1]</mark>, of <mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark> (telephone <mark class="ph t-PHONE">[PHONE_1]</mark>, email <mark class="ph t-EMAIL">[EMAIL_1]</mark>),
+and
+The Tenants: <mark class="ph t-PERSON">[PERSON_2]</mark>, born <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>, National Insurance number <mark class="ph t-ID">[ID_1]</mark>, and <mark class="ph t-PERSON">[PERSON_3]</mark>, born <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_2]</mark>.
+
+1. The Property. The Landlord lets to the Tenants the dwelling at <mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark> for a term of twelve months beginning on 28 February 2025.
+2. Rent. The rent is £1,030.31 per calendar month, payable in advance by standing order to account <mark class="ph t-IBAN">[IBAN_1]</mark>.
+3. Deposit. A deposit of £1,882.02 is payable on signature and will be protected in an authorised scheme within thirty days.
+4. Managing agent. The Property is managed by <mark class="ph t-COMPANY">[COMPANY_1]</mark>; repairs should be reported to <mark class="ph t-PERSON">[PERSON_4]</mark> on <mark class="ph t-PHONE">[PHONE_2]</mark>.
+
+Signed at <mark class="ph t-ADDRESS">[ADDRESS_5]</mark> by the parties named above.</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> Glasgow <i>ADDRESS</i></li>
+<li><b>漏检</b> TEN/9829/25 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="payslip" data-fail="true">
+<h3>en-syn-payslip-01 <small>en · payslip</small><span class="stats">F1 89% <span class="grade g-B">B</span> · 34 ms · 563 字符 · 预期 21 / 命中 15 / 部分 2 / 漏检 4 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:us:company · 85%">Cascade Analytics Inc.</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">8 Orchard Close, Bristol, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">BS8 4TH</mark>
+PAYE reference: <span class="missed" title="漏检 ID">537/AB76020</span>
+
+PAYSLIP
+Employee: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Siobhan Kavanagh</mark>                 Employee No: <span class="missed" title="漏检 ID">E-77642</span>
+Address: <mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">27 Clarendon Street, Nottingham, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">NG1 5JD</mark>
+NI number: <mark class="t-ID" title="ID · regex:gb:nino · 90%">KE 54 58 50 A</mark>       Tax code: 1257L
+Pay period: <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">21/03/2025</mark> to <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">24/03/2025</mark>      Pay date: <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">19 April 2025</mark>
+
+Basic salary            <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£4,505.84</mark>
+Income tax and NI       <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£991.28</mark>
+NET PAY                 <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£3,514.56</mark>
+
+Paid by BACS to account <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">GB95 LOYD 6130 4451 6691 56</mark>.
+Payroll queries: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Thomas Gallagher</mark>, HR, <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0670</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">payroll.team@pennine-office.co.uk</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+PAYE reference: 537/AB76020
+
+PAYSLIP
+Employee: <mark class="ph t-PERSON">[PERSON_1]</mark>                 Employee No: E-77642
+Address: <mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+NI number: <mark class="ph t-ID">[ID_1]</mark>       Tax code: 1257L
+Pay period: 21/03/2025 to 24/03/2025      Pay date: 19 April 2025
+
+Basic salary            £4,505.84
+Income tax and NI       £991.28
+NET PAY                 £3,514.56
+
+Paid by BACS to account <mark class="ph t-IBAN">[IBAN_1]</mark>.
+Payroll queries: <mark class="ph t-PERSON">[PERSON_2]</mark>, HR, <mark class="ph t-PHONE">[PHONE_1]</mark>, <mark class="ph t-EMAIL">[EMAIL_1]</mark></pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> Bristol <i>ADDRESS</i></li>
+<li><b>漏检</b> Nottingham <i>ADDRESS</i></li>
+<li><b>漏检</b> 537/AB76020 <i>ID</i></li>
+<li><b>漏检</b> E-77642 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="payslip" data-fail="true">
+<h3>en-syn-payslip-02 <small>en · payslip</small><span class="stats">F1 89% <span class="grade g-B">B</span> · 33 ms · 561 字符 · 预期 21 / 命中 15 / 部分 2 / 漏检 4 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 99%">Northfield Insurance Group</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">3 Priory Lane, Cambridge, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">CB4 1DT</mark>
+PAYE reference: <span class="missed" title="漏检 ID">930/AB66683</span>
+
+PAYSLIP
+Employee: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Darnell Whitaker</mark>                 Employee No: <span class="missed" title="漏检 ID">E-64507</span>
+Address: <mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">59 Albert Terrace, Glasgow, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">G12 8RX</mark>
+NI number: <mark class="t-ID" title="ID · regex:gb:nino · 90%">NP 83 56 26 B</mark>       Tax code: 1257L
+Pay period: <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">05/04/2025</mark> to <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">25/04/2025</mark>      Pay date: <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">15 May 2025</mark>
+
+Basic salary            <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£2,871.73</mark>
+Income tax and NI       <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£631.78</mark>
+NET PAY                 <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£2,239.95</mark>
+
+Paid by BACS to account <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">GB08 HBUK 6764 0206 7970 16</mark>.
+Payroll queries: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Callum Macpherson</mark>, HR, <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0586</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">payroll.team@pennine-office.co.uk</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+PAYE reference: 930/AB66683
+
+PAYSLIP
+Employee: <mark class="ph t-PERSON">[PERSON_1]</mark>                 Employee No: E-64507
+Address: <mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+NI number: <mark class="ph t-ID">[ID_1]</mark>       Tax code: 1257L
+Pay period: 05/04/2025 to 25/04/2025      Pay date: 15 May 2025
+
+Basic salary            £2,871.73
+Income tax and NI       £631.78
+NET PAY                 £2,239.95
+
+Paid by BACS to account <mark class="ph t-IBAN">[IBAN_1]</mark>.
+Payroll queries: <mark class="ph t-PERSON">[PERSON_2]</mark>, HR, <mark class="ph t-PHONE">[PHONE_1]</mark>, <mark class="ph t-EMAIL">[EMAIL_1]</mark></pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> Cambridge <i>ADDRESS</i></li>
+<li><b>漏检</b> Glasgow <i>ADDRESS</i></li>
+<li><b>漏检</b> 930/AB66683 <i>ID</i></li>
+<li><b>漏检</b> E-64507 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="payslip" data-fail="true">
+<h3>en-syn-payslip-03 <small>en · payslip</small><span class="stats">F1 89% <span class="grade g-B">B</span> · 31 ms · 556 字符 · 预期 21 / 命中 15 / 部分 2 / 漏检 4 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:us:company · 85%">Cascade Analytics Inc.</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">59 Albert Terrace, Glasgow, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">G12 8RX</mark>
+PAYE reference: <span class="missed" title="漏检 ID">813/AB73433</span>
+
+PAYSLIP
+Employee: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Marcus Oyelaran</mark>                 Employee No: <span class="missed" title="漏检 ID">E-73441</span>
+Address: <mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">3 Priory Lane, Cambridge, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">CB4 1DT</mark>
+NI number: <mark class="t-ID" title="ID · regex:gb:nino · 90%">LR 73 88 33 B</mark>       Tax code: 1257L
+Pay period: <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">27/02/2025</mark> to <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">28/03/2025</mark>      Pay date: <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">6 April 2025</mark>
+
+Basic salary            <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£4,121.74</mark>
+Income tax and NI       <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£906.78</mark>
+NET PAY                 <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£3,214.96</mark>
+
+Paid by BACS to account <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">GB36 BARC 6030 9260 0267 51</mark>.
+Payroll queries: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Hannah Lindqvist</mark>, HR, <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0141</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">payroll.team@pennine-office.co.uk</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+PAYE reference: 813/AB73433
+
+PAYSLIP
+Employee: <mark class="ph t-PERSON">[PERSON_1]</mark>                 Employee No: E-73441
+Address: <mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+NI number: <mark class="ph t-ID">[ID_1]</mark>       Tax code: 1257L
+Pay period: 27/02/2025 to 28/03/2025      Pay date: 6 April 2025
+
+Basic salary            £4,121.74
+Income tax and NI       £906.78
+NET PAY                 £3,214.96
+
+Paid by BACS to account <mark class="ph t-IBAN">[IBAN_1]</mark>.
+Payroll queries: <mark class="ph t-PERSON">[PERSON_2]</mark>, HR, <mark class="ph t-PHONE">[PHONE_1]</mark>, <mark class="ph t-EMAIL">[EMAIL_1]</mark></pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> Glasgow <i>ADDRESS</i></li>
+<li><b>漏检</b> Cambridge <i>ADDRESS</i></li>
+<li><b>漏检</b> 813/AB73433 <i>ID</i></li>
+<li><b>漏检</b> E-73441 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="medical" data-fail="true">
+<h3>en-syn-medical-01 <small>en · medical</small><span class="stats">F1 88% <span class="grade g-B">B</span> · 41 ms · 768 字符 · 预期 22 / 命中 16 / 部分 2 / 漏检 4 / 误报 1 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 99%">Brightwater Dental Practice</mark>
+<mark class="fp t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">112 Kingsway, Manchester, M19 1BB</mark>
+Tel: <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0608</mark>
+
+<mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">14 April 2025</mark>
+
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Hannah Lindqvist</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">8 Orchard Close, Bristol, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">BS8 4TH</mark>
+
+Our ref: <mark class="t-ID" title="ID · regex:universal:labeled_id · 70%">CLM-0429355</mark>        NHS number: <mark class="t-ID" title="ID · regex:gb:nhs · 60%">759 183 6234</mark>        Date of birth: <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_word · 80%">2 August 1988</mark>
+
+Dear Ms <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Lindqvist</mark>,
+
+Following your consultation with Dr <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Thomas Gallagher</mark> on <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">9 May 2025</mark>, we have reviewed your claim for treatment costs of <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£744.43</mark>. Under policy HP-<mark class="partial t-NUMBER" title="NUMBER · regex:us:passport · 35%">26114913</mark> we have approved a payment of <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£105.64</mark>, which will be credited to the account ending in the details you provided within ten working days.
+
+Your follow-up appointment is booked for <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">18 May 2025</mark> at 10:40. If you cannot attend, please call <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0531</mark> or write to <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">appointments.desk@brightwater-dental.co.uk</mark>.
+
+Yours sincerely,
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Darnell Whitaker</mark>
+Patient Services</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark>
+Tel: <mark class="ph t-PHONE">[PHONE_1]</mark>
+
+14 April 2025
+
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_2]</mark><mark class="ph t-ADDRESS">[ADDRESS_3]</mark>
+
+Our ref: <mark class="ph t-ID">[ID_1]</mark>        NHS number: <mark class="ph t-ID">[ID_2]</mark>        Date of birth: <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+Dear Ms <mark class="ph t-PERSON">[PERSON_1]</mark>,
+
+Following your consultation with Dr <mark class="ph t-PERSON">[PERSON_2]</mark> on 9 May 2025, we have reviewed your claim for treatment costs of £744.43. Under policy HP-<mark class="ph t-NUMBER">[NUMBER_1]</mark> we have approved a payment of £105.64, which will be credited to the account ending in the details you provided within ten working days.
+
+Your follow-up appointment is booked for 18 May 2025 at 10:40. If you cannot attend, please call <mark class="ph t-PHONE">[PHONE_2]</mark> or write to <mark class="ph t-EMAIL">[EMAIL_1]</mark>.
+
+Yours sincerely,
+<mark class="ph t-PERSON">[PERSON_3]</mark>
+Patient Services</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> 112 Kingsway <i>ADDRESS</i></li>
+<li><b>漏检</b> Manchester <i>ADDRESS</i></li>
+<li><b>漏检</b> M19 1BB <i>ADDRESS</i></li>
+<li><b>漏检</b> Bristol <i>ADDRESS</i></li>
+<li><b>误报</b> 112 Kingsway, Manchester, M19 1BB <i>ADDRESS</i> <span class="src">regex:gb:postcode 80%</span></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="medical" data-fail="true">
+<h3>en-syn-medical-02 <small>en · medical</small><span class="stats">F1 95% <span class="grade g-A">A</span> · 43 ms · 769 字符 · 预期 22 / 命中 17 / 部分 3 / 漏检 2 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:us:company · 85%">Harrowgate Building Supplies Ltd</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:us:street · 85%">59 Albert Terrace, Glasgow, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">G12 8RX</mark>
+Tel: <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0351</mark>
+
+<mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">15 May 2024</mark>
+
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Darnell Whitaker</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">8 Orchard Close, Bristol, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">BS8 4TH</mark>
+
+Our ref: <mark class="t-ID" title="ID · regex:universal:labeled_id · 70%">CLM-8317010</mark>        NHS number: <mark class="t-ID" title="ID · regex:gb:nhs · 60%">737 504 3108</mark>        Date of birth: <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_numeric · 85%">27/10/1974</mark>
+
+Dear Ms <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Whitaker</mark>,
+
+Following your consultation with Dr <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Eleanor Whitfield</mark> on <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">2 June 2024</mark>, we have reviewed your claim for treatment costs of <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£334.12</mark>. Under policy HP-<mark class="partial t-NUMBER" title="NUMBER · regex:us:passport · 35%">15827940</mark> we have approved a payment of <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£255.76</mark>, which will be credited to the account ending in the details you provided within ten working days.
+
+Your follow-up appointment is booked for <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">11 June 2024</mark> at 10:40. If you cannot attend, please call <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0752</mark> or write to <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">appointments.desk@brightwater-dental.co.uk</mark>.
+
+Yours sincerely,
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Naomi Adebayo</mark>
+Patient Services</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+Tel: <mark class="ph t-PHONE">[PHONE_1]</mark>
+
+15 May 2024
+
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+
+Our ref: <mark class="ph t-ID">[ID_1]</mark>        NHS number: <mark class="ph t-ID">[ID_2]</mark>        Date of birth: <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+Dear Ms <mark class="ph t-PERSON">[PERSON_1]</mark>,
+
+Following your consultation with Dr <mark class="ph t-PERSON">[PERSON_2]</mark> on 2 June 2024, we have reviewed your claim for treatment costs of £334.12. Under policy HP-<mark class="ph t-NUMBER">[NUMBER_1]</mark> we have approved a payment of £255.76, which will be credited to the account ending in the details you provided within ten working days.
+
+Your follow-up appointment is booked for 11 June 2024 at 10:40. If you cannot attend, please call <mark class="ph t-PHONE">[PHONE_2]</mark> or write to <mark class="ph t-EMAIL">[EMAIL_1]</mark>.
+
+Yours sincerely,
+<mark class="ph t-PERSON">[PERSON_3]</mark>
+Patient Services</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> Glasgow <i>ADDRESS</i></li>
+<li><b>漏检</b> Bristol <i>ADDRESS</i></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="medical" data-fail="true">
+<h3>en-syn-medical-03 <small>en · medical</small><span class="stats">F1 95% <span class="grade g-A">A</span> · 38 ms · 767 字符 · 预期 22 / 命中 17 / 部分 3 / 漏检 2 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:us:company · 85%">Cascade Analytics Inc.</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:us:street · 85%">27 Clarendon Street, Nottingham, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">NG1 5JD</mark>
+Tel: <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0504</mark>
+
+<mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">4 July 2025</mark>
+
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Naomi Adebayo</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:us:street · 85%">59 Albert Terrace, Glasgow, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">G12 8RX</mark>
+
+Our ref: <mark class="t-ID" title="ID · regex:universal:labeled_id · 70%">CLM-8126464</mark>        NHS number: <mark class="t-ID" title="ID · regex:gb:nhs · 60%">536 630 6264</mark>        Date of birth: <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_numeric · 85%">13/10/1969</mark>
+
+Dear Ms <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Adebayo</mark>,
+
+Following your consultation with Dr <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Hannah Lindqvist</mark> on <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">2 August 2025</mark>, we have reviewed your claim for treatment costs of <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£113.15</mark>. Under policy HP-<mark class="partial t-NUMBER" title="NUMBER · regex:us:passport · 35%">72200826</mark> we have approved a payment of <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_prefix · 80%">£87.79</mark>, which will be credited to the account ending in the details you provided within ten working days.
+
+Your follow-up appointment is booked for <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_word · 80%">10 August 2025</mark> at 10:40. If you cannot attend, please call <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0686</mark> or write to <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">appointments.desk@brightwater-dental.co.uk</mark>.
+
+Yours sincerely,
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Olivia Pemberton</mark>
+Patient Services</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+Tel: <mark class="ph t-PHONE">[PHONE_1]</mark>
+
+4 July 2025
+
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+
+Our ref: <mark class="ph t-ID">[ID_1]</mark>        NHS number: <mark class="ph t-ID">[ID_2]</mark>        Date of birth: <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+Dear Ms <mark class="ph t-PERSON">[PERSON_1]</mark>,
+
+Following your consultation with Dr <mark class="ph t-PERSON">[PERSON_2]</mark> on 2 August 2025, we have reviewed your claim for treatment costs of £113.15. Under policy HP-<mark class="ph t-NUMBER">[NUMBER_1]</mark> we have approved a payment of £87.79, which will be credited to the account ending in the details you provided within ten working days.
+
+Your follow-up appointment is booked for 10 August 2025 at 10:40. If you cannot attend, please call <mark class="ph t-PHONE">[PHONE_2]</mark> or write to <mark class="ph t-EMAIL">[EMAIL_1]</mark>.
+
+Yours sincerely,
+<mark class="ph t-PERSON">[PERSON_3]</mark>
+Patient Services</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> Nottingham <i>ADDRESS</i></li>
+<li><b>漏检</b> Glasgow <i>ADDRESS</i></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="cv" data-fail="true">
+<h3>en-syn-cv-01 <small>en · cv</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 43 ms · 805 字符 · 预期 16 / 命中 15 / 部分 1 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Thomas Gallagher</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">27 Clarendon Street, Nottingham, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">NG1 5JD</mark>
+<mark class="t-PHONE" title="PHONE · regex:gb:phone_mobile · 85%">07700 900949</mark> | <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">thomas.gallagher@btinternet.com</mark> | <mark class="t-URL" title="URL · regex:universal:url · 85%">linkedin.com/in/thomas-gallagher</mark>
+Date of birth: <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_numeric · 85%">02/07/1973</mark>
+
+PROFILE
+Operations analyst with eight years of experience in logistics and financial reporting.
+
+EXPERIENCE
+Senior Operations Analyst, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Deloitte</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Cambridge</mark> (2021 - present)
+Led the migration of the monthly reporting pack and cut closing time by three days.
+Operations Analyst, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 99%">Northfield Insurance Group</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Nottingham</mark> (2017 - 2021)
+Built the carrier performance dashboard used by the regional managers.
+Graduate Trainee, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 99%">Brightwater Dental Practice</mark> (2016 - 2017)
+
+EDUCATION
+BSc Economics, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 99%">University of Leeds</mark>, 2016
+
+REFERENCES
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Naomi Adebayo</mark>, Head of Operations, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 99%">Northfield Insurance Group</mark>, <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0492</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">naomi.adebayo@meridian-freight.co.uk</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+<mark class="ph t-PHONE">[PHONE_1]</mark> | <mark class="ph t-EMAIL">[EMAIL_1]</mark> | <mark class="ph t-URL">[URL_1]</mark>
+Date of birth: <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+PROFILE
+Operations analyst with eight years of experience in logistics and financial reporting.
+
+EXPERIENCE
+Senior Operations Analyst, <mark class="ph t-COMPANY">[COMPANY_1]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_3]</mark> (2021 - present)
+Led the migration of the monthly reporting pack and cut closing time by three days.
+Operations Analyst, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_4]</mark> (2017 - 2021)
+Built the carrier performance dashboard used by the regional managers.
+Graduate Trainee, <mark class="ph t-COMPANY">[COMPANY_3]</mark> (2016 - 2017)
+
+EDUCATION
+BSc Economics, <mark class="ph t-COMPANY">[COMPANY_4]</mark>, 2016
+
+REFERENCES
+<mark class="ph t-PERSON">[PERSON_2]</mark>, Head of Operations, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-PHONE">[PHONE_2]</mark>, <mark class="ph t-EMAIL">[EMAIL_2]</mark></pre></div>
+</div>
+</article>
+<article class="case" data-lang="en" data-cat="cv" data-fail="true">
+<h3>en-syn-cv-02 <small>en · cv</small><span class="stats">F1 97% <span class="grade g-A">A</span> · 44 ms · 822 字符 · 预期 17 / 命中 15 / 部分 1 / 漏检 1 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Rajesh Venkataraman</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">27 Clarendon Street, Nottingham, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">NG1 5JD</mark>
+<mark class="t-PHONE" title="PHONE · regex:gb:phone_mobile · 85%">07700 900557</mark> | <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">rajesh.venkataraman@gmail.com</mark> | <mark class="t-URL" title="URL · regex:universal:url · 85%">linkedin.com/in/rajesh-venkataraman</mark>
+Date of birth: <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_numeric · 85%">26/08/1991</mark>
+
+PROFILE
+Operations analyst with eight years of experience in logistics and financial reporting.
+
+EXPERIENCE
+Senior Operations Analyst, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Rolls-Royce</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Manchester</mark> (2021 - present)
+Led the migration of the monthly reporting pack and cut closing time by three days.
+Operations Analyst, <mark class="t-COMPANY" title="COMPANY · regex:gb:company · 85%">Harrowgate Building Supplies Ltd</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Leeds</mark> (2017 - 2021)
+Built the carrier performance dashboard used by the regional managers.
+Graduate Trainee, <mark class="t-COMPANY" title="COMPANY · regex:gb:company · 85%">Meridian Freight Services Ltd</mark> (2016 - 2017)
+
+EDUCATION
+BSc Economics, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 99%">University of Leeds</mark>, 2016
+
+REFERENCES
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Naomi Adebayo</mark>, Head of Operations, <mark class="t-COMPANY" title="COMPANY · regex:gb:company · 85%">Harrowgate Building Supplies Ltd</mark>, <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0168</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">naomi.adebayo@meridian-freight.co.uk</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+<mark class="ph t-PHONE">[PHONE_1]</mark> | <mark class="ph t-EMAIL">[EMAIL_1]</mark> | <mark class="ph t-URL">[URL_1]</mark>
+Date of birth: <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+PROFILE
+Operations analyst with eight years of experience in logistics and financial reporting.
+
+EXPERIENCE
+Senior Operations Analyst, <mark class="ph t-COMPANY">[COMPANY_1]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_3]</mark> (2021 - present)
+Led the migration of the monthly reporting pack and cut closing time by three days.
+Operations Analyst, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_4]</mark> (2017 - 2021)
+Built the carrier performance dashboard used by the regional managers.
+Graduate Trainee, <mark class="ph t-COMPANY">[COMPANY_3]</mark> (2016 - 2017)
+
+EDUCATION
+BSc Economics, <mark class="ph t-COMPANY">[COMPANY_4]</mark>, 2016
+
+REFERENCES
+<mark class="ph t-PERSON">[PERSON_2]</mark>, Head of Operations, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-PHONE">[PHONE_2]</mark>, <mark class="ph t-EMAIL">[EMAIL_2]</mark></pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> Nottingham <i>ADDRESS</i></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="cv" data-fail="true">
+<h3>en-syn-cv-03 <small>en · cv</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 45 ms · 809 字符 · 预期 16 / 命中 15 / 部分 1 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Rajesh Venkataraman</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:gb:street · 85%">27 Clarendon Street, Nottingham, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:gb:postcode · 80%">NG1 5JD</mark>
+<mark class="t-PHONE" title="PHONE · regex:gb:phone_mobile · 85%">07700 900167</mark> | <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">rajesh.venkataraman@btinternet.com</mark> | <mark class="t-URL" title="URL · regex:universal:url · 85%">linkedin.com/in/rajesh-venkataraman</mark>
+Date of birth: <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_word · 80%">20 May 1978</mark>
+
+PROFILE
+Operations analyst with eight years of experience in logistics and financial reporting.
+
+EXPERIENCE
+Senior Operations Analyst, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Deloitte</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Manchester</mark> (2021 - present)
+Led the migration of the monthly reporting pack and cut closing time by three days.
+Operations Analyst, <mark class="t-COMPANY" title="COMPANY · regex:gb:company · 85%">Calder &amp; Finch LLP</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Nottingham</mark> (2017 - 2021)
+Built the carrier performance dashboard used by the regional managers.
+Graduate Trainee, <mark class="t-COMPANY" title="COMPANY · regex:gb:company · 85%">Pennine Office Solutions Ltd</mark> (2016 - 2017)
+
+EDUCATION
+BSc Economics, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 99%">University of Leeds</mark>, 2016
+
+REFERENCES
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Callum Macpherson</mark>, Head of Operations, <mark class="t-COMPANY" title="COMPANY · regex:gb:company · 85%">Calder &amp; Finch LLP</mark>, <mark class="t-PHONE" title="PHONE · regex:gb:phone_landline · 80%">020 7946 0360</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">callum.macpherson@meridian-freight.co.uk</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+<mark class="ph t-PHONE">[PHONE_1]</mark> | <mark class="ph t-EMAIL">[EMAIL_1]</mark> | <mark class="ph t-URL">[URL_1]</mark>
+Date of birth: <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+PROFILE
+Operations analyst with eight years of experience in logistics and financial reporting.
+
+EXPERIENCE
+Senior Operations Analyst, <mark class="ph t-COMPANY">[COMPANY_1]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_3]</mark> (2021 - present)
+Led the migration of the monthly reporting pack and cut closing time by three days.
+Operations Analyst, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_4]</mark> (2017 - 2021)
+Built the carrier performance dashboard used by the regional managers.
+Graduate Trainee, <mark class="ph t-COMPANY">[COMPANY_3]</mark> (2016 - 2017)
+
+EDUCATION
+BSc Economics, <mark class="ph t-COMPANY">[COMPANY_4]</mark>, 2016
+
+REFERENCES
+<mark class="ph t-PERSON">[PERSON_2]</mark>, Head of Operations, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-PHONE">[PHONE_2]</mark>, <mark class="ph t-EMAIL">[EMAIL_2]</mark></pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="invoice" data-fail="true">
+<h3>fr-syn-invoice-01 <small>fr · invoice</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 111 ms · 769 字符 · 预期 21 / 命中 18 / 部分 3 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:fr:company_head · 80%">Agence Immobilière du Parc</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">8 avenue Jean Jaurès, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">31000 Toulouse</mark>
+SIRET : <mark class="t-NUMBER" title="NUMBER · regex:fr:siret · 65%">684 477 691 00028</mark> - Tél. : <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">03 52 20 66 39</mark> - <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">comptabilite.service@berthelot-menuiserie.fr</mark>
+
+FACTURE N° FA-<mark class="partial t-NUMBER" title="NUMBER · regex:universal:long_number · 50%">2025-2904</mark>
+Date de facturation : <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">8 juillet 2025</mark>        Échéance : <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">2 août 2025</mark>
+
+Client :
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Étienne Rousseau</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">27 rue des Lilas, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">69003 Lyon</mark>
+
+Désignation                          Qté    Prix unitaire HT    Montant HT
+Pose et ajustement sur mesure         3     <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">305,65 €</mark>             <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">916,95 €</mark>
+Frais de déplacement                  1     <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">54,00 €</mark>             <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">54,00 €</mark>
+
+Total HT : <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">970,95 €</mark>
+TVA 20 % : <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">194,19 €</mark>
+Total TTC : <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">1 165,14 €</mark>
+
+Règlement par virement sur le compte <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">FR86 9000 0954 1858 3694 9235 972 </mark>en rappelant le numéro de facture.
+Votre contact : <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Océane Morel</mark>, service comptabilité, <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">04 41 31 10 15</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+SIRET : <mark class="ph t-NUMBER">[NUMBER_1]</mark> - Tél. : <mark class="ph t-PHONE">[PHONE_1]</mark> - <mark class="ph t-EMAIL">[EMAIL_1]</mark>
+
+FACTURE N° FA-<mark class="ph t-NUMBER">[NUMBER_2]</mark>
+Date de facturation : 8 juillet 2025        Échéance : 2 août 2025
+
+Client :
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+
+Désignation                          Qté    Prix unitaire HT    Montant HT
+Pose et ajustement sur mesure         3     305,65 €             916,95 €
+Frais de déplacement                  1     54,00 €             54,00 €
+
+Total HT : 970,95 €
+TVA 20 % : 194,19 €
+Total TTC : 1 165,14 €
+
+Règlement par virement sur le compte <mark class="ph t-IBAN">[IBAN_1]</mark>en rappelant le numéro de facture.
+Votre contact : <mark class="ph t-PERSON">[PERSON_2]</mark>, service comptabilité, <mark class="ph t-PHONE">[PHONE_2]</mark>.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="invoice" data-fail="true">
+<h3>fr-syn-invoice-02 <small>fr · invoice</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 86 ms · 778 字符 · 预期 21 / 命中 18 / 部分 3 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:fr:company_head · 80%">Boulangerie Maison Thévenet</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">3 impasse des Acacias, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">44300 Nantes</mark>
+SIRET : <mark class="t-NUMBER" title="NUMBER · regex:fr:siret · 65%">763 279 331 00023</mark> - Tél. : <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">03 39 92 14 25</mark> - <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">comptabilite.service@berthelot-menuiserie.fr</mark>
+
+FACTURE N° FA-<mark class="partial t-NUMBER" title="NUMBER · regex:universal:long_number · 50%">2025-5404</mark>
+Date de facturation : <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">6 juin 2025</mark>        Échéance : <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">25 juin 2025</mark>
+
+Client :
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Étienne Rousseau</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">8 avenue Jean Jaurès, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">31000 Toulouse</mark>
+
+Désignation                          Qté    Prix unitaire HT    Montant HT
+Pose et ajustement sur mesure         3     <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">308,27 €</mark>             <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">924,81 €</mark>
+Frais de déplacement                  1     <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">63,85 €</mark>             <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">63,85 €</mark>
+
+Total HT : <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">988,66 €</mark>
+TVA 20 % : <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">197,73 €</mark>
+Total TTC : <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">1 186,39 €</mark>
+
+Règlement par virement sur le compte <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">FR17 3687 7800 6394 3699 1922 001 </mark>en rappelant le numéro de facture.
+Votre contact : <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Thibault Perrin</mark>, service comptabilité, <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">02 36 36 24 14</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+SIRET : <mark class="ph t-NUMBER">[NUMBER_1]</mark> - Tél. : <mark class="ph t-PHONE">[PHONE_1]</mark> - <mark class="ph t-EMAIL">[EMAIL_1]</mark>
+
+FACTURE N° FA-<mark class="ph t-NUMBER">[NUMBER_2]</mark>
+Date de facturation : 6 juin 2025        Échéance : 25 juin 2025
+
+Client :
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+
+Désignation                          Qté    Prix unitaire HT    Montant HT
+Pose et ajustement sur mesure         3     308,27 €             924,81 €
+Frais de déplacement                  1     63,85 €             63,85 €
+
+Total HT : 988,66 €
+TVA 20 % : 197,73 €
+Total TTC : 1 186,39 €
+
+Règlement par virement sur le compte <mark class="ph t-IBAN">[IBAN_1]</mark>en rappelant le numéro de facture.
+Votre contact : <mark class="ph t-PERSON">[PERSON_2]</mark>, service comptabilité, <mark class="ph t-PHONE">[PHONE_2]</mark>.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="invoice" data-fail="true">
+<h3>fr-syn-invoice-03 <small>fr · invoice</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 86 ms · 766 字符 · 预期 21 / 命中 18 / 部分 3 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:fr:company_head · 80%">Clinique des Tilleuls</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">19 chemin du Moulin, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">67000 Strasbourg</mark>
+SIRET : <mark class="t-NUMBER" title="NUMBER · regex:fr:siret · 65%">780 821 149 00078</mark> - Tél. : <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">05 37 21 83 46</mark> - <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">comptabilite.service@berthelot-menuiserie.fr</mark>
+
+FACTURE N° FA-<mark class="partial t-NUMBER" title="NUMBER · regex:universal:long_number · 50%">2025-2608</mark>
+Date de facturation : <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">14 février 2025</mark>        Échéance : <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">7 mars 2025</mark>
+
+Client :
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Yasmine Haddad</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">27 rue des Lilas, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">69003 Lyon</mark>
+
+Désignation                          Qté    Prix unitaire HT    Montant HT
+Pose et ajustement sur mesure         3     <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">226,70 €</mark>             <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">680,10 €</mark>
+Frais de déplacement                  1     <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">25,32 €</mark>             <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">25,32 €</mark>
+
+Total HT : <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">705,42 €</mark>
+TVA 20 % : <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">141,08 €</mark>
+Total TTC : <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">846,50 €</mark>
+
+Règlement par virement sur le compte <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">FR11 3372 1178 1551 6616 0534 468 </mark>en rappelant le numéro de facture.
+Votre contact : <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Aurélie Fontaine</mark>, service comptabilité, <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">04 98 42 84 39</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+SIRET : <mark class="ph t-NUMBER">[NUMBER_1]</mark> - Tél. : <mark class="ph t-PHONE">[PHONE_1]</mark> - <mark class="ph t-EMAIL">[EMAIL_1]</mark>
+
+FACTURE N° FA-<mark class="ph t-NUMBER">[NUMBER_2]</mark>
+Date de facturation : 14 février 2025        Échéance : 7 mars 2025
+
+Client :
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+
+Désignation                          Qté    Prix unitaire HT    Montant HT
+Pose et ajustement sur mesure         3     226,70 €             680,10 €
+Frais de déplacement                  1     25,32 €             25,32 €
+
+Total HT : 705,42 €
+TVA 20 % : 141,08 €
+Total TTC : 846,50 €
+
+Règlement par virement sur le compte <mark class="ph t-IBAN">[IBAN_1]</mark>en rappelant le numéro de facture.
+Votre contact : <mark class="ph t-PERSON">[PERSON_2]</mark>, service comptabilité, <mark class="ph t-PHONE">[PHONE_2]</mark>.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="lease" data-fail="true">
+<h3>fr-syn-lease-01 <small>fr · lease</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 108 ms · 1028 字符 · 预期 22 / 命中 20 / 部分 2 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>CONTRAT DE LOCATION - LOGEMENT VIDE
+Référence du dossier : <mark class="t-ID" title="ID · regex:universal:labeled_id · 70%">LOC-2025-4643</mark>
+
+Entre les soussignés :
+
+Le bailleur : <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Bertrand Lemoine</mark>, demeurant <mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">3 impasse des Acacias, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">44300 Nantes</mark>, téléphone <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">06 23 91 23 45</mark>, courriel <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">bertrand.lemoine@orange.fr</mark>,
+et
+Les locataires : <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Camille Lefèvre</mark>, née le <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:fr:date_words · 85%">1er juillet 1986</mark>, numéro de sécurité sociale <mark class="t-ID" title="ID · regex:fr:nir · 90%">2 76 09 31 475 023 28</mark>, et <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Océane Morel</mark>, né le <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:fr:date_words · 85%">24 juillet 1971</mark>.
+
+Article 1 - Désignation. Le bailleur loue aux locataires le logement situé <mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">52 rue de la République, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">13002 Marseille</mark>, pour une durée de trois ans à compter du <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">9 mai 2024</mark>.
+Article 2 - Loyer. Le loyer mensuel est fixé à <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">1 879,79 €</mark>, payable d'avance par virement sur le compte <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">FR61 6362 4677 0968 2506 7104 832</mark>.
+Article 3 - Dépôt de garantie. Un dépôt de garantie de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">3 287,22 €</mark> est versé à la signature du présent contrat.
+Article 4 - Gestion. Le bien est géré par <mark class="t-COMPANY" title="COMPANY · regex:fr:company_head · 80%">Boulangerie Maison Thévenet</mark> ; toute demande d'intervention est à adresser à <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Julien Marchand</mark> au <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">01 88 55 91 17</mark>.
+
+Fait à <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Paris</mark>, le <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">1er juin 2024</mark>, en deux exemplaires originaux.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>CONTRAT DE LOCATION - LOGEMENT VIDE
+Référence du dossier : <mark class="ph t-ID">[ID_1]</mark>
+
+Entre les soussignés :
+
+Le bailleur : <mark class="ph t-PERSON">[PERSON_1]</mark>, demeurant <mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>, téléphone <mark class="ph t-PHONE">[PHONE_1]</mark>, courriel <mark class="ph t-EMAIL">[EMAIL_1]</mark>,
+et
+Les locataires : <mark class="ph t-PERSON">[PERSON_2]</mark>, née le <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>, numéro de sécurité sociale <mark class="ph t-ID">[ID_2]</mark>, et <mark class="ph t-PERSON">[PERSON_3]</mark>, né le <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_2]</mark>.
+
+Article 1 - Désignation. Le bailleur loue aux locataires le logement situé <mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>, pour une durée de trois ans à compter du 9 mai 2024.
+Article 2 - Loyer. Le loyer mensuel est fixé à 1 879,79 €, payable d'avance par virement sur le compte <mark class="ph t-IBAN">[IBAN_1]</mark>.
+Article 3 - Dépôt de garantie. Un dépôt de garantie de 3 287,22 € est versé à la signature du présent contrat.
+Article 4 - Gestion. Le bien est géré par <mark class="ph t-COMPANY">[COMPANY_1]</mark> ; toute demande d'intervention est à adresser à <mark class="ph t-PERSON">[PERSON_4]</mark> au <mark class="ph t-PHONE">[PHONE_2]</mark>.
+
+Fait à <mark class="ph t-ADDRESS">[ADDRESS_5]</mark>, le 1er juin 2024, en deux exemplaires originaux.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="lease" data-fail="true">
+<h3>fr-syn-lease-02 <small>fr · lease</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 118 ms · 1027 字符 · 预期 22 / 命中 20 / 部分 2 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>CONTRAT DE LOCATION - LOGEMENT VIDE
+Référence du dossier : <mark class="t-ID" title="ID · regex:universal:labeled_id · 70%">LOC-2025-8275</mark>
+
+Entre les soussignés :
+
+Le bailleur : <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Thibault Perrin</mark>, demeurant <mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">52 rue de la République, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">13002 Marseille</mark>, téléphone <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">06 39 44 58 97</mark>, courriel <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">thibault.perrin@laposte.net</mark>,
+et
+Les locataires : <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Étienne Rousseau</mark>, née le <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_numeric · 85%">16/01/1989</mark>, numéro de sécurité sociale <mark class="t-ID" title="ID · regex:fr:nir · 90%">2 84 04 31 329 492 72</mark>, et <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Yasmine Haddad</mark>, né le <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:fr:date_words · 85%">21 février 1993</mark>.
+
+Article 1 - Désignation. Le bailleur loue aux locataires le logement situé <mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">19 chemin du Moulin,</mark> <mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">67000 Strasbourg</mark>, pour une durée de trois ans à compter du <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">24 mai 2025</mark>.
+Article 2 - Loyer. Le loyer mensuel est fixé à <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">1 235,13 €</mark>, payable d'avance par virement sur le compte <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">FR46 4491 9232 7523 6829 9184 373</mark>.
+Article 3 - Dépôt de garantie. Un dépôt de garantie de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">2 035,86 €</mark> est versé à la signature du présent contrat.
+Article 4 - Gestion. Le bien est géré par <mark class="t-COMPANY" title="COMPANY · regex:fr:company · 90%">Atelier Numérique Lyonnais SAS</mark> ; toute demande d'intervention est à adresser à <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Nadia Benali</mark> au <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">02 79 86 10 30</mark>.
+
+Fait à <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 95%">Paris</mark>, le <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">28 juin 2025</mark>, en deux exemplaires originaux.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>CONTRAT DE LOCATION - LOGEMENT VIDE
+Référence du dossier : <mark class="ph t-ID">[ID_1]</mark>
+
+Entre les soussignés :
+
+Le bailleur : <mark class="ph t-PERSON">[PERSON_1]</mark>, demeurant <mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>, téléphone <mark class="ph t-PHONE">[PHONE_1]</mark>, courriel <mark class="ph t-EMAIL">[EMAIL_1]</mark>,
+et
+Les locataires : <mark class="ph t-PERSON">[PERSON_2]</mark>, née le <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>, numéro de sécurité sociale <mark class="ph t-ID">[ID_2]</mark>, et <mark class="ph t-PERSON">[PERSON_3]</mark>, né le <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_2]</mark>.
+
+Article 1 - Désignation. Le bailleur loue aux locataires le logement situé <mark class="ph t-ADDRESS">[ADDRESS_3]</mark> <mark class="ph t-ADDRESS">[ADDRESS_4]</mark>, pour une durée de trois ans à compter du 24 mai 2025.
+Article 2 - Loyer. Le loyer mensuel est fixé à 1 235,13 €, payable d'avance par virement sur le compte <mark class="ph t-IBAN">[IBAN_1]</mark>.
+Article 3 - Dépôt de garantie. Un dépôt de garantie de 2 035,86 € est versé à la signature du présent contrat.
+Article 4 - Gestion. Le bien est géré par <mark class="ph t-COMPANY">[COMPANY_1]</mark> ; toute demande d'intervention est à adresser à <mark class="ph t-PERSON">[PERSON_4]</mark> au <mark class="ph t-PHONE">[PHONE_2]</mark>.
+
+Fait à <mark class="ph t-ADDRESS">[ADDRESS_5]</mark>, le 28 juin 2025, en deux exemplaires originaux.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="lease" data-fail="true">
+<h3>fr-syn-lease-03 <small>fr · lease</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 114 ms · 1023 字符 · 预期 22 / 命中 20 / 部分 2 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>CONTRAT DE LOCATION - LOGEMENT VIDE
+Référence du dossier : <mark class="t-ID" title="ID · regex:universal:labeled_id · 70%">LOC-2025-7883</mark>
+
+Entre les soussignés :
+
+Le bailleur : <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Clémence Dupuis</mark>, demeurant <mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">52 rue de la République, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">13002 Marseille</mark>, téléphone <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">06 46 65 53 64</mark>, courriel <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">clemence.dupuis@laposte.net</mark>,
+et
+Les locataires : <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Julien Marchand</mark>, née le <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:fr:date_words · 85%">10 mai 1997</mark>, numéro de sécurité sociale <mark class="t-ID" title="ID · regex:fr:nir · 90%">2 93 07 31 516 279 05</mark>, et <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Yasmine Haddad</mark>, né le <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:fr:date_words · 85%">7 novembre 1994</mark>.
+
+Article 1 - Désignation. Le bailleur loue aux locataires le logement situé <mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">3 impasse des Acacias, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">44300 Nantes</mark>, pour une durée de trois ans à compter du <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">28 mai 2024</mark>.
+Article 2 - Loyer. Le loyer mensuel est fixé à <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">1 727,11 €</mark>, payable d'avance par virement sur le compte <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">FR74 6410 0379 0889 6929 1307 212</mark>.
+Article 3 - Dépôt de garantie. Un dépôt de garantie de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">2 215,40 €</mark> est versé à la signature du présent contrat.
+Article 4 - Gestion. Le bien est géré par <mark class="t-COMPANY" title="COMPANY · regex:fr:company_head · 80%">Clinique des Tilleuls</mark> ; toute demande d'intervention est à adresser à <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Camille Lefèvre</mark> au <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">05 76 15 25 63</mark>.
+
+Fait à <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Marseille</mark>, le <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">28 juin 2024</mark>, en deux exemplaires originaux.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>CONTRAT DE LOCATION - LOGEMENT VIDE
+Référence du dossier : <mark class="ph t-ID">[ID_1]</mark>
+
+Entre les soussignés :
+
+Le bailleur : <mark class="ph t-PERSON">[PERSON_1]</mark>, demeurant <mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>, téléphone <mark class="ph t-PHONE">[PHONE_1]</mark>, courriel <mark class="ph t-EMAIL">[EMAIL_1]</mark>,
+et
+Les locataires : <mark class="ph t-PERSON">[PERSON_2]</mark>, née le <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>, numéro de sécurité sociale <mark class="ph t-ID">[ID_2]</mark>, et <mark class="ph t-PERSON">[PERSON_3]</mark>, né le <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_2]</mark>.
+
+Article 1 - Désignation. Le bailleur loue aux locataires le logement situé <mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>, pour une durée de trois ans à compter du 28 mai 2024.
+Article 2 - Loyer. Le loyer mensuel est fixé à 1 727,11 €, payable d'avance par virement sur le compte <mark class="ph t-IBAN">[IBAN_1]</mark>.
+Article 3 - Dépôt de garantie. Un dépôt de garantie de 2 215,40 € est versé à la signature du présent contrat.
+Article 4 - Gestion. Le bien est géré par <mark class="ph t-COMPANY">[COMPANY_1]</mark> ; toute demande d'intervention est à adresser à <mark class="ph t-PERSON">[PERSON_4]</mark> au <mark class="ph t-PHONE">[PHONE_2]</mark>.
+
+Fait à <mark class="ph t-ADDRESS">[ADDRESS_5]</mark>, le 28 juin 2024, en deux exemplaires originaux.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="payslip" data-fail="true">
+<h3>fr-syn-payslip-01 <small>fr · payslip</small><span class="stats">F1 97% <span class="grade g-A">A</span> · 95 ms · 734 字符 · 预期 20 / 命中 17 / 部分 2 / 漏检 1 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>BULLETIN DE PAIE
+Employeur : <mark class="t-COMPANY" title="COMPANY · regex:fr:company_head · 80%">Cabinet Vasseur &amp; Associés</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">145 boulevard Voltaire, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">75011 Paris</mark>
+SIRET : <mark class="t-NUMBER" title="NUMBER · regex:fr:siret · 65%">491 151 474 00098</mark>    Code NAF : 4332A
+
+Salarié : <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">François-Xavier Delmas</mark>                 Matricule : <span class="missed" title="漏检 ID">M-21487</span>
+Adresse : <mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">52 rue de la République, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">13002 Marseille</mark>
+N° de sécurité sociale : <mark class="t-ID" title="ID · regex:fr:nir · 90%">2 78 01 69 012 063 16</mark>
+Emploi : technicien confirmé        Date d'entrée : <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">28 juin 2024</mark>
+Période du <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">08/07/2024</mark> au <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">07/08/2024</mark>      Paiement le <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">1er septembre 2024</mark>
+
+Salaire de base                 <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">3 372,02 €</mark>
+Cotisations salariales          <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">741,84 €</mark>
+NET À PAYER                     <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">2 630,18 €</mark>
+
+Virement sur le compte <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">FR45 2676 7495 4409 9590 2949 636</mark>.
+Pour toute question : <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Océane Morel</mark>, service paie, <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">04 54 78 20 79</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">paie.service@rhone-alpes-logistique.fr</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>BULLETIN DE PAIE
+Employeur : <mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+SIRET : <mark class="ph t-NUMBER">[NUMBER_1]</mark>    Code NAF : 4332A
+
+Salarié : <mark class="ph t-PERSON">[PERSON_1]</mark>                 Matricule : M-21487
+Adresse : <mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+N° de sécurité sociale : <mark class="ph t-ID">[ID_1]</mark>
+Emploi : technicien confirmé        Date d'entrée : 28 juin 2024
+Période du 08/07/2024 au 07/08/2024      Paiement le 1er septembre 2024
+
+Salaire de base                 3 372,02 €
+Cotisations salariales          741,84 €
+NET À PAYER                     2 630,18 €
+
+Virement sur le compte <mark class="ph t-IBAN">[IBAN_1]</mark>.
+Pour toute question : <mark class="ph t-PERSON">[PERSON_2]</mark>, service paie, <mark class="ph t-PHONE">[PHONE_1]</mark>, <mark class="ph t-EMAIL">[EMAIL_1]</mark></pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> M-21487 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="fr" data-cat="payslip" data-fail="true">
+<h3>fr-syn-payslip-02 <small>fr · payslip</small><span class="stats">F1 97% <span class="grade g-A">A</span> · 116 ms · 720 字符 · 预期 20 / 命中 17 / 部分 2 / 漏检 1 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>BULLETIN DE PAIE
+Employeur : <mark class="t-COMPANY" title="COMPANY · regex:fr:labeled_company · 80%">Mutuelle Horizon Santé</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">27 rue des Lilas, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">69003 Lyon</mark>
+SIRET : <mark class="t-NUMBER" title="NUMBER · regex:fr:siret · 65%">496 194 285 00099</mark>    Code NAF : 4332A
+
+Salarié : <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Bertrand Lemoine</mark>                 Matricule : <span class="missed" title="漏检 ID">M-45995</span>
+Adresse : <mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">19 chemin du Moulin, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">67000 Strasbourg</mark>
+N° de sécurité sociale : <mark class="t-ID" title="ID · regex:fr:nir · 90%">2 95 03 75 046 945 61</mark>
+Emploi : technicien confirmé        Date d'entrée : <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">15 juillet 2024</mark>
+Période du <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">13/08/2024</mark> au <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">22/08/2024</mark>      Paiement le <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">20 septembre 2024</mark>
+
+Salaire de base                 <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">2 691,79 €</mark>
+Cotisations salariales          <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">592,19 €</mark>
+NET À PAYER                     <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">2 099,60 €</mark>
+
+Virement sur le compte <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">FR05 7993 4461 7992 4053 2610 008</mark>.
+Pour toute question : <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Étienne Rousseau</mark>, service paie, <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">02 32 14 42 55</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">paie.service@rhone-alpes-logistique.fr</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>BULLETIN DE PAIE
+Employeur : <mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+SIRET : <mark class="ph t-NUMBER">[NUMBER_1]</mark>    Code NAF : 4332A
+
+Salarié : <mark class="ph t-PERSON">[PERSON_1]</mark>                 Matricule : M-45995
+Adresse : <mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+N° de sécurité sociale : <mark class="ph t-ID">[ID_1]</mark>
+Emploi : technicien confirmé        Date d'entrée : 15 juillet 2024
+Période du 13/08/2024 au 22/08/2024      Paiement le 20 septembre 2024
+
+Salaire de base                 2 691,79 €
+Cotisations salariales          592,19 €
+NET À PAYER                     2 099,60 €
+
+Virement sur le compte <mark class="ph t-IBAN">[IBAN_1]</mark>.
+Pour toute question : <mark class="ph t-PERSON">[PERSON_2]</mark>, service paie, <mark class="ph t-PHONE">[PHONE_1]</mark>, <mark class="ph t-EMAIL">[EMAIL_1]</mark></pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> M-45995 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="fr" data-cat="payslip" data-fail="true">
+<h3>fr-syn-payslip-03 <small>fr · payslip</small><span class="stats">F1 97% <span class="grade g-A">A</span> · 590 ms · 713 字符 · 预期 20 / 命中 17 / 部分 2 / 漏检 1 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>BULLETIN DE PAIE
+Employeur : <mark class="t-COMPANY" title="COMPANY · regex:fr:labeled_company · 80%">Agence Immobilière du Parc</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">3 impasse des Acacias, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">44300 Nantes</mark>
+SIRET : <mark class="t-NUMBER" title="NUMBER · regex:fr:siret · 65%">544 926 246 00096</mark>    Code NAF : 4332A
+
+Salarié : <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Julien Marchand</mark>                 Matricule : <span class="missed" title="漏检 ID">M-07302</span>
+Adresse : <mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">27 rue des Lilas, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">69003 Lyon</mark>
+N° de sécurité sociale : <mark class="t-ID" title="ID · regex:fr:nir · 90%">1 66 10 31 911 768 48</mark>
+Emploi : technicien confirmé        Date d'entrée : <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">14 juin 2025</mark>
+Période du <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">17/07/2025</mark> au <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">26/07/2025</mark>      Paiement le <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">25 août 2025</mark>
+
+Salaire de base                 <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">2 638,30 €</mark>
+Cotisations salariales          <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">580,43 €</mark>
+NET À PAYER                     <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">2 057,87 €</mark>
+
+Virement sur le compte <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">FR22 8272 4663 2049 4524 7157 712</mark>.
+Pour toute question : <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Aurélie Fontaine</mark>, service paie, <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">03 28 91 12 66</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">paie.service@rhone-alpes-logistique.fr</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>BULLETIN DE PAIE
+Employeur : <mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+SIRET : <mark class="ph t-NUMBER">[NUMBER_1]</mark>    Code NAF : 4332A
+
+Salarié : <mark class="ph t-PERSON">[PERSON_1]</mark>                 Matricule : M-07302
+Adresse : <mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+N° de sécurité sociale : <mark class="ph t-ID">[ID_1]</mark>
+Emploi : technicien confirmé        Date d'entrée : 14 juin 2025
+Période du 17/07/2025 au 26/07/2025      Paiement le 25 août 2025
+
+Salaire de base                 2 638,30 €
+Cotisations salariales          580,43 €
+NET À PAYER                     2 057,87 €
+
+Virement sur le compte <mark class="ph t-IBAN">[IBAN_1]</mark>.
+Pour toute question : <mark class="ph t-PERSON">[PERSON_2]</mark>, service paie, <mark class="ph t-PHONE">[PHONE_1]</mark>, <mark class="ph t-EMAIL">[EMAIL_1]</mark></pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> M-07302 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="fr" data-cat="medical" data-fail="true">
+<h3>fr-syn-medical-01 <small>fr · medical</small><span class="stats">F1 95% <span class="grade g-A">A</span> · 773 ms · 883 字符 · 预期 22 / 命中 18 / 部分 2 / 漏检 2 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:fr:company_head · 80%">Clinique des Tilleuls</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">3 impasse des Acacias, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">44300 Nantes</mark>
+Tél. : <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">02 88 95 90 34</mark>
+
+<mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Marseille</mark>, le <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">1er août 2025</mark>
+
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Clémence Dupuis</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">27 rue des Lilas, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">69003 Lyon</mark>
+
+Nos réf. : <span class="missed" title="漏检 ID">SIN-3018608</span>        N° de sécurité sociale : <mark class="t-ID" title="ID · regex:fr:nir · 90%">2 83 05 13 093 016 31</mark>        Née le : <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_numeric · 85%">16/03/1988</mark>
+
+Madame,
+
+À la suite de votre consultation du <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">21 août 2025</mark> auprès du Dr <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Océane Morel</mark>, nous avons étudié votre demande de remboursement d'un montant de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">699,47 €</mark>. Au titre du contrat <span class="missed" title="漏检 ID">MH-32950259</span>, nous vous informons de la prise en charge de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">129,93 €</mark>, qui sera versée sous dix jours ouvrés sur le compte <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">FR94 7780 8820 3139 2214 4800 134</mark>.
+
+Votre prochain rendez-vous est fixé au <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">3 septembre 2025</mark> à 10 h 40. En cas d'empêchement, merci d'appeler le <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">01 61 27 79 85</mark> ou d'écrire à <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">accueil.secretariat@clinique-tilleuls.fr</mark>.
+
+Veuillez agréer, Madame, l'expression de nos salutations distinguées.
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Mathieu Girard</mark>
+Service des adhérents</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+Tél. : <mark class="ph t-PHONE">[PHONE_1]</mark>
+
+<mark class="ph t-ADDRESS">[ADDRESS_3]</mark>, le 1er août 2025
+
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_4]</mark><mark class="ph t-ADDRESS">[ADDRESS_5]</mark>
+
+Nos réf. : SIN-3018608        N° de sécurité sociale : <mark class="ph t-ID">[ID_1]</mark>        Née le : <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+Madame,
+
+À la suite de votre consultation du 21 août 2025 auprès du Dr <mark class="ph t-PERSON">[PERSON_2]</mark>, nous avons étudié votre demande de remboursement d'un montant de 699,47 €. Au titre du contrat MH-32950259, nous vous informons de la prise en charge de 129,93 €, qui sera versée sous dix jours ouvrés sur le compte <mark class="ph t-IBAN">[IBAN_1]</mark>.
+
+Votre prochain rendez-vous est fixé au 3 septembre 2025 à 10 h 40. En cas d'empêchement, merci d'appeler le <mark class="ph t-PHONE">[PHONE_2]</mark> ou d'écrire à <mark class="ph t-EMAIL">[EMAIL_1]</mark>.
+
+Veuillez agréer, Madame, l'expression de nos salutations distinguées.
+<mark class="ph t-PERSON">[PERSON_3]</mark>
+Service des adhérents</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> SIN-3018608 <i>ID</i></li>
+<li><b>漏检</b> MH-32950259 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="fr" data-cat="medical" data-fail="true">
+<h3>fr-syn-medical-02 <small>fr · medical</small><span class="stats">F1 95% <span class="grade g-A">A</span> · 692 ms · 884 字符 · 预期 22 / 命中 18 / 部分 2 / 漏检 2 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:fr:company_head · 80%">Mutuelle Horizon Santé</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">8 avenue Jean Jaurès, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">31000 Toulouse</mark>
+Tél. : <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">02 64 94 90 11</mark>
+
+<mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Paris</mark>, le <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">21 juin 2024</mark>
+
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Yasmine Haddad</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">27 rue des Lilas, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">69003 Lyon</mark>
+
+Nos réf. : <span class="missed" title="漏检 ID">SIN-8215638</span>        N° de sécurité sociale : <mark class="t-ID" title="ID · regex:fr:nir · 90%">1 76 03 13 407 796 86</mark>        Née le : <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_numeric · 85%">26/01/1991</mark>
+
+Madame,
+
+À la suite de votre consultation du <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">26 juin 2024</mark> auprès du Dr <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Étienne Rousseau</mark>, nous avons étudié votre demande de remboursement d'un montant de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">864,60 €</mark>. Au titre du contrat <span class="missed" title="漏检 ID">MH-94948091</span>, nous vous informons de la prise en charge de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">562,57 €</mark>, qui sera versée sous dix jours ouvrés sur le compte <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">FR29 8417 9827 1824 6944 3184 799</mark>.
+
+Votre prochain rendez-vous est fixé au <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">26 juillet 2024</mark> à 10 h 40. En cas d'empêchement, merci d'appeler le <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">01 55 30 40 51</mark> ou d'écrire à <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">accueil.secretariat@clinique-tilleuls.fr</mark>.
+
+Veuillez agréer, Madame, l'expression de nos salutations distinguées.
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Bertrand Lemoine</mark>
+Service des adhérents</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+Tél. : <mark class="ph t-PHONE">[PHONE_1]</mark>
+
+<mark class="ph t-ADDRESS">[ADDRESS_3]</mark>, le 21 juin 2024
+
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_4]</mark><mark class="ph t-ADDRESS">[ADDRESS_5]</mark>
+
+Nos réf. : SIN-8215638        N° de sécurité sociale : <mark class="ph t-ID">[ID_1]</mark>        Née le : <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+Madame,
+
+À la suite de votre consultation du 26 juin 2024 auprès du Dr <mark class="ph t-PERSON">[PERSON_2]</mark>, nous avons étudié votre demande de remboursement d'un montant de 864,60 €. Au titre du contrat MH-94948091, nous vous informons de la prise en charge de 562,57 €, qui sera versée sous dix jours ouvrés sur le compte <mark class="ph t-IBAN">[IBAN_1]</mark>.
+
+Votre prochain rendez-vous est fixé au 26 juillet 2024 à 10 h 40. En cas d'empêchement, merci d'appeler le <mark class="ph t-PHONE">[PHONE_2]</mark> ou d'écrire à <mark class="ph t-EMAIL">[EMAIL_1]</mark>.
+
+Veuillez agréer, Madame, l'expression de nos salutations distinguées.
+<mark class="ph t-PERSON">[PERSON_3]</mark>
+Service des adhérents</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> SIN-8215638 <i>ID</i></li>
+<li><b>漏检</b> MH-94948091 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="fr" data-cat="medical" data-fail="true">
+<h3>fr-syn-medical-03 <small>fr · medical</small><span class="stats">F1 95% <span class="grade g-A">A</span> · 780 ms · 885 字符 · 预期 22 / 命中 18 / 部分 2 / 漏检 2 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:fr:company_head · 80%">Agence Immobilière du Parc</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">27 rue des Lilas, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">69003 Lyon</mark>
+Tél. : <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">05 22 70 44 90</mark>
+
+<mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Strasbourg</mark>, le <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">10 mars 2024</mark>
+
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Clémence Dupuis</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">145 boulevard Voltaire, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">75011 Paris</mark>
+
+Nos réf. : <span class="missed" title="漏检 ID">SIN-6106891</span>        N° de sécurité sociale : <mark class="t-ID" title="ID · regex:fr:nir · 90%">2 87 10 75 428 871 43</mark>        Née le : <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_numeric · 85%">20/02/1979</mark>
+
+Madame,
+
+À la suite de votre consultation du <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">9 avril 2024</mark> auprès du Dr <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Océane Morel</mark>, nous avons étudié votre demande de remboursement d'un montant de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">577,69 €</mark>. Au titre du contrat <span class="missed" title="漏检 ID">MH-77454568</span>, nous vous informons de la prise en charge de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">514,50 €</mark>, qui sera versée sous dix jours ouvrés sur le compte <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">FR17 3155 9353 6000 4974 8489 688</mark>.
+
+Votre prochain rendez-vous est fixé au <mark class="off t-DATE" title="DATE（默认不遮） · regex:fr:date_words · 85%">24 avril 2024</mark> à 10 h 40. En cas d'empêchement, merci d'appeler le <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">04 72 61 66 89</mark> ou d'écrire à <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">accueil.secretariat@clinique-tilleuls.fr</mark>.
+
+Veuillez agréer, Madame, l'expression de nos salutations distinguées.
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Mathieu Girard</mark>
+Service des adhérents</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+Tél. : <mark class="ph t-PHONE">[PHONE_1]</mark>
+
+<mark class="ph t-ADDRESS">[ADDRESS_3]</mark>, le 10 mars 2024
+
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_4]</mark><mark class="ph t-ADDRESS">[ADDRESS_5]</mark>
+
+Nos réf. : SIN-6106891        N° de sécurité sociale : <mark class="ph t-ID">[ID_1]</mark>        Née le : <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+Madame,
+
+À la suite de votre consultation du 9 avril 2024 auprès du Dr <mark class="ph t-PERSON">[PERSON_2]</mark>, nous avons étudié votre demande de remboursement d'un montant de 577,69 €. Au titre du contrat MH-77454568, nous vous informons de la prise en charge de 514,50 €, qui sera versée sous dix jours ouvrés sur le compte <mark class="ph t-IBAN">[IBAN_1]</mark>.
+
+Votre prochain rendez-vous est fixé au 24 avril 2024 à 10 h 40. En cas d'empêchement, merci d'appeler le <mark class="ph t-PHONE">[PHONE_2]</mark> ou d'écrire à <mark class="ph t-EMAIL">[EMAIL_1]</mark>.
+
+Veuillez agréer, Madame, l'expression de nos salutations distinguées.
+<mark class="ph t-PERSON">[PERSON_3]</mark>
+Service des adhérents</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> SIN-6106891 <i>ID</i></li>
+<li><b>漏检</b> MH-77454568 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="fr" data-cat="cv" data-fail="false">
+<h3>fr-syn-cv-01 <small>fr · cv</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 552 ms · 807 字符 · 预期 16 / 命中 16 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Nadia Benali</mark>
+<mark class="t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">145 boulevard Voltaire</mark>, <mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">75011 Paris</mark>
+<mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">06 98 62 11 10</mark> | <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">nadia.benali@laposte.net</mark> | <mark class="t-URL" title="URL · regex:universal:url · 85%">linkedin.com/in/nadia-benali</mark>
+Née le <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:fr:date_words · 85%">10 juillet 1997</mark>
+
+PROFIL
+Contrôleuse de gestion, huit ans d'expérience en logistique et en reporting financier.
+
+EXPÉRIENCE PROFESSIONNELLE
+Contrôleuse de gestion senior, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Decathlon</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Lyon</mark> (depuis 2021)
+Pilotage de la refonte du reporting mensuel, clôture raccourcie de trois jours.
+Contrôleuse de gestion, <mark class="t-COMPANY" title="COMPANY · regex:fr:company_head · 80%">Cabinet Vasseur &amp; Associés</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Marseille</mark> (2017 - 2021)
+Mise en place du tableau de bord de performance des transporteurs.
+Stagiaire, <mark class="t-COMPANY" title="COMPANY · regex:fr:company · 90%">Menuiserie Berthelot SARL</mark> (2016 - 2017)
+
+FORMATION
+Master Contrôle de gestion, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 99%">Université Lumière Lyon 2</mark>, 2016
+
+RÉFÉRENCES
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Mathieu Girard</mark>, directeur des opérations, <mark class="t-COMPANY" title="COMPANY · regex:fr:company_head · 80%">Cabinet Vasseur &amp; Associés</mark>, <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">01 95 13 35 32</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">mathieu.girard@atelier-numerique.fr</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+<mark class="ph t-PHONE">[PHONE_1]</mark> | <mark class="ph t-EMAIL">[EMAIL_1]</mark> | <mark class="ph t-URL">[URL_1]</mark>
+Née le <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+PROFIL
+Contrôleuse de gestion, huit ans d'expérience en logistique et en reporting financier.
+
+EXPÉRIENCE PROFESSIONNELLE
+Contrôleuse de gestion senior, <mark class="ph t-COMPANY">[COMPANY_1]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_3]</mark> (depuis 2021)
+Pilotage de la refonte du reporting mensuel, clôture raccourcie de trois jours.
+Contrôleuse de gestion, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_4]</mark> (2017 - 2021)
+Mise en place du tableau de bord de performance des transporteurs.
+Stagiaire, <mark class="ph t-COMPANY">[COMPANY_3]</mark> (2016 - 2017)
+
+FORMATION
+Master Contrôle de gestion, <mark class="ph t-COMPANY">[COMPANY_4]</mark>, 2016
+
+RÉFÉRENCES
+<mark class="ph t-PERSON">[PERSON_2]</mark>, directeur des opérations, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-PHONE">[PHONE_2]</mark>, <mark class="ph t-EMAIL">[EMAIL_2]</mark></pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="cv" data-fail="false">
+<h3>fr-syn-cv-02 <small>fr · cv</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 574 ms · 832 字符 · 预期 16 / 命中 16 / 部分 0 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Étienne Rousseau</mark>
+<mark class="t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">8 avenue Jean Jaurès</mark>, <mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">31000 Toulouse</mark>
+<mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">06 90 22 84 18</mark> | <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">etienne.rousseau@laposte.net</mark> | <mark class="t-URL" title="URL · regex:universal:url · 85%">linkedin.com/in/etienne-rousseau</mark>
+Née le <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:fr:date_words · 85%">13 janvier 1974</mark>
+
+PROFIL
+Contrôleuse de gestion, huit ans d'expérience en logistique et en reporting financier.
+
+EXPÉRIENCE PROFESSIONNELLE
+Contrôleuse de gestion senior, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Capgemini</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Lyon</mark> (depuis 2021)
+Pilotage de la refonte du reporting mensuel, clôture raccourcie de trois jours.
+Contrôleuse de gestion, <mark class="t-COMPANY" title="COMPANY · regex:fr:company · 90%">Atelier Numérique Lyonnais SAS</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Toulouse</mark> (2017 - 2021)
+Mise en place du tableau de bord de performance des transporteurs.
+Stagiaire, <mark class="t-COMPANY" title="COMPANY · regex:fr:company · 90%">Transports Rhône-Alpes Logistique SAS</mark> (2016 - 2017)
+
+FORMATION
+Master Contrôle de gestion, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 98%">INSA Lyon</mark>, 2016
+
+RÉFÉRENCES
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">François-Xavier Delmas</mark>, directeur des opérations, <mark class="t-COMPANY" title="COMPANY · regex:fr:company · 90%">Atelier Numérique Lyonnais SAS</mark>, <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">04 84 15 66 16</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">francois.delmas@atelier-numerique.fr</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+<mark class="ph t-PHONE">[PHONE_1]</mark> | <mark class="ph t-EMAIL">[EMAIL_1]</mark> | <mark class="ph t-URL">[URL_1]</mark>
+Née le <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+PROFIL
+Contrôleuse de gestion, huit ans d'expérience en logistique et en reporting financier.
+
+EXPÉRIENCE PROFESSIONNELLE
+Contrôleuse de gestion senior, <mark class="ph t-COMPANY">[COMPANY_1]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_3]</mark> (depuis 2021)
+Pilotage de la refonte du reporting mensuel, clôture raccourcie de trois jours.
+Contrôleuse de gestion, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_4]</mark> (2017 - 2021)
+Mise en place du tableau de bord de performance des transporteurs.
+Stagiaire, <mark class="ph t-COMPANY">[COMPANY_3]</mark> (2016 - 2017)
+
+FORMATION
+Master Contrôle de gestion, <mark class="ph t-COMPANY">[COMPANY_4]</mark>, 2016
+
+RÉFÉRENCES
+<mark class="ph t-PERSON">[PERSON_2]</mark>, directeur des opérations, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-PHONE">[PHONE_2]</mark>, <mark class="ph t-EMAIL">[EMAIL_2]</mark></pre></div>
+</div>
+</article>
+<article class="case" data-lang="fr" data-cat="cv" data-fail="true">
+<h3>fr-syn-cv-03 <small>fr · cv</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 531 ms · 816 字符 · 预期 16 / 命中 15 / 部分 1 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Yasmine Haddad</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:fr:street · 90%">27 rue des Lilas, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:fr:postal · 80%">69003 Lyon</mark>
+<mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">06 55 58 33 10</mark> | <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">yasmine.haddad@laposte.net</mark> | <mark class="t-URL" title="URL · regex:universal:url · 85%">linkedin.com/in/yasmine-haddad</mark>
+Née le <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_numeric · 85%">04/06/1987</mark>
+
+PROFIL
+Contrôleuse de gestion, huit ans d'expérience en logistique et en reporting financier.
+
+EXPÉRIENCE PROFESSIONNELLE
+Contrôleuse de gestion senior, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Capgemini</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Marseille</mark> (depuis 2021)
+Pilotage de la refonte du reporting mensuel, clôture raccourcie de trois jours.
+Contrôleuse de gestion, <mark class="t-COMPANY" title="COMPANY · regex:fr:company · 90%">Atelier Numérique Lyonnais SAS</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Nantes</mark> (2017 - 2021)
+Mise en place du tableau de bord de performance des transporteurs.
+Stagiaire, <mark class="t-COMPANY" title="COMPANY · regex:fr:company_head · 80%">Cabinet Vasseur &amp; Associés</mark> (2016 - 2017)
+
+FORMATION
+Master Contrôle de gestion, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 99%">Université Lumière Lyon 2</mark>, 2016
+
+RÉFÉRENCES
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Étienne Rousseau</mark>, directeur des opérations, <mark class="t-COMPANY" title="COMPANY · regex:fr:company · 90%">Atelier Numérique Lyonnais SAS</mark>, <mark class="t-PHONE" title="PHONE · regex:fr:phone · 85%">03 61 93 18 25</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">etienne.rousseau@atelier-numerique.fr</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+<mark class="ph t-PHONE">[PHONE_1]</mark> | <mark class="ph t-EMAIL">[EMAIL_1]</mark> | <mark class="ph t-URL">[URL_1]</mark>
+Née le <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+PROFIL
+Contrôleuse de gestion, huit ans d'expérience en logistique et en reporting financier.
+
+EXPÉRIENCE PROFESSIONNELLE
+Contrôleuse de gestion senior, <mark class="ph t-COMPANY">[COMPANY_1]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_3]</mark> (depuis 2021)
+Pilotage de la refonte du reporting mensuel, clôture raccourcie de trois jours.
+Contrôleuse de gestion, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_4]</mark> (2017 - 2021)
+Mise en place du tableau de bord de performance des transporteurs.
+Stagiaire, <mark class="ph t-COMPANY">[COMPANY_3]</mark> (2016 - 2017)
+
+FORMATION
+Master Contrôle de gestion, <mark class="ph t-COMPANY">[COMPANY_4]</mark>, 2016
+
+RÉFÉRENCES
+<mark class="ph t-PERSON">[PERSON_2]</mark>, directeur des opérations, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-PHONE">[PHONE_2]</mark>, <mark class="ph t-EMAIL">[EMAIL_2]</mark></pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="invoice" data-fail="true">
+<h3>es-syn-invoice-01 <small>es · invoice</small><span class="stats">F1 98% <span class="grade g-A">A</span> · 581 ms · 788 字符 · 预期 21 / 命中 18 / 部分 2 / 漏检 1 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:es:company_head · 80%">Clínica Dental Sonrisa Norte</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Calle de Alcalá 142, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">28009 Madrid</mark>
+CIF: <mark class="t-ID" title="ID · regex:es:cif · 80%">B73232259</mark> - Tel.: <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">936 404 587</mark> - <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">administracion.dpto@suministros-levante.es</mark>
+
+FACTURA N.º <span class="missed" title="漏检 ID">F-2025/8337</span>
+Fecha de emisión: <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">8 de abril de 2024</mark>        Vencimiento: <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">27 de abril de 2024</mark>
+
+Cliente:
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Rocío Montenegro Díaz</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Calle Colón 31, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">46004 Valencia</mark>
+
+Concepto                             Cant.   Precio unitario    Importe
+Revisión e instalación de equipos     3      <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">172,45 €</mark>            <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">517,35 €</mark>
+Portes y embalaje                     1      <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">37,73 €</mark>            <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">37,73 €</mark>
+
+Base imponible: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">555,08 €</mark>
+IVA 21 %: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">116,57 €</mark>
+Total a pagar: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">671,65 €</mark>
+
+Forma de pago: transferencia a la cuenta <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">ES42 4264 5672 4205 5607 3651</mark>, indicando el número de factura.
+Persona de contacto: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Sergio Castaño Bravo</mark>, departamento de administración, <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">933 398 217</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+CIF: <mark class="ph t-ID">[ID_1]</mark> - Tel.: <mark class="ph t-PHONE">[PHONE_1]</mark> - <mark class="ph t-EMAIL">[EMAIL_1]</mark>
+
+FACTURA N.º F-2025/8337
+Fecha de emisión: 8 de abril de 2024        Vencimiento: 27 de abril de 2024
+
+Cliente:
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+
+Concepto                             Cant.   Precio unitario    Importe
+Revisión e instalación de equipos     3      172,45 €            517,35 €
+Portes y embalaje                     1      37,73 €            37,73 €
+
+Base imponible: 555,08 €
+IVA 21 %: 116,57 €
+Total a pagar: 671,65 €
+
+Forma de pago: transferencia a la cuenta <mark class="ph t-IBAN">[IBAN_1]</mark>, indicando el número de factura.
+Persona de contacto: <mark class="ph t-PERSON">[PERSON_2]</mark>, departamento de administración, <mark class="ph t-PHONE">[PHONE_2]</mark>.</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> F-2025/8337 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="es" data-cat="invoice" data-fail="true">
+<h3>es-syn-invoice-02 <small>es · invoice</small><span class="stats">F1 98% <span class="grade g-A">A</span> · 433 ms · 787 字符 · 预期 21 / 命中 18 / 部分 2 / 漏检 1 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:es:company · 90%">Asesoría Méndez y Roldán S.L.</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Calle de Alcalá 142, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">28009 Madrid</mark>
+CIF: <mark class="t-ID" title="ID · regex:es:cif · 80%">A51013091</mark> - Tel.: <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">914 910 426</mark> - <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">administracion.dpto@suministros-levante.es</mark>
+
+FACTURA N.º <span class="missed" title="漏检 ID">F-2025/3516</span>
+Fecha de emisión: <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">20 de marzo de 2025</mark>        Vencimiento: <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">9 de abril de 2025</mark>
+
+Cliente:
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Lucía Navarro Gil</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Gran Vía 45, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">48011 Bilbao</mark>
+
+Concepto                             Cant.   Precio unitario    Importe
+Revisión e instalación de equipos     3      <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">364,39 €</mark>            <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">1.093,17 €</mark>
+Portes y embalaje                     1      <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">106,89 €</mark>            <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">106,89 €</mark>
+
+Base imponible: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">1.200,06 €</mark>
+IVA 21 %: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">252,01 €</mark>
+Total a pagar: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">1.452,07 €</mark>
+
+Forma de pago: transferencia a la cuenta <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">ES90 7330 8725 4229 9351 8622</mark>, indicando el número de factura.
+Persona de contacto: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Pablo Herrero Vidal</mark>, departamento de administración, <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">986 572 959</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+CIF: <mark class="ph t-ID">[ID_1]</mark> - Tel.: <mark class="ph t-PHONE">[PHONE_1]</mark> - <mark class="ph t-EMAIL">[EMAIL_1]</mark>
+
+FACTURA N.º F-2025/3516
+Fecha de emisión: 20 de marzo de 2025        Vencimiento: 9 de abril de 2025
+
+Cliente:
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+
+Concepto                             Cant.   Precio unitario    Importe
+Revisión e instalación de equipos     3      364,39 €            1.093,17 €
+Portes y embalaje                     1      106,89 €            106,89 €
+
+Base imponible: 1.200,06 €
+IVA 21 %: 252,01 €
+Total a pagar: 1.452,07 €
+
+Forma de pago: transferencia a la cuenta <mark class="ph t-IBAN">[IBAN_1]</mark>, indicando el número de factura.
+Persona de contacto: <mark class="ph t-PERSON">[PERSON_2]</mark>, departamento de administración, <mark class="ph t-PHONE">[PHONE_2]</mark>.</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> F-2025/3516 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="es" data-cat="invoice" data-fail="true">
+<h3>es-syn-invoice-03 <small>es · invoice</small><span class="stats">F1 98% <span class="grade g-A">A</span> · 491 ms · 798 字符 · 预期 21 / 命中 18 / 部分 2 / 漏检 1 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:es:company · 90%">Asesoría Méndez y Roldán S.L.</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Paseo de Pereda 22, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">39004 Santander</mark>
+CIF: <mark class="t-ID" title="ID · regex:es:cif · 80%">B24088125</mark> - Tel.: <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">982 370 211</mark> - <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">administracion.dpto@suministros-levante.es</mark>
+
+FACTURA N.º <span class="missed" title="漏检 ID">F-2025/7673</span>
+Fecha de emisión: <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">26 de febrero de 2024</mark>        Vencimiento: <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">1 de marzo de 2024</mark>
+
+Cliente:
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Andrés Quintana Marín</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Calle de Alcalá 142, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">28009 Madrid</mark>
+
+Concepto                             Cant.   Precio unitario    Importe
+Revisión e instalación de equipos     3      <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">208,66 €</mark>            <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">625,98 €</mark>
+Portes y embalaje                     1      <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">117,88 €</mark>            <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">117,88 €</mark>
+
+Base imponible: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">743,86 €</mark>
+IVA 21 %: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">156,21 €</mark>
+Total a pagar: <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">900,07 €</mark>
+
+Forma de pago: transferencia a la cuenta <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">ES02 3767 2499 1232 2761 0773</mark>, indicando el número de factura.
+Persona de contacto: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Nuria Beltrán Aguado</mark>, departamento de administración, <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">937 840 481</mark>.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+CIF: <mark class="ph t-ID">[ID_1]</mark> - Tel.: <mark class="ph t-PHONE">[PHONE_1]</mark> - <mark class="ph t-EMAIL">[EMAIL_1]</mark>
+
+FACTURA N.º F-2025/7673
+Fecha de emisión: 26 de febrero de 2024        Vencimiento: 1 de marzo de 2024
+
+Cliente:
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+
+Concepto                             Cant.   Precio unitario    Importe
+Revisión e instalación de equipos     3      208,66 €            625,98 €
+Portes y embalaje                     1      117,88 €            117,88 €
+
+Base imponible: 743,86 €
+IVA 21 %: 156,21 €
+Total a pagar: 900,07 €
+
+Forma de pago: transferencia a la cuenta <mark class="ph t-IBAN">[IBAN_1]</mark>, indicando el número de factura.
+Persona de contacto: <mark class="ph t-PERSON">[PERSON_2]</mark>, departamento de administración, <mark class="ph t-PHONE">[PHONE_2]</mark>.</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> F-2025/7673 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="es" data-cat="lease" data-fail="true">
+<h3>es-syn-lease-01 <small>es · lease</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 752 ms · 1109 字符 · 预期 23 / 命中 21 / 部分 2 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>CONTRATO DE ARRENDAMIENTO DE VIVIENDA
+Expediente: <mark class="t-ID" title="ID · regex:universal:labeled_id · 70%">ARR-2025-8269</mark>
+
+En <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Santander</mark>, a <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">21 de febrero de 2025</mark>, reunidos:
+
+De una parte, D. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Alejandro Ruiz Cabrera</mark>, con DNI <mark class="t-ID" title="ID · regex:es:dni · 90%">18054197W</mark> y domicilio en <mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Avenida de la Constitución 18, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">41004 Sevilla</mark>, teléfono <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">696 439 723</mark>, correo <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">alejandro.cabrera@gmail.com</mark>, como arrendador;
+y de otra, D.ª <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Sergio Castaño Bravo</mark>, nacida el <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_numeric · 85%">14/06/1981</mark>, con DNI <mark class="t-ID" title="ID · regex:es:dni · 90%">74522788M</mark>, y D. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Pablo Herrero Vidal</mark>, nacido el <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:es:date_words · 85%">11 de septiembre de 1970</mark>, como arrendatarios.
+
+Primera. Objeto. El arrendador cede en arrendamiento la vivienda sita en <mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Calle de Alcalá 142, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">28009 Madrid</mark>, por un plazo de cinco años a contar desde el <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">25 de febrero de 2025</mark>.
+Segunda. Renta. La renta mensual se fija en <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">1.295,97 €</mark>, pagadera por adelantado mediante transferencia a la cuenta <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">ES28 9916 1728 8818 1768 2397</mark>.
+Tercera. Fianza. Los arrendatarios entregan en este acto una fianza de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">2.370,94 €</mark>.
+Cuarta. Administración. La finca es administrada por <mark class="t-COMPANY" title="COMPANY · regex:es:company · 90%">Innovación Digital Cantábrica S.L.</mark>; las incidencias se comunicarán a <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 99%">Carmen Iglesias Soto</mark> en el <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">921 240 482</mark>.
+
+Y en prueba de conformidad, firman el presente contrato por duplicado.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>CONTRATO DE ARRENDAMIENTO DE VIVIENDA
+Expediente: <mark class="ph t-ID">[ID_1]</mark>
+
+En <mark class="ph t-ADDRESS">[ADDRESS_1]</mark>, a 21 de febrero de 2025, reunidos:
+
+De una parte, D. <mark class="ph t-PERSON">[PERSON_1]</mark>, con DNI <mark class="ph t-ID">[ID_2]</mark> y domicilio en <mark class="ph t-ADDRESS">[ADDRESS_2]</mark><mark class="ph t-ADDRESS">[ADDRESS_3]</mark>, teléfono <mark class="ph t-PHONE">[PHONE_1]</mark>, correo <mark class="ph t-EMAIL">[EMAIL_1]</mark>, como arrendador;
+y de otra, D.ª <mark class="ph t-PERSON">[PERSON_2]</mark>, nacida el <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>, con DNI <mark class="ph t-ID">[ID_3]</mark>, y D. <mark class="ph t-PERSON">[PERSON_3]</mark>, nacido el <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_2]</mark>, como arrendatarios.
+
+Primera. Objeto. El arrendador cede en arrendamiento la vivienda sita en <mark class="ph t-ADDRESS">[ADDRESS_4]</mark><mark class="ph t-ADDRESS">[ADDRESS_5]</mark>, por un plazo de cinco años a contar desde el 25 de febrero de 2025.
+Segunda. Renta. La renta mensual se fija en 1.295,97 €, pagadera por adelantado mediante transferencia a la cuenta <mark class="ph t-IBAN">[IBAN_1]</mark>.
+Tercera. Fianza. Los arrendatarios entregan en este acto una fianza de 2.370,94 €.
+Cuarta. Administración. La finca es administrada por <mark class="ph t-COMPANY">[COMPANY_1]</mark>; las incidencias se comunicarán a <mark class="ph t-PERSON">[PERSON_4]</mark> en el <mark class="ph t-PHONE">[PHONE_2]</mark>.
+
+Y en prueba de conformidad, firman el presente contrato por duplicado.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="lease" data-fail="true">
+<h3>es-syn-lease-02 <small>es · lease</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 823 ms · 1079 字符 · 预期 23 / 命中 21 / 部分 2 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>CONTRATO DE ARRENDAMIENTO DE VIVIENDA
+Expediente: <mark class="t-ID" title="ID · regex:universal:labeled_id · 70%">ARR-2025-5709</mark>
+
+En <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Barcelona</mark>, a <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">4 de marzo de 2024</mark>, reunidos:
+
+De una parte, D. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Carmen Iglesias Soto</mark>, con DNI <mark class="t-ID" title="ID · regex:es:dni · 90%">57746649C</mark> y domicilio en <mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Gran Vía 45, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">48011 Bilbao</mark>, teléfono <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">680 435 922</mark>, correo <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">carmen.soto@gmail.com</mark>, como arrendador;
+y de otra, D.ª <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Andrés Quintana Marín</mark>, nacida el <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:es:date_words · 85%">22 de abril de 1969</mark>, con DNI <mark class="t-ID" title="ID · regex:es:dni · 90%">44172154X</mark>, y D. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Nuria Beltrán Aguado</mark>, nacido el <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:es:date_words · 85%">15 de enero de 1984</mark>, como arrendatarios.
+
+Primera. Objeto. El arrendador cede en arrendamiento la vivienda sita en <mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Calle de Alcalá 142, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">28009 Madrid</mark>, por un plazo de cinco años a contar desde el <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">7 de abril de 2024</mark>.
+Segunda. Renta. La renta mensual se fija en <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">1.116,27 €</mark>, pagadera por adelantado mediante transferencia a la cuenta <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">ES13 1558 3429 9032 5759 7655</mark>.
+Tercera. Fianza. Los arrendatarios entregan en este acto una fianza de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">3.143,12 €</mark>.
+Cuarta. Administración. La finca es administrada por <mark class="t-COMPANY" title="COMPANY · regex:es:company · 90%">Inmobiliaria Puerta del Sol S.L.</mark>; las incidencias se comunicarán a <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 99%">Javier Morales Peña</mark> en el <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">910 443 693</mark>.
+
+Y en prueba de conformidad, firman el presente contrato por duplicado.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>CONTRATO DE ARRENDAMIENTO DE VIVIENDA
+Expediente: <mark class="ph t-ID">[ID_1]</mark>
+
+En <mark class="ph t-ADDRESS">[ADDRESS_1]</mark>, a 4 de marzo de 2024, reunidos:
+
+De una parte, D. <mark class="ph t-PERSON">[PERSON_1]</mark>, con DNI <mark class="ph t-ID">[ID_2]</mark> y domicilio en <mark class="ph t-ADDRESS">[ADDRESS_2]</mark><mark class="ph t-ADDRESS">[ADDRESS_3]</mark>, teléfono <mark class="ph t-PHONE">[PHONE_1]</mark>, correo <mark class="ph t-EMAIL">[EMAIL_1]</mark>, como arrendador;
+y de otra, D.ª <mark class="ph t-PERSON">[PERSON_2]</mark>, nacida el <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>, con DNI <mark class="ph t-ID">[ID_3]</mark>, y D. <mark class="ph t-PERSON">[PERSON_3]</mark>, nacido el <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_2]</mark>, como arrendatarios.
+
+Primera. Objeto. El arrendador cede en arrendamiento la vivienda sita en <mark class="ph t-ADDRESS">[ADDRESS_4]</mark><mark class="ph t-ADDRESS">[ADDRESS_5]</mark>, por un plazo de cinco años a contar desde el 7 de abril de 2024.
+Segunda. Renta. La renta mensual se fija en 1.116,27 €, pagadera por adelantado mediante transferencia a la cuenta <mark class="ph t-IBAN">[IBAN_1]</mark>.
+Tercera. Fianza. Los arrendatarios entregan en este acto una fianza de 3.143,12 €.
+Cuarta. Administración. La finca es administrada por <mark class="ph t-COMPANY">[COMPANY_1]</mark>; las incidencias se comunicarán a <mark class="ph t-PERSON">[PERSON_4]</mark> en el <mark class="ph t-PHONE">[PHONE_2]</mark>.
+
+Y en prueba de conformidad, firman el presente contrato por duplicado.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="lease" data-fail="true">
+<h3>es-syn-lease-03 <small>es · lease</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 756 ms · 1071 字符 · 预期 23 / 命中 22 / 部分 1 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>CONTRATO DE ARRENDAMIENTO DE VIVIENDA
+Expediente: <mark class="t-ID" title="ID · regex:universal:labeled_id · 70%">ARR-2025-1455</mark>
+
+En <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Santander</mark>, a <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">26 de abril de 2024</mark>, reunidos:
+
+De una parte, D. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Elena Domínguez Rey</mark>, con DNI <mark class="t-ID" title="ID · regex:es:dni · 90%">57033891D</mark> y domicilio en <mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Carrer de Mallorca 275, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">08008 Barcelona</mark>, teléfono <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">680 832 515</mark>, correo <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">elena.rey@telefonica.net</mark>, como arrendador;
+y de otra, D.ª <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Rocío Montenegro Díaz</mark>, nacida el <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_numeric · 85%">22/06/1965</mark>, con DNI <mark class="t-ID" title="ID · regex:es:dni · 90%">74621300P</mark>, y D. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Lucía Navarro Gil</mark>, nacido el <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:es:date_words · 85%">8 de abril de 1994</mark>, como arrendatarios.
+
+Primera. Objeto. El arrendador cede en arrendamiento la vivienda sita en <mark class="t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Gran Vía 45</mark>, <mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">48011 Bilbao</mark>, por un plazo de cinco años a contar desde el <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">23 de mayo de 2024</mark>.
+Segunda. Renta. La renta mensual se fija en <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">1.741,02 €</mark>, pagadera por adelantado mediante transferencia a la cuenta <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">ES13 8024 3030 6739 4813 3029</mark>.
+Tercera. Fianza. Los arrendatarios entregan en este acto una fianza de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">3.646,61 €</mark>.
+Cuarta. Administración. La finca es administrada por <mark class="t-COMPANY" title="COMPANY · regex:es:company_head · 80%">Clínica Dental Sonrisa Norte</mark>; las incidencias se comunicarán a <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Javier Morales Peña</mark> en el <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">916 181 175</mark>.
+
+Y en prueba de conformidad, firman el presente contrato por duplicado.</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>CONTRATO DE ARRENDAMIENTO DE VIVIENDA
+Expediente: <mark class="ph t-ID">[ID_1]</mark>
+
+En <mark class="ph t-ADDRESS">[ADDRESS_1]</mark>, a 26 de abril de 2024, reunidos:
+
+De una parte, D. <mark class="ph t-PERSON">[PERSON_1]</mark>, con DNI <mark class="ph t-ID">[ID_2]</mark> y domicilio en <mark class="ph t-ADDRESS">[ADDRESS_2]</mark><mark class="ph t-ADDRESS">[ADDRESS_3]</mark>, teléfono <mark class="ph t-PHONE">[PHONE_1]</mark>, correo <mark class="ph t-EMAIL">[EMAIL_1]</mark>, como arrendador;
+y de otra, D.ª <mark class="ph t-PERSON">[PERSON_2]</mark>, nacida el <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>, con DNI <mark class="ph t-ID">[ID_3]</mark>, y D. <mark class="ph t-PERSON">[PERSON_3]</mark>, nacido el <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_2]</mark>, como arrendatarios.
+
+Primera. Objeto. El arrendador cede en arrendamiento la vivienda sita en <mark class="ph t-ADDRESS">[ADDRESS_4]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_5]</mark>, por un plazo de cinco años a contar desde el 23 de mayo de 2024.
+Segunda. Renta. La renta mensual se fija en 1.741,02 €, pagadera por adelantado mediante transferencia a la cuenta <mark class="ph t-IBAN">[IBAN_1]</mark>.
+Tercera. Fianza. Los arrendatarios entregan en este acto una fianza de 3.646,61 €.
+Cuarta. Administración. La finca es administrada por <mark class="ph t-COMPANY">[COMPANY_1]</mark>; las incidencias se comunicarán a <mark class="ph t-PERSON">[PERSON_4]</mark> en el <mark class="ph t-PHONE">[PHONE_2]</mark>.
+
+Y en prueba de conformidad, firman el presente contrato por duplicado.</pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="payslip" data-fail="true">
+<h3>es-syn-payslip-01 <small>es · payslip</small><span class="stats">F1 95% <span class="grade g-A">A</span> · 482 ms · 723 字符 · 预期 21 / 命中 17 / 部分 2 / 漏检 2 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>NÓMINA
+Empresa: <mark class="t-COMPANY" title="COMPANY · regex:es:labeled_company · 80%">Seguros Atlántida Mutua</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Carrer de Mallorca 275, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">08008 Barcelona</mark>
+CIF: <mark class="t-ID" title="ID · regex:es:cif · 80%">B12281710</mark>    CCC: <span class="missed" title="漏检 ID">28/5950695/21</span>
+
+Trabajador: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Javier Morales Peña</mark>               N.º empleado: <span class="missed" title="漏检 ID">T-02328</span>
+Domicilio: <mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Avenida de la Constitución 18, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">41004 Sevilla</mark>
+DNI: <mark class="t-ID" title="ID · regex:es:dni · 90%">22061879A</mark>
+Categoría: oficial de primera       Antigüedad: <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">2 de agosto de 2025</mark>
+Periodo de liquidación: del <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">28/08/2025</mark> al <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">02/10/2025</mark>      Fecha de pago: <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">27 de octubre de 2025</mark>
+
+Salario base                    <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">2.868,25 €</mark>
+Deducciones (IRPF y Seg. Social)  <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">631,01 €</mark>
+LÍQUIDO A PERCIBIR              <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">2.237,24 €</mark>
+
+Abono por transferencia en la cuenta <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">ES34 2495 2228 0537 7356 7350</mark>.
+Consultas: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Sergio Castaño Bravo</mark>, recursos humanos, <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">923 775 850</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">nominas.dpto@transportes-guadalquivir.es</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>NÓMINA
+Empresa: <mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+CIF: <mark class="ph t-ID">[ID_1]</mark>    CCC: 28/5950695/21
+
+Trabajador: <mark class="ph t-PERSON">[PERSON_1]</mark>               N.º empleado: T-02328
+Domicilio: <mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+DNI: <mark class="ph t-ID">[ID_2]</mark>
+Categoría: oficial de primera       Antigüedad: 2 de agosto de 2025
+Periodo de liquidación: del 28/08/2025 al 02/10/2025      Fecha de pago: 27 de octubre de 2025
+
+Salario base                    2.868,25 €
+Deducciones (IRPF y Seg. Social)  631,01 €
+LÍQUIDO A PERCIBIR              2.237,24 €
+
+Abono por transferencia en la cuenta <mark class="ph t-IBAN">[IBAN_1]</mark>.
+Consultas: <mark class="ph t-PERSON">[PERSON_2]</mark>, recursos humanos, <mark class="ph t-PHONE">[PHONE_1]</mark>, <mark class="ph t-EMAIL">[EMAIL_1]</mark></pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> 28/5950695/21 <i>ID</i></li>
+<li><b>漏检</b> T-02328 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="es" data-cat="payslip" data-fail="true">
+<h3>es-syn-payslip-02 <small>es · payslip</small><span class="stats">F1 95% <span class="grade g-A">A</span> · 459 ms · 720 字符 · 预期 21 / 命中 17 / 部分 2 / 漏检 2 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>NÓMINA
+Empresa: <mark class="t-COMPANY" title="COMPANY · regex:es:company · 90%">Innovación Digital Cantábrica S.L.</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Calle de Alcalá 142, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">28009 Madrid</mark>
+CIF: <mark class="t-ID" title="ID · regex:es:cif · 80%">B32905044</mark>    CCC: <span class="missed" title="漏检 ID">28/4150732/59</span>
+
+Trabajador: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Lucía Navarro Gil</mark>               N.º empleado: <span class="missed" title="漏检 ID">T-97390</span>
+Domicilio: <mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Paseo de Pereda 22, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">39004 Santander</mark>
+DNI: <mark class="t-ID" title="ID · regex:es:dni · 90%">38161321C</mark>
+Categoría: oficial de primera       Antigüedad: <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">23 de julio de 2024</mark>
+Periodo de liquidación: del <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">28/07/2024</mark> al <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">03/09/2024</mark>      Fecha de pago: <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">17 de septiembre de 2024</mark>
+
+Salario base                    <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">3.441,17 €</mark>
+Deducciones (IRPF y Seg. Social)  <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">757,06 €</mark>
+LÍQUIDO A PERCIBIR              <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">2.684,11 €</mark>
+
+Abono por transferencia en la cuenta <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">ES88 1172 8602 3828 8185 7153</mark>.
+Consultas: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Sergio Castaño Bravo</mark>, recursos humanos, <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">938 848 174</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">nominas.dpto@transportes-guadalquivir.es</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>NÓMINA
+Empresa: <mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+CIF: <mark class="ph t-ID">[ID_1]</mark>    CCC: 28/4150732/59
+
+Trabajador: <mark class="ph t-PERSON">[PERSON_1]</mark>               N.º empleado: T-97390
+Domicilio: <mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+DNI: <mark class="ph t-ID">[ID_2]</mark>
+Categoría: oficial de primera       Antigüedad: 23 de julio de 2024
+Periodo de liquidación: del 28/07/2024 al 03/09/2024      Fecha de pago: 17 de septiembre de 2024
+
+Salario base                    3.441,17 €
+Deducciones (IRPF y Seg. Social)  757,06 €
+LÍQUIDO A PERCIBIR              2.684,11 €
+
+Abono por transferencia en la cuenta <mark class="ph t-IBAN">[IBAN_1]</mark>.
+Consultas: <mark class="ph t-PERSON">[PERSON_2]</mark>, recursos humanos, <mark class="ph t-PHONE">[PHONE_1]</mark>, <mark class="ph t-EMAIL">[EMAIL_1]</mark></pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> 28/4150732/59 <i>ID</i></li>
+<li><b>漏检</b> T-97390 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="es" data-cat="payslip" data-fail="true">
+<h3>es-syn-payslip-03 <small>es · payslip</small><span class="stats">F1 95% <span class="grade g-A">A</span> · 459 ms · 715 字符 · 预期 21 / 命中 17 / 部分 2 / 漏检 2 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre>NÓMINA
+Empresa: <mark class="t-COMPANY" title="COMPANY · regex:es:company_head · 80%">Seguros Atlántida Mutua</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Calle de Alcalá 142, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">28009 Madrid</mark>
+CIF: <mark class="t-ID" title="ID · regex:es:cif · 80%">A74940846</mark>    CCC: <span class="missed" title="漏检 ID">28/6203984/96</span>
+
+Trabajador: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Alejandro Ruiz Cabrera</mark>               N.º empleado: <span class="missed" title="漏检 ID">T-33119</span>
+Domicilio: <mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Paseo de Pereda 22, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">39004 Santander</mark>
+DNI: <mark class="t-ID" title="ID · regex:es:dni · 90%">14516797W</mark>
+Categoría: oficial de primera       Antigüedad: <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">24 de junio de 2025</mark>
+Periodo de liquidación: del <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">24/07/2025</mark> al <mark class="off t-DATE" title="DATE（默认不遮） · regex:universal:date_numeric · 85%">19/08/2025</mark>      Fecha de pago: <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">22 de septiembre de 2025</mark>
+
+Salario base                    <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">3.195,74 €</mark>
+Deducciones (IRPF y Seg. Social)  <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">703,06 €</mark>
+LÍQUIDO A PERCIBIR              <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">2.492,68 €</mark>
+
+Abono por transferencia en la cuenta <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">ES79 3825 3227 2056 5616 2461</mark>.
+Consultas: <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Rocío Montenegro Díaz</mark>, recursos humanos, <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">956 465 778</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">nominas.dpto@transportes-guadalquivir.es</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre>NÓMINA
+Empresa: <mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+CIF: <mark class="ph t-ID">[ID_1]</mark>    CCC: 28/6203984/96
+
+Trabajador: <mark class="ph t-PERSON">[PERSON_1]</mark>               N.º empleado: T-33119
+Domicilio: <mark class="ph t-ADDRESS">[ADDRESS_3]</mark><mark class="ph t-ADDRESS">[ADDRESS_4]</mark>
+DNI: <mark class="ph t-ID">[ID_2]</mark>
+Categoría: oficial de primera       Antigüedad: 24 de junio de 2025
+Periodo de liquidación: del 24/07/2025 al 19/08/2025      Fecha de pago: 22 de septiembre de 2025
+
+Salario base                    3.195,74 €
+Deducciones (IRPF y Seg. Social)  703,06 €
+LÍQUIDO A PERCIBIR              2.492,68 €
+
+Abono por transferencia en la cuenta <mark class="ph t-IBAN">[IBAN_1]</mark>.
+Consultas: <mark class="ph t-PERSON">[PERSON_2]</mark>, recursos humanos, <mark class="ph t-PHONE">[PHONE_1]</mark>, <mark class="ph t-EMAIL">[EMAIL_1]</mark></pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> 28/6203984/96 <i>ID</i></li>
+<li><b>漏检</b> T-33119 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="es" data-cat="medical" data-fail="true">
+<h3>es-syn-medical-01 <small>es · medical</small><span class="stats">F1 95% <span class="grade g-A">A</span> · 507 ms · 795 字符 · 预期 22 / 命中 18 / 部分 2 / 漏检 2 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:es:company_head · 80%">Clínica Dental Sonrisa Norte</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Calle de Alcalá 142, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">28009 Madrid</mark>
+Tel.: <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">983 365 159</mark>
+
+<mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Santander</mark>, <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">19 de mayo de 2025</mark>
+
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Rocío Montenegro Díaz</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Gran Vía 45, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">48011 Bilbao</mark>
+
+N/ref.: <span class="missed" title="漏检 ID">SIN-4845434</span>        DNI: <mark class="t-ID" title="ID · regex:es:dni · 90%">68796468H</mark>        Fecha de nacimiento: <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_numeric · 85%">16/02/1967</mark>
+
+Estimada señora:
+
+Tras su consulta del <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">6 de junio de 2025</mark> con el Dr. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">María Fernández Ortiz</mark>, hemos revisado su solicitud de reembolso por importe de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">74,92 €</mark>. Con cargo a la póliza <span class="missed" title="漏检 ID">PS-26495076</span>, le comunicamos la aprobación de un pago de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">144,49 €</mark>, que se abonará en un plazo de diez días hábiles en la cuenta <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">ES89 7672 8033 6804 8567 1131</mark>.
+
+Su próxima cita queda fijada para el <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">9 de junio de 2025</mark> a las 10:40. Si no puede acudir, llame al <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">923 608 190</mark> o escriba a <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">citas.recepcion@sonrisa-norte.es</mark>.
+
+Atentamente,
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Íñigo Etxeberria Lasa</mark>
+Atención al asegurado</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+Tel.: <mark class="ph t-PHONE">[PHONE_1]</mark>
+
+<mark class="ph t-ADDRESS">[ADDRESS_3]</mark>, 19 de mayo de 2025
+
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_4]</mark><mark class="ph t-ADDRESS">[ADDRESS_5]</mark>
+
+N/ref.: SIN-4845434        DNI: <mark class="ph t-ID">[ID_1]</mark>        Fecha de nacimiento: <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+Estimada señora:
+
+Tras su consulta del 6 de junio de 2025 con el Dr. <mark class="ph t-PERSON">[PERSON_2]</mark>, hemos revisado su solicitud de reembolso por importe de 74,92 €. Con cargo a la póliza PS-26495076, le comunicamos la aprobación de un pago de 144,49 €, que se abonará en un plazo de diez días hábiles en la cuenta <mark class="ph t-IBAN">[IBAN_1]</mark>.
+
+Su próxima cita queda fijada para el 9 de junio de 2025 a las 10:40. Si no puede acudir, llame al <mark class="ph t-PHONE">[PHONE_2]</mark> o escriba a <mark class="ph t-EMAIL">[EMAIL_1]</mark>.
+
+Atentamente,
+<mark class="ph t-PERSON">[PERSON_3]</mark>
+Atención al asegurado</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> SIN-4845434 <i>ID</i></li>
+<li><b>漏检</b> PS-26495076 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="es" data-cat="medical" data-fail="true">
+<h3>es-syn-medical-02 <small>es · medical</small><span class="stats">F1 95% <span class="grade g-A">A</span> · 504 ms · 804 字符 · 预期 22 / 命中 18 / 部分 2 / 漏检 2 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:es:company_head · 80%">Clínica Dental Sonrisa Norte</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Calle de Alcalá 142, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">28009 Madrid</mark>
+Tel.: <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">981 504 623</mark>
+
+<mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Valencia</mark>, <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">22 de abril de 2025</mark>
+
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Carmen Iglesias Soto</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Gran Vía 45, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">48011 Bilbao</mark>
+
+N/ref.: <span class="missed" title="漏检 ID">SIN-4436684</span>        DNI: <mark class="t-ID" title="ID · regex:es:dni · 90%">50932027E</mark>        Fecha de nacimiento: <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:es:date_words · 85%">7 de septiembre de 1974</mark>
+
+Estimada señora:
+
+Tras su consulta del <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">20 de mayo de 2025</mark> con el Dr. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Javier Morales Peña</mark>, hemos revisado su solicitud de reembolso por importe de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">274,22 €</mark>. Con cargo a la póliza <span class="missed" title="漏检 ID">PS-77925537</span>, le comunicamos la aprobación de un pago de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">519,56 €</mark>, que se abonará en un plazo de diez días hábiles en la cuenta <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">ES27 3822 3817 1310 6347 6202</mark>.
+
+Su próxima cita queda fijada para el <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">25 de mayo de 2025</mark> a las 10:40. Si no puede acudir, llame al <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">930 956 557</mark> o escriba a <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">citas.recepcion@sonrisa-norte.es</mark>.
+
+Atentamente,
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Elena Domínguez Rey</mark>
+Atención al asegurado</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+Tel.: <mark class="ph t-PHONE">[PHONE_1]</mark>
+
+<mark class="ph t-ADDRESS">[ADDRESS_3]</mark>, 22 de abril de 2025
+
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_4]</mark><mark class="ph t-ADDRESS">[ADDRESS_5]</mark>
+
+N/ref.: SIN-4436684        DNI: <mark class="ph t-ID">[ID_1]</mark>        Fecha de nacimiento: <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+Estimada señora:
+
+Tras su consulta del 20 de mayo de 2025 con el Dr. <mark class="ph t-PERSON">[PERSON_2]</mark>, hemos revisado su solicitud de reembolso por importe de 274,22 €. Con cargo a la póliza PS-77925537, le comunicamos la aprobación de un pago de 519,56 €, que se abonará en un plazo de diez días hábiles en la cuenta <mark class="ph t-IBAN">[IBAN_1]</mark>.
+
+Su próxima cita queda fijada para el 25 de mayo de 2025 a las 10:40. Si no puede acudir, llame al <mark class="ph t-PHONE">[PHONE_2]</mark> o escriba a <mark class="ph t-EMAIL">[EMAIL_1]</mark>.
+
+Atentamente,
+<mark class="ph t-PERSON">[PERSON_3]</mark>
+Atención al asegurado</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> SIN-4436684 <i>ID</i></li>
+<li><b>漏检</b> PS-77925537 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="es" data-cat="medical" data-fail="true">
+<h3>es-syn-medical-03 <small>es · medical</small><span class="stats">F1 95% <span class="grade g-A">A</span> · 542 ms · 808 字符 · 预期 22 / 命中 18 / 部分 2 / 漏检 2 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-COMPANY" title="COMPANY · regex:es:company_head · 80%">Seguros Atlántida Mutua</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Calle de Alcalá 142, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">28009 Madrid</mark>
+Tel.: <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">936 771 636</mark>
+
+<mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Santander</mark>, <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">28 de febrero de 2024</mark>
+
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Rocío Montenegro Díaz</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Carrer de Mallorca 275, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">08008 Barcelona</mark>
+
+N/ref.: <span class="missed" title="漏检 ID">SIN-4750713</span>        DNI: <mark class="t-ID" title="ID · regex:es:dni · 90%">75061111J</mark>        Fecha de nacimiento: <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_numeric · 85%">20/10/1979</mark>
+
+Estimada señora:
+
+Tras su consulta del <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">8 de marzo de 2024</mark> con el Dr. <mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Andrés Quintana Marín</mark>, hemos revisado su solicitud de reembolso por importe de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">755,94 €</mark>. Con cargo a la póliza <span class="missed" title="漏检 ID">PS-32743940</span>, le comunicamos la aprobación de un pago de <mark class="off t-AMOUNT" title="AMOUNT（默认不遮） · regex:universal:currency_symbol_suffix · 85%">99,61 €</mark>, que se abonará en un plazo de diez días hábiles en la cuenta <mark class="t-IBAN" title="IBAN · regex:universal:iban · 90%">ES36 5152 5215 0742 4113 1274</mark>.
+
+Su próxima cita queda fijada para el <mark class="off t-DATE" title="DATE（默认不遮） · regex:es:date_words · 85%">18 de marzo de 2024</mark> a las 10:40. Si no puede acudir, llame al <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">951 579 351</mark> o escriba a <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">citas.recepcion@sonrisa-norte.es</mark>.
+
+Atentamente,
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">María Fernández Ortiz</mark>
+Atención al asegurado</pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-COMPANY">[COMPANY_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+Tel.: <mark class="ph t-PHONE">[PHONE_1]</mark>
+
+<mark class="ph t-ADDRESS">[ADDRESS_3]</mark>, 28 de febrero de 2024
+
+<mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_4]</mark><mark class="ph t-ADDRESS">[ADDRESS_5]</mark>
+
+N/ref.: SIN-4750713        DNI: <mark class="ph t-ID">[ID_1]</mark>        Fecha de nacimiento: <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+Estimada señora:
+
+Tras su consulta del 8 de marzo de 2024 con el Dr. <mark class="ph t-PERSON">[PERSON_2]</mark>, hemos revisado su solicitud de reembolso por importe de 755,94 €. Con cargo a la póliza PS-32743940, le comunicamos la aprobación de un pago de 99,61 €, que se abonará en un plazo de diez días hábiles en la cuenta <mark class="ph t-IBAN">[IBAN_1]</mark>.
+
+Su próxima cita queda fijada para el 18 de marzo de 2024 a las 10:40. Si no puede acudir, llame al <mark class="ph t-PHONE">[PHONE_2]</mark> o escriba a <mark class="ph t-EMAIL">[EMAIL_1]</mark>.
+
+Atentamente,
+<mark class="ph t-PERSON">[PERSON_3]</mark>
+Atención al asegurado</pre></div>
+</div>
+<ul class="issues">
+<li><b>漏检</b> SIN-4750713 <i>ID</i></li>
+<li><b>漏检</b> PS-32743940 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="es" data-cat="cv" data-fail="true">
+<h3>es-syn-cv-01 <small>es · cv</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 588 ms · 832 字符 · 预期 16 / 命中 15 / 部分 1 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Pablo Herrero Vidal</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Paseo de Pereda 22, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">39004 Santander</mark>
+<mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">664 502 739</mark> | <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">pablo.vidal@gmail.com</mark> | <mark class="t-URL" title="URL · regex:universal:url · 85%">linkedin.com/in/pablo-herrero-vidal</mark>
+Fecha de nacimiento: <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:es:date_words · 85%">4 de febrero de 1969</mark>
+
+PERFIL
+Analista de operaciones con ocho años de experiencia en logística e información financiera.
+
+EXPERIENCIA
+Analista sénior de operaciones, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Mercadona</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Bilbao</mark> (2021 - actualidad)
+Dirigió la renovación del informe mensual y redujo el cierre en tres días.
+Analista de operaciones, <mark class="t-COMPANY" title="COMPANY · regex:es:company · 90%">Talleres Mecánicos Arganzuela S.L.</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Santander</mark> (2017 - 2021)
+Creó el cuadro de mando de rendimiento de transportistas.
+Becaria, <mark class="t-COMPANY" title="COMPANY · regex:es:company · 90%">Transportes Guadalquivir S.A.</mark> (2016 - 2017)
+
+FORMACIÓN
+Grado en Economía, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Universidad de Salamanca</mark>, 2016
+
+REFERENCIAS
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Rocío Montenegro Díaz</mark>, director de operaciones, <mark class="t-COMPANY" title="COMPANY · regex:es:company · 90%">Talleres Mecánicos Arganzuela S.L.</mark>, <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">937 339 349</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">rocio.diaz@innovacion-cantabrica.es</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+<mark class="ph t-PHONE">[PHONE_1]</mark> | <mark class="ph t-EMAIL">[EMAIL_1]</mark> | <mark class="ph t-URL">[URL_1]</mark>
+Fecha de nacimiento: <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+PERFIL
+Analista de operaciones con ocho años de experiencia en logística e información financiera.
+
+EXPERIENCIA
+Analista sénior de operaciones, <mark class="ph t-COMPANY">[COMPANY_1]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_3]</mark> (2021 - actualidad)
+Dirigió la renovación del informe mensual y redujo el cierre en tres días.
+Analista de operaciones, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_4]</mark> (2017 - 2021)
+Creó el cuadro de mando de rendimiento de transportistas.
+Becaria, <mark class="ph t-COMPANY">[COMPANY_3]</mark> (2016 - 2017)
+
+FORMACIÓN
+Grado en Economía, <mark class="ph t-COMPANY">[COMPANY_4]</mark>, 2016
+
+REFERENCIAS
+<mark class="ph t-PERSON">[PERSON_2]</mark>, director de operaciones, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-PHONE">[PHONE_2]</mark>, <mark class="ph t-EMAIL">[EMAIL_2]</mark></pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="cv" data-fail="true">
+<h3>es-syn-cv-02 <small>es · cv</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 481 ms · 833 字符 · 预期 16 / 命中 15 / 部分 1 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Sergio Castaño Bravo</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Avenida de la Constitución 18, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">41004 Sevilla</mark>
+<mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">635 324 802</mark> | <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">sergio.bravo@telefonica.net</mark> | <mark class="t-URL" title="URL · regex:universal:url · 85%">linkedin.com/in/sergio-castano-bravo</mark>
+Fecha de nacimiento: <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_numeric · 85%">26/08/1966</mark>
+
+PERFIL
+Analista de operaciones con ocho años de experiencia en logística e información financiera.
+
+EXPERIENCIA
+Analista sénior de operaciones, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Telefónica</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Madrid</mark> (2021 - actualidad)
+Dirigió la renovación del informe mensual y redujo el cierre en tres días.
+Analista de operaciones, <mark class="t-COMPANY" title="COMPANY · regex:es:company · 90%">Transportes Guadalquivir S.A.</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Valencia</mark> (2017 - 2021)
+Creó el cuadro de mando de rendimiento de transportistas.
+Becaria, <mark class="t-COMPANY" title="COMPANY · regex:es:company · 90%">Talleres Mecánicos Arganzuela S.L.</mark> (2016 - 2017)
+
+FORMACIÓN
+Grado en Economía, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 99%">Universidad de Salamanca</mark>, 2016
+
+REFERENCIAS
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Pablo Herrero Vidal</mark>, director de operaciones, <mark class="t-COMPANY" title="COMPANY · regex:es:company · 90%">Transportes Guadalquivir S.A.</mark>, <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">977 897 437</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">pablo.vidal@innovacion-cantabrica.es</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+<mark class="ph t-PHONE">[PHONE_1]</mark> | <mark class="ph t-EMAIL">[EMAIL_1]</mark> | <mark class="ph t-URL">[URL_1]</mark>
+Fecha de nacimiento: <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+PERFIL
+Analista de operaciones con ocho años de experiencia en logística e información financiera.
+
+EXPERIENCIA
+Analista sénior de operaciones, <mark class="ph t-COMPANY">[COMPANY_1]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_3]</mark> (2021 - actualidad)
+Dirigió la renovación del informe mensual y redujo el cierre en tres días.
+Analista de operaciones, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_4]</mark> (2017 - 2021)
+Creó el cuadro de mando de rendimiento de transportistas.
+Becaria, <mark class="ph t-COMPANY">[COMPANY_3]</mark> (2016 - 2017)
+
+FORMACIÓN
+Grado en Economía, <mark class="ph t-COMPANY">[COMPANY_4]</mark>, 2016
+
+REFERENCIAS
+<mark class="ph t-PERSON">[PERSON_2]</mark>, director de operaciones, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-PHONE">[PHONE_2]</mark>, <mark class="ph t-EMAIL">[EMAIL_2]</mark></pre></div>
+</div>
+</article>
+<article class="case" data-lang="es" data-cat="cv" data-fail="true">
+<h3>es-syn-cv-03 <small>es · cv</small><span class="stats">F1 100% <span class="grade g-A">A</span> · 541 ms · 837 字符 · 预期 15 / 命中 14 / 部分 1 / 漏检 0 / 误报 0 / 类型错 0</span></h3>
+<div class="panes">
+<div class="pane"><h4>原文与检测</h4><pre><mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Carmen Iglesias Soto</mark>
+<mark class="partial t-ADDRESS" title="ADDRESS · regex:es:street · 85%">Calle de Alcalá 142, </mark><mark class="t-ADDRESS" title="ADDRESS · regex:es:postal · 80%">28009 Madrid</mark>
+<mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">639 345 302</mark> | <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">carmen.soto@gmail.com</mark> | <mark class="t-URL" title="URL · regex:universal:url · 85%">linkedin.com/in/carmen-iglesias-soto</mark>
+Fecha de nacimiento: <mark class="t-BIRTH_DATE" title="BIRTH_DATE · regex:universal:date_numeric · 85%">16/10/1991</mark>
+
+PERFIL
+Analista de operaciones con ocho años de experiencia en logística e información financiera.
+
+EXPERIENCIA
+Analista sénior de operaciones, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 100%">Telefónica</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Bilbao</mark> (2021 - actualidad)
+Dirigió la renovación del informe mensual y redujo el cierre en tres días.
+Analista de operaciones, <mark class="t-COMPANY" title="COMPANY · regex:es:company · 90%">Suministros Industriales Levante S.L.</mark>, <mark class="t-ADDRESS" title="ADDRESS · ner:xlm-roberta-base-ner-docudis · 100%">Bilbao</mark> (2017 - 2021)
+Creó el cuadro de mando de rendimiento de transportistas.
+Becaria, <mark class="t-COMPANY" title="COMPANY · regex:es:company · 90%">Transportes Guadalquivir S.A.</mark> (2016 - 2017)
+
+FORMACIÓN
+Grado en Economía, <mark class="t-COMPANY" title="COMPANY · ner:xlm-roberta-base-ner-docudis · 99%">Universidad Politécnica de Valencia</mark>, 2016
+
+REFERENCIAS
+<mark class="t-PERSON" title="PERSON · ner:xlm-roberta-base-ner-docudis · 100%">Rocío Montenegro Díaz</mark>, director de operaciones, <mark class="t-COMPANY" title="COMPANY · regex:es:company · 90%">Suministros Industriales Levante S.L.</mark>, <mark class="t-PHONE" title="PHONE · regex:es:phone · 80%">916 501 779</mark>, <mark class="t-EMAIL" title="EMAIL · regex:universal:email · 95%">rocio.diaz@innovacion-cantabrica.es</mark></pre></div>
+<div class="pane"><h4>匿名化输出</h4><pre><mark class="ph t-PERSON">[PERSON_1]</mark>
+<mark class="ph t-ADDRESS">[ADDRESS_1]</mark><mark class="ph t-ADDRESS">[ADDRESS_2]</mark>
+<mark class="ph t-PHONE">[PHONE_1]</mark> | <mark class="ph t-EMAIL">[EMAIL_1]</mark> | <mark class="ph t-URL">[URL_1]</mark>
+Fecha de nacimiento: <mark class="ph t-BIRTH_DATE">[BIRTH_DATE_1]</mark>
+
+PERFIL
+Analista de operaciones con ocho años de experiencia en logística e información financiera.
+
+EXPERIENCIA
+Analista sénior de operaciones, <mark class="ph t-COMPANY">[COMPANY_1]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_3]</mark> (2021 - actualidad)
+Dirigió la renovación del informe mensual y redujo el cierre en tres días.
+Analista de operaciones, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-ADDRESS">[ADDRESS_3]</mark> (2017 - 2021)
+Creó el cuadro de mando de rendimiento de transportistas.
+Becaria, <mark class="ph t-COMPANY">[COMPANY_3]</mark> (2016 - 2017)
+
+FORMACIÓN
+Grado en Economía, <mark class="ph t-COMPANY">[COMPANY_4]</mark>, 2016
+
+REFERENCIAS
+<mark class="ph t-PERSON">[PERSON_2]</mark>, director de operaciones, <mark class="ph t-COMPANY">[COMPANY_2]</mark>, <mark class="ph t-PHONE">[PHONE_2]</mark>, <mark class="ph t-EMAIL">[EMAIL_2]</mark></pre></div>
+</div>
+</article>
+</main>
+<script>const lang=document.getElementById('lang'),cat=document.getElementById('cat'),fail=document.getElementById('fail'),count=document.getElementById('count');
+function apply(){let n=0;for(const c of document.querySelectorAll('article.case')){const show=(!lang.value||c.dataset.lang===lang.value)&&(!cat.value||c.dataset.cat===cat.value)&&(!fail.checked||c.dataset.fail==='true');c.classList.toggle('hidden',!show);if(show)n++;}count.textContent='显示 '+n+' 条';}
+lang.onchange=cat.onchange=fail.onchange=apply;apply();
+</script>
+</body></html>

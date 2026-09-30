@@ -1,0 +1,87 @@
+{
+ "id": "fr-bodacc-vente-01",
+ "expected": [
+  {
+   "value": "18/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Mamoudzou",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "066 351 420",
+   "type": "ID"
+  },
+  {
+   "value": "REST'OR",
+   "type": "COMPANY"
+  },
+  {
+   "value": "7200.00 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Route Nationale 1., Zone industrielle Kaweni, BP 633, 97600 Mamoudzou",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "445000 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "100 Boulevard Halidi Selemani, 97600 Mamoudzou",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "024 083 321",
+   "type": "ID"
+  },
+  {
+   "value": "BERNARD Anne-Marie",
+   "type": "PERSON"
+  },
+  {
+   "value": "VAUTRIN",
+   "type": "PERSON"
+  },
+  {
+   "value": "03/07/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "MAMOUDZOU",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "30/07/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "EAI 340",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "2026 E n°1606",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "3 B Rue du Commerce 97600 MAMOUDZOU",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Zone Industrielle Kaweni BP 633 Route nationale 1 - 97600 MAMOUDZOU",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "11/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "100 Boulevard Halidi Selemani 97600 Mamoudzou",
+   "type": "ADDRESS"
+  }
+ ]
+}

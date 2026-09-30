@@ -1,0 +1,338 @@
+[
+ {
+  "id": "en-bank-01",
+  "lang": "en",
+  "category": "bank",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "en-catalogue-01",
+  "lang": "en",
+  "category": "catalogue",
+  "source": "written",
+  "group": "B"
+ },
+ {
+  "id": "en-chat-01",
+  "lang": "en",
+  "category": "chat",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "en-cv-01",
+  "lang": "en",
+  "category": "cv",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "en-insurance-01",
+  "lang": "en",
+  "category": "insurance",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "en-invoice-01",
+  "lang": "en",
+  "category": "invoice",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "en-jobad-01",
+  "lang": "en",
+  "category": "jobad",
+  "source": "written",
+  "group": "B"
+ },
+ {
+  "id": "en-lease-01",
+  "lang": "en",
+  "category": "lease",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "en-letter-01",
+  "lang": "en",
+  "category": "letter",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "en-manual-01",
+  "lang": "en",
+  "category": "manual",
+  "source": "written",
+  "group": "B"
+ },
+ {
+  "id": "en-medical-01",
+  "lang": "en",
+  "category": "medical",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "en-notice-01",
+  "lang": "en",
+  "category": "notice",
+  "source": "written",
+  "group": "B"
+ },
+ {
+  "id": "en-payslip-01",
+  "lang": "en",
+  "category": "payslip",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "en-policy-01",
+  "lang": "en",
+  "category": "policy",
+  "source": "written",
+  "group": "B"
+ },
+ {
+  "id": "en-support-01",
+  "lang": "en",
+  "category": "support",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "en-terms-01",
+  "lang": "en",
+  "category": "terms",
+  "source": "written",
+  "group": "B"
+ },
+ {
+  "id": "es-bank-01",
+  "lang": "es",
+  "category": "bank",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "es-catalogue-01",
+  "lang": "es",
+  "category": "catalogue",
+  "source": "written",
+  "group": "B"
+ },
+ {
+  "id": "es-chat-01",
+  "lang": "es",
+  "category": "chat",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "es-cv-01",
+  "lang": "es",
+  "category": "cv",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "es-insurance-01",
+  "lang": "es",
+  "category": "insurance",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "es-invoice-01",
+  "lang": "es",
+  "category": "invoice",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "es-jobad-01",
+  "lang": "es",
+  "category": "jobad",
+  "source": "written",
+  "group": "B"
+ },
+ {
+  "id": "es-lease-01",
+  "lang": "es",
+  "category": "lease",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "es-letter-01",
+  "lang": "es",
+  "category": "letter",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "es-manual-01",
+  "lang": "es",
+  "category": "manual",
+  "source": "written",
+  "group": "B"
+ },
+ {
+  "id": "es-medical-01",
+  "lang": "es",
+  "category": "medical",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "es-notice-01",
+  "lang": "es",
+  "category": "notice",
+  "source": "written",
+  "group": "B"
+ },
+ {
+  "id": "es-payslip-01",
+  "lang": "es",
+  "category": "payslip",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "es-policy-01",
+  "lang": "es",
+  "category": "policy",
+  "source": "written",
+  "group": "B"
+ },
+ {
+  "id": "es-support-01",
+  "lang": "es",
+  "category": "support",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "es-terms-01",
+  "lang": "es",
+  "category": "terms",
+  "source": "written",
+  "group": "B"
+ },
+ {
+  "id": "fr-bank-01",
+  "lang": "fr",
+  "category": "bank",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "fr-catalogue-01",
+  "lang": "fr",
+  "category": "catalogue",
+  "source": "written",
+  "group": "B"
+ },
+ {
+  "id": "fr-chat-01",
+  "lang": "fr",
+  "category": "chat",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "fr-cv-01",
+  "lang": "fr",
+  "category": "cv",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "fr-insurance-01",
+  "lang": "fr",
+  "category": "insurance",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "fr-invoice-01",
+  "lang": "fr",
+  "category": "invoice",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "fr-jobad-01",
+  "lang": "fr",
+  "category": "jobad",
+  "source": "written",
+  "group": "B"
+ },
+ {
+  "id": "fr-lease-01",
+  "lang": "fr",
+  "category": "lease",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "fr-letter-01",
+  "lang": "fr",
+  "category": "letter",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "fr-manual-01",
+  "lang": "fr",
+  "category": "manual",
+  "source": "written",
+  "group": "B"
+ },
+ {
+  "id": "fr-medical-01",
+  "lang": "fr",
+  "category": "medical",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "fr-notice-01",
+  "lang": "fr",
+  "category": "notice",
+  "source": "written",
+  "group": "B"
+ },
+ {
+  "id": "fr-payslip-01",
+  "lang": "fr",
+  "category": "payslip",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "fr-policy-01",
+  "lang": "fr",
+  "category": "policy",
+  "source": "written",
+  "group": "B"
+ },
+ {
+  "id": "fr-support-01",
+  "lang": "fr",
+  "category": "support",
+  "source": "written",
+  "group": "A"
+ },
+ {
+  "id": "fr-terms-01",
+  "lang": "fr",
+  "category": "terms",
+  "source": "written",
+  "group": "B"
+ }
+]

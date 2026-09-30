@@ -1,0 +1,158 @@
+{
+ "id": "fr-bank-01",
+ "expected": [
+  {
+   "value": "CRÉDIT AGRICOLE PYRÉNÉES GASCOGNE",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Bayonne Saint-Esprit",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Bayonne",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "12 boulevard Alsace-Lorraine",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "64100 Bayonne",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "05 59 46 31 08",
+   "type": "PHONE"
+  },
+  {
+   "value": "Thibault ETCHEVERRY",
+   "type": "PERSON"
+  },
+  {
+   "value": "Résidence Les Hauts de Mousserolles",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Bât. C - Appt 27",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "9 chemin de Hargous",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "64100 BAYONNE",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "14 septembre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "40718265",
+   "type": "ID"
+  },
+  {
+   "value": "BSE/RC/2026-09/1184",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Etcheverry",
+   "type": "PERSON"
+  },
+  {
+   "value": "Laurence Pinsolle",
+   "type": "PERSON"
+  },
+  {
+   "value": "Saint-Jean-de-Luz",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "1er octobre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Mehdi Bouzidi",
+   "type": "PERSON"
+  },
+  {
+   "value": "Mehdi",
+   "type": "PERSON"
+  },
+  {
+   "value": "05 59 46 31 22",
+   "type": "PHONE"
+  },
+  {
+   "value": "mehdi.bouzidi@ca-pyrenees-gascogne.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "8 octobre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "06 85 20 47 93",
+   "type": "PHONE"
+  },
+  {
+   "value": "31/10/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "1 200,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "ETCHEVERRY THIBAULT",
+   "type": "PERSON"
+  },
+  {
+   "value": "30857",
+   "type": "ID"
+  },
+  {
+   "value": "70037",
+   "type": "ID"
+  },
+  {
+   "value": "79855620270",
+   "type": "ID"
+  },
+  {
+   "value": "77",
+   "type": "ID"
+  },
+  {
+   "value": "FR76 3085 7700 3779 8556 2027 077",
+   "type": "IBAN"
+  },
+  {
+   "value": "AGRIFRPP869",
+   "type": "ID"
+  },
+  {
+   "value": "20 octobre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "8,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Christophe Lasserre",
+   "type": "PERSON"
+  },
+  {
+   "value": "Caisse Régionale de Crédit Agricole Mutuel Pyrénées Gascogne",
+   "type": "COMPANY"
+  },
+  {
+   "value": "11 boulevard du Président Kennedy, 65000 Tarbes",
+   "type": "ADDRESS"
+  }
+ ]
+}

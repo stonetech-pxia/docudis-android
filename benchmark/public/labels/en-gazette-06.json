@@ -1,0 +1,62 @@
+{
+ "id": "en-gazette-06",
+ "expected": [
+  {
+   "value": "Manchester",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "CR-2026-001324",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "NKAARA PROPERTIES LTD",
+   "type": "COMPANY"
+  },
+  {
+   "value": "14695312",
+   "type": "ID"
+  },
+  {
+   "value": "Suite 060, Unit 2, 94A Wycliffe Road, Northampton, Northamptonshire, NN1 5JF",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "The Union Building 51-59 Rose Lane, Norwich, NR1 1BY, United Kingdom",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "The Union Building 51-59 Rose Lane, Norwich, NR1 1BY",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "14 September 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Deviesh Raikundalia",
+   "type": "PERSON"
+  },
+  {
+   "value": "13890",
+   "type": "ID"
+  },
+  {
+   "value": "Hall Chadwick (UK) Limited",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Seraphine Alexander",
+   "type": "PERSON"
+  },
+  {
+   "value": "SAlexander@hallchadwick.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "restructuring.uk@hallchadwick.com",
+   "type": "EMAIL"
+  }
+ ]
+}

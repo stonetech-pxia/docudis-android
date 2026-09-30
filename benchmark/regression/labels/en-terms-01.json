@@ -1,0 +1,17 @@
+{"id": "en-terms-01", "expected": [
+  {"value": "HALBROOK & VANCE FACILITIES SERVICES LIMITED", "type": "COMPANY"},
+  {"value": "Halbrook & Vance Facilities Services Limited", "type": "COMPANY"},
+  {"value": "Unit 14, Ravensworth Business Park, Aldridge Road, Sheffield S9 2QX", "type": "ADDRESS"},
+  {"value": "0114 496 7720", "type": "PHONE"},
+  {"value": "contracts@halbrookvance.co.uk", "type": "EMAIL"},
+  {"value": "HV-STC-0417", "type": "ID", "sub": "reference"},
+  {"value": "1 October 2026", "type": "DATE"},
+  {"value": "14 March 2024", "type": "DATE"},
+  {"value": "WEE/JB3392AC", "type": "ID"},
+  {"value": "07741220", "type": "ID"},
+  {"value": "GB 249 8831 07", "type": "ID"},
+  {"value": "£84,600", "type": "AMOUNT"},
+  {"value": "£7,050", "type": "AMOUNT"},
+  {"value": "£68.00", "type": "AMOUNT"},
+  {"value": "£92.50", "type": "AMOUNT"}
+]}

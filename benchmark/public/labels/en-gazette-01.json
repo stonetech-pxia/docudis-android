@@ -1,0 +1,61 @@
+{
+ "id": "en-gazette-01",
+ "expected": [
+  {
+   "value": "ALPHA KILO CREATIVE LIMITED",
+   "type": "COMPANY"
+  },
+  {
+   "value": "09583892",
+   "type": "ID"
+  },
+  {
+   "value": "11 Second Floor, Savile Row, London, W1S 3PG",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "14 September 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Lee Morris",
+   "type": "PERSON"
+  },
+  {
+   "value": "31850",
+   "type": "ID"
+  },
+  {
+   "value": "Marshall Peters",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Heskin Hall Farm, Wood Lane, Heskin, Preston, PR7 5PA",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "01257 452021",
+   "type": "PHONE"
+  },
+  {
+   "value": "John Thompson",
+   "type": "PERSON"
+  },
+  {
+   "value": "32230",
+   "type": "ID"
+  },
+  {
+   "value": "Liv Roy",
+   "type": "PERSON"
+  },
+  {
+   "value": "livroy@marshallpeters.co.uk",
+   "type": "EMAIL"
+  },
+  {
+   "value": "15 September 2026",
+   "type": "DATE"
+  }
+ ]
+}

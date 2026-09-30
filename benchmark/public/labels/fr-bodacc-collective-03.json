@@ -1,0 +1,45 @@
+{
+ "id": "fr-bodacc-collective-03",
+ "expected": [
+  {
+   "value": "18/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Grenoble",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "919 580 597",
+   "type": "ID"
+  },
+  {
+   "value": "HK-RS",
+   "type": "COMPANY"
+  },
+  {
+   "value": "66 quai Perrière, 38000 Grenoble",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "09/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "18 août 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Selarl Roumezi et Associes",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Maud Roumezi",
+   "type": "PERSON"
+  },
+  {
+   "value": "9 bis rue de New York 38000 Grenoble",
+   "type": "ADDRESS"
+  }
+ ]
+}

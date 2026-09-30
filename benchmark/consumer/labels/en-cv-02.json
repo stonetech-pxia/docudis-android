@@ -1,0 +1,141 @@
+{
+ "id": "en-cv-02",
+ "expected": [
+  {
+   "value": "YOUSEF AL-KHATIB",
+   "type": "PERSON"
+  },
+  {
+   "value": "Flat 3, 48 Stapleton Road, Easton, Bristol BS5 0QY",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Bristol",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "07463 905 172",
+   "type": "PHONE"
+  },
+  {
+   "value": "yousef.alkhatib91@gmail.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "www.linkedin.com/in/yousef-al-khatib-bristol",
+   "type": "URL"
+  },
+  {
+   "value": "14/03/1991",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "SJ 19 16 75 A",
+   "type": "ID"
+  },
+  {
+   "value": "ALKHA903141Y99ZK",
+   "type": "ID"
+  },
+  {
+   "value": "South West",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Severnside Logistics Ltd",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Avonmouth",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Bath",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Weston-super-Mare",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "JTS Haulage",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Portishead",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "North Somerset",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Tesco",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Al-Noor Grocers",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Stapleton Road, Bristol",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "City of Bristol College",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Ashley Down",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Fairfield High School",
+   "type": "COMPANY"
+  },
+  {
+   "value": "St John Ambulance",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Easton Cowboys",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Mark Tranter",
+   "type": "PERSON"
+  },
+  {
+   "value": "Unit 9, Kings Weston Trade Park, Avonmouth, Bristol BS11 8AZ",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "0117 496 0283",
+   "type": "PHONE"
+  },
+  {
+   "value": "07891 334 650",
+   "type": "PHONE"
+  },
+  {
+   "value": "mark.tranter@severnsidelogistics.co.uk",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Bożena Kaczmarek",
+   "type": "PERSON"
+  },
+  {
+   "value": "Harbour Road, Portishead BS20 7DD",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "01275 840 916",
+   "type": "PHONE"
+  },
+  {
+   "value": "b.kaczmarek@jtshaulage.co.uk",
+   "type": "EMAIL"
+  }
+ ]
+}

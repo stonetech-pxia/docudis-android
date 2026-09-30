@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Docudis app icon (design/logo/concept-a-page.svg), scaled to fit the adaptive-icon safe zone. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="1024"
+    android:viewportHeight="1024">
+    <group android:scaleX="0.86" android:scaleY="0.86" android:pivotX="512" android:pivotY="512">
+        <path
+            android:fillColor="#FFFCF8"
+            android:pathData="M348,232 H676 A56,56 0 0 1 732,288 V736 A56,56 0 0 1 676,792 H312 A20,20 0 0 1 292,772 V288 A56,56 0 0 1 348,232 Z"/>
+        <path
+            android:strokeColor="#E3D6C7"
+            android:strokeWidth="40"
+            android:strokeLineCap="round"
+            android:pathData="M372,340 H652 M372,444 H440 M372,548 H652 M372,652 H548"/>
+        <path
+            android:fillColor="#2A2420"
+            android:pathData="M496,412 H636 A16,16 0 0 1 652,428 V460 A16,16 0 0 1 636,476 H496 A16,16 0 0 1 480,460 V428 A16,16 0 0 1 496,412 Z"/>
+    </group>
+</vector>

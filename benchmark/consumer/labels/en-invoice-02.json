@@ -1,0 +1,242 @@
+{
+ "id": "en-invoice-02",
+ "expected": [
+  {
+   "value": "Lone Prairie Energy LLC",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Lone Prairie Energy",
+   "type": "COMPANY"
+  },
+  {
+   "value": "10287",
+   "type": "ID"
+  },
+  {
+   "value": "P.O. Box 660418, Dallas, TX 75266-0418",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Dallas",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "www.loneprairieenergy.com",
+   "type": "URL"
+  },
+  {
+   "value": "7204-118-3395-6",
+   "type": "ID"
+  },
+  {
+   "value": "0093317458",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "08/14/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "$183.00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "09/04/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "CHIDINMA A OKONKWO",
+   "type": "PERSON"
+  },
+  {
+   "value": "OKONKWO FAMILY DENTAL PLLC",
+   "type": "COMPANY"
+  },
+  {
+   "value": "1180 W CAMPBELL RD STE 210",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "RICHARDSON TX 75080-2946",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "2217 LARKSPUR TRL APT 1406, PLANO TX 75074",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "10443720006183954",
+   "type": "ID"
+  },
+  {
+   "value": "148302771LG",
+   "type": "ID"
+  },
+  {
+   "value": "02/19/2027",
+   "type": "DATE"
+  },
+  {
+   "value": "(469) 307-2291",
+   "type": "PHONE"
+  },
+  {
+   "value": "c.okonkwo@okonkwodental.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "$203.16",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "07/28/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "$0.00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Okonkwo",
+   "type": "PERSON"
+  },
+  {
+   "value": "1554",
+   "type": "CARD"
+  },
+  {
+   "value": "www.loneprairieenergy.com/myaccount",
+   "type": "URL"
+  },
+  {
+   "value": "1-866-482-0139",
+   "type": "PHONE"
+  },
+  {
+   "value": "07/13/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "08/12/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "$0.098700",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "$129.69",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "$9.95",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Oncor",
+   "type": "COMPANY"
+  },
+  {
+   "value": "$0.025510",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "$33.52",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "$4.23",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "$177.39",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "$3.54",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "$0.30",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Plano",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "$1.77",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "13.9 cents",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "(214) 731-0446",
+   "type": "PHONE"
+  },
+  {
+   "value": "care@loneprairieenergy.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "2217 Larkspur Trl Apt 1406",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Oncor Electric Delivery",
+   "type": "COMPANY"
+  },
+  {
+   "value": "888-313-4747",
+   "type": "PHONE"
+  },
+  {
+   "value": "Texas",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "P.O. Box 13326, Austin, TX 78711-3326",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "(512) 936-7120",
+   "type": "PHONE"
+  },
+  {
+   "value": "1-888-782-8477",
+   "type": "PHONE"
+  },
+  {
+   "value": "2217 LARKSPUR TRL APT 1406 PLANO TX 75074",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "$192.15",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "LONE PRAIRIE ENERGY LLC",
+   "type": "COMPANY"
+  },
+  {
+   "value": "P.O. BOX 660418",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "DALLAS TX 75266-0418",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "72041183395600000183000000019215 4",
+   "type": "ID"
+  },
+  {
+   "value": "3400 Ross Avenue, Suite 1850, Dallas, TX 75204",
+   "type": "ADDRESS"
+  }
+ ]
+}

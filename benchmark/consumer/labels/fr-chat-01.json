@@ -1,0 +1,61 @@
+{
+ "id": "fr-chat-01",
+ "expected": [
+  {
+   "value": "12/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Nadia",
+   "type": "PERSON"
+  },
+  {
+   "value": "Momo",
+   "type": "PERSON"
+  },
+  {
+   "value": "leclerc",
+   "type": "COMPANY"
+  },
+  {
+   "value": "karim",
+   "type": "PERSON"
+  },
+  {
+   "value": "jo",
+   "type": "PERSON"
+  },
+  {
+   "value": "pierre",
+   "type": "PERSON"
+  },
+  {
+   "value": "Yasmine Belkacem",
+   "type": "PERSON"
+  },
+  {
+   "value": "14 rue des Tanneurs bat C, 69009 Lyon",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Vasseur",
+   "type": "PERSON"
+  },
+  {
+   "value": "3e etage",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "150€",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "FR76 1079 3094 9303 5121 1859 458",
+   "type": "IBAN"
+  },
+  {
+   "value": "06 41 27 93 05",
+   "type": "PHONE"
+  }
+ ]
+}

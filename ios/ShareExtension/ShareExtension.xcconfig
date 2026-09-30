@@ -1,0 +1,3 @@
+// FLUTTER_BUILD_NAME / FLUTTER_BUILD_NUMBER, so the extension carries the
+// app's version (App Store Connect requires them to match).
+#include "../Flutter/Generated.xcconfig"

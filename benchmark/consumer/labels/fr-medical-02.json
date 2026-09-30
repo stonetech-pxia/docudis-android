@@ -1,0 +1,98 @@
+{
+ "id": "fr-medical-02",
+ "expected": [
+  {
+   "value": "Fatoumata COULIBALY",
+   "type": "PERSON"
+  },
+  {
+   "value": "10101583427",
+   "type": "ID"
+  },
+  {
+   "value": "Cabinet médical du Thabor",
+   "type": "COMPANY"
+  },
+  {
+   "value": "17 bis rue de Paris",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "35000 RENNES",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "02 99 38 61 05",
+   "type": "PHONE"
+  },
+  {
+   "value": "Rennes",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "02/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "LE GOFF Maëlle",
+   "type": "PERSON"
+  },
+  {
+   "value": "23/02/1988",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "F. Coulibaly",
+   "type": "PERSON"
+  },
+  {
+   "value": "LABORATOIRE BIOCÉANE",
+   "type": "COMPANY"
+  },
+  {
+   "value": "42 rue de l'Alma - 35000 Rennes",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "02 23 40 77 12",
+   "type": "PHONE"
+  },
+  {
+   "value": "rennes.alma@bioceane-labo.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "2609-0457713",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "04/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "S. JÉGOU",
+   "type": "PERSON"
+  },
+  {
+   "value": "9 allée des Korrigans, 35200 Rennes",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "07 68 14 93 20",
+   "type": "PHONE"
+  },
+  {
+   "value": "COULIBALY",
+   "type": "PERSON"
+  },
+  {
+   "value": "Fatoumata",
+   "type": "PERSON"
+  },
+  {
+   "value": "Hervé QUÉMENER",
+   "type": "PERSON"
+  }
+ ]
+}

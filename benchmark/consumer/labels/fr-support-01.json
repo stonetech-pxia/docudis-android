@@ -1,0 +1,153 @@
+{
+ "id": "fr-support-01",
+ "expected": [
+  {
+   "value": "Comptoir Numérik",
+   "type": "COMPANY"
+  },
+  {
+   "value": "serviceclients@comptoir-numerik.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Cédric Lurel",
+   "type": "PERSON"
+  },
+  {
+   "value": "cedric.lurel94@gmail.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "CN-26-4471935",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "8825140",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "17 septembre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Lurel",
+   "type": "PERSON"
+  },
+  {
+   "value": "Colis Privé",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Q7 4390 2281 5",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "11/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "NGUYEN",
+   "type": "PERSON"
+  },
+  {
+   "value": "14 avenue du Maréchal de Lattre de Tassigny",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "ENQ-260917-0352",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Chronopost",
+   "type": "COMPANY"
+  },
+  {
+   "value": "849,99 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "8538",
+   "type": "CARD"
+  },
+  {
+   "value": "03 20 61 47 90",
+   "type": "PHONE"
+  },
+  {
+   "value": "10573826",
+   "type": "ID"
+  },
+  {
+   "value": "Élodie M.",
+   "type": "PERSON"
+  },
+  {
+   "value": "Comptoir Numérik SAS",
+   "type": "COMPANY"
+  },
+  {
+   "value": "12 rue des Tisserands, 59650 Villeneuve-d'Ascq",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Lille Métropole",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "676 336 068",
+   "type": "ID"
+  },
+  {
+   "value": "www.comptoir-numerik.fr",
+   "type": "URL"
+  },
+  {
+   "value": "15 sept. 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "7 septembre",
+   "type": "DATE"
+  },
+  {
+   "value": "Anaïs Rousselot",
+   "type": "PERSON"
+  },
+  {
+   "value": "Traoré",
+   "type": "PERSON"
+  },
+  {
+   "value": "07/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Cédric LUREL",
+   "type": "PERSON"
+  },
+  {
+   "value": "Résidence Les Hauts du Lac, esc. D, 5e étage, appt 512",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "41 avenue du Maréchal de Lattre de Tassigny",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "94000 Créteil",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "07 81 36 02 94",
+   "type": "PHONE"
+  },
+  {
+   "value": "Yanis",
+   "type": "PERSON"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+name: docudis_engine
+description: Docudis on-device anonymization engine (pure Dart, no Flutter).
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.13.3
+
+dependencies:
+  dart_bert_tokenizer: ^1.3.0
+  dart_sentencepiece_tokenizer: ^1.4.1
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.0

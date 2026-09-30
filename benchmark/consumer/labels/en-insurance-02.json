@@ -1,0 +1,167 @@
+{
+  "id": "en-insurance-02",
+  "expected": [
+    {
+      "value": "Aviva Insurance Limited",
+      "type": "COMPANY"
+    },
+    {
+      "value": "PO Box 3661",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Norwich NR1 3JX",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "0345 301 4477",
+      "type": "PHONE"
+    },
+    {
+      "value": "T Fenwick",
+      "type": "PERSON"
+    },
+    {
+      "value": "Fenwick",
+      "type": "PERSON"
+    },
+    {
+      "value": "A Siddiqui",
+      "type": "PERSON"
+    },
+    {
+      "value": "Siddiqui",
+      "type": "PERSON"
+    },
+    {
+      "value": "27 Whinfell Road",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Ecclesall",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Sheffield",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "S11 9QA",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "4 September 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "HC/26/44719083",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "HMB 2048 7716 53",
+      "type": "ID"
+    },
+    {
+      "value": "27 Whinfell Road, Sheffield S11 9QA",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "1 September 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "Tobias Fenwick",
+      "type": "PERSON"
+    },
+    {
+      "value": "Ayesha Siddiqui",
+      "type": "PERSON"
+    },
+    {
+      "value": "27 Whinfell Road, Ecclesall, Sheffield S11 9QA",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "29 August 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "29 August",
+      "type": "DATE"
+    },
+    {
+      "value": "£350.00",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "Prewett Lindqvist Marsh LLP",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Delroy Braithwaite",
+      "type": "PERSON"
+    },
+    {
+      "value": "Braithwaite",
+      "type": "PERSON"
+    },
+    {
+      "value": "07734 518206",
+      "type": "PHONE"
+    },
+    {
+      "value": "delroy.braithwaite@plm-adjusters.co.uk",
+      "type": "EMAIL"
+    },
+    {
+      "value": "3rd Floor, Cutlers Court, 12 Leopold Street, Sheffield S1 2GY",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "0114 496 0273",
+      "type": "PHONE"
+    },
+    {
+      "value": "PLM/SHF/118264",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "Hallam Rapid Plumbing",
+      "type": "COMPANY"
+    },
+    {
+      "value": "£186.00",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "08-71-99",
+      "type": "ID"
+    },
+    {
+      "value": "4402",
+      "type": "ID"
+    },
+    {
+      "value": "01603 558014",
+      "type": "PHONE"
+    },
+    {
+      "value": "homeclaims.north@aviva.com",
+      "type": "EMAIL"
+    },
+    {
+      "value": "Hannah Pickersgill",
+      "type": "PERSON"
+    },
+    {
+      "value": "SC002116",
+      "type": "ID"
+    },
+    {
+      "value": "Pitheavlis, Perth PH2 0NH",
+      "type": "ADDRESS"
+    }
+  ]
+}

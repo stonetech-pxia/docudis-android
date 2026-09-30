@@ -1,0 +1,267 @@
+{
+ "id": "es-invoice-02",
+ "expected": [
+  {
+   "value": "Lumbre Energía",
+   "type": "COMPANY"
+  },
+  {
+   "value": "LE26-08-00417733",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "14/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "12/07/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "11/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "21/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "56,51 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "70448126",
+   "type": "ID"
+  },
+  {
+   "value": "3300918457",
+   "type": "ID"
+  },
+  {
+   "value": "ENEKO ZUBIZARRETA OLABARRIA",
+   "type": "PERSON"
+  },
+  {
+   "value": "27968794N",
+   "type": "ID"
+  },
+  {
+   "value": "Avda. Lehendakari Aguirre 87, 5º C",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "48015 Bilbao (Bizkaia)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Bilbao",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "eneko.zubi@euskalnet-mail.eus",
+   "type": "EMAIL"
+  },
+  {
+   "value": "688 30 14 92",
+   "type": "PHONE"
+  },
+  {
+   "value": "C/ Mayor 41, 2º Izda., 22700 Jaca (Huesca)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Jaca",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Huesca",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "ES0031 4065 8821 3007 KX",
+   "type": "ID"
+  },
+  {
+   "value": "0187734421",
+   "type": "ID"
+  },
+  {
+   "value": "E-Distribución Redes Digitales, S.L.U.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "11/03/2027",
+   "type": "DATE"
+  },
+  {
+   "value": "Zubizarreta",
+   "type": "PERSON"
+  },
+  {
+   "value": "1 de julio de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "10,32 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "32,94 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "2,21 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "0,83 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "0,40 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "46,70 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "9,81 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "0,083921 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "8,98 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "0,012575 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "1,34 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "0,189450 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "11,75 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "0,142310 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "8,25 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "0,098760 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "12,94 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "43,26 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "0,026630 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "0,012742 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "1,82 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Miren Itziar Arteaga Lizarralde",
+   "type": "PERSON"
+  },
+  {
+   "value": "ES60 2368 **** **** **** 4146",
+   "type": "IBAN"
+  },
+  {
+   "value": "LE-MND-0070448126-02",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "3,50 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "900 814 227",
+   "type": "PHONE"
+  },
+  {
+   "value": "+34 976 30 41 85",
+   "type": "PHONE"
+  },
+  {
+   "value": "clientes@lumbreenergia.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "www.lumbreenergia.es/mi-cuenta",
+   "type": "URL"
+  },
+  {
+   "value": "900 371 552",
+   "type": "PHONE"
+  },
+  {
+   "value": "Coso Bajo 63, bajo, 22001 Huesca",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Apartado de Correos 4127, 50080 Zaragoza",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Zaragoza",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Aragón",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Pº María Agustín 36, 50004 Zaragoza",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Lumbre Energía, S.L.U.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Pº de la Independencia 24, 4ª planta, 50004 Zaragoza",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Z-61204",
+   "type": "ID"
+  },
+  {
+   "value": "B99418263",
+   "type": "ID"
+  },
+  {
+   "value": "protecciondedatos@lumbreenergia.es",
+   "type": "EMAIL"
+  }
+ ]
+}

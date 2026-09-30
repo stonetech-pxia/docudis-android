@@ -1,0 +1,81 @@
+{
+ "id": "en-enron-05",
+ "expected": [
+  {
+   "value": "vince.kaminski@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "ron.baker@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "2001-05-07",
+   "type": "DATE"
+  },
+  {
+   "value": "Ron",
+   "type": "PERSON"
+  },
+  {
+   "value": "Rice",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Vince",
+   "type": "PERSON"
+  },
+  {
+   "value": "Vince J Kaminski",
+   "type": "PERSON"
+  },
+  {
+   "value": "05/07/2001",
+   "type": "DATE"
+  },
+  {
+   "value": "Ivy Ghose",
+   "type": "PERSON"
+  },
+  {
+   "value": "ghosei@ruf.rice.edu",
+   "type": "EMAIL"
+  },
+  {
+   "value": "05/03/2001",
+   "type": "DATE"
+  },
+  {
+   "value": "ghosei@rice.edu",
+   "type": "EMAIL"
+  },
+  {
+   "value": "vince.j.kaminski@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Kenneth Parkhill",
+   "type": "PERSON"
+  },
+  {
+   "value": "Kenneth.Parkhill@enron.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Kaminski",
+   "type": "PERSON"
+  },
+  {
+   "value": "EnronOnline",
+   "type": "COMPANY"
+  },
+  {
+   "value": "IVY GHOSE",
+   "type": "PERSON"
+  },
+  {
+   "value": "RICE",
+   "type": "COMPANY"
+  }
+ ]
+}

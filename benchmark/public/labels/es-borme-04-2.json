@@ -1,0 +1,77 @@
+{
+ "id": "es-borme-04-2",
+ "expected": [
+  {
+   "value": "12 de septiembre de 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "MERCHASTYLE, SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "EIVISSA",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "MARTIN COROMINA ANTONIO RAMON",
+   "type": "PERSON"
+  },
+  {
+   "value": "H IB 11709",
+   "type": "ID"
+  },
+  {
+   "value": "5.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "DIAZ GIL MARIA JOSE",
+   "type": "PERSON"
+  },
+  {
+   "value": "SERVICIOS LARGA DISTANCIA, SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "H IB 2053",
+   "type": "ID"
+  },
+  {
+   "value": "NATSUKI SERVICIOS CENTRALES, SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "H IB 11392",
+   "type": "ID"
+  },
+  {
+   "value": "STAR ISLAND SPAIN, S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "FINANCIERE JL SAS",
+   "type": "COMPANY"
+  },
+  {
+   "value": "ROCK EQUITY S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "ROCK EQUITY SL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Jess Simon Davi Levy",
+   "type": "PERSON"
+  },
+  {
+   "value": "Y-4567973-A",
+   "type": "ID"
+  },
+  {
+   "value": "H IB 16282",
+   "type": "ID"
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{"id": "en-policy-01", "expected": [
+  {"value": "NORTHLARK INSTRUMENTS, INC.", "type": "COMPANY"},
+  {"value": "Northlark Instruments, Inc.", "type": "COMPANY"},
+  {"value": "Northlark", "type": "COMPANY"},
+  {"value": "2400 SW Halverson Loop, Beaverton, OR 97006", "type": "ADDRESS"},
+  {"value": "Beaverton", "type": "ADDRESS"},
+  {"value": "NL-ISP-014", "type": "ID", "sub": "reference"},
+  {"value": "January 5, 2027", "type": "DATE"},
+  {"value": "June 2, 2026", "type": "DATE"},
+  {"value": "Renata Alcott", "type": "PERSON"},
+  {"value": "FedEx", "type": "COMPANY"},
+  {"value": "$32.00", "type": "AMOUNT"}
+]}

@@ -1,0 +1,197 @@
+{
+ "id": "es-cv-01",
+ "expected": [
+  {
+   "value": "AINHOA ETXEBERRIA ZUBIZARRETA",
+   "type": "PERSON"
+  },
+  {
+   "value": "C/ Iparraguirre, 41, 3º dcha.",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "48011 Bilbao (Bizkaia)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "688 40 17 52",
+   "type": "PHONE"
+  },
+  {
+   "value": "ainhoa.etxeberria.z@outlook.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "07/11/1990",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "84283181A",
+   "type": "ID"
+  },
+  {
+   "value": "https://www.linkedin.com/in/ainhoa-etxeberria-zubizarreta",
+   "type": "URL"
+  },
+  {
+   "value": "Bizkaia",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Álava",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Logística Nervión, S.A.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Zamudio (Bizkaia)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Mercedes-Benz Vitoria",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Gestamp",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Derio",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Mikel Aranburu",
+   "type": "PERSON"
+  },
+  {
+   "value": "Iñaki Goikoetxea Arrieta",
+   "type": "PERSON"
+  },
+  {
+   "value": "Grupo Albia",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Vitoria-Gasteiz (Álava)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "4,3 M€",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "UPV/EHU",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Transportes Hijos de Casimiro Landa",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Coslada (Madrid)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Asesores Henares, S.L.P.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Conservas Ortuondo",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Bermeo (Bizkaia)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Deusto Business School",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Bilbao",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Universidad del País Vasco",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Sarriko",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Université de Bordeaux",
+   "type": "COMPANY"
+  },
+  {
+   "value": "CIFP Repélega",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Portugalete",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "CS-48-02291",
+   "type": "ID"
+  },
+  {
+   "value": "Banco de Alimentos de Bizkaia",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Kaiku",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Sestao",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "94 452 18 30",
+   "type": "PHONE"
+  },
+  {
+   "value": "i.goikoetxea@logisticanervion.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Catalina Restrepo Giraldo",
+   "type": "PERSON"
+  },
+  {
+   "value": "945 13 72 06",
+   "type": "PHONE"
+  },
+  {
+   "value": "637 25 94 11",
+   "type": "PHONE"
+  },
+  {
+   "value": "catalina.restrepo@grupoalbia.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Jordi Casals i Pujol",
+   "type": "PERSON"
+  },
+  {
+   "value": "Casals Logística Integral, S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Granollers",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "+34 93 870 41 95",
+   "type": "PHONE"
+  },
+  {
+   "value": "jcasals@casalslogistica.cat",
+   "type": "EMAIL"
+  }
+ ]
+}

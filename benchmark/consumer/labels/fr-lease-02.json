@@ -1,0 +1,97 @@
+{
+ "id": "fr-lease-02",
+ "expected": [
+  {
+   "value": "Hubert de La Rochère",
+   "type": "PERSON"
+  },
+  {
+   "value": "9 chemin des Vignes, 69450 Saint-Cyr-au-Mont-d'Or",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Saint-Cyr-au-Mont-d'Or",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "04 78 47 31 06",
+   "type": "PHONE"
+  },
+  {
+   "value": "h.delarochere@wanadoo.fr",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Inès BOUKHALFA",
+   "type": "PERSON"
+  },
+  {
+   "value": "Emre YILDIZ",
+   "type": "PERSON"
+  },
+  {
+   "value": "1er septembre 2022",
+   "type": "DATE"
+  },
+  {
+   "value": "appartement n° 12, 2e étage, 46 rue Paul Bert, 69003 Lyon",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Boukhalfa",
+   "type": "PERSON"
+  },
+  {
+   "value": "Yildiz",
+   "type": "PERSON"
+  },
+  {
+   "value": "04/08/2025",
+   "type": "DATE"
+  },
+  {
+   "value": "1 065,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "31 août 2025",
+   "type": "DATE"
+  },
+  {
+   "value": "980,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "85,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "5 août 2025",
+   "type": "DATE"
+  },
+  {
+   "value": "H. de La Rochère",
+   "type": "PERSON"
+  },
+  {
+   "value": "1er septembre 2025",
+   "type": "DATE"
+  },
+  {
+   "value": "990,19 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "01/09/2025",
+   "type": "DATE"
+  },
+  {
+   "value": "1 075,19 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "FR76 7743 6773 4549 6079 4237 004",
+   "type": "IBAN"
+  }
+ ]
+}

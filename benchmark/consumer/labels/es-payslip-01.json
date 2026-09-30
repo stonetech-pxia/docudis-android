@@ -1,0 +1,145 @@
+{
+ "id": "es-payslip-01",
+ "expected": [
+  {
+   "value": "CONSERVAS ILLA DE CORTEGADA, S.A.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Polígono Industrial de Trabanca Badiña, parcela 14",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Trabanca",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "36600 Vilagarcía de Arousa (Pontevedra)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Vilagarcía de Arousa",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Pontevedra",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "A36284917",
+   "type": "ID"
+  },
+  {
+   "value": "36/1048827/83",
+   "type": "ID"
+  },
+  {
+   "value": "BOUZAS TRONCOSO, ANXO MANUEL",
+   "type": "PERSON"
+  },
+  {
+   "value": "76216233Y",
+   "type": "ID"
+  },
+  {
+   "value": "36/57397001/70",
+   "type": "ID"
+  },
+  {
+   "value": "03/04/2019",
+   "type": "DATE"
+  },
+  {
+   "value": "00412",
+   "type": "ID"
+  },
+  {
+   "value": "Rúa Ourense, 9, 2º esq. - 36630 Cambados (Pontevedra)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "31 de agosto de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "1.471,55 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "ABANCA Corporación Bancaria",
+   "type": "COMPANY"
+  },
+  {
+   "value": "ES17 8573 9700 8417 4352 9990",
+   "type": "IBAN"
+  },
+  {
+   "value": "31/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "14.218,65 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "1.613,82 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "924,21 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Anxo",
+   "type": "PERSON"
+  },
+  {
+   "value": "14 de agosto",
+   "type": "DATE"
+  },
+  {
+   "value": "Xurxo Devesa",
+   "type": "PERSON"
+  },
+  {
+   "value": "1 de enero",
+   "type": "DATE"
+  },
+  {
+   "value": "nominas@illadecortegada.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "986 50 71 34",
+   "type": "PHONE"
+  },
+  {
+   "value": "Pilar Abalde Nogueira",
+   "type": "PERSON"
+  },
+  {
+   "value": "Anxo Manuel Bouzas Troncoso",
+   "type": "PERSON"
+  },
+  {
+   "value": "Conservas Illa de Cortegada, S.A.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "PO-31.906",
+   "type": "ID"
+  },
+  {
+   "value": "986 50 71 00",
+   "type": "PHONE"
+  },
+  {
+   "value": "www.illadecortegada.es",
+   "type": "URL"
+  },
+  {
+   "value": "28/08/2026",
+   "type": "DATE"
+  }
+ ]
+}

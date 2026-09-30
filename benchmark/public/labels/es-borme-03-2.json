@@ -1,0 +1,117 @@
+{
+ "id": "es-borme-03-2",
+ "expected": [
+  {
+   "value": "12 de septiembre de 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "AGRICOLA GUADALUPE XXI S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "3.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "CTRA DE ENTRERRIOS, S/N-FABRICA DE TRANSA 06700 (VILLANUEVA DE LA SERENA)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "3.000,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "GONFERJA HOLDING S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "RAFAEL CARRANZA ERQUICIA",
+   "type": "PERSON"
+  },
+  {
+   "value": "H BA 34636",
+   "type": "ID"
+  },
+  {
+   "value": "5.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "DEHESA Y BUEY S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "MARIA ELENA CARRION GARCIA",
+   "type": "PERSON"
+  },
+  {
+   "value": "ANTONIO JOSE RODRIGUEZ DIAZ",
+   "type": "PERSON"
+  },
+  {
+   "value": "H BA 28273",
+   "type": "ID"
+  },
+  {
+   "value": "AGRICOLA LOVAINA S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "CTRA DE ENTRERRIOS S/N, FABRICA DE TRANSA, S/N-FAB (VILLANUEVA DE LA SERENA)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "H BA 34637",
+   "type": "ID"
+  },
+  {
+   "value": "SEMILLAS JAD IBERICA SA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "SEMILLAS JAD IBERICA S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "ANA DE LLANO ARIAS",
+   "type": "PERSON"
+  },
+  {
+   "value": "16.114,75 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "14.086,43 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "46.015,57 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "H BA 1458",
+   "type": "ID"
+  },
+  {
+   "value": "CENTRO CANINO SIBERCAN S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "27.08.24",
+   "type": "DATE"
+  },
+  {
+   "value": "POLIG 9-PARCELA 54 (SIRUELA)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "JUAN MUELA CONTRERAS",
+   "type": "PERSON"
+  },
+  {
+   "value": "H BA 34638",
+   "type": "ID"
+  }
+ ]
+}

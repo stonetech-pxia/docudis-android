@@ -1,0 +1,165 @@
+{
+ "id": "en-cv-01",
+ "expected": [
+  {
+   "value": "SHANICE O. DELACROIX",
+   "type": "PERSON"
+  },
+  {
+   "value": "2716 Glenwood Ave SE, Apt 3B",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Atlanta, GA 30317",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Atlanta, GA",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "(404) 555-0118",
+   "type": "PHONE"
+  },
+  {
+   "value": "shanice.delacroix.rn@gmail.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "linkedin.com/in/shanice-delacroix-rn",
+   "type": "URL"
+  },
+  {
+   "value": "Georgia",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "RN298417",
+   "type": "ID"
+  },
+  {
+   "value": "01/31/2028",
+   "type": "DATE"
+  },
+  {
+   "value": "AACN",
+   "type": "COMPANY"
+  },
+  {
+   "value": "00614482",
+   "type": "ID"
+  },
+  {
+   "value": "American Heart Association",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Peachtree Regional Medical Center",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Nathaniel Brooks",
+   "type": "PERSON"
+  },
+  {
+   "value": "DeKalb Mercy Hospital",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Decatur, GA",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Carol-Ann Whitfield",
+   "type": "PERSON"
+  },
+  {
+   "value": "Brightpath Home Health, LLC",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Marietta, GA",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Cobb County",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Georgia State University",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Byrdine F. Lewis College of Nursing",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Sigma Theta Tau",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Atlanta Technical College",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Emory University",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Konbit Sante Atlanta",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Clarkston, GA",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Hôpital Saint-Michel",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Jacmel, Haiti",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Yves Laurent",
+   "type": "PERSON"
+  },
+  {
+   "value": "Wei-Ling Zhou",
+   "type": "PERSON"
+  },
+  {
+   "value": "1180 Peachtree Dunwoody Rd NE, Suite 640, Atlanta, GA 30342",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "(404) 555-0162",
+   "type": "PHONE"
+  },
+  {
+   "value": "wzhou@peachtreeregional.org",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Abdullahi M. Warsame",
+   "type": "PERSON"
+  },
+  {
+   "value": "+1 (678) 555-0147",
+   "type": "PHONE"
+  },
+  {
+   "value": "abdullahi.warsame@peachtreeregional.org",
+   "type": "EMAIL"
+  },
+  {
+   "value": "770-555-0193",
+   "type": "PHONE"
+  },
+  {
+   "value": "cawhitfield52@bellsouth.net",
+   "type": "EMAIL"
+  }
+ ]
+}

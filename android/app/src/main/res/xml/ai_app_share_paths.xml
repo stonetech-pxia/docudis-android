@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Anonymization output lives in <files>/records/<id>/output.txt; the copy handed
+     to other apps under its localized name in <files>/records/<id>/share/. -->
+<paths>
+    <files-path name="records" path="records/" />
+</paths>

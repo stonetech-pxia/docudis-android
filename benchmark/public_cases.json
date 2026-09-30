@@ -1,0 +1,4021 @@
+{
+ "version": 1,
+ "description": "Real public-record documents (BODACC, BORME, The Gazette, Enron corpus) with hand-checked labels. Fetched by tool/fetch_public_samples.py, assembled by tool/build_public_cases.py. Addresses are labelled as written, one value per contiguous address.",
+ "cases": [
+  {
+   "id": "fr-bodacc-creation-01",
+   "lang": "fr",
+   "category": "registry",
+   "source": "BODACC",
+   "url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A20260179917",
+   "text": "BODACC A n° 20260179 du 18/09/2026 - Annonce n° 917\nCréations - Avis initial\nGreffe du Tribunal de Commerce d'Arras\n\nRCS Arras 109 680 694\nRousseau Benjamin Andre Alfons\nNom commercial : BENJAMIN ROUSSEAU\n\nÉtablissement (Etablissement principal) :\nOrigine du fonds : Création\nActivité : Livraison de repas à domicile pour le compte de Plateformes de livraison. Les livraisons s'effectuent à vélo\nAdresse : Appartement 3, 409 rue Florent Evrard, 62430 Sallaumines\n\nDate d'immatriculation : 09/09/2026\nDate de commencement d'activité : 22/09/2026\nImmatriculation d'une personne physique suite à création d'un établissement principal",
+   "expected": [
+    {
+     "value": "18/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Arras",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "109 680 694",
+     "type": "ID"
+    },
+    {
+     "value": "Rousseau Benjamin Andre Alfons",
+     "type": "PERSON"
+    },
+    {
+     "value": "BENJAMIN ROUSSEAU",
+     "type": "PERSON"
+    },
+    {
+     "value": "Appartement 3, 409 rue Florent Evrard, 62430 Sallaumines",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "09/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "22/09/2026",
+     "type": "DATE"
+    }
+   ]
+  },
+  {
+   "id": "fr-bodacc-creation-02",
+   "lang": "fr",
+   "category": "registry",
+   "source": "BODACC",
+   "url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A20260179935",
+   "text": "BODACC A n° 20260179 du 18/09/2026 - Annonce n° 935\nCréations - Avis initial\nGreffe du Tribunal de Commerce de Boulogne-sur-Mer\n\nRCS Boulogne-sur-Mer 109 790 832\nBOSQUET Cassandra, Stéphanie, Christiane\nNom commercial : Cassis shop\nNationalité : Française\n\nÉtablissement (établissement principal) :\nOrigine du fonds : Création\nActivité : épicerie alimentaire jour et nuit\nAdresse : 7b Rue de Fruges, 62560 Fauquembergues\n\nDate d'immatriculation : 14/09/2026\nDate de commencement d'activité : 25/09/2026\nImmatriculation d'une personne physique suite à création d'un établissement principal",
+   "expected": [
+    {
+     "value": "18/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Boulogne-sur-Mer",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "109 790 832",
+     "type": "ID"
+    },
+    {
+     "value": "BOSQUET Cassandra, Stéphanie, Christiane",
+     "type": "PERSON"
+    },
+    {
+     "value": "Cassis shop",
+     "type": "COMPANY"
+    },
+    {
+     "value": "7b Rue de Fruges, 62560 Fauquembergues",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "14/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "25/09/2026",
+     "type": "DATE"
+    }
+   ]
+  },
+  {
+   "id": "fr-bodacc-creation-03",
+   "lang": "fr",
+   "category": "registry",
+   "source": "BODACC",
+   "url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A20260179949",
+   "text": "BODACC A n° 20260179 du 18/09/2026 - Annonce n° 949\nCréations - Avis initial\nGreffe du Tribunal de Commerce de Boulogne-sur-Mer\n\nRCS Boulogne-sur-Mer 109 954 446\nKHALFAOUI Khemais\nNom commercial : Livreur Uber eat\nNationalité : Tunisienne\n\nÉtablissement (établissement principal) :\nOrigine du fonds : Création\nActivité : livraison de repas à domicile\nAdresse : 156 Rue de Tunis, 62100 Calais\n\nDate d'immatriculation : 15/09/2026\nDate de commencement d'activité : 13/09/2026\nImmatriculation d'une personne physique suite à création d'un établissement principal",
+   "expected": [
+    {
+     "value": "18/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Boulogne-sur-Mer",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "109 954 446",
+     "type": "ID"
+    },
+    {
+     "value": "KHALFAOUI Khemais",
+     "type": "PERSON"
+    },
+    {
+     "value": "Livreur Uber eat",
+     "type": "COMPANY"
+    },
+    {
+     "value": "156 Rue de Tunis, 62100 Calais",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "15/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "13/09/2026",
+     "type": "DATE"
+    }
+   ]
+  },
+  {
+   "id": "fr-bodacc-creation-04",
+   "lang": "fr",
+   "category": "registry",
+   "source": "BODACC",
+   "url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A20260179975",
+   "text": "BODACC A n° 20260179 du 18/09/2026 - Annonce n° 975\nCréations - Avis initial\nGreffe du Tribunal de Commerce de Boulogne-sur-Mer\n\nRCS Boulogne-sur-Mer 130 037 054\nLB INVEST\nForme juridique : Société civile immobilière\nAdministration : Gérant, Associé indéfiniment responsable : BROUTIER Louis, Maxime, Guy\nCapital : 1000.00 EUR\nSiège social : 27 Rue de Montechor, 62170 Montcavrel\n\nÉtablissement (siège et établissement principal) :\nOrigine du fonds : Création\nActivité : propriété, gestion et administration, par bail ou autrement, de tous les immeubles et droits immobiliers composant son patrimoine.\nAdresse : 27 Rue de Montechor, 62170 Montcavrel\n\nDate d'immatriculation : 15/09/2026\nDate de commencement d'activité : 01/09/2026\nImmatriculation d'une personne morale (B, C, D) suite à création d'un établissement principal",
+   "expected": [
+    {
+     "value": "18/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Boulogne-sur-Mer",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "130 037 054",
+     "type": "ID"
+    },
+    {
+     "value": "LB INVEST",
+     "type": "COMPANY"
+    },
+    {
+     "value": "BROUTIER Louis, Maxime, Guy",
+     "type": "PERSON"
+    },
+    {
+     "value": "1000.00 EUR",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "27 Rue de Montechor, 62170 Montcavrel",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "15/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "01/09/2026",
+     "type": "DATE"
+    }
+   ]
+  },
+  {
+   "id": "fr-bodacc-vente-01",
+   "lang": "fr",
+   "category": "registry",
+   "source": "BODACC",
+   "url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202601792200",
+   "text": "BODACC A n° 20260179 du 18/09/2026 - Annonce n° 2200\nVentes et cessions - Avis initial\nGreffe du Tribunal Mixte de Commerce de Mamoudzou\n\nRCS Mamoudzou 066 351 420\nREST'OR\nForme juridique : Société à Responsabilité Limitée\nCapital : 7200.00 EUR\nSiège social : Route Nationale 1., Zone industrielle Kaweni, BP 633, 97600 Mamoudzou\n\nÉtablissement (Etablissement complémentaire) :\nOrigine du fonds : Etablissement complémentaire acquis par achat au prix stipulé de 445000 EUR\nActivité : Restauration traditionnelle sur place.\nAdresse : 100 Boulevard Halidi Selemani, 97600 Mamoudzou\n\nPrécédent propriétaire :\nRCS Mamoudzou 024 083 321\nBERNARD Anne-Marie (nom d'usage : VAUTRIN)\n\nDescriptif : Acte sous seing privé en date du 03/07/2026 enregistré au Service de l'Enregistrement de SIE MAMOUDZOU le 30/07/2026, Dossier Opération EAI 340. Référence : Folio: 2026 E n°1606. Adresse de l'ancien propriétaire : 3 B Rue du Commerce 97600 MAMOUDZOU. Adresse du nouveau propriétaire : Zone Industrielle Kaweni BP 633 Route nationale 1 - 97600 MAMOUDZOU. Acte sous seing privé en date du 03/07/2026 enregistré au Service de l'Enregistrement de SIE MAMOUDZOU le 30/07/2026, Dossier Opération EAI 340. Référence : Folio: 2026 E n°1606. Les oppositions seront reçues dans les dix jours suivant la publication prévue à l’article L.141-12 du code de commerce.\nDate de commencement d'activité : 03/07/2026\nAchat d'un établissement secondaire ou complémentaire par une personne morale\nFlash Infos - 11/09/2026\nA l'adresse du fonds: 100 Boulevard Halidi Selemani 97600 Mamoudzou",
+   "expected": [
+    {
+     "value": "18/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Mamoudzou",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "066 351 420",
+     "type": "ID"
+    },
+    {
+     "value": "REST'OR",
+     "type": "COMPANY"
+    },
+    {
+     "value": "7200.00 EUR",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "Route Nationale 1., Zone industrielle Kaweni, BP 633, 97600 Mamoudzou",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "445000 EUR",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "100 Boulevard Halidi Selemani, 97600 Mamoudzou",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "024 083 321",
+     "type": "ID"
+    },
+    {
+     "value": "BERNARD Anne-Marie",
+     "type": "PERSON"
+    },
+    {
+     "value": "VAUTRIN",
+     "type": "PERSON"
+    },
+    {
+     "value": "03/07/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "MAMOUDZOU",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "30/07/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "EAI 340",
+     "type": "ID",
+     "sub": "reference"
+    },
+    {
+     "value": "2026 E n°1606",
+     "type": "ID",
+     "sub": "reference"
+    },
+    {
+     "value": "3 B Rue du Commerce 97600 MAMOUDZOU",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Zone Industrielle Kaweni BP 633 Route nationale 1 - 97600 MAMOUDZOU",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "11/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "100 Boulevard Halidi Selemani 97600 Mamoudzou",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "fr-bodacc-vente-02",
+   "lang": "fr",
+   "category": "registry",
+   "source": "BODACC",
+   "url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A2026017971",
+   "text": "BODACC A n° 20260179 du 18/09/2026 - Annonce n° 71\nVentes et cessions - Avis initial\nGreffe du Tribunal de Commerce de Nice\n\nRCS Nice 900 210 675\nJERVIS BAY\nForme juridique : Société à responsabilité limitée\nAdministration : Gérant : CHATAIN Amaury, Claude, Jean\nCapital : 20000.00 EUR\nSiège social : Le Saint-Roch, 24 - 26 Avenue Félix Faure, 06500 Menton\n\nÉtablissement (établissement secondaire) :\nOrigine du fonds : établissement secondaire acquis par achat au prix stipulé de 125000.00 euros\nActivité : vente de linge et de textile de maison, puériculture, décoration, accessoires d'intérieur.\nAdresse : 30 Avenue Félix Faure, 06500 Menton\n\nPrécédent propriétaire :\nRCS Nice 401 686 878\nAIR DU TEMPS\n\nDescriptif : Cession sous acte authentique en date du 27/08/2026 Adresse de l'ancien propriétaire: 30 Avenue Félix Faure 06500 Menton\nDate de commencement d'activité : 27/08/2026\nAchat d'un établissement secondaire ou complémentaire par une personne morale\nPetitesaffiches.fr - 09/09/2026\nElection de domicile : Me DARTY, Notaire 27 Rue Carnot 06500 Menton pour la validité et Opposition dans les 10 jours suivant la dernière en date des publications prévues à l'article L141-12 du Code de Commerce.",
+   "expected": [
+    {
+     "value": "18/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Nice",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "900 210 675",
+     "type": "ID"
+    },
+    {
+     "value": "JERVIS BAY",
+     "type": "COMPANY"
+    },
+    {
+     "value": "CHATAIN Amaury, Claude, Jean",
+     "type": "PERSON"
+    },
+    {
+     "value": "20000.00 EUR",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "Le Saint-Roch, 24 - 26 Avenue Félix Faure, 06500 Menton",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "125000.00 euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "30 Avenue Félix Faure, 06500 Menton",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "401 686 878",
+     "type": "ID"
+    },
+    {
+     "value": "AIR DU TEMPS",
+     "type": "COMPANY"
+    },
+    {
+     "value": "27/08/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "30 Avenue Félix Faure 06500 Menton",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "09/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "DARTY",
+     "type": "PERSON"
+    },
+    {
+     "value": "27 Rue Carnot 06500 Menton",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "fr-bodacc-vente-03",
+   "lang": "fr",
+   "category": "registry",
+   "source": "BODACC",
+   "url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A20260179114",
+   "text": "BODACC A n° 20260179 du 18/09/2026 - Annonce n° 114\nVentes et cessions - Avis initial\nGreffe du Tribunal des Activités Economiques de Marseille\n\nRCS Marseille 107 137 887\nAlliance Sud Distribution\nForme juridique : Société à responsabilité limitée\nCapital : 10000.00 EUR\nSiège social : 13 Rue des Catalans, 13007 Marseille 7e Arrondissement\n\nÉtablissement (établissement principal) :\nOrigine du fonds : établissement principal acquis par achat au prix stipulé de 74400.00 euros\nActivité : l'exploitation de magasins spécialisés dans la vente au détail et en gros d'électroménager, multimédia, télévision, image, son, informatique, téléphonie, literie, cuisines, mobilier, climatisation, chauffage, produits d'équipement de la maison.\nAdresse : 94 Avenue André Zenatti, 13008 Marseille 8e Arrondissement\n\nPrécédent propriétaire :\nRCS Marseille 809 297 807\nFF BONNEVEINE MENAGER\n\nDescriptif : Acte en date du 24/07/2026 enregistré au SDE MARSEILLE le 03/09/2026 sous le numéro 1314P61 2026 A 04288 Adresse de l'ancien propriétaire: 94 Avenue André Zenatti 13008 Marseille 8e Arrondissement\nDate de commencement d'activité : 24/07/2026\nAchat d'un fonds par une personne morale (insertion provisoire)\nmesinfos.fr - 14/09/2026\nElection de domicile : Étude Maître Adrien JOLY 30 Cours Lieutaud 13001 Marseille 1er Arrondissement pour la validité et Opposition dans les 10 jours suivant la dernière en date des publications prévues à l'article L141-12 du Code de Commerce.",
+   "expected": [
+    {
+     "value": "18/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Marseille",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "107 137 887",
+     "type": "ID"
+    },
+    {
+     "value": "Alliance Sud Distribution",
+     "type": "COMPANY"
+    },
+    {
+     "value": "10000.00 EUR",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "13 Rue des Catalans, 13007 Marseille 7e Arrondissement",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "74400.00 euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "94 Avenue André Zenatti, 13008 Marseille 8e Arrondissement",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "809 297 807",
+     "type": "ID"
+    },
+    {
+     "value": "FF BONNEVEINE MENAGER",
+     "type": "COMPANY"
+    },
+    {
+     "value": "24/07/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "MARSEILLE",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "03/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "1314P61 2026 A 04288",
+     "type": "ID",
+     "sub": "reference"
+    },
+    {
+     "value": "94 Avenue André Zenatti 13008 Marseille 8e Arrondissement",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "14/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Adrien JOLY",
+     "type": "PERSON"
+    },
+    {
+     "value": "30 Cours Lieutaud 13001 Marseille 1er Arrondissement",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "fr-bodacc-vente-04",
+   "lang": "fr",
+   "category": "registry",
+   "source": "BODACC",
+   "url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A20260179615",
+   "text": "BODACC A n° 20260179 du 18/09/2026 - Annonce n° 615\nVentes et cessions - Avis initial\nGreffe du Tribunal de Commerce de Grenoble\n\nRCS Grenoble 108 184 912\nEpicerie Saint Phillibert\nForme juridique : Société par Actions Simplifiée\nCapital : 5000.00 EUR\nSiège social : 38330 Saint-Ismier\n\nÉtablissement (Etablissement principal) :\nOrigine du fonds : Etablissement principal acquis par achat au prix stipulé de 200000 EUR\nActivité : Restaurant.\nAdresse : Place De l'Eglise, 38330 Saint-Ismier\n\nPrécédent propriétaire :\nRCS Grenoble 452 805 666\nRESTAURANT LE MARTINET\n\nDescriptif : Acte Authentique en date du 02/09/2026. Adresse de l'ancien propriétaire : Place de l'Eglise 38330 SAINT-ISMIER. Adresse du nouveau propriétaire : 6 Place de l'Eglise 38330 SAINT-ISMIER. Les oppositions seront reçues dans les dix jours suivant la publication prévue à l’article L.141-12 du code de commerce.\nDate de commencement d'activité : 02/09/2026\nAchat d'un établissement principal par une personne morale lors de l'immatriculation\nLes Affiches de Grenoble et du Dauphiné - 11/09/2026\nSelarl PERROT TIRRE et ASSOCIES 24 Boulevard de la Chantoune 38700 LA TRONCHE.",
+   "expected": [
+    {
+     "value": "18/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Grenoble",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "108 184 912",
+     "type": "ID"
+    },
+    {
+     "value": "Epicerie Saint Phillibert",
+     "type": "COMPANY"
+    },
+    {
+     "value": "5000.00 EUR",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "38330 Saint-Ismier",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "200000 EUR",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "Place De l'Eglise, 38330 Saint-Ismier",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "452 805 666",
+     "type": "ID"
+    },
+    {
+     "value": "RESTAURANT LE MARTINET",
+     "type": "COMPANY"
+    },
+    {
+     "value": "02/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Place de l'Eglise 38330 SAINT-ISMIER",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "6 Place de l'Eglise 38330 SAINT-ISMIER",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "11/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Selarl PERROT TIRRE et ASSOCIES",
+     "type": "COMPANY"
+    },
+    {
+     "value": "24 Boulevard de la Chantoune 38700 LA TRONCHE",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "fr-bodacc-collective-01",
+   "lang": "fr",
+   "category": "registry",
+   "source": "BODACC",
+   "url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202601793226",
+   "text": "BODACC A n° 20260179 du 18/09/2026 - Annonce n° 3226\nProcédures collectives - Avis initial\nGreffe du Tribunal de Commerce de Reims\n\nRCS Reims 838 805 653\nSAS BLENET-CHUL\nSigle : MECADISTRIB\nForme juridique : Société par Actions Simplifiée\nActivité : prestations de services négoce réparation location vente de matériels btp poids lourds et agricole et toutes pièces détachées et accessoires. négoce et distribution de vins et spiriteux, la sous-traitance de travaux vini viticoles\nSiège social : 7 rue de la République, 51700 Festigny\n\nJugement d'ouverture de liquidation judiciaire du 08/09/2026\nJugement prononçant la liquidation judiciaire, date de cessation des paiements le 17 juillet 2026, désignant liquidateur Selarl Amandine Riquelme (me Amandine Riquelme) 13 bis Boulevard Foch Cs 40050 51722 Reims CEDEX. Les déclarations des créances sont à adresser au liquidateur judiciaire ou sur le portail électronique prévu par les articles L. 814-2 et L. 814-13 du code de commerce dans les deux mois à compter de la présente publication.",
+   "expected": [
+    {
+     "value": "18/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Reims",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "838 805 653",
+     "type": "ID"
+    },
+    {
+     "value": "SAS BLENET-CHUL",
+     "type": "COMPANY"
+    },
+    {
+     "value": "MECADISTRIB",
+     "type": "COMPANY"
+    },
+    {
+     "value": "7 rue de la République, 51700 Festigny",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "08/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "17 juillet 2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Selarl Amandine Riquelme",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Amandine Riquelme",
+     "type": "PERSON"
+    },
+    {
+     "value": "13 bis Boulevard Foch Cs 40050 51722 Reims CEDEX",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "fr-bodacc-collective-02",
+   "lang": "fr",
+   "category": "registry",
+   "source": "BODACC",
+   "url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202601793030",
+   "text": "BODACC A n° 20260179 du 18/09/2026 - Annonce n° 3030\nProcédures collectives - Avis initial\nGreffe du Tribunal de Commerce de Lons-le-Saunier\n\nRCS Lons-le-Saunier 893 120 105\nSO AND CO\nForme juridique : Société par Actions Simplifiée\nActivité : imprimés, signalitiques et objets publicitaires.\nSiège social : 56 rue des Arènes, 39100 Dole\n\nJugement d'ouverture de liquidation judiciaire du 11/09/2026\nJugement prononçant la liquidation judiciaire simplifiée, date de cessation des paiements le 1 mai 2025, désignant liquidateur Selarl Guigon Associes, Prise en la Personne de Maître Pascal Guigon 3 avenue Commandant Marceau 25000 Besançon. Les déclarations des créances sont à adresser au liquidateur judiciaire ou sur le portail électronique prévu par les articles L. 814-2 et L. 814-13 du code de commerce dans les deux mois à compter de la présente publication.",
+   "expected": [
+    {
+     "value": "18/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Lons-le-Saunier",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "893 120 105",
+     "type": "ID"
+    },
+    {
+     "value": "SO AND CO",
+     "type": "COMPANY"
+    },
+    {
+     "value": "56 rue des Arènes, 39100 Dole",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "11/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "1 mai 2025",
+     "type": "DATE"
+    },
+    {
+     "value": "Selarl Guigon Associes",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Pascal Guigon",
+     "type": "PERSON"
+    },
+    {
+     "value": "3 avenue Commandant Marceau 25000 Besançon",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "fr-bodacc-collective-03",
+   "lang": "fr",
+   "category": "registry",
+   "source": "BODACC",
+   "url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202601792958",
+   "text": "BODACC A n° 20260179 du 18/09/2026 - Annonce n° 2958\nProcédures collectives - Avis initial\nGreffe du Tribunal de Commerce de Grenoble\n\nRCS Grenoble 919 580 597\nHK-RS\nForme juridique : Société par Actions Simplifiée\nActivité : restauration traditonnelle.\nSiège social : 66 quai Perrière, 38000 Grenoble\n\nJugement d'ouverture d'une procédure de redressement judiciaire du 09/09/2026\nJugement prononçant l'ouverture d'une procédure de redressement judiciaire, date de cessation des paiements le 18 août 2026, désignant mandataire judiciaire Selarl Roumezi et Associes, Prise en la Personne de Me Maud Roumezi 9 bis rue de New York 38000 Grenoble. Les déclarations des créances sont à adresser au mandataire judiciaire ou sur le portail électronique prévu par les articles L. 814-2 et L. 814-13 du code de commerce dans les deux mois à compter de la présente publication.",
+   "expected": [
+    {
+     "value": "18/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Grenoble",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "919 580 597",
+     "type": "ID"
+    },
+    {
+     "value": "HK-RS",
+     "type": "COMPANY"
+    },
+    {
+     "value": "66 quai Perrière, 38000 Grenoble",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "09/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "18 août 2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Selarl Roumezi et Associes",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Maud Roumezi",
+     "type": "PERSON"
+    },
+    {
+     "value": "9 bis rue de New York 38000 Grenoble",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "fr-bodacc-collective-04",
+   "lang": "fr",
+   "category": "registry",
+   "source": "BODACC",
+   "url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202601793104",
+   "text": "BODACC A n° 20260179 du 18/09/2026 - Annonce n° 3104\nProcédures collectives - Avis initial\nGreffe du Tribunal de Commerce du Puy-en-Velay\n\nRCS le Puy en Velay 852 650 407\nNet'Pro 43\nForme juridique : Société par Actions Simplifiée\nActivité : entretien et nettoyage de tous locaux commerciaux.\nSiège social : 81 ZA de Chatimbarbe, 43200 Yssingeaux\n\nJugement d'ouverture d'une procédure de redressement judiciaire du 16/09/2026\nJugement prononçant l'ouverture d'une procédure de redressement judiciaire, date de cessation des paiements le 3 septembre 2026, désignant mandataire judiciaire SARL Mandatum, Prise en la Personne de Maître Raphaël Petavy 10 rue de la Ronzade 43000 Le Puy-en-Velay. Les déclarations des créances sont à adresser au mandataire judiciaire ou sur le portail électronique prévu par les articles L. 814-2 et L. 814-13 du code de commerce dans les deux mois à compter de la présente publication.",
+   "expected": [
+    {
+     "value": "18/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Puy-en-Velay",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "le Puy en Velay",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "852 650 407",
+     "type": "ID"
+    },
+    {
+     "value": "Net'Pro 43",
+     "type": "COMPANY"
+    },
+    {
+     "value": "81 ZA de Chatimbarbe, 43200 Yssingeaux",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "16/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "3 septembre 2026",
+     "type": "DATE"
+    },
+    {
+     "value": "SARL Mandatum",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Raphaël Petavy",
+     "type": "PERSON"
+    },
+    {
+     "value": "10 rue de la Ronzade 43000 Le Puy-en-Velay",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "fr-bodacc-modification-01",
+   "lang": "fr",
+   "category": "registry",
+   "source": "BODACC",
+   "url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B20260179896",
+   "text": "BODACC B n° 20260179 du 18/09/2026 - Annonce n° 896\nModifications diverses - Avis initial\nGreffe du Tribunal de Commerce de Rennes\n\nRCS Rennes 802 635 250\nPILLOT EURL\nForme juridique : Société à responsabilité limitée\nActivité : Commercialisation de tissus et produits dérives de produits manufactures ou non pour le compte de la société ou en qualité d'intermédiaire\nAdministration : Liquidateur : PILLOT Nathalie Michèle\nSiège social : 3 Rue de Verdon, 35500 Erbrée\n\nModification survenue sur l'administration, cessation d'activité, dissolution de la société.",
+   "expected": [
+    {
+     "value": "18/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Rennes",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "802 635 250",
+     "type": "ID"
+    },
+    {
+     "value": "PILLOT EURL",
+     "type": "COMPANY"
+    },
+    {
+     "value": "PILLOT Nathalie Michèle",
+     "type": "PERSON"
+    },
+    {
+     "value": "3 Rue de Verdon, 35500 Erbrée",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "fr-bodacc-modification-02",
+   "lang": "fr",
+   "category": "registry",
+   "source": "BODACC",
+   "url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B20260179942",
+   "text": "BODACC B n° 20260179 du 18/09/2026 - Annonce n° 942\nModifications diverses - Avis initial\nGreffe du Tribunal de Commerce de Tours\n\nRCS Tours 530 873 504\nSCI STONE\nForme juridique : Société civile immobilière\nAdministration : modification du Liquidateur et associé indéfiniment responsable Roche, Jean-François Jules\nCapital : 1500 EUR\nSiège social : 1 impasse des Mesanges, 37500 Chinon\n\nCessation d'activité et dissolution de la société\n2026-08-31",
+   "expected": [
+    {
+     "value": "18/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Tours",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "530 873 504",
+     "type": "ID"
+    },
+    {
+     "value": "SCI STONE",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Roche, Jean-François Jules",
+     "type": "PERSON"
+    },
+    {
+     "value": "1500 EUR",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "1 impasse des Mesanges, 37500 Chinon",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "2026-08-31",
+     "type": "DATE"
+    }
+   ]
+  },
+  {
+   "id": "fr-bodacc-modification-03",
+   "lang": "fr",
+   "category": "registry",
+   "source": "BODACC",
+   "url": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:B20260179972",
+   "text": "BODACC B n° 20260179 du 18/09/2026 - Annonce n° 972\nModifications diverses - Avis initial\nGreffe du Tribunal de Commerce de Nantes\n\nRCS Nantes 538 379 785\nAtlantique Budo\nForme juridique : Société à responsabilité limitée\nActivité : Activités spécialisées, scientifiques et techniques diverses\nCapital : 5000 EUR\nSiège social : 110 rue des Meuniers, 44270 La Marne\n\nmodification survenue sur l'activité de l'établissement principal, l'adresse du siège et l'adresse de l'établissement",
+   "expected": [
+    {
+     "value": "18/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Nantes",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "538 379 785",
+     "type": "ID"
+    },
+    {
+     "value": "Atlantique Budo",
+     "type": "COMPANY"
+    },
+    {
+     "value": "5000 EUR",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "110 rue des Meuniers, 44270 La Marne",
+     "type": "ADDRESS"
+    }
+   ]
+  },
+  {
+   "id": "es-borme-01-1",
+   "lang": "es",
+   "category": "registry",
+   "source": "BORME",
+   "url": "https://www.boe.es/borme/dias/2024/09/12/pdfs/BORME-A-2024-176-02.pdf",
+   "text": "BOLETÍN OFICIAL DEL REGISTRO MERCANTIL\nJueves 12 de septiembre de 2024\nActos inscritos\n\n393331 - J. J. WEN SOCIEDAD LIMITADA. Ceses/Dimisiones. Adm. Mancom.: LOPEZ CORCOLES MIGUEL ANGEL;MARTINEZ NAVARRO WENCESLAO;LOPEZ CORCOLES JUAN;LOPEZ CORCOLES JOSE VICENTE. Nombramientos. Adm. Unico: LOPEZ CORCOLES MIGUEL ANGEL. Otros conceptos: Cambio del Organo de Administración: Administradores mancomunados a Administrador único. Cambio de domicilio social. C/ PONTEVEDRA, 1 4º D 02003 (ALBACETE). Datos registrales. S 8 , H AB 23576, I/A 5 ( 4.09.24).\n\n393332 - ARECAR SOCIEDAD LIMITADA. Sociedad unipersonal. Cambio de identidad del socio único: ARENAS LLAMAS JAVIER. Ceses/Dimisiones. Adm. Unico: ARENAS SAEZ CIPRIANO. Nombramientos. Adm. Unico: ARENAS LLAMAS JAVIER. Datos registrales. S 8 , H AB 13653, I/A 5 ( 4.09.24).\n\n393333 - GASOLEOS HERMANOS RODRIGUEZ SOCIEDAD LIMITADA. Nombramientos. Apoderado: SANCHEZ ORTEGA MARIA. Datos registrales. S 8 , H AB 7602, I/A 7 ( 4.09.24).\n\n393334 - MOIX MOTOR SOCIEDAD LIMITADA. Ampliación de capital. Capital: 60.000,00 Euros. Resultante Suscrito: 63.000,00 Euros. Datos registrales. S 8 , H AB 26275, I/A 7 ( 4.09.24).\n\n393335 - VECOIS SOCIEDAD LIMITADA. Ceses/Dimisiones. Adm. Solid.: CANO SANCHEZ JUAN FRANCISCO;CANO SANCHEZ JOSE LUIS;CANO SANCHEZ BIENVENIDO. Nombramientos. Adm. Mancom.: CANO SANCHEZ JUAN FRANCISCO;CANO SANCHEZ JOSE LUIS;CANO SANCHEZ BIENVENIDO. Otros conceptos: Cambio del Organo de Administración: Administradores solidarios a Administradores mancomunados. Datos registrales. S 8 , H AB 21422, I/A 6 ( 4.09.24).\n\n393336 - VISION Y PROYECTOS 2008 SOCIEDAD LIMITADA. Ceses/Dimisiones. Adm. Solid.: CANO SANCHEZ JUAN FRANCISCO;CANO SANCHEZ JOSE LUIS;CANO SANCHEZ BIENVENIDO. Nombramientos. Adm. Mancom.: CANO SANCHEZ JUAN FRANCISCO;CANO SANCHEZ JOSE LUIS;CANO SANCHEZ BIENVENIDO. Otros conceptos: Cambio del Organo de Administración: Administradores solidarios a Administradores mancomunados. Datos registrales. S 8 , H AB 18463, I/A 7 ( 4.09.24).",
+   "expected": [
+    {
+     "value": "12 de septiembre de 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "J. J. WEN SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "LOPEZ CORCOLES MIGUEL ANGEL",
+     "type": "PERSON"
+    },
+    {
+     "value": "MARTINEZ NAVARRO WENCESLAO",
+     "type": "PERSON"
+    },
+    {
+     "value": "LOPEZ CORCOLES JUAN",
+     "type": "PERSON"
+    },
+    {
+     "value": "LOPEZ CORCOLES JOSE VICENTE",
+     "type": "PERSON"
+    },
+    {
+     "value": "C/ PONTEVEDRA, 1 4º D 02003 (ALBACETE)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "H AB 23576",
+     "type": "ID"
+    },
+    {
+     "value": "4.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "ARECAR SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "ARENAS LLAMAS JAVIER",
+     "type": "PERSON"
+    },
+    {
+     "value": "ARENAS SAEZ CIPRIANO",
+     "type": "PERSON"
+    },
+    {
+     "value": "H AB 13653",
+     "type": "ID"
+    },
+    {
+     "value": "GASOLEOS HERMANOS RODRIGUEZ SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "SANCHEZ ORTEGA MARIA",
+     "type": "PERSON"
+    },
+    {
+     "value": "H AB 7602",
+     "type": "ID"
+    },
+    {
+     "value": "MOIX MOTOR SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "60.000,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "63.000,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "H AB 26275",
+     "type": "ID"
+    },
+    {
+     "value": "VECOIS SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "CANO SANCHEZ JUAN FRANCISCO",
+     "type": "PERSON"
+    },
+    {
+     "value": "CANO SANCHEZ JOSE LUIS",
+     "type": "PERSON"
+    },
+    {
+     "value": "CANO SANCHEZ BIENVENIDO",
+     "type": "PERSON"
+    },
+    {
+     "value": "H AB 21422",
+     "type": "ID"
+    },
+    {
+     "value": "VISION Y PROYECTOS 2008 SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "H AB 18463",
+     "type": "ID"
+    }
+   ]
+  },
+  {
+   "id": "es-borme-01-2",
+   "lang": "es",
+   "category": "registry",
+   "source": "BORME",
+   "url": "https://www.boe.es/borme/dias/2024/09/12/pdfs/BORME-A-2024-176-02.pdf",
+   "text": "BOLETÍN OFICIAL DEL REGISTRO MERCANTIL\nJueves 12 de septiembre de 2024\nActos inscritos\n\n393337 - CURSOS PREMIUM SOCIEDAD LIMITADA. Constitución. Comienzo de operaciones: 6.06.24. Objeto social: 1.- Actividad principal: Formación no reglada y asesoría de formación.2.- Resto de activdades:A) La compraventa e intermediación de toda clase de fincas rústicas y urbanas, lapromoción y construcción sobre las mismas de toda clase de edificaciones, surehabilitación, venta o arrendamiento no. Domicilio: C/ SAN SEBASTIAN, 31 3º B 02005 (ALBACETE). Capital: 3.000,00 Euros. Declaración de unipersonalidad. Socio único: ROBLES MAGAN JUAN CARLOS. Nombramientos. Adm. Unico: ROBLES MAGAN JUAN CARLOS. Datos registrales. S 8 , H AB 30904, I/A 1 ( 4.09.24).\n\n393338 - GRUPO FHA VIA VIARIA SOCIEDAD LIMITADA. Ceses/Dimisiones. Adm. Unico: HERRAEZ ABELLAN FRANCISCO JAVIER. Nombramientos. Adm. Solid.: HERRAEZ ABELLAN FRANCISCO JAVIER;HERRAEZ ABELLAN ROBERTO. Otros conceptos: Cambio del Organo de Administración: Administrador único a Administradores solidarios. Datos registrales. S 8 , H AB 17806, I/A 6 ( 4.09.24).\n\n393339 - YESOS EL BONI SOCIEDAD LIMITADA. Pérdida del carácter de unipersonalidad. Ceses/Dimisiones. Adm. Unico: JIMENEZ PEREZ JUAN MANUEL. Nombramientos. Adm. Solid.: GIMENEZ PEREZ JUAN MANUEL;GANDIA NAVALON ANTONIO. Otros conceptos: Cambio del Organo de Administración: Administrador único a Administradores solidarios. Cambio de domicilio social. AVDA DE VALENCIA, 8 02660 (CAUDETE). Datos registrales. S 8 , H AB 19246, I/A 4 ( 4.09.24).\n\n393340 - CALZADOS MISTER SOCIEDAD ANONIMA. Reelecciones. Adm. Unico: VILLAESCUSA CALATAYUD MIGUEL. Datos registrales. S 8 , H AB 2092, I/A 16 ( 4.09.24).\nJueves 12 de septiembre de 2024\n\n393341 - CLINICA MEDICA CAPITOL SOCIEDAD LIMITADA. Ceses/Dimisiones. Adm. Unico: ANDUJAR ORTUÑO RAFAEL. Nombramientos. Adm. Unico: GARCIA GOMEZ SARA. Datos registrales. S 8 , H AB 3986, I/A 7 ( 4.09.24).\n\n393342 - HORTISANO SOCIEDAD LIMITADA. Nombramientos. Apoderado: CANOVAS RUIZ JOSE. Datos registrales. S 8 , H AB 8236, I/A 31 ( 4.09.24).",
+   "expected": [
+    {
+     "value": "12 de septiembre de 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "CURSOS PREMIUM SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "6.06.24",
+     "type": "DATE"
+    },
+    {
+     "value": "C/ SAN SEBASTIAN, 31 3º B 02005 (ALBACETE)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "3.000,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "ROBLES MAGAN JUAN CARLOS",
+     "type": "PERSON"
+    },
+    {
+     "value": "H AB 30904",
+     "type": "ID"
+    },
+    {
+     "value": "4.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "GRUPO FHA VIA VIARIA SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "HERRAEZ ABELLAN FRANCISCO JAVIER",
+     "type": "PERSON"
+    },
+    {
+     "value": "HERRAEZ ABELLAN ROBERTO",
+     "type": "PERSON"
+    },
+    {
+     "value": "H AB 17806",
+     "type": "ID"
+    },
+    {
+     "value": "YESOS EL BONI SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "JIMENEZ PEREZ JUAN MANUEL",
+     "type": "PERSON"
+    },
+    {
+     "value": "GIMENEZ PEREZ JUAN MANUEL",
+     "type": "PERSON"
+    },
+    {
+     "value": "GANDIA NAVALON ANTONIO",
+     "type": "PERSON"
+    },
+    {
+     "value": "AVDA DE VALENCIA, 8 02660 (CAUDETE)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "H AB 19246",
+     "type": "ID"
+    },
+    {
+     "value": "CALZADOS MISTER SOCIEDAD ANONIMA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "VILLAESCUSA CALATAYUD MIGUEL",
+     "type": "PERSON"
+    },
+    {
+     "value": "H AB 2092",
+     "type": "ID"
+    },
+    {
+     "value": "CLINICA MEDICA CAPITOL SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "ANDUJAR ORTUÑO RAFAEL",
+     "type": "PERSON"
+    },
+    {
+     "value": "GARCIA GOMEZ SARA",
+     "type": "PERSON"
+    },
+    {
+     "value": "H AB 3986",
+     "type": "ID"
+    },
+    {
+     "value": "HORTISANO SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "CANOVAS RUIZ JOSE",
+     "type": "PERSON"
+    },
+    {
+     "value": "H AB 8236",
+     "type": "ID"
+    }
+   ]
+  },
+  {
+   "id": "es-borme-01-3",
+   "lang": "es",
+   "category": "registry",
+   "source": "BORME",
+   "url": "https://www.boe.es/borme/dias/2024/09/12/pdfs/BORME-A-2024-176-02.pdf",
+   "text": "BOLETÍN OFICIAL DEL REGISTRO MERCANTIL\nJueves 12 de septiembre de 2024\nActos inscritos\n\n393343 - QVASERR PATRIMONIAL SOCIEDAD LIMITADA. Ceses/Dimisiones. Adm. Unico: RODRIGUEZ MARTINEZ ALFONSO. Nombramientos. Adm. Unico: FORTALEZA GLOBAL ENTERPRISES SOCIEDAD LIMITADA. Otros conceptos: RODRIGUEZ MARTINEZ, ALFONSO, ha sido nombrado representante de la sociedad FORTALEZA GLOBAL ENTERPRISES SOCIEDAD LIMITADA que a su vez es Administrador Unico de la sociedad QVASERR PATRIMONIAL SOCIEDAD LIMITADA. Datos registrales. S 8 , H AB 16159, I/A 7 ( 5.09.24).\n\n393344 - ACEVI ENTIDAD ACREDITADA SOCIEDAD ANONIMA. Nombramientos. Apo.Sol.: CHINCHILLA NUÑO DE LA ROSA VICENTE;AMADOR CORTES JUAN. Datos registrales. S 8 , H AB 13113, I/A 9 ( 5.09.24).\n\n393345 - DF OBRAS Y ZANJEOS SOCIEDAD LIMITADA. Ceses/Dimisiones. Adm. Unico: YGARZA LORENZO MANUEL. Nombramientos. Adm. Unico: POVEDA TELLO JAVIER. Ampliación de capital. Capital: 200.000,00 Euros. Resultante Suscrito: 400.000,00 Euros. Datos registrales. S 8 , H AB 30045, I/A 10 ( 5.09.24).\n\n393346 - DIFIBRA OBRAS SOCIEDAD LIMITADA. Ceses/Dimisiones. Representan: LOPEZ PINAR DANIEL. Otros conceptos: POVEDA TELLO, JAVIER, ha sido nombrado representante de la sociedad INVERSIONES MANCHACAMPO 2014 SOCIEDAD LIMITADA que a su vez es Administrador Unico de la sociedad DIFIBRA OBRAS SOCIEDAD LIMITADA. Datos registrales. S 8 , H AB 27298, I/A 5 ( 5.09.24).",
+   "expected": [
+    {
+     "value": "12 de septiembre de 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "QVASERR PATRIMONIAL SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "RODRIGUEZ MARTINEZ ALFONSO",
+     "type": "PERSON"
+    },
+    {
+     "value": "FORTALEZA GLOBAL ENTERPRISES SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "RODRIGUEZ MARTINEZ, ALFONSO",
+     "type": "PERSON"
+    },
+    {
+     "value": "H AB 16159",
+     "type": "ID"
+    },
+    {
+     "value": "5.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "ACEVI ENTIDAD ACREDITADA SOCIEDAD ANONIMA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "CHINCHILLA NUÑO DE LA ROSA VICENTE",
+     "type": "PERSON"
+    },
+    {
+     "value": "AMADOR CORTES JUAN",
+     "type": "PERSON"
+    },
+    {
+     "value": "H AB 13113",
+     "type": "ID"
+    },
+    {
+     "value": "DF OBRAS Y ZANJEOS SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "YGARZA LORENZO MANUEL",
+     "type": "PERSON"
+    },
+    {
+     "value": "POVEDA TELLO JAVIER",
+     "type": "PERSON"
+    },
+    {
+     "value": "200.000,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "400.000,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "H AB 30045",
+     "type": "ID"
+    },
+    {
+     "value": "DIFIBRA OBRAS SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "LOPEZ PINAR DANIEL",
+     "type": "PERSON"
+    },
+    {
+     "value": "POVEDA TELLO, JAVIER",
+     "type": "PERSON"
+    },
+    {
+     "value": "INVERSIONES MANCHACAMPO 2014 SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "H AB 27298",
+     "type": "ID"
+    }
+   ]
+  },
+  {
+   "id": "es-borme-02-1",
+   "lang": "es",
+   "category": "registry",
+   "source": "BORME",
+   "url": "https://www.boe.es/borme/dias/2024/09/12/pdfs/BORME-A-2024-176-04.pdf",
+   "text": "BOLETÍN OFICIAL DEL REGISTRO MERCANTIL\nJueves 12 de septiembre de 2024\nActos inscritos\n\n393347 - PARAJE LA CERRA SOCIEDAD LIMITADA. Ampliación de capital. Capital: 330.000,00 Euros. Resultante Suscrito: 357.110,00 Euros. Modificaciones estatutarias. Artículo de los estatutos: 5. Capital social.-Artículo 5º.- El capital social se fija en TRESCIENTOS CINCUENTA Y SIETE MIL CIENTO DIEZ EUROS (357.110,00E) y se halla dividido en TRESCIENTAS CINCUENTA Y SIETE MIL CIENTO DIEZ (357.110) participaciones sociales iguales, acumulables e indivisibles de UN EURO (1,00E) de valor nominal cada una, numeradas. Datos registrales. S 8 , H AL 42793, I/A 3 ( 5.09.24).\n\n393348 - PARAJE LA CERRA SOCIEDAD LIMITADA. Ceses/Dimisiones. Adm. Unico: RECHE FERNANDEZ EMILIO JOSE. Nombramientos. Adm. Solid.: RECHE FERNANDEZ EMILIO JOSE;FERNANDEZ CARRION EMILIO JOSE. Otros conceptos: Cambio del Organo de Administración: Administrador único a Administradores solidarios. Datos registrales. S 8 , H AL 42793, I/A 4 ( 5.09.24).\n\n393349 - VIRSA MULTISERVICIOS SOCIEDAD LIMITADA. Sociedad unipersonal. Cambio de identidad del socio único: DEL AGUILA CAZORLA MARIA DEL MAR. Datos registrales. S 8 , H AL 36663, I/A 7 ( 5.09.24).\n\n393350 - FINANCIAL RUBI SOCIEDAD LIMITADA. Reducción de capital. Importe reducción: 268.000,00 Euros. Resultante Suscrito: 32.000,00 Euros. Modificaciones estatutarias. Artículo de los estatutos: ARTICULO 6º. El capital social se fija en TREINTA Y DOS MIL EUROS (32.000 E) representado y dividido en TREINTA Y DOS MIL (32.000) participaciones sociales, indivisibles y acumulables de UN EURO (1 E) de valor nominal cada una, numeradas correlativamente del 1 al 32.000, ambas inclusive.. Datos registrales. S 8 , H AL 59943, I/A 2 ( 5.09.24).\n\n393351 - EXPLOTACIONES HOTELERAS COMPLEJO CONTINENTAL SOCIEDAD LIMITADA. Ceses/Dimisiones. Adm. Unico: GARCIA GOMEZ MARIA DOLORES. Nombramientos. Adm. Unico: GARCIA GOMEZ ISABEL. Datos registrales. S 8 , H AL 30036,bis , I/ 5 .( 5.09.24).\n\n393352 - NUEVAS DIGITALES SOCIEDAD LIMITADA. Ceses/Dimisiones. Adm. Unico: DE ROJAS MARIN MARIA PILAR. Nombramientos. Adm. Unico: TEJADA FILGAIRA FRANCISCO JOSE. Datos registrales. S 8 , H AL 40787, I/A 2 ( 5.09.24).",
+   "expected": [
+    {
+     "value": "12 de septiembre de 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "PARAJE LA CERRA SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "330.000,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "357.110,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "TRESCIENTOS CINCUENTA Y SIETE MIL CIENTO DIEZ EUROS",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "357.110,00E",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "UN EURO",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "1,00E",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "H AL 42793",
+     "type": "ID"
+    },
+    {
+     "value": "5.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "RECHE FERNANDEZ EMILIO JOSE",
+     "type": "PERSON"
+    },
+    {
+     "value": "FERNANDEZ CARRION EMILIO JOSE",
+     "type": "PERSON"
+    },
+    {
+     "value": "VIRSA MULTISERVICIOS SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "DEL AGUILA CAZORLA MARIA DEL MAR",
+     "type": "PERSON"
+    },
+    {
+     "value": "H AL 36663",
+     "type": "ID"
+    },
+    {
+     "value": "FINANCIAL RUBI SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "268.000,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "32.000,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "TREINTA Y DOS MIL EUROS",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "32.000 E",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "1 E",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "H AL 59943",
+     "type": "ID"
+    },
+    {
+     "value": "EXPLOTACIONES HOTELERAS COMPLEJO CONTINENTAL SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "GARCIA GOMEZ MARIA DOLORES",
+     "type": "PERSON"
+    },
+    {
+     "value": "GARCIA GOMEZ ISABEL",
+     "type": "PERSON"
+    },
+    {
+     "value": "H AL 30036",
+     "type": "ID"
+    },
+    {
+     "value": "NUEVAS DIGITALES SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "DE ROJAS MARIN MARIA PILAR",
+     "type": "PERSON"
+    },
+    {
+     "value": "TEJADA FILGAIRA FRANCISCO JOSE",
+     "type": "PERSON"
+    },
+    {
+     "value": "H AL 40787",
+     "type": "ID"
+    }
+   ]
+  },
+  {
+   "id": "es-borme-02-2",
+   "lang": "es",
+   "category": "registry",
+   "source": "BORME",
+   "url": "https://www.boe.es/borme/dias/2024/09/12/pdfs/BORME-A-2024-176-04.pdf",
+   "text": "BOLETÍN OFICIAL DEL REGISTRO MERCANTIL\nJueves 12 de septiembre de 2024\nActos inscritos\n\n393353 - PEFER E HIJOS SOCIEDAD ANONIMA. Nombramientos. Apoderado: DIAZ FERNANDEZ ANA ROCIO. Datos registrales. S 8 , H AL 5509, I/A 19 ( 5.09.24).\n\n393354 - PARQUE CIENTIFICO-TECNOLOGICO DE ALMERIA (PITA) SOCIEDAD ANONIMA. Ceses/Dimisiones. Consejero: JIMENEZ GARRIDO JOSE;SOCIEDAD PARA LA PROMOCION Y RECONVERSION ECONOMIC. Presidente: SOCIEDAD PARA LA PROMOCION Y RECONVERSION ECONOMIC. Nombramientos. Consejero: CERVANTES MERINO JAVIER JUAN;MARTIN MOYA MARIA ARANZAZU. Presidente: MARTIN MOYA MARIA ARANZAZU. Datos registrales. S 8 , H AL 17795, I/A 58 ( 5.09.24).\n\n393355 - CLINICA SOLVAS Y RODRIGUEZ SL. Modificaciones estatutarias. Artículo de los estatutos: 2. Objeto social.-Realización, implementación, ejecución y prestación de todo tipo de los servicios y consultas multiprofesionales en ingeniería biomédica, estética y dental, todo tipo de servicios en salud oral en las especialidades dentales en prevención deenfermedad estomatognática, protección específica contra enfermedades. Ampliación del objeto social. Así como acciones de servicios de consultoría con otros profesionales de la salud como médicos generales y especialistas, terapistas en rehabilitación huma como fisioterapistas, terapistas ocupacionales, fonoaudiólogos, médico cirujano con especial en nutrición y estética médica, médico cirujano con. Datos registrales. S 8 , H AL 56362, I/A 2 ( 5.09.24).\n\n393356 - JIMENEZ CAPARROS, SOCIEDAD LIMITADA. Modificaciones estatutarias. Artículo de los estatutos: 2. Objeto social.-1).- ACTIVIDAD PRINCIPAL: CNAE.-6622.- La realización de las actividades de correduría de seguros con sometimiento a la legislación especifica de mediación de seguros privados. Asi como actuar como agente de una empresa de servicios de inversión, actuando en todo momento por cuenta y bajo responsabilidad plena e. Ampliación del objeto social. ACTIVIDAD PRINCIPAL: CNAE.-6622.- La realización de las actividades de correduría de seguros con\nJueves 12 de septiembre de 2024\nsometimiento a la legislación especifica de mediación de seguros privados. Asi como actuar como agente de una empresa de servicios de inversión, actuando en todo momento por cuenta y bajo responsabilidad. Datos registrales. S 8 , H AL 49090, I/A 3 ( 5.09.24).\n\n393357 - JUAN JESUS MAESTRE CHAPA-PINTURA Y RESTAURACION SOCIEDAD LIMITADA. Ampliación de capital. Capital: 30.000,00 Euros. Resultante Suscrito: 33.000,00 Euros. Modificaciones estatutarias. Artículo de los estatutos: 5. Capital social.-\"Artículo 5..- El capital social sé fija en TREINTA Y TRES MIL EUROS (33. 000, 00E) divido en (3.300) PARTICIPACIONES SOCIALES, íntegramente asumidas, indivisibles, iguales y acumulables de DIEZ EUROS (10E) de valor nominal cada una de ellas, numeradas correlativamente del 1 al 3.300, ambos inclusive, y está. Datos registrales. S 8 , H AL 46817, I/A 3 ( 5.09.24).\n\n393358 - CAJAMAR CAJA RURAL SOCIEDAD COOPERATIVA DE CREDITO. Revocaciones. Apo.Sol.: RODRIGUEZ JURADO FRANCISCO JAVIER;DE PARELLADA DURAN ANTONIO;ANDUJAR LAZARO FRANCISCO JOSE;LOPEZ FERNANDEZ MARIA;RODRIGUEZ JURADO FRANCISCO JAVIER;DE PARELLADA DURAN ANTONIO. Apo.Man.Soli: LOPEZ FERNANDEZ MARIA. Datos registrales. S 8 , H AL 40338, I/A 849 ( 5.09.24).",
+   "expected": [
+    {
+     "value": "12 de septiembre de 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "PEFER E HIJOS SOCIEDAD ANONIMA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "DIAZ FERNANDEZ ANA ROCIO",
+     "type": "PERSON"
+    },
+    {
+     "value": "H AL 5509",
+     "type": "ID"
+    },
+    {
+     "value": "5.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "PARQUE CIENTIFICO-TECNOLOGICO DE ALMERIA (PITA) SOCIEDAD ANONIMA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "JIMENEZ GARRIDO JOSE",
+     "type": "PERSON"
+    },
+    {
+     "value": "SOCIEDAD PARA LA PROMOCION Y RECONVERSION ECONOMIC",
+     "type": "COMPANY"
+    },
+    {
+     "value": "CERVANTES MERINO JAVIER JUAN",
+     "type": "PERSON"
+    },
+    {
+     "value": "MARTIN MOYA MARIA ARANZAZU",
+     "type": "PERSON"
+    },
+    {
+     "value": "H AL 17795",
+     "type": "ID"
+    },
+    {
+     "value": "CLINICA SOLVAS Y RODRIGUEZ SL",
+     "type": "COMPANY"
+    },
+    {
+     "value": "H AL 56362",
+     "type": "ID"
+    },
+    {
+     "value": "JIMENEZ CAPARROS, SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "H AL 49090",
+     "type": "ID"
+    },
+    {
+     "value": "JUAN JESUS MAESTRE CHAPA-PINTURA Y RESTAURACION SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "30.000,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "33.000,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "TREINTA Y TRES MIL EUROS",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "33. 000, 00E",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "DIEZ EUROS",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "10E",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "H AL 46817",
+     "type": "ID"
+    },
+    {
+     "value": "CAJAMAR CAJA RURAL SOCIEDAD COOPERATIVA DE CREDITO",
+     "type": "COMPANY"
+    },
+    {
+     "value": "RODRIGUEZ JURADO FRANCISCO JAVIER",
+     "type": "PERSON"
+    },
+    {
+     "value": "DE PARELLADA DURAN ANTONIO",
+     "type": "PERSON"
+    },
+    {
+     "value": "ANDUJAR LAZARO FRANCISCO JOSE",
+     "type": "PERSON"
+    },
+    {
+     "value": "LOPEZ FERNANDEZ MARIA",
+     "type": "PERSON"
+    },
+    {
+     "value": "H AL 40338",
+     "type": "ID"
+    }
+   ]
+  },
+  {
+   "id": "es-borme-02-3",
+   "lang": "es",
+   "category": "registry",
+   "source": "BORME",
+   "url": "https://www.boe.es/borme/dias/2024/09/12/pdfs/BORME-A-2024-176-04.pdf",
+   "text": "BOLETÍN OFICIAL DEL REGISTRO MERCANTIL\nJueves 12 de septiembre de 2024\nActos inscritos\n\n393359 - ESOJZAID SOCIEDAD LIMITADA. Ampliación de capital. Capital: 500.000,00 Euros. Resultante Suscrito: 1.546.947,00 Euros. Modificaciones estatutarias. Artículo de los estatutos: Artículo 5º.- El capital social es de UN MILLON QUINIENTOS CUARENTA Y SEIS MIL NOVECIENTOS CUARENTA Y SIETE EUROS -1.546.947.- E- dividido en un millón quinientas cuarenta y seis mil novecientas cuarenta y siete -1.546.947participaciones sociales, numeradas correlativamente del uno -1- al un millón quinientos cuarenta y seis Artículo de los estatutos: Artículo 3º.- El domicilio de la sociedad se fija en Calle Galeón, edificio 1, 3ºA, 04711 ALMERIMAR, EL EJIDO, ALMERIA. Por acuerdo del órgano de Administración, podrá trasladarse dentro de la misma población donde se halle establecido, así como crearse, trasladarse o suprimirse las sucursales, agencias o delegaciones, tanto en. Cambio de domicilio social. C/ GALEON 3º A EDIFICIO 1. ALMERIMAR. (EJIDO (EL)). Datos registrales. S 8 , H AL 33464, I/A 5 ( 5.09.24).\n\n393360 - TRACOTRASA SL. Ceses/Dimisiones. Adm. Mancom.: HERNANDEZ MURCIA JOSE ANGEL;INVER BOAVISTA PM SL. Nombramientos. Liquidador: HERNANDEZ MURCIA JOSE ANGEL. Disolución. Voluntaria. Extinción. Datos registrales. S 8 , H AL 14622, I/A 5 ( 5.09.24).\n\n393361 - AUDIO MURGIS SL. Declaración de unipersonalidad. Socio único: RUBIO JIMENEZ JOSE MIGUEL. Datos registrales. S 8 , H AL 37042, I/A 4 ( 5.09.24).\n\n393362 - VIATORPLUSULTRA SOCIEDAD LIMITADA. Nombramientos. Auditor: PRAXIS AUDITORES SLP. Datos registrales. S 8 , H AL 37440, I/A 9 ( 5.09.24).\n\n393363 - RUANO SERVICIOS INMOBILIARIOS SOCIEDAD LIMITADA. Pérdida del carácter de unipersonalidad. Datos registrales. S 8 , H AL 49417, I/A 2 ( 5.09.24).\n\n393364 - CH.A.Y TRANS ESPAGNE SOCIEDAD LIMITADA. Pérdida del carácter de unipersonalidad. Datos registrales. S 8 , H AL 63803, I/A 3 ( 5.09.24).",
+   "expected": [
+    {
+     "value": "12 de septiembre de 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "ESOJZAID SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "500.000,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "1.546.947,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "UN MILLON QUINIENTOS CUARENTA Y SEIS MIL NOVECIENTOS CUARENTA Y SIETE EUROS",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "1.546.947.- E",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "Calle Galeón, edificio 1, 3ºA, 04711 ALMERIMAR, EL EJIDO, ALMERIA",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "C/ GALEON 3º A EDIFICIO 1. ALMERIMAR. (EJIDO (EL))",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "H AL 33464",
+     "type": "ID"
+    },
+    {
+     "value": "5.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "TRACOTRASA SL",
+     "type": "COMPANY"
+    },
+    {
+     "value": "HERNANDEZ MURCIA JOSE ANGEL",
+     "type": "PERSON"
+    },
+    {
+     "value": "INVER BOAVISTA PM SL",
+     "type": "COMPANY"
+    },
+    {
+     "value": "H AL 14622",
+     "type": "ID"
+    },
+    {
+     "value": "AUDIO MURGIS SL",
+     "type": "COMPANY"
+    },
+    {
+     "value": "RUBIO JIMENEZ JOSE MIGUEL",
+     "type": "PERSON"
+    },
+    {
+     "value": "H AL 37042",
+     "type": "ID"
+    },
+    {
+     "value": "VIATORPLUSULTRA SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "PRAXIS AUDITORES SLP",
+     "type": "COMPANY"
+    },
+    {
+     "value": "H AL 37440",
+     "type": "ID"
+    },
+    {
+     "value": "RUANO SERVICIOS INMOBILIARIOS SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "H AL 49417",
+     "type": "ID"
+    },
+    {
+     "value": "CH.A.Y TRANS ESPAGNE SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "H AL 63803",
+     "type": "ID"
+    }
+   ]
+  },
+  {
+   "id": "es-borme-03-1",
+   "lang": "es",
+   "category": "registry",
+   "source": "BORME",
+   "url": "https://www.boe.es/borme/dias/2024/09/12/pdfs/BORME-A-2024-176-06.pdf",
+   "text": "BOLETÍN OFICIAL DEL REGISTRO MERCANTIL\nJueves 12 de septiembre de 2024\nActos inscritos\n\n393373 - TRANSERAGRO S.L. Ceses/Dimisiones. Adm. Unico: DIEGO GONZALEZ GOMEZ. Nombramientos. Adm. Solid.: CARMEN GRAGERO GIL;DIEGO GONZALEZ GRAGERO. Otros conceptos: Cambio del Organo de Administración: Administrador único a Administradores solidarios. Datos registrales. S 8 , H BA 28813, I/A 5 ( 5.09.24).\n\n393374 - EVENTOS Y LUMINOSOS S.L. Ceses/Dimisiones. Adm. Unico: MARIA ANGELES CRESPO GOMEZ. Nombramientos. Adm. Unico: ANDRES GUSTAVO TOMAS GARCIA. Datos registrales. S 8 , H BA 26242, I/A 4 ( 5.09.24).\n\n393375 - JAMON EXCLUSIVE S.L. Constitución. Comienzo de operaciones: 27.08.24. Objeto social: Comercio menor y mayor de jamones embutidos y similares. Comercio menor y mayor de todo tipo de productos de alimentación y bebidas. -Almacén y distribución de todo tipo de productos de alimentación y bebidas. -Importación y exportación a cualquier país de todo tipo de productos de alimentación y b. Domicilio: AVDA DE LA PAZ, 39 3º A 06200 (ALMENDRALEJO). Capital: 21.000,00 Euros. Nombramientos. Adm. Solid.: ANTONIO ACEDO BURGUILLOS;DANIEL ACEDO CRUZ. Datos registrales. S 8 , H BA 34635, I/A 1 ( 5.09.24).\n\n393376 - DESARROLLOS NAVALES E INDUSTRIALES NAIR SL. Ceses/Dimisiones. Apoderado: ANTONIO MARTIN LOMEÑA GUERRERO. Datos registrales. S 8 , H BA 32234, I/A 3 ( 5.09.24).\n\n393377 - ALFASERONA S.L. Ceses/Dimisiones. Adm. Unico: ORTEGA MENDOZA JOSE ANTONIO. Nombramientos. Adm. Unico: ISABEL MARIA ORTEGA PINEDA. Modificaciones estatutarias. Administración y Representacion. Datos registrales. S 8 , H BA 27726, I/A 4 ( 5.09.24).\n\n393378 - ECOVERDIAL DE BADAJOZ S.L. Modificaciones estatutarias. Artículo de los Estatutos : Objeto. Cambio de objeto social. Objeto. La Sociedad tendrá por objeto las siguientes actividades: -- Como actividad principal, la encuadrada en CNAE, como de la clase: 1043 Fabricación de aceite de oliva. -Otras actividades: - Compraventa de aceitunas, producción de aceite convencional y ecológico y su comercialización y venta. Datos registrales. S 8 , H BA 30024, I/A 2 ( 5.09.24).",
+   "expected": [
+    {
+     "value": "12 de septiembre de 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "TRANSERAGRO S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "DIEGO GONZALEZ GOMEZ",
+     "type": "PERSON"
+    },
+    {
+     "value": "CARMEN GRAGERO GIL",
+     "type": "PERSON"
+    },
+    {
+     "value": "DIEGO GONZALEZ GRAGERO",
+     "type": "PERSON"
+    },
+    {
+     "value": "H BA 28813",
+     "type": "ID"
+    },
+    {
+     "value": "5.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "EVENTOS Y LUMINOSOS S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "MARIA ANGELES CRESPO GOMEZ",
+     "type": "PERSON"
+    },
+    {
+     "value": "ANDRES GUSTAVO TOMAS GARCIA",
+     "type": "PERSON"
+    },
+    {
+     "value": "H BA 26242",
+     "type": "ID"
+    },
+    {
+     "value": "JAMON EXCLUSIVE S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "27.08.24",
+     "type": "DATE"
+    },
+    {
+     "value": "AVDA DE LA PAZ, 39 3º A 06200 (ALMENDRALEJO)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "21.000,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "ANTONIO ACEDO BURGUILLOS",
+     "type": "PERSON"
+    },
+    {
+     "value": "DANIEL ACEDO CRUZ",
+     "type": "PERSON"
+    },
+    {
+     "value": "H BA 34635",
+     "type": "ID"
+    },
+    {
+     "value": "DESARROLLOS NAVALES E INDUSTRIALES NAIR SL",
+     "type": "COMPANY"
+    },
+    {
+     "value": "ANTONIO MARTIN LOMEÑA GUERRERO",
+     "type": "PERSON"
+    },
+    {
+     "value": "H BA 32234",
+     "type": "ID"
+    },
+    {
+     "value": "ALFASERONA S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "ORTEGA MENDOZA JOSE ANTONIO",
+     "type": "PERSON"
+    },
+    {
+     "value": "ISABEL MARIA ORTEGA PINEDA",
+     "type": "PERSON"
+    },
+    {
+     "value": "H BA 27726",
+     "type": "ID"
+    },
+    {
+     "value": "ECOVERDIAL DE BADAJOZ S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "H BA 30024",
+     "type": "ID"
+    }
+   ]
+  },
+  {
+   "id": "es-borme-03-2",
+   "lang": "es",
+   "category": "registry",
+   "source": "BORME",
+   "url": "https://www.boe.es/borme/dias/2024/09/12/pdfs/BORME-A-2024-176-06.pdf",
+   "text": "BOLETÍN OFICIAL DEL REGISTRO MERCANTIL\nJueves 12 de septiembre de 2024\nActos inscritos\n\n393379 - AGRICOLA GUADALUPE XXI S.L. Constitución. Comienzo de operaciones: 3.09.24. Objeto social: la actividad agrícola en general, la explotación agrícola y cultivo de fincas rústicas y actividades complementarias; así como la comercialización y venta de los productos agrícolas que obtenga por la explotación. Se excluyen aquellas actividades sujetas a autorización administrativa y las propias d. Domicilio: CTRA DE ENTRERRIOS, S/N-FABRICA DE TRANSA 06700 (VILLANUEVA DE LA SERENA). Capital: 3.000,00 Euros. Declaración de unipersonalidad. Socio único: GONFERJA HOLDING S.L. Nombramientos. Adm. Unico: RAFAEL CARRANZA ERQUICIA. Datos registrales. S 8 , H BA 34636, I/A 1 ( 5.09.24).\n\n393380 - DEHESA Y BUEY S.L. Ceses/Dimisiones. Adm. Unico: MARIA ELENA CARRION GARCIA. Nombramientos. Adm. Unico: ANTONIO JOSE RODRIGUEZ DIAZ. Datos registrales. S 8 , H BA 28273, I/A 4 ( 5.09.24).\n\n393381 - AGRICOLA LOVAINA S.L. Constitución. Comienzo de operaciones: 3.09.24. Objeto social: la actividad agrícola en general, la explotación agrícola y cultivo de fincas rústicas y actividades complementarias; así como la comercialización y venta de los productos agrícolas que obtenga por la explotación. Se excluyen aquellas actividades sujetas a autorización administrativa y las propias d. Domicilio: CTRA DE ENTRERRIOS S/N, FABRICA DE TRANSA, S/N-FAB (VILLANUEVA DE LA SERENA). Capital: 3.000,00 Euros. Declaración de unipersonalidad. Socio único: GONFERJA HOLDING S.L. Nombramientos. Adm. Unico: RAFAEL CARRANZA ERQUICIA. Datos registrales. S 8 , H BA 34637, I/A 1 ( 5.09.24).\n\n393382 - SEMILLAS JAD IBERICA SA. Transformación de sociedad. Denominación y forma adoptada: SEMILLAS JAD IBERICA S.L. Reelecciones. Adm. Unico: ANA DE LLANO ARIAS. Desembolso de dividendos pasivos. Desembolsado: 16.114,75 Euros. Reducción de capital. Importe reducción:\nJueves 12 de septiembre de 2024\n14.086,43 Euros. Resultante Suscrito: 46.015,57 Euros. Modificaciones estatutarias. Artículo de los Estatutos : 7. Capital. Artículo de los Estatutos : 7. Capital. Artículo de los Estatutos : 1. Denominación. Artículo de los Estatutos : 2. Objeto. Otros conceptos: Se modifica la redacción íntegra de los Estatutos Sociales. Cambio de objeto social. La sociedad tiene por objeto las siguientes actividades, correspondiendo a la principal el C.N.A.E. 0161: El comercio de semillas y productos agrícolas. Actividades de apoyo a la agricultura. Consultoría agrícola. Inteligencia artificial aplicada a la agricultura, teledetección y monitorización de c. Datos registrales. S 8 , H BA 1458, I/A 14 ( 5.09.24).\n\n393383 - CENTRO CANINO SIBERCAN S.L. Constitución. Comienzo de operaciones: 27.08.24. Objeto social: CNAE 9609 Adiestramiento y cuidado de animales. CNAE 4776 Comercio Menor semillas, abonos, flores y plantas. CNAE 0149 Otras explotaciones ganaderas. C.N.A.E. de la actividad principal: 9609 Adiestramiento y cuidado de animales Para tales actividades la sociedad actuará como intermediaria, con exclu. Domicilio: POLIG 9-PARCELA 54 (SIRUELA). Capital: 3.000,00 Euros. Nombramientos. Adm. Unico: JUAN MUELA CONTRERAS. Datos registrales. S 8 , H BA 34638, I/A 1 ( 5.09.24).",
+   "expected": [
+    {
+     "value": "12 de septiembre de 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "AGRICOLA GUADALUPE XXI S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "3.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "CTRA DE ENTRERRIOS, S/N-FABRICA DE TRANSA 06700 (VILLANUEVA DE LA SERENA)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "3.000,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "GONFERJA HOLDING S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "RAFAEL CARRANZA ERQUICIA",
+     "type": "PERSON"
+    },
+    {
+     "value": "H BA 34636",
+     "type": "ID"
+    },
+    {
+     "value": "5.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "DEHESA Y BUEY S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "MARIA ELENA CARRION GARCIA",
+     "type": "PERSON"
+    },
+    {
+     "value": "ANTONIO JOSE RODRIGUEZ DIAZ",
+     "type": "PERSON"
+    },
+    {
+     "value": "H BA 28273",
+     "type": "ID"
+    },
+    {
+     "value": "AGRICOLA LOVAINA S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "CTRA DE ENTRERRIOS S/N, FABRICA DE TRANSA, S/N-FAB (VILLANUEVA DE LA SERENA)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "H BA 34637",
+     "type": "ID"
+    },
+    {
+     "value": "SEMILLAS JAD IBERICA SA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "SEMILLAS JAD IBERICA S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "ANA DE LLANO ARIAS",
+     "type": "PERSON"
+    },
+    {
+     "value": "16.114,75 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "14.086,43 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "46.015,57 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "H BA 1458",
+     "type": "ID"
+    },
+    {
+     "value": "CENTRO CANINO SIBERCAN S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "27.08.24",
+     "type": "DATE"
+    },
+    {
+     "value": "POLIG 9-PARCELA 54 (SIRUELA)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "JUAN MUELA CONTRERAS",
+     "type": "PERSON"
+    },
+    {
+     "value": "H BA 34638",
+     "type": "ID"
+    }
+   ]
+  },
+  {
+   "id": "es-borme-04-1",
+   "lang": "es",
+   "category": "registry",
+   "source": "BORME",
+   "url": "https://www.boe.es/borme/dias/2024/09/12/pdfs/BORME-A-2024-176-07.pdf",
+   "text": "BOLETÍN OFICIAL DEL REGISTRO MERCANTIL\nJueves 12 de septiembre de 2024\nActos inscritos\n\n393384 - TROPIMAX MADERA, S.L.(R.M. EIVISSA). Fe de erratas: Rectificacion NIE del administrador único siendo el correcto Z2146076C. Datos registrales. S 8 , H IB 21116, I/A 1 (29.07.24).\n\n393385 - TROPIMAX MADERA, S.L.(R.M. EIVISSA). Fe de erratas: Rectificado el NIE del administrador único y socio único, don Lance Terweij, siendo el correcto Z21406076C. Datos registrales. S 8 , H IB 21116, I/A 2 ( 5.09.24).\n\n393386 - CRISMAER INVERSIONES, SOCIEDAD LIMITADA(R.M. EIVISSA). Nombramientos. Apoderado: SALA TORRES JOSE. Datos registrales. S 8 , H IB 5871, I/A 3 ( 5.09.24).\n\n393387 - TURISTICA INVERSIONES ES PUET, S.L.(R.M. EIVISSA). Nombramientos. Apoderado: SALA TORRES JOSE. Datos registrales. S 8 , H IB 18084, I/A 2 ( 5.09.24).\n\n393388 - OUTSITE SPAIN SL(R.M. EIVISSA). Cambio de domicilio social. AVDA PUNTA ARABI, 146, CANA (ES) 07849 (SANTA EULALIA DEL RIO). Datos registrales. S 8 , H IB 21181, I/A 2 ( 5.09.24).\n\n393389 - ZEYNEP BEAUTY IBIZA, SOCIEDAD LIMITADA(R.M. EIVISSA). Constitución. Comienzo de operaciones: 2.09.24. Objeto social: 1. Construcción, instalaciones y mantenimiento. 2. Comercio al por mayor y al por menor. Distribución comercial. Importación y exportación. 3. Actividades inmobiliarias.5. Industrias manufactureras y textiles. 6. Turismo, hostelería y restauración. 7. Prestación de servicios. Actividades de gestión. Domicilio: C/ FAISAN, 10-LOCAL 2, NUESTRA SEÑORA DE JESUS 078 (SANTA EULALIA DEL RIO). Capital: 3.000,00 Euros. Declaración de unipersonalidad. Socio único: SCHLUTER ZEYNEP. Nombramientos. Adm. Unico: SCHLUTER ZEYNEP. Datos registrales. S 8 , H IB 21182, I/A 1 ( 5.09.24).",
+   "expected": [
+    {
+     "value": "12 de septiembre de 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "TROPIMAX MADERA, S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "EIVISSA",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Z2146076C",
+     "type": "ID"
+    },
+    {
+     "value": "H IB 21116",
+     "type": "ID"
+    },
+    {
+     "value": "29.07.24",
+     "type": "DATE"
+    },
+    {
+     "value": "Lance Terweij",
+     "type": "PERSON"
+    },
+    {
+     "value": "Z21406076C",
+     "type": "ID"
+    },
+    {
+     "value": "5.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "CRISMAER INVERSIONES, SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "SALA TORRES JOSE",
+     "type": "PERSON"
+    },
+    {
+     "value": "H IB 5871",
+     "type": "ID"
+    },
+    {
+     "value": "TURISTICA INVERSIONES ES PUET, S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "H IB 18084",
+     "type": "ID"
+    },
+    {
+     "value": "OUTSITE SPAIN SL",
+     "type": "COMPANY"
+    },
+    {
+     "value": "AVDA PUNTA ARABI, 146, CANA (ES) 07849 (SANTA EULALIA DEL RIO)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "H IB 21181",
+     "type": "ID"
+    },
+    {
+     "value": "ZEYNEP BEAUTY IBIZA, SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "2.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "C/ FAISAN, 10-LOCAL 2, NUESTRA SEÑORA DE JESUS 078 (SANTA EULALIA DEL RIO)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "3.000,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "SCHLUTER ZEYNEP",
+     "type": "PERSON"
+    },
+    {
+     "value": "H IB 21182",
+     "type": "ID"
+    }
+   ]
+  },
+  {
+   "id": "es-borme-04-2",
+   "lang": "es",
+   "category": "registry",
+   "source": "BORME",
+   "url": "https://www.boe.es/borme/dias/2024/09/12/pdfs/BORME-A-2024-176-07.pdf",
+   "text": "BOLETÍN OFICIAL DEL REGISTRO MERCANTIL\nJueves 12 de septiembre de 2024\nActos inscritos\n\n393390 - MERCHASTYLE, SOCIEDAD LIMITADA(R.M. EIVISSA). Revocaciones. Apoderado: MARTIN COROMINA ANTONIO RAMON. Datos registrales. S 8 , H IB 11709, I/A 16 ( 5.09.24).\n\n393391 - MERCHASTYLE, SOCIEDAD LIMITADA(R.M. EIVISSA). Nombramientos. Apoderado: DIAZ GIL MARIA JOSE. Datos registrales. S 8 , H IB 11709, I/A 17 ( 5.09.24).\n\n393392 - SERVICIOS LARGA DISTANCIA, SOCIEDAD LIMITADA(R.M. EIVISSA). Revocaciones. Apoderado: MARTIN COROMINA ANTONIO RAMON. Datos registrales. S 8 , H IB 2053, I/A 20 ( 5.09.24).\n\n393393 - NATSUKI SERVICIOS CENTRALES, SOCIEDAD LIMITADA(R.M. EIVISSA). Nombramientos. Apoderado: DIAZ GIL MARIA JOSE. Datos registrales. S 8 , H IB 11392, I/A 21 ( 5.09.24).\n\n393394 - NATSUKI SERVICIOS CENTRALES, SOCIEDAD LIMITADA(R.M. EIVISSA). Revocaciones. Apoderado: MARTIN COROMINA ANTONIO RAMON. Datos registrales. S 8 , H IB 11392, I/A 22 ( 5.09.24).\n\n393395 - STAR ISLAND SPAIN, S.L.(R.M. EIVISSA). Ceses/Dimisiones. Adm. Unico: FINANCIERE JL SAS. Nombramientos. Adm. Unico: ROCK EQUITY S.L. Otros conceptos: Designado representante persona fisica de ROCK EQUITY SL, administrador único de la sociedad, a don Jess Simon Davi Levy, con NIE Y-4567973-A. Datos registrales. S 8 , H IB 16282, I/A 3 ( 5.09.24).",
+   "expected": [
+    {
+     "value": "12 de septiembre de 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "MERCHASTYLE, SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "EIVISSA",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "MARTIN COROMINA ANTONIO RAMON",
+     "type": "PERSON"
+    },
+    {
+     "value": "H IB 11709",
+     "type": "ID"
+    },
+    {
+     "value": "5.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "DIAZ GIL MARIA JOSE",
+     "type": "PERSON"
+    },
+    {
+     "value": "SERVICIOS LARGA DISTANCIA, SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "H IB 2053",
+     "type": "ID"
+    },
+    {
+     "value": "NATSUKI SERVICIOS CENTRALES, SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "H IB 11392",
+     "type": "ID"
+    },
+    {
+     "value": "STAR ISLAND SPAIN, S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "FINANCIERE JL SAS",
+     "type": "COMPANY"
+    },
+    {
+     "value": "ROCK EQUITY S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "ROCK EQUITY SL",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Jess Simon Davi Levy",
+     "type": "PERSON"
+    },
+    {
+     "value": "Y-4567973-A",
+     "type": "ID"
+    },
+    {
+     "value": "H IB 16282",
+     "type": "ID"
+    }
+   ]
+  },
+  {
+   "id": "es-borme-04-3",
+   "lang": "es",
+   "category": "registry",
+   "source": "BORME",
+   "url": "https://www.boe.es/borme/dias/2024/09/12/pdfs/BORME-A-2024-176-07.pdf",
+   "text": "BOLETÍN OFICIAL DEL REGISTRO MERCANTIL\nJueves 12 de septiembre de 2024\nActos inscritos\n\n393396 - COMPAÑIA DE INVERSIONES NAVALES, SOCIEDAD LIMITADA(R.M. EIVISSA). Revocaciones. Apoderado: MARTIN COROMINA ANTONIO RAMON. Datos registrales. S 8 , H IB 6160, I/A 12 ( 5.09.24).\n\n393397 - LA COMUNAUTEE, SOCIEDAD LIMITADA(R.M. EIVISSA). Ceses/Dimisiones. Adm. Unico: MOREL REGINE-JEANNE-CLAUDE. Nombramientos. Adm. Solid.: MOREL REGINE-JEANNE-\nJueves 12 de septiembre de 2024\nCLAUDE;FOTI CONTRERAS DIEGO-MARTIN. Otros conceptos: Cambio del Organo de Administración: Administrador único a Administradores solidarios. Datos registrales. S 8 , H IB 13385, I/A 4 ( 5.09.24).\n\n393398 - PHOTOPILLS CORE SOCIEDAD LIMITADA(R.M. MAHON). Fe de erratas: Se rectifica la inscripción 1ª, por haber incurrido en un error en cuanto al epígrafe del CNAE del objeto social, según resulta de la diligencia de subsanación extendida el día 25-07-2024 por el Notario de Ciutadella don Luis Miguel Ferrer García, siendo el correcto el CNAE 7010. Datos registrales. S 8 , H IM 7952, I/A 5 ( 2.09.24).\n\n393399 - MARCAINA BALEARS GESTIO DE TRANSPORTS SOCIEDAD LIMITADA(R.M. MAHON). Constitución. Comienzo de operaciones: 9.07.24. Objeto social: El objeto social está constituido por las siguientes actividades: Gestión de licencias de autotransporte, compraventa, arrendamientos y explotación de licencias de autotransporte. Domicilio: C/ SANT BARTOMEU, 1 07760 (CIUTADELLA DE MENORCA). Capital: 3.000,00 Euros. Declaración de unipersonalidad. Socio único: MARCAINA SOCIETAT D'INVERSIONS SL. Nombramientos. Adm. Unico: VALLS RODRIGUEZ JOAQUIN. Datos registrales. S 8 , H IM 8190, I/A 1 ( 2.09.24).\n\n393400 - CAMPERITZACIONS MENORCA SOCIEDAD LIMITADA(R.M. MAHON). Declaración de unipersonalidad. Socio único: AMETLLER BAGUR LLORENS. Ceses/Dimisiones. Adm. Solid.: AMETLLER BAGUR LLORENS;PLENS ANGLADA ANGEL JOSE. Nombramientos. Adm. Unico: AMETLLER BAGUR LLORENS. Otros conceptos: Cambio del Organo de Administración: Administradores solidarios a Administrador único. Datos registrales. S 8 , H IM 7846, I/A 3 ( 2.09.24).\n\n393401 - LA FINCA TORTUGA SOCIEDAD LIMITADA(R.M. MAHON). Ceses/Dimisiones. Adm. Unico: ISOARDI MARIA LUISA. Nombramientos. Adm. Unico: MATTEO RABINO. Datos registrales. S 8 , H IM 3517, I/A 5 ( 5.09.24).",
+   "expected": [
+    {
+     "value": "12 de septiembre de 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "COMPAÑIA DE INVERSIONES NAVALES, SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "EIVISSA",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "MARTIN COROMINA ANTONIO RAMON",
+     "type": "PERSON"
+    },
+    {
+     "value": "H IB 6160",
+     "type": "ID"
+    },
+    {
+     "value": "5.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "LA COMUNAUTEE, SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "MOREL REGINE-JEANNE-CLAUDE",
+     "type": "PERSON"
+    },
+    {
+     "value": "MOREL REGINE-JEANNE",
+     "type": "PERSON"
+    },
+    {
+     "value": "CLAUDE",
+     "type": "PERSON"
+    },
+    {
+     "value": "FOTI CONTRERAS DIEGO-MARTIN",
+     "type": "PERSON"
+    },
+    {
+     "value": "H IB 13385",
+     "type": "ID"
+    },
+    {
+     "value": "PHOTOPILLS CORE SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "MAHON",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "25-07-2024",
+     "type": "DATE"
+    },
+    {
+     "value": "Ciutadella",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Luis Miguel Ferrer García",
+     "type": "PERSON"
+    },
+    {
+     "value": "H IM 7952",
+     "type": "ID"
+    },
+    {
+     "value": "2.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "MARCAINA BALEARS GESTIO DE TRANSPORTS SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "9.07.24",
+     "type": "DATE"
+    },
+    {
+     "value": "C/ SANT BARTOMEU, 1 07760 (CIUTADELLA DE MENORCA)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "3.000,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "MARCAINA SOCIETAT D'INVERSIONS SL",
+     "type": "COMPANY"
+    },
+    {
+     "value": "VALLS RODRIGUEZ JOAQUIN",
+     "type": "PERSON"
+    },
+    {
+     "value": "H IM 8190",
+     "type": "ID"
+    },
+    {
+     "value": "CAMPERITZACIONS MENORCA SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "AMETLLER BAGUR LLORENS",
+     "type": "PERSON"
+    },
+    {
+     "value": "PLENS ANGLADA ANGEL JOSE",
+     "type": "PERSON"
+    },
+    {
+     "value": "H IM 7846",
+     "type": "ID"
+    },
+    {
+     "value": "LA FINCA TORTUGA SOCIEDAD LIMITADA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "ISOARDI MARIA LUISA",
+     "type": "PERSON"
+    },
+    {
+     "value": "MATTEO RABINO",
+     "type": "PERSON"
+    },
+    {
+     "value": "H IM 3517",
+     "type": "ID"
+    }
+   ]
+  },
+  {
+   "id": "es-borme-05-1",
+   "lang": "es",
+   "category": "registry",
+   "source": "BORME",
+   "url": "https://www.boe.es/borme/dias/2024/09/12/pdfs/BORME-A-2024-176-08.pdf",
+   "text": "BOLETÍN OFICIAL DEL REGISTRO MERCANTIL\nJueves 12 de septiembre de 2024\nActos inscritos\n\n393500 - DOGSTEL LA CANINA S.L. Fe de erratas: En el BORME no.37/2021 y con referencia 88506 DONDE SE LEE COMO PRIMER APELLIDO DEL ADMINISTRADOR UNICO \"MARTN\", DEBE LEERSE: \"MARTIN\". Datos registrales. T 47673 , F 41, S 8, H B 558948, I/A 1 (17.02.21).\n\n393501 - INMOBILIARIA HUCART SL. Fe de erratas: En el BORME no.66/2024 y con referencia 162454 SE COMETIO ERROR EN EL SEGUNDO APELLIDO DE LA ADMINISTRADORA UNICA NOMBRADA, SIENDO SU IDENTIDAD CORRECTA \"DOÑA MERCEDES HUGUET ROVIRA\". Datos registrales. T 46566 , F 148, S 8, H B 54162, I/A 43 (22.03.24).\n\n393502 - NEKIR SL. Fe de erratas: En el BORME no.83/2012 y con referencia 189988 SE OMITIO LA PUBLICACION DEL NOMBRAMIENTO DEL ADMINISTRADOR UNICO SRA. MARIA GADOR CANO ENCISO. Datos registrales. T 43001 , F 184, S 8, H B 41406, I/A 24 (20.04.12).\n\n393503 - CONTRATAS VALLES 2000 S.L. Fe de erratas: En el BORME no.108/2021 y con referencia 278552 SE COMETIO ERROR EN LA INDENTIDAD DEL ADMINISTRADOR UNICO NOMBRADO. SE NOMBRO COMO DENIS ANTOLIN,DANIEL, SIENDO SU INDENTIDAD CORRECTA \"DON DANIEL DENIS ANTOLIN MANZANO\". Datos registrales. T 46203 , F 188, S 8, H B 512867, I/A 3 ( 1.06.21).\n\n393504 - TINT-JET SL. Fe de erratas: En el BORME no.110/2011 y con referencia 245933 RECTIFICADO EL PRIMER APELLIDO DE LA APODERADA, MARIA GRACIA CONGOST PALOMERAS, SIENDO EL CORRECTO MARIA GARCIA CONGOST PALOMERAS. Datos registrales. T 42578 , F 7, S 8, H B 410556, I/A 2 (30.05.11).\n\n393505 - PLATING GLOBAL VENTURES S.L. Fe de erratas: En el BORME no.138/2024 y con referencia 320455 RECTIFICADA POR LA INSCRIPCION 23 EN CUANTO AL NOMBRE Y DNI DEL APODERADO SEÑOR ANDREU COMA, SIENDO SU NOMBRE COMPLETO CORRECTO DON FRANCESC ANDREU COMA. Datos registrales. S 8 , H B 510781, I/A 22 (11.07.24).",
+   "expected": [
+    {
+     "value": "12 de septiembre de 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "DOGSTEL LA CANINA S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "MARTN",
+     "type": "PERSON"
+    },
+    {
+     "value": "MARTIN",
+     "type": "PERSON"
+    },
+    {
+     "value": "H B 558948",
+     "type": "ID"
+    },
+    {
+     "value": "17.02.21",
+     "type": "DATE"
+    },
+    {
+     "value": "INMOBILIARIA HUCART SL",
+     "type": "COMPANY"
+    },
+    {
+     "value": "MERCEDES HUGUET ROVIRA",
+     "type": "PERSON"
+    },
+    {
+     "value": "H B 54162",
+     "type": "ID"
+    },
+    {
+     "value": "22.03.24",
+     "type": "DATE"
+    },
+    {
+     "value": "NEKIR SL",
+     "type": "COMPANY"
+    },
+    {
+     "value": "MARIA GADOR CANO ENCISO",
+     "type": "PERSON"
+    },
+    {
+     "value": "H B 41406",
+     "type": "ID"
+    },
+    {
+     "value": "20.04.12",
+     "type": "DATE"
+    },
+    {
+     "value": "CONTRATAS VALLES 2000 S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "DENIS ANTOLIN,DANIEL",
+     "type": "PERSON"
+    },
+    {
+     "value": "DANIEL DENIS ANTOLIN MANZANO",
+     "type": "PERSON"
+    },
+    {
+     "value": "H B 512867",
+     "type": "ID"
+    },
+    {
+     "value": "1.06.21",
+     "type": "DATE"
+    },
+    {
+     "value": "TINT-JET SL",
+     "type": "COMPANY"
+    },
+    {
+     "value": "MARIA GRACIA CONGOST PALOMERAS",
+     "type": "PERSON"
+    },
+    {
+     "value": "MARIA GARCIA CONGOST PALOMERAS",
+     "type": "PERSON"
+    },
+    {
+     "value": "H B 410556",
+     "type": "ID"
+    },
+    {
+     "value": "30.05.11",
+     "type": "DATE"
+    },
+    {
+     "value": "PLATING GLOBAL VENTURES S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "ANDREU COMA",
+     "type": "PERSON"
+    },
+    {
+     "value": "FRANCESC ANDREU COMA",
+     "type": "PERSON"
+    },
+    {
+     "value": "H B 510781",
+     "type": "ID"
+    },
+    {
+     "value": "11.07.24",
+     "type": "DATE"
+    }
+   ]
+  },
+  {
+   "id": "es-borme-05-2",
+   "lang": "es",
+   "category": "registry",
+   "source": "BORME",
+   "url": "https://www.boe.es/borme/dias/2024/09/12/pdfs/BORME-A-2024-176-08.pdf",
+   "text": "BOLETÍN OFICIAL DEL REGISTRO MERCANTIL\nJueves 12 de septiembre de 2024\nActos inscritos\n\n393506 - PLATING BRAP SA. Fe de erratas: En el BORME no.138/2024 y con referencia 320461 RECTIFICADA POR LA INSCRICION 25 EN CUANTO AL NOMBRE Y DNI DEL APODERADO SEÑOR ANDREU COMA, SIENSO SU NOMBRE COMPLETO CORRECTO DON FRANCESC ANDREU COMA. Datos registrales. S 8 , H B 295948, I/A 24 (11.07.24).\n\n393507 - JADE ESPARRAGUERA SL. Fe de erratas: En el BORME no.138/2024 y con referencia 320452 RECTIFICADA POR LA INSCRIPCION 21 EN CUANTO AL NOMBRE Y DNI DEL APODERADO SEÑOR ANDREU COMA, SIENDO SU NOMBRE COMPLETO CORRECTO DON FRANCESC ANDREU COMA. Datos registrales. S 8 , H B 185483, I/A 20 (11.07.24).\n\n393508 - NEKIR SL. Nombramientos. ADM.UNICO: CANO ENCISO MARIA GADOR. Datos registrales. T 43001 , F 184, S 8, H B 41406, I/A 24 (20.04.12).\n\n393509 - PROMOCION ACTIVIDADES UNIVERSITARIAS SA. Revocaciones. ADM.UNICO: SIMON COMALADA JOSEP MARIA. Nombramientos. ADM.UNICO: SIMON COMALADA JOSEP MARIA. Datos registrales. S 8 , H B 15253, I/A 8 ( 5.09.24).\n\n393510 - REFORMAS DE EDIFICIOS RL Y JC S.L. Constitución. Comienzo de operaciones: 4.09.24. Objeto social: ACTIVIDAD PRINCIPAL: 4339 / OTRO ACABADO DE EDIFICIOS. OTRAS ACTIVIDADES: 9329 / OTRAS ACTIVIDADES RECREATIVAS Y DE ENTRETENIMIENTO. 4399 / OTRAS ACTIVIDADES DE CONSTRUCCION ESPECIALIZADA. ETC. Domicilio: CL FLORIDABLANCA NUM.29 P.4 PTA.2 (BADALONA). Capital: 3.000,00\nJueves 12 de septiembre de 2024\nEuros. Nombramientos. ADM.SOLIDAR.: LARA MURILLO RAMON DUBLAN;JAVIER ALFREDO CAÑARTE PARRALES. Datos registrales. S 8 , H B 621252, I/A 1 ( 5.09.24).\n\n393511 - MIND THE GAP DIGITAL S.L. Constitución. Comienzo de operaciones: 4.09.24. Objeto social: ACTIVIDAD PRINCIPAL: 7311 / AGENCIAS DE PUBLICIDAD. OTRAS ACTIVIDADES: 8299 / OTRAS ACTIVIDADES DE APOYO A LAS EMPRESAS. 6209 / OTROS SERVICIOS RELACIONADOS CON LAS TECNOLOGIAS DE LA INFORMACION Y LA INFORMATICA. ETC. Domicilio: CL TARRAGONA NUM.4 P.3 PTA.4 (MONTGAT). Capital: 12.300,00 Euros. Nombramientos. ADM.CONJUNTO: GARCIA PEREZ MONEO MARIA CARLA;MATIAS ANTONIO PIRO. Datos registrales. S 8 , H B 621254, I/A 1 ( 5.09.24).",
+   "expected": [
+    {
+     "value": "12 de septiembre de 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "PLATING BRAP SA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "ANDREU COMA",
+     "type": "PERSON"
+    },
+    {
+     "value": "FRANCESC ANDREU COMA",
+     "type": "PERSON"
+    },
+    {
+     "value": "H B 295948",
+     "type": "ID"
+    },
+    {
+     "value": "11.07.24",
+     "type": "DATE"
+    },
+    {
+     "value": "JADE ESPARRAGUERA SL",
+     "type": "COMPANY"
+    },
+    {
+     "value": "H B 185483",
+     "type": "ID"
+    },
+    {
+     "value": "NEKIR SL",
+     "type": "COMPANY"
+    },
+    {
+     "value": "CANO ENCISO MARIA GADOR",
+     "type": "PERSON"
+    },
+    {
+     "value": "H B 41406",
+     "type": "ID"
+    },
+    {
+     "value": "20.04.12",
+     "type": "DATE"
+    },
+    {
+     "value": "PROMOCION ACTIVIDADES UNIVERSITARIAS SA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "SIMON COMALADA JOSEP MARIA",
+     "type": "PERSON"
+    },
+    {
+     "value": "H B 15253",
+     "type": "ID"
+    },
+    {
+     "value": "5.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "REFORMAS DE EDIFICIOS RL Y JC S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "4.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "CL FLORIDABLANCA NUM.29 P.4 PTA.2 (BADALONA)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "3.000,00",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "LARA MURILLO RAMON DUBLAN",
+     "type": "PERSON"
+    },
+    {
+     "value": "JAVIER ALFREDO CAÑARTE PARRALES",
+     "type": "PERSON"
+    },
+    {
+     "value": "H B 621252",
+     "type": "ID"
+    },
+    {
+     "value": "MIND THE GAP DIGITAL S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "CL TARRAGONA NUM.4 P.3 PTA.4 (MONTGAT)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "12.300,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "GARCIA PEREZ MONEO MARIA CARLA",
+     "type": "PERSON"
+    },
+    {
+     "value": "MATIAS ANTONIO PIRO",
+     "type": "PERSON"
+    },
+    {
+     "value": "H B 621254",
+     "type": "ID"
+    }
+   ]
+  },
+  {
+   "id": "es-borme-05-3",
+   "lang": "es",
+   "category": "registry",
+   "source": "BORME",
+   "url": "https://www.boe.es/borme/dias/2024/09/12/pdfs/BORME-A-2024-176-08.pdf",
+   "text": "BOLETÍN OFICIAL DEL REGISTRO MERCANTIL\nJueves 12 de septiembre de 2024\nActos inscritos\n\n393512 - JBCB TRANSPORTS S.L. Constitución. Comienzo de operaciones: 5.09.24. Objeto social: ACTIVIDAD PRINCIPAL: 4941 / TRANSPORTE DE MERCANCIAS POR CARRETERA. OTRAS ACTIVIDADES: 5210 / DEPOSITO Y ALMACENAMIENTO. Domicilio: CL LLIBERTAT NUM.105 (PARETS DEL VALLES). Capital: 15.000,00 Euros. Nombramientos. ADM.UNICO: CASTRO BALLESTEROS JUAN BAUTISTA. Datos registrales. S 8 , H B 621253, I/A 1 ( 5.09.24).\n\n393513 - OASIS DEL SOÑADOR S.L. Constitución. Comienzo de operaciones: 4.09.24. Objeto social: ACTIVIDAD PRINCIPAL: 8299 / OTRAS ACTIVIDADES DE APOYO A LAS EMPRESAS. OTRAS ACTIVIDADES: 4121 / CONSTRUCCION DE EDIFICIOS RESIDENCIALES. 4110 / PROMOCION INMOBILIARIA. 7911 / ACTIVIDADES DE LAS AGENCIAS DE VIAJES. ETC. Domicilio: CL GRAN VIA CARLES III NUM.98 P.10 (BARCELONA). Capital: 3.000,00 Euros. Nombramientos. ADM.UNICO: PEÑA CADIZ MARIA DOLORES. Otros conceptos: DECLARACION DE SOCIEDAD UNIPERSONAL, SIENDO SOCIO UNICO MARIA DOLORES PEÑA CADIZ Datos registrales. S 8 , H B 621255, I/A 1 ( 5.09.24).\n\n393514 - CREATIVE BUSINESS SOLUTIONS S.L. Constitución. Comienzo de operaciones: 5.09.24. Objeto social: ACTIVIDAD PRINCIPAL: 7022 / OTRAS ACTIVIDADES DE CONSULTORIA DE GESTION EMPRESARIAL. OTRAS ACTIVIDADES: 4110 / PROMOCION INMOBILIARIA. 8299 / OTRAS ACTIVIDADES DE APOYO A LAS EMPRESAS. 6619 / OTRAS ACTIVIDADES AUXILIARES. ETC. Domicilio: CL SANTIGA NUM.116 (SABADELL). Capital: 3.000,00 Euros. Nombramientos. ADM.UNICO: BUSQUETS OJEDA EDGAR. Datos registrales. S 8 , H B 621256, I/A 1 ( 5.09.24).\n\n393515 - ZAIQA 572 S.L. Constitución. Comienzo de operaciones: 4.09.24. Objeto social: ACTIVIDAD PRINCIPAL: 5610 / RESTAURANTES Y PUESTOS DE COMIDAS. OTRAS ACTIVIDADES: 4725 / COMERCIO AL POR MENOR DE BEBIDAS EN ESTABLECIMIENTOS ESPECIALIZADOS. 4719 / OTRO COMERCIO AL POR MENOR EN ESTABLECIMIENTOS NO ESPEC. ETC. Domicilio: CL PADRO NUM.87 P.0 (RIPOLLET). Capital: 6.700,00 Euros. Nombramientos. ADM.UNICO: SHAHBAZ YOUSAF. Otros conceptos: DECLARACION DE SOCIEDAD UNIPERSONAL, SIENDO SOCIO UNICO SHAHBAZ YOUSAF. Datos registrales. S 8 , H B 621257, I/A 1 ( 5.09.24).\n\n393516 - GUINART TIME S.L. Constitución. Comienzo de operaciones: 4.09.24. Objeto social: ACTIVIDAD PRINCIPAL: 5610 / RESTAURANTES Y PUESTOS DE COMIDAS. Domicilio: CL PROVENZA NUM.541 (BARCELONA). Capital: 3.000,00 Euros. Nombramientos. ADM.UNICO: PINCHAS ROZEN. Datos registrales. S 8 , H B 621277, I/A 1 ( 5.09.24).\n\n393517 - INFAM WELLINGTON S.L. Constitución. Comienzo de operaciones: 6.09.24. Objeto social: ACTIVIDAD PRINCIPAL: 7022 / OTRAS ACTIVIDADES DE CONSULTORIA DE GESTION EMPRESARIAL. OTRAS ACTIVIDADES: 6209 / OTROS SERVICIOS RELACIONADOS CON LAS TECNOLOGIAS DE LA INFORMACION Y LA INFORMATICA, ETC. Domicilio: CL LLEDONERS NUM.17 (CABRILS). Capital: 3.000,00 Euros. Nombramientos. ADM.UNICO: QUINTANS OSeS ALEJANDRO. Otros conceptos: DECLARACION DE SOCIEDAD UNIPERSONAL, SIENDO SOCIO UNICO ALEJANDRO QUINTANS OSeS. Datos registrales. S 8 , H B 621259, I/A 1 ( 5.09.24).",
+   "expected": [
+    {
+     "value": "12 de septiembre de 2024",
+     "type": "DATE"
+    },
+    {
+     "value": "JBCB TRANSPORTS S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "5.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "CL LLIBERTAT NUM.105 (PARETS DEL VALLES)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "15.000,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "CASTRO BALLESTEROS JUAN BAUTISTA",
+     "type": "PERSON"
+    },
+    {
+     "value": "H B 621253",
+     "type": "ID"
+    },
+    {
+     "value": "OASIS DEL SOÑADOR S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "4.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "CL GRAN VIA CARLES III NUM.98 P.10 (BARCELONA)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "3.000,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "PEÑA CADIZ MARIA DOLORES",
+     "type": "PERSON"
+    },
+    {
+     "value": "MARIA DOLORES PEÑA CADIZ",
+     "type": "PERSON"
+    },
+    {
+     "value": "H B 621255",
+     "type": "ID"
+    },
+    {
+     "value": "CREATIVE BUSINESS SOLUTIONS S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "CL SANTIGA NUM.116 (SABADELL)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "BUSQUETS OJEDA EDGAR",
+     "type": "PERSON"
+    },
+    {
+     "value": "H B 621256",
+     "type": "ID"
+    },
+    {
+     "value": "ZAIQA 572 S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "CL PADRO NUM.87 P.0 (RIPOLLET)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "6.700,00 Euros",
+     "type": "AMOUNT"
+    },
+    {
+     "value": "SHAHBAZ YOUSAF",
+     "type": "PERSON"
+    },
+    {
+     "value": "H B 621257",
+     "type": "ID"
+    },
+    {
+     "value": "GUINART TIME S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "CL PROVENZA NUM.541 (BARCELONA)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "PINCHAS ROZEN",
+     "type": "PERSON"
+    },
+    {
+     "value": "H B 621277",
+     "type": "ID"
+    },
+    {
+     "value": "INFAM WELLINGTON S.L.",
+     "type": "COMPANY"
+    },
+    {
+     "value": "6.09.24",
+     "type": "DATE"
+    },
+    {
+     "value": "CL LLEDONERS NUM.17 (CABRILS)",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "QUINTANS OSeS ALEJANDRO",
+     "type": "PERSON"
+    },
+    {
+     "value": "ALEJANDRO QUINTANS OSeS",
+     "type": "PERSON"
+    },
+    {
+     "value": "H B 621259",
+     "type": "ID"
+    }
+   ]
+  },
+  {
+   "id": "en-gazette-01",
+   "lang": "en",
+   "category": "notice",
+   "source": "The Gazette",
+   "url": "https://www.thegazette.co.uk/notice/5213221",
+   "text": "Name of Company: ALPHA KILO CREATIVE LIMITED\nCompany Number: 09583892\nRegistered office: 11 Second Floor, Savile Row, London, W1S 3PG\nPrincipal trading address: 11 Second Floor, Savile Row, London, W1S 3PG\nNature of Business: Public relations and communciations activities\nType of Liquidation: Creditors' Voluntary\nDate of Appointment: 14 September 2026\nBy whom Appointed: members and creditors\nJoint Liquidator's Name and Address: Lee Morris (IP No. 31850) of Marshall Peters, Heskin Hall Farm, Wood Lane, Heskin, Preston, PR7 5PA. Telephone: 01257 452021. Joint Liquidator's Name and Address: John Thompson (IP No. 32230) of Marshall Peters, Heskin Hall Farm, Wood Lane, Heskin, Preston, PR7 5PA. Telephone: 01257 452021. For further information contact Liv Roy at the offices of Marshall Peters on 01257 452021, or livroy@marshallpeters.co.uk.\n15 September 2026",
+   "expected": [
+    {
+     "value": "ALPHA KILO CREATIVE LIMITED",
+     "type": "COMPANY"
+    },
+    {
+     "value": "09583892",
+     "type": "ID"
+    },
+    {
+     "value": "11 Second Floor, Savile Row, London, W1S 3PG",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "14 September 2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Lee Morris",
+     "type": "PERSON"
+    },
+    {
+     "value": "31850",
+     "type": "ID"
+    },
+    {
+     "value": "Marshall Peters",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Heskin Hall Farm, Wood Lane, Heskin, Preston, PR7 5PA",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "01257 452021",
+     "type": "PHONE"
+    },
+    {
+     "value": "John Thompson",
+     "type": "PERSON"
+    },
+    {
+     "value": "32230",
+     "type": "ID"
+    },
+    {
+     "value": "Liv Roy",
+     "type": "PERSON"
+    },
+    {
+     "value": "livroy@marshallpeters.co.uk",
+     "type": "EMAIL"
+    },
+    {
+     "value": "15 September 2026",
+     "type": "DATE"
+    }
+   ]
+  },
+  {
+   "id": "en-gazette-02",
+   "lang": "en",
+   "category": "notice",
+   "source": "The Gazette",
+   "url": "https://www.thegazette.co.uk/notice/5213218",
+   "text": "Name of Company: INTERIOR FORM INSTALLATIONS LTD\nCompany Number: 11469875\nRegistered office: Walter Dawson & Son 1 Valley Court, Canal Road, Bradford, West Yorkshire, BD1 4SP\nPrincipal trading address: New North Road, Heckmondwike, West Yorkshire, WF16 9DH\nNature of Business: 43220 - Plumbing, heat and air-conditioning installation\nType of Liquidation: Creditors Voluntary Liquidation\nDate of Appointment: 10 September 2026\nBy whom Appointed: Members and Creditors\nLiquidator's name and address: Richard Marchinton (IP No. 29010) of Conselia Limited, Dalton House, 1 Hawksworth Street, Ilkley, West Yorkshire, LS29 9DU. Telephone: 0113 318 1533.\nFor further information contact Ben Whiteley at the offices of Conselia Limited on 0113 318 1533, or ben.whiteley@conseliauk.com.\n14 September 2026",
+   "expected": [
+    {
+     "value": "INTERIOR FORM INSTALLATIONS LTD",
+     "type": "COMPANY"
+    },
+    {
+     "value": "11469875",
+     "type": "ID"
+    },
+    {
+     "value": "Walter Dawson & Son",
+     "type": "COMPANY"
+    },
+    {
+     "value": "1 Valley Court, Canal Road, Bradford, West Yorkshire, BD1 4SP",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "New North Road, Heckmondwike, West Yorkshire, WF16 9DH",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "10 September 2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Richard Marchinton",
+     "type": "PERSON"
+    },
+    {
+     "value": "29010",
+     "type": "ID"
+    },
+    {
+     "value": "Conselia Limited",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Dalton House, 1 Hawksworth Street, Ilkley, West Yorkshire, LS29 9DU",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "0113 318 1533",
+     "type": "PHONE"
+    },
+    {
+     "value": "Ben Whiteley",
+     "type": "PERSON"
+    },
+    {
+     "value": "ben.whiteley@conseliauk.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "14 September 2026",
+     "type": "DATE"
+    }
+   ]
+  },
+  {
+   "id": "en-gazette-03",
+   "lang": "en",
+   "category": "notice",
+   "source": "The Gazette",
+   "url": "https://www.thegazette.co.uk/notice/5213217",
+   "text": "TOFINO MANAGEMENT LIMITED\nTrading Name: The Kings Arms\n(Company Number 10588174)\nRegistered office: Suite B, Blackdown House, Blackbrook Park Avenue, Taunton, Somerset, TA1 2PX\nPrincipal trading address: 21 Silver Street, Ottery, St Mary, EX11 1DB\nNotice is given that by written resolutions, the sole member of the company passed a special resolution that the company be wound up voluntarily, and an ordinary resolution appointing the Joint Liquidators for the purposes of the winding-up. The requisite voting majority was received on 11/09/2026\nMr James Kirkness, Director\n11 September 2026\nJoint Liquidator's Name and Address: Steve Elliott (IP No. 11110) of The Insolvency Company, Hermes House, Fire Fly Avenue, Swindon, SN2 2GA. Telephone: 01793 818350.\nJoint Liquidator's Name and Address: Gareth Buckley (IP No. 18032) of The Insolvency Company, Suite B, Blackdown House, Blackbrook Park Avenue, Taunton, Somerset, TA1 2PX. Telephone: 01823216156.\nFor further information contact Harman Reyat at the offices of The Insolvency Company on 01823216156, or info@theinsolvencycompany.co.uk.\n15 September 2026",
+   "expected": [
+    {
+     "value": "TOFINO MANAGEMENT LIMITED",
+     "type": "COMPANY"
+    },
+    {
+     "value": "The Kings Arms",
+     "type": "COMPANY"
+    },
+    {
+     "value": "10588174",
+     "type": "ID"
+    },
+    {
+     "value": "Suite B, Blackdown House, Blackbrook Park Avenue, Taunton, Somerset, TA1 2PX",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "21 Silver Street, Ottery, St Mary, EX11 1DB",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "11/09/2026",
+     "type": "DATE"
+    },
+    {
+     "value": "James Kirkness",
+     "type": "PERSON"
+    },
+    {
+     "value": "11 September 2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Steve Elliott",
+     "type": "PERSON"
+    },
+    {
+     "value": "11110",
+     "type": "ID"
+    },
+    {
+     "value": "The Insolvency Company",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Hermes House, Fire Fly Avenue, Swindon, SN2 2GA",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "01793 818350",
+     "type": "PHONE"
+    },
+    {
+     "value": "Gareth Buckley",
+     "type": "PERSON"
+    },
+    {
+     "value": "18032",
+     "type": "ID"
+    },
+    {
+     "value": "01823216156",
+     "type": "PHONE"
+    },
+    {
+     "value": "Harman Reyat",
+     "type": "PERSON"
+    },
+    {
+     "value": "info@theinsolvencycompany.co.uk",
+     "type": "EMAIL"
+    },
+    {
+     "value": "15 September 2026",
+     "type": "DATE"
+    }
+   ]
+  },
+  {
+   "id": "en-gazette-04",
+   "lang": "en",
+   "category": "notice",
+   "source": "The Gazette",
+   "url": "https://www.thegazette.co.uk/notice/5213214",
+   "text": "HOME FRAGRANCE FILLERS UK LTD\n(Company Number 14154561)\nRegistered office: The Mill House Court Farm, Church Lane, Norton, Worcester, WR5 2PS\nPrincipal trading address: Unit 14C Hartlebury Trading Estate, Hartlebury, Kidderminste, DY104JB\nNature of Business: Other manufacturing not elsewhere classified.\nType of Liquidation: Creditors' Voluntary.\nPlace of meeting: The Offices of Marshall Peters Limited, Heskin Hall Farm, Heskin, Preston, PR7 5PA.\nDate of meeting: 10 September 2026.\nNotice is given that at a General Meeting of the Company, duly convened and held at the place and on the date given above, a special resolution was passed that the company be wound up voluntarily; and an ordinary resolution was passed appointing the Joint Liquidators for the purposes of the winding-up.\nDate of Appointment:\n10 September 2026\nJoint Liquidator's Name and Address: Lee Morris (IP No. 31850) of Marshall Peters, Heskin Hall Farm, Wood Lane, Heskin, Preston, PR7 5PA. Telephone: 01257 452021.\nJoint Liquidator's Name and Address: John Thompson (IP No. 32230) of Marshall Peters, Heskin Hall Farm, Wood Lane, Heskin, Preston, PR7 5PA. Telephone: 01257 452021.\nFor further information contact Rebekah Winstanley at the offices of Marshall Peters on 01257 452021, or RebekahMcCoy@marshallpeters.co.uk.\n15 September 2026",
+   "expected": [
+    {
+     "value": "HOME FRAGRANCE FILLERS UK LTD",
+     "type": "COMPANY"
+    },
+    {
+     "value": "14154561",
+     "type": "ID"
+    },
+    {
+     "value": "The Mill House Court Farm, Church Lane, Norton, Worcester, WR5 2PS",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Unit 14C Hartlebury Trading Estate, Hartlebury, Kidderminste, DY104JB",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Marshall Peters Limited",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Heskin Hall Farm, Heskin, Preston, PR7 5PA",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "10 September 2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Lee Morris",
+     "type": "PERSON"
+    },
+    {
+     "value": "31850",
+     "type": "ID"
+    },
+    {
+     "value": "Marshall Peters",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Heskin Hall Farm, Wood Lane, Heskin, Preston, PR7 5PA",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "01257 452021",
+     "type": "PHONE"
+    },
+    {
+     "value": "John Thompson",
+     "type": "PERSON"
+    },
+    {
+     "value": "32230",
+     "type": "ID"
+    },
+    {
+     "value": "Rebekah Winstanley",
+     "type": "PERSON"
+    },
+    {
+     "value": "RebekahMcCoy@marshallpeters.co.uk",
+     "type": "EMAIL"
+    },
+    {
+     "value": "15 September 2026",
+     "type": "DATE"
+    }
+   ]
+  },
+  {
+   "id": "en-gazette-05",
+   "lang": "en",
+   "category": "notice",
+   "source": "The Gazette",
+   "url": "https://www.thegazette.co.uk/notice/5213228",
+   "text": "Appointment of Administrators\nIn the High Court of Justice, Business and Property Courts in Birmingham Insolvency and Companies List (ChD),\nNo CR-2026-BHM-0004 of 2026\nNOVA CATERING REPAIRS LTD\n(Company Number 12846107)\nRegistered office: 34 Dudley Road, Brierley Hill, DY5 1LH\nPrincipal trading address: 34 Dudley Road, Brierley Hill, DY5 1LH\nDate of Appointment: 11 September 2026\nJoint Administrator's Name and Address: David Griffiths (IP No. 22930) of bk plus Limited, Azzurri House, Walsall Business Park, Walsall Road, Walsall, West Midlands, WS9 0RB. Telephone: 01922 667 204.\nJoint Administrator's Name and Address: Margaret Carter (IP No. 020730) of bk plus Limited, Azzurri House, Walsall Business Park, Walsall Road, Walsall, West Midlands, WS9 0RB. Telephone: 01922 660 929.\nFor further information contact Geraldine Harvey at the offices of bk plus Limited on 01922 922050, or geraldine.harvey@bkplus.co.uk.\n14 September 2026",
+   "expected": [
+    {
+     "value": "Birmingham",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "CR-2026-BHM-0004",
+     "type": "ID",
+     "sub": "reference"
+    },
+    {
+     "value": "NOVA CATERING REPAIRS LTD",
+     "type": "COMPANY"
+    },
+    {
+     "value": "12846107",
+     "type": "ID"
+    },
+    {
+     "value": "34 Dudley Road, Brierley Hill, DY5 1LH",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "11 September 2026",
+     "type": "DATE"
+    },
+    {
+     "value": "David Griffiths",
+     "type": "PERSON"
+    },
+    {
+     "value": "22930",
+     "type": "ID"
+    },
+    {
+     "value": "bk plus Limited",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Azzurri House, Walsall Business Park, Walsall Road, Walsall, West Midlands, WS9 0RB",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "01922 667 204",
+     "type": "PHONE"
+    },
+    {
+     "value": "Margaret Carter",
+     "type": "PERSON"
+    },
+    {
+     "value": "020730",
+     "type": "ID"
+    },
+    {
+     "value": "01922 660 929",
+     "type": "PHONE"
+    },
+    {
+     "value": "Geraldine Harvey",
+     "type": "PERSON"
+    },
+    {
+     "value": "01922 922050",
+     "type": "PHONE"
+    },
+    {
+     "value": "geraldine.harvey@bkplus.co.uk",
+     "type": "EMAIL"
+    },
+    {
+     "value": "14 September 2026",
+     "type": "DATE"
+    }
+   ]
+  },
+  {
+   "id": "en-gazette-06",
+   "lang": "en",
+   "category": "notice",
+   "source": "The Gazette",
+   "url": "https://www.thegazette.co.uk/notice/5212678",
+   "text": "In the High Court of Justice\nBusiness and Property Courts in Manchester, Insolvency & Companies List (ChD) Court Number: CR-2026-001324\nNKAARA PROPERTIES LTD\n(Company Number 14695312)\nNature of Business: The buying and selling of own real estate, other letting and operating of own or leased real estate and the management of real estate on a fee or contract basis\nRegistered office: Suite 060, Unit 2, 94A Wycliffe Road, Northampton, Northamptonshire, NN1 5JF (Formerly) The Union Building 51-59 Rose Lane, Norwich, NR1 1BY, United Kingdom.\nPrincipal trading address: The Union Building 51-59 Rose Lane, Norwich, NR1 1BY\nDate of Appointment: 14 September 2026\nName and Address of Administrator: Deviesh Raikundalia (IP No. 13890) of Hall Chadwick (UK) Limited, Suite 060, Unit 2, 94A Wycliffe Road, Northampton, Northamptonshire, NN1 5JF\nFor further details contact Seraphine Alexander by email at SAlexander@hallchadwick.com or at restructuring.uk@hallchadwick.com\nAg UK61666",
+   "expected": [
+    {
+     "value": "Manchester",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "CR-2026-001324",
+     "type": "ID",
+     "sub": "reference"
+    },
+    {
+     "value": "NKAARA PROPERTIES LTD",
+     "type": "COMPANY"
+    },
+    {
+     "value": "14695312",
+     "type": "ID"
+    },
+    {
+     "value": "Suite 060, Unit 2, 94A Wycliffe Road, Northampton, Northamptonshire, NN1 5JF",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "The Union Building 51-59 Rose Lane, Norwich, NR1 1BY, United Kingdom",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "The Union Building 51-59 Rose Lane, Norwich, NR1 1BY",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "14 September 2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Deviesh Raikundalia",
+     "type": "PERSON"
+    },
+    {
+     "value": "13890",
+     "type": "ID"
+    },
+    {
+     "value": "Hall Chadwick (UK) Limited",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Seraphine Alexander",
+     "type": "PERSON"
+    },
+    {
+     "value": "SAlexander@hallchadwick.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "restructuring.uk@hallchadwick.com",
+     "type": "EMAIL"
+    }
+   ]
+  },
+  {
+   "id": "en-gazette-07",
+   "lang": "en",
+   "category": "notice",
+   "source": "The Gazette",
+   "url": "https://www.thegazette.co.uk/notice/5212731",
+   "text": "MUJI'S FOODS LTD\n(Company Number 15051391)\nRegistered office: 71 Church Road, Manchester, M22 4WD\nPrincipal trading address: 71 Church Road, Manchester, M22 4WD\nNotice is hereby given under Section 100 of the Insolvency Act 1986 and Rule 6.14 and 15.8 of the Insolvency (England and Wales) Rules 2016, that a virtual meeting of the creditors of the above named Company is being proposed by the director of the Company in accordance with resolutions passed by the Board of Directors. The virtual meeting will be held via Zoom on 6 October 2026 at 11.15 am.\nA meeting of shareholders has been called and will be held prior to the virtual meeting of creditors, to consider passing a resolution for voluntary winding up of the Company.\nAny creditor entitled to attend and vote at this virtual meeting is entitled to do so either in person or by proxy. Creditors wishing to vote at the virtual meeting must (unless they are individual creditors attending in person) lodge their proxy with the convener before they may be used at the meeting. The convener can be contacted care of Simon Weir, DSi Business Recovery, 2 Lakeside, Calder Island Way, Wakefield, WF2 7AW.\nUnless there are exceptional circumstances, a creditor will not be entitled to vote unless his written statement of claim, (’proof’), which clearly sets out the name and address of the creditor and the amount claimed, has been lodged and admitted for voting purposes. Proofs must be lodged by 4.00 pm on the business day before the meeting.\nUnless they surrender their security, secured creditors must give particulars of their security, the date when it was given and the estimated value at which it is assessed if they wish to vote at the meeting.\nThe resolutions to be taken at the creditors' meeting may include the appointment by creditors of a Liquidator, a resolution specifying the terms on which the Liquidator is to be remunerated, and the meeting may receive information about, or be called upon to approve, the costs of preparing the statement of affairs and convening the meeting.\nSimon Weir is qualified to act as an Insolvency Practitioner in relation to the above Company and a list of names and addresses of the Company’s creditors will be available for inspection at the offices of DSi Business Recovery, 2 Lakeside, Calder Island Way, Wakefield, WF2 7AW on the two business days preceding the meeting.\nIn case of queries, please contact Simon Weir on 01924 790880 or email info@dsinsol.com.\nNabil Anwar, Director\n16 September 2026\nAg UK61701",
+   "expected": [
+    {
+     "value": "MUJI'S FOODS LTD",
+     "type": "COMPANY"
+    },
+    {
+     "value": "15051391",
+     "type": "ID"
+    },
+    {
+     "value": "71 Church Road, Manchester, M22 4WD",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "6 October 2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Simon Weir",
+     "type": "PERSON"
+    },
+    {
+     "value": "DSi Business Recovery",
+     "type": "COMPANY"
+    },
+    {
+     "value": "2 Lakeside, Calder Island Way, Wakefield, WF2 7AW",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "01924 790880",
+     "type": "PHONE"
+    },
+    {
+     "value": "info@dsinsol.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "Nabil Anwar",
+     "type": "PERSON"
+    },
+    {
+     "value": "16 September 2026",
+     "type": "DATE"
+    }
+   ]
+  },
+  {
+   "id": "en-gazette-08",
+   "lang": "en",
+   "category": "notice",
+   "source": "The Gazette",
+   "url": "https://www.thegazette.co.uk/notice/5212730",
+   "text": "GAS HEATING AND PLUMBING SOLUTIONS LTD\n(Company Number 10282059)\nRegistered office: Caledon Community Centre, Caledon Road, London Colney, St Albans, Hertfordshire AL2 1PU\nPrincipal trading address: N/A\nNotice is hereby given that a virtual meeting of the creditors of the above-named Company is being convened by Francis Greene, to be held on 22 September 2026 at 10.15 am for the purpose provided for in section 100 of the Insolvency Act 1986 and to consider a resolution specifying the terms on which the appointed Joint Liquidators are to be remunerated.\nCreditors entitled to attend and vote at the virtual meeting may do so personally or by proxy. A creditor can attend the virtual meeting in person and vote, and is entitled to vote if they have delivered proof of their debt by no later than 4 p.m. on the business day before the meeting. If a creditor cannot attend in person, or does not wish to attend but still wishes to vote at the meeting, they can either nominate a person to attend on their behalf, or they may nominate the Chair of the meeting, who will be a director of the Company, to vote on their behalf. Creditors must deliver their proxy by no later than the commencement of the meeting. Creditors must deliver all proofs of their debt and proxies to Turpin Barker Armstrong, 15 Horizon Business Village, 1 Brooklands Road, Weybridge, Surrey, KT13 0TJ. Creditors failing to lodge a proof of their debt or proxy as indicated will lead to their vote(s) being disregarded.\nUnless they surrender their security, secured creditors must give particulars of their security, the date when it was given and the estimated value at which it is assessed if they wish to vote at the meeting.\nAt the meeting, creditors may receive information about, or be called upon to approve, the costs of preparing the statement of affairs and convening the meeting of creditors.\nA list of names and addresses of the Company's creditors will be available for inspection free of charge at Turpin Barker Armstrong, 15 Horizon Business Village, 1 Brooklands Road, Weybridge, Surrey, KT13 0TJ between 10 am and 4 pm on the two business days prior to the decision date.\nCreditors can contact Turpin Barker Armstrong on 01932 336149 or by email at chris.warner@turpinba.co.uk.\nKelly Abrey, Director\n14 September 2026\nAg UK61669",
+   "expected": [
+    {
+     "value": "GAS HEATING AND PLUMBING SOLUTIONS LTD",
+     "type": "COMPANY"
+    },
+    {
+     "value": "10282059",
+     "type": "ID"
+    },
+    {
+     "value": "Caledon Community Centre, Caledon Road, London Colney, St Albans, Hertfordshire AL2 1PU",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Francis Greene",
+     "type": "PERSON"
+    },
+    {
+     "value": "22 September 2026",
+     "type": "DATE"
+    },
+    {
+     "value": "Turpin Barker Armstrong",
+     "type": "COMPANY"
+    },
+    {
+     "value": "15 Horizon Business Village, 1 Brooklands Road, Weybridge, Surrey, KT13 0TJ",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "01932 336149",
+     "type": "PHONE"
+    },
+    {
+     "value": "chris.warner@turpinba.co.uk",
+     "type": "EMAIL"
+    },
+    {
+     "value": "Kelly Abrey",
+     "type": "PERSON"
+    },
+    {
+     "value": "14 September 2026",
+     "type": "DATE"
+    }
+   ]
+  },
+  {
+   "id": "en-enron-01",
+   "lang": "en",
+   "category": "email",
+   "source": "Enron corpus",
+   "url": "corbt/enron-emails:allen-p/_sent_mail/386.",
+   "text": "From: phillip.allen@enron.com\nTo: ina.rangel@enron.com\nDate: 2001-04-18\nSubject: RE: Presentation to Trading Track A&A\n\nIna, \n\nCan you please forward the presentation to Mog.\n\nPhillip\n---------------------- Forwarded by Phillip K Allen/HOU/ECT on 04/18/2001 \n02:50 PM ---------------------------\nFrom: Karen Buckley/ENRON@enronXgate on 04/18/2001 10:56 AM CDT\nTo: Phillip K Allen/HOU/ECT@ECT\ncc:  \nSubject: RE: Presentation to Trading Track A&A\n\nHi Philip\n\nIf you do have slides preapred,, can you have your assistant e:mail a copy to \nMog Heu, who will conference in from New York.\n\nThanks, karen\n\n -----Original Message-----\nFrom:  Allen, Phillip  \nSent: Wednesday, April 18, 2001 10:30 AM\nTo: Buckley, Karen\nSubject: Re: Presentation to Trading Track A&A\n\nThe topic will the the western natural gas market.  I may have overhead \nslides.  I will bring handouts.",
+   "expected": [
+    {
+     "value": "phillip.allen@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "ina.rangel@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "2001-04-18",
+     "type": "DATE"
+    },
+    {
+     "value": "Ina",
+     "type": "PERSON"
+    },
+    {
+     "value": "Mog",
+     "type": "PERSON"
+    },
+    {
+     "value": "Phillip",
+     "type": "PERSON"
+    },
+    {
+     "value": "Phillip K Allen",
+     "type": "PERSON"
+    },
+    {
+     "value": "04/18/2001",
+     "type": "DATE"
+    },
+    {
+     "value": "Karen Buckley",
+     "type": "PERSON"
+    },
+    {
+     "value": "Philip",
+     "type": "PERSON"
+    },
+    {
+     "value": "Mog Heu",
+     "type": "PERSON"
+    },
+    {
+     "value": "New York",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "karen",
+     "type": "PERSON"
+    },
+    {
+     "value": "Allen, Phillip",
+     "type": "PERSON"
+    },
+    {
+     "value": "April 18, 2001",
+     "type": "DATE"
+    },
+    {
+     "value": "Buckley, Karen",
+     "type": "PERSON"
+    }
+   ]
+  },
+  {
+   "id": "en-enron-02",
+   "lang": "en",
+   "category": "email",
+   "source": "Enron corpus",
+   "url": "corbt/enron-emails:badeer-r/california/64.",
+   "text": "From: tom.delaney@enron.com\nTo: tom.alonso@enron.com\nDate: 2000-06-12\nSubject: Meeting with CAISO re Desert Southwest\n\ntom, attached is the agenda and the documents of principles used in our \ndiscussions with the CAISO Last week.  forward this to who you think might \nneed it and i'll be there this thursday to go over it and get more input from \nyou guys.  thanx.\n\ntom\n---------------------- Forwarded by Tom Delaney/Corp/Enron on 06/12/2000 \n03:09 PM ---------------------------\n\nCarl Imparato <cfi1@tca-us.com> on 06/02/2000 12:41:02 PM\nPlease respond to cfi1@tca-us.com\nTo: lebarrett@duke-energy.com, sslavigne@duke-energy.com, dcn@netwrx.net, \ntfitchitt@newenergy.com, cmiessner@newenergy.com, zalaywan@caiso.com, \neschmid@caiso.com, crobinson@caiso.com, cdeise@apsc.com, \ntdelawder@tucsonelectric.com, ebeck@tucsonelectric.com, dbrown1@pnm.com, \ngmiller@pnm.com, bob_anderson@apses.com, barbara_klemstine@apses.com, \nrllamkin@seiworldwide.com, steve.huhman@southernenergy.com, \ntom_delaney@enron.com, marcie_milner@enron.com, smara@enron.com, \nscott.miller@gen.pge.com, rreilley@coral-energy.com, lcampbell@csllp.com, \nlocb@rt66.com, john_r_orr@reliantenergy.com, kewh@dynegy.com, \njmpa@dynegy.com, mbochotorena@calpx.com\ncc: gackerman@wptf.org, jdavis@apx.com, jim_kritikson@calpx.com, \ndmberry@calpx.com, frank.derosa@gen.pge.com, jim.filippi@gen.pge.com, \nbrian.kunz@gen.pge.com \n\nSubject: Meeting with CAISO re Desert Southwest\n\nAttached are three documents that will be discussed at Monday's meeting:\n\n- agenda-060500.rtf: a proposed agenda for the meeting\n\n- iso-rqmts3.rtf: the current draft of the framework for consideration\nof the CAISO as the preferred RTO for the Desert Southwest\n\n- Additional Issues for Discussion.rtf: a list of additional items that\nvarious parties would like discuss to ensure that we all fully\nunderstand the present CAISO model.\n\nThe meeting is scheduled for Monday, June 5, from 10 - 3, and will take\nplace at Enron's office in Phoenix, located at 4742 N. 24th Street,\nSuite 165.\n\nIf any of the addressees have not yet RSVP'd, I would appreciate your\ninforming Marcie Milner of Enron (602-840-3800) as soon as possible so\nwe can make adequate arrangements.\n\nThank you,\n\nCarl Imparato\n\n - Agenda-060500.rtf\n - Additional Issues for Discussion.rtf\n - iso-rqmts3.rtf",
+   "expected": [
+    {
+     "value": "tom.delaney@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "tom.alonso@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "2000-06-12",
+     "type": "DATE"
+    },
+    {
+     "value": "CAISO",
+     "type": "COMPANY"
+    },
+    {
+     "value": "tom",
+     "type": "PERSON"
+    },
+    {
+     "value": "Tom Delaney",
+     "type": "PERSON"
+    },
+    {
+     "value": "06/12/2000",
+     "type": "DATE"
+    },
+    {
+     "value": "Carl Imparato",
+     "type": "PERSON"
+    },
+    {
+     "value": "cfi1@tca-us.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "06/02/2000",
+     "type": "DATE"
+    },
+    {
+     "value": "lebarrett@duke-energy.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "sslavigne@duke-energy.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "dcn@netwrx.net",
+     "type": "EMAIL"
+    },
+    {
+     "value": "tfitchitt@newenergy.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "cmiessner@newenergy.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "zalaywan@caiso.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "eschmid@caiso.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "crobinson@caiso.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "cdeise@apsc.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "tdelawder@tucsonelectric.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "ebeck@tucsonelectric.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "dbrown1@pnm.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "gmiller@pnm.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "bob_anderson@apses.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "barbara_klemstine@apses.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "rllamkin@seiworldwide.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "steve.huhman@southernenergy.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "tom_delaney@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "marcie_milner@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "smara@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "scott.miller@gen.pge.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "rreilley@coral-energy.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "lcampbell@csllp.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "locb@rt66.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "john_r_orr@reliantenergy.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "kewh@dynegy.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "jmpa@dynegy.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "mbochotorena@calpx.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "gackerman@wptf.org",
+     "type": "EMAIL"
+    },
+    {
+     "value": "jdavis@apx.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "jim_kritikson@calpx.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "dmberry@calpx.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "frank.derosa@gen.pge.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "jim.filippi@gen.pge.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "brian.kunz@gen.pge.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "June 5",
+     "type": "DATE"
+    },
+    {
+     "value": "Enron",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Phoenix",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "4742 N. 24th Street",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Suite 165",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "Marcie Milner",
+     "type": "PERSON"
+    },
+    {
+     "value": "602-840-3800",
+     "type": "PHONE"
+    }
+   ]
+  },
+  {
+   "id": "en-enron-03",
+   "lang": "en",
+   "category": "email",
+   "source": "Enron corpus",
+   "url": "corbt/enron-emails:beck-s/notes_inbox/61.",
+   "text": "From: leonardo.pacheco@enron.com\nTo: kenneth.lay@enron.com, jeff.skilling@enron.com, cliff.baxter@enron.com, mike.mcconnell@enron.com, jay.fitzgerald@enron.com, mark.palmer@enron.com\nDate: 2000-12-08\nSubject: EnronOnline Executive Summary for December 7, 2000\n\nFollowing please find the Daily EnronOnline Executive Summary.\n\nEnronOnline Executive Summary for 12/07/00\nTransaction Summary\t\nExternal Transactions Today\t4,125\nAverage Daily External Transactions (30 day Trailing Avg)\t4,281\nTotal Life to Date Transactions\t508,065\n\nEnronOnline Daily % of Entity's Total Transactions for 12/07/00\tTrans\tPercent\nEnron North America\t3,377\t77%\nEnron Europe Limited\t200\t35%\nGlobal Products\t180\t32%\nEnron Metals\t368\t15%\n\nEnronOnline Percentage of Total Corporate Transactions \n(30 day Trailing Avg)\t55%\n\nGross Notional Value of EnronOnline Transactions\tTotal\nToday\t3,261,738,861\nMTD\t25,090,717,613\nLTD\t304,261,134,658\nAverage Daily Notional Value (30 Day Trailing Avg)\t3,342,091,949\n\t\nNotional Revenue from Physical Flows to Date\t19,976,883,663\n\nCounterparties, Users, and Products Offered\t\nCounterparties having transacted to date\t598\nNew Counterparties transacting for the first time today\t2\nNumber of Products Offered Today\t1,048\nTotal Number of External Users Logged on Today\t3,215\nAverage # of External Users logged on (30 day Trailing Avg)\t2,941",
+   "expected": [
+    {
+     "value": "leonardo.pacheco@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "kenneth.lay@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "jeff.skilling@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "cliff.baxter@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "mike.mcconnell@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "jay.fitzgerald@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "mark.palmer@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "2000-12-08",
+     "type": "DATE"
+    },
+    {
+     "value": "EnronOnline",
+     "type": "COMPANY"
+    },
+    {
+     "value": "December 7, 2000",
+     "type": "DATE"
+    },
+    {
+     "value": "12/07/00",
+     "type": "DATE"
+    },
+    {
+     "value": "Enron North America",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Enron Europe Limited",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Global Products",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Enron Metals",
+     "type": "COMPANY"
+    }
+   ]
+  },
+  {
+   "id": "en-enron-04",
+   "lang": "en",
+   "category": "email",
+   "source": "Enron corpus",
+   "url": "corbt/enron-emails:gang-l/sent_items/30.",
+   "text": "From: lisa.gang@enron.com\nTo: kathryn.sheppard@enron.com\nDate: 2002-06-06\nSubject: RE: WTC Parking\n\nKath, I know I'm not an Enron employee but if no one at Enron wants a spot, wanted to let you know I would be most interested in a spot.  Thank You!\n\nlisa \n\n -----Original Message-----\nFrom: \tSheppard, Kathryn  \nSent:\tThursday, June 06, 2002 8:25 AM\nTo:\tBlackburn, Jody; Cavanaugh, Darren; Elafandi, Mo; Emmert, Caroline; Eriksson, Fredrik; Erwin, Kenton; Gang, Lisa; Gilbert, Jim; Hammond, Don; Kane, Paul; Mays, Wayne; O'Neil, Murray P.; Sarnowski, Julie; Sheppard, Kathryn; Slaughter, Jeff G.; Thome, Jennifer; Thompson, Virginia; Tully, Mike; Williams, Bill\nSubject:\tWTC Parking\n\nPortland Employees-\n\nAt this time Enron Portland has 5 parking spots allocated based on floor space and number of employees.  As UBS employees leave we do not automatically have the ability to take over their spots.  However, in renegotiating our lease with PGE we will address the possibility of taking over more that the 5 allocated spots.  We will keep you updated as to the progress of this.  For now, Khymberly Booth is checking into the availability of 1 or more of our spots and will offer any available spots to Portland employees based on Portland office seniority.  We will contact you individually if a spot becomes available.  If you have any questions please contact Kathy Sheppard or Khymberly Booth.\n\nThanks-\nKhymberly Booth",
+   "expected": [
+    {
+     "value": "lisa.gang@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "kathryn.sheppard@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "2002-06-06",
+     "type": "DATE"
+    },
+    {
+     "value": "Kath",
+     "type": "PERSON"
+    },
+    {
+     "value": "Enron",
+     "type": "COMPANY"
+    },
+    {
+     "value": "lisa",
+     "type": "PERSON"
+    },
+    {
+     "value": "Sheppard, Kathryn",
+     "type": "PERSON"
+    },
+    {
+     "value": "June 06, 2002",
+     "type": "DATE"
+    },
+    {
+     "value": "Blackburn, Jody",
+     "type": "PERSON"
+    },
+    {
+     "value": "Cavanaugh, Darren",
+     "type": "PERSON"
+    },
+    {
+     "value": "Elafandi, Mo",
+     "type": "PERSON"
+    },
+    {
+     "value": "Emmert, Caroline",
+     "type": "PERSON"
+    },
+    {
+     "value": "Eriksson, Fredrik",
+     "type": "PERSON"
+    },
+    {
+     "value": "Erwin, Kenton",
+     "type": "PERSON"
+    },
+    {
+     "value": "Gang, Lisa",
+     "type": "PERSON"
+    },
+    {
+     "value": "Gilbert, Jim",
+     "type": "PERSON"
+    },
+    {
+     "value": "Hammond, Don",
+     "type": "PERSON"
+    },
+    {
+     "value": "Kane, Paul",
+     "type": "PERSON"
+    },
+    {
+     "value": "Mays, Wayne",
+     "type": "PERSON"
+    },
+    {
+     "value": "O'Neil, Murray P",
+     "type": "PERSON"
+    },
+    {
+     "value": "Sarnowski, Julie",
+     "type": "PERSON"
+    },
+    {
+     "value": "Slaughter, Jeff G",
+     "type": "PERSON"
+    },
+    {
+     "value": "Thome, Jennifer",
+     "type": "PERSON"
+    },
+    {
+     "value": "Thompson, Virginia",
+     "type": "PERSON"
+    },
+    {
+     "value": "Tully, Mike",
+     "type": "PERSON"
+    },
+    {
+     "value": "Williams, Bill",
+     "type": "PERSON"
+    },
+    {
+     "value": "Portland",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "UBS",
+     "type": "COMPANY"
+    },
+    {
+     "value": "PGE",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Khymberly Booth",
+     "type": "PERSON"
+    },
+    {
+     "value": "Kathy Sheppard",
+     "type": "PERSON"
+    }
+   ]
+  },
+  {
+   "id": "en-enron-05",
+   "lang": "en",
+   "category": "email",
+   "source": "Enron corpus",
+   "url": "corbt/enron-emails:kaminski-v/_sent_mail/2.",
+   "text": "From: vince.kaminski@enron.com\nTo: ron.baker@enron.com\nDate: 2001-05-07\nSubject: Internship Opportunities\n\nRon,\n\nThe resume of the Rice student I mentioned to you.\n\nVince\n\n---------------------- Forwarded by Vince J Kaminski/HOU/ECT on 05/07/2001 \n03:39 PM ---------------------------\n\n\"Ivy Ghose\" <ghosei@ruf.rice.edu> on 05/03/2001 12:08:47 PM\nPlease respond to <ghosei@rice.edu>\nTo: <vince.j.kaminski@enron.com>\ncc: \"Kenneth Parkhill\" <Kenneth.Parkhill@enron.com> \nSubject: Internship Opportunities\n\nDear Mr.Kaminski,\n\nI have found the EnronOnline project a very interesting one and have enjoyed\nworking with everyone in the Research department as well as those from other\ndepartments. I am keenly interested in this area and was wondering if there\nwould be any summer internship opportunities. I have attached my resume to\nthis mail for your review and look forward to hearing from you soon.\n\nThank you\n\nIVY GHOSE\nRICE MBA 2002\n\n - resume.doc",
+   "expected": [
+    {
+     "value": "vince.kaminski@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "ron.baker@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "2001-05-07",
+     "type": "DATE"
+    },
+    {
+     "value": "Ron",
+     "type": "PERSON"
+    },
+    {
+     "value": "Rice",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Vince",
+     "type": "PERSON"
+    },
+    {
+     "value": "Vince J Kaminski",
+     "type": "PERSON"
+    },
+    {
+     "value": "05/07/2001",
+     "type": "DATE"
+    },
+    {
+     "value": "Ivy Ghose",
+     "type": "PERSON"
+    },
+    {
+     "value": "ghosei@ruf.rice.edu",
+     "type": "EMAIL"
+    },
+    {
+     "value": "05/03/2001",
+     "type": "DATE"
+    },
+    {
+     "value": "ghosei@rice.edu",
+     "type": "EMAIL"
+    },
+    {
+     "value": "vince.j.kaminski@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "Kenneth Parkhill",
+     "type": "PERSON"
+    },
+    {
+     "value": "Kenneth.Parkhill@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "Kaminski",
+     "type": "PERSON"
+    },
+    {
+     "value": "EnronOnline",
+     "type": "COMPANY"
+    },
+    {
+     "value": "IVY GHOSE",
+     "type": "PERSON"
+    },
+    {
+     "value": "RICE",
+     "type": "COMPANY"
+    }
+   ]
+  },
+  {
+   "id": "en-enron-06",
+   "lang": "en",
+   "category": "email",
+   "source": "Enron corpus",
+   "url": "corbt/enron-emails:scholtes-d/it/3.",
+   "text": "From: will.smith@enron.com\nTo: diana.scholtes@enron.com\nDate: 2002-01-10\nSubject: RE: Auto Scheduler\n\nDiana,\n\nI need to leave for today.  I will look into this first thing tomorrow morning.  If it is more urgent give me a call at 713-417-4679 or contact Duong Luu or Bill Crooks.\n\nRegards,\nWill\n\n -----Original Message-----\nFrom: \tScholtes, Diana  \nSent:\tWednesday, January 09, 2002 4:21 PM\nTo:\tSmith, Will\nSubject:\tRE: Auto Scheduler\n\nHey Will!\n\nRemeber us dicussing deals showing up in Real-Time Position manager that are the EPMI-West-Bank.  Can you remove these from this view?\n\nthanks,\n\nDiana\n\n -----Original Message-----\nFrom: \tSmith, Will  \nSent:\tThursday, January 03, 2002 7:55 AM\nTo:\tScholtes, Diana\nSubject:\tRE: Auto Scheduler\n\nFor the West:\n\nSchedule:\t12/14/2001 - 12/28/2001\nAnalysis:\t4/2/1996 - 12/13/2001\n\nRegards,\nWill\n\n -----Original Message-----\nFrom: \tScholtes, Diana  \nSent:\tThursday, January 03, 2002 9:16 AM\nTo:\tSmith, Will\nSubject:\tAuto Scheduler\n\nWill,\n\nCan you tell me what day was the last to be rolled in Auto Scheduler?  I'm trying to go back into December to balance Enpower for Settlement purposes.  \n\nThank you,\n\nDiana Scholtes\n503-464-3807",
+   "expected": [
+    {
+     "value": "will.smith@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "diana.scholtes@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "2002-01-10",
+     "type": "DATE"
+    },
+    {
+     "value": "Diana",
+     "type": "PERSON"
+    },
+    {
+     "value": "713-417-4679",
+     "type": "PHONE"
+    },
+    {
+     "value": "Duong Luu",
+     "type": "PERSON"
+    },
+    {
+     "value": "Bill Crooks",
+     "type": "PERSON"
+    },
+    {
+     "value": "Will",
+     "type": "PERSON"
+    },
+    {
+     "value": "Scholtes, Diana",
+     "type": "PERSON"
+    },
+    {
+     "value": "January 09, 2002",
+     "type": "DATE"
+    },
+    {
+     "value": "Smith, Will",
+     "type": "PERSON"
+    },
+    {
+     "value": "EPMI",
+     "type": "COMPANY"
+    },
+    {
+     "value": "January 03, 2002",
+     "type": "DATE"
+    },
+    {
+     "value": "12/14/2001",
+     "type": "DATE"
+    },
+    {
+     "value": "12/28/2001",
+     "type": "DATE"
+    },
+    {
+     "value": "4/2/1996",
+     "type": "DATE"
+    },
+    {
+     "value": "12/13/2001",
+     "type": "DATE"
+    },
+    {
+     "value": "Diana Scholtes",
+     "type": "PERSON"
+    },
+    {
+     "value": "503-464-3807",
+     "type": "PHONE"
+    }
+   ]
+  },
+  {
+   "id": "en-enron-07",
+   "lang": "en",
+   "category": "email",
+   "source": "Enron corpus",
+   "url": "corbt/enron-emails:staab-t/inbox/87.",
+   "text": "From: anwar.melethil@enron.com\nTo: bryce.baxter@enron.com, kathryn.bussell@enron.com, cheryl.dawes@enron.com, margaret.dhont@enron.com, terry'.'ed@enron.com, j..farmer@enron.com\nDate: 2001-11-20\nSubject: RE: Unify Gas Month end Close - November 2001\n\nplease see attached. this includes Richard Pinion's changes for Logistics.\n\n \nthanks,\nAnwar\n\n -----Original Message-----\nFrom: \tMelethil, Anwar  \nSent:\tWednesday, November 14, 2001 5:19 PM\nTo:\tBaxter, Bryce; Bussell, Kathryn; Dawes, Cheryl; Dhont, Margaret; Ed Terry; Farmer, Daren J.; Greif, Donna; Hall, Bob M; Harwell, Melanie; Heal, Kevin; Howard Camp; Jacobs, Charles; Jaquet, Tammy; John Lopez; Kinsey, Lisa; Lakho, Shahnaz; Lamadrid, Victor; Machleit, Shirley; Mcclure, Mark; McFatridge, Thomas; Olinger, Kimberly S.; Palmer, B. Scott; Pinion, Richard; Reeves, Leslie; Smith, George F.; Staab, Theresa; Sullivan, Patti; Superty, Robert; Valderrama, Lisa; Wynne, Rita\nCc:\tCuccia, Michael; Kaspereit, Michael; Laurel, Robert; Mallak, Mutaz; Martinez, Danny; Neal, Steve; Pena, Matt; Roberts, Steve; Smith, Regan M.; SQL_MAIL; Stokes, Darren; Ward, Bob; Warner, John; Zwiers, Jeff\nSubject:\tRE: Unify Gas Month end Close - November 2001\n\nattached is the month end close document for Gas Settlements:\n\n << File: Month End Close -November.doc >> \n\nthe first mass draft run is tomorrow, Nov 15 for ENA Sales/Supply at 7.00pm.\nMichael Cuccia will be monitoring the mass drafts for this month end.\n\nthanks,\nAnwar\n\n -----Original Message-----\nFrom: \tMelethil, Anwar  \nSent:\tTuesday, November 13, 2001 3:01 PM\nTo:\tBaxter, Bryce; Hiatt, Wendy; Jaquet, Tammy; Lakho, Shahnaz; Mcclure, Mark; Pinion, Richard; Wynne, Rita\nCc:\tCuccia, Michael; Laurel, Robert; Mallak, Mutaz; Martinez, Danny; Neal, Steve; Pena, Matt; Roberts, Steve; Smith, Regan M.; SQL_MAIL; Stokes, Darren; Ward, Bob; Warner, John; Zwiers, Jeff\nSubject:\tUnify Gas Month end Close - November 2001\n\nPlease review the attached 'month end close' document and let us know if you would like to make any changes.\n\n << File: Month End Close -November.doc >> \n\ni will be sending out this document tomorrow to the other Business Leads who are not in this list.\n\nthanks very much.\n\nCheers,\nAnwar",
+   "expected": [
+    {
+     "value": "anwar.melethil@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "bryce.baxter@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "kathryn.bussell@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "cheryl.dawes@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "margaret.dhont@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "terry'.'ed@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "j..farmer@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "2001-11-20",
+     "type": "DATE"
+    },
+    {
+     "value": "Richard Pinion",
+     "type": "PERSON"
+    },
+    {
+     "value": "Anwar",
+     "type": "PERSON"
+    },
+    {
+     "value": "Melethil, Anwar",
+     "type": "PERSON"
+    },
+    {
+     "value": "November 14, 2001",
+     "type": "DATE"
+    },
+    {
+     "value": "Baxter, Bryce",
+     "type": "PERSON"
+    },
+    {
+     "value": "Bussell, Kathryn",
+     "type": "PERSON"
+    },
+    {
+     "value": "Dawes, Cheryl",
+     "type": "PERSON"
+    },
+    {
+     "value": "Dhont, Margaret",
+     "type": "PERSON"
+    },
+    {
+     "value": "Ed Terry",
+     "type": "PERSON"
+    },
+    {
+     "value": "Farmer, Daren J",
+     "type": "PERSON"
+    },
+    {
+     "value": "Greif, Donna",
+     "type": "PERSON"
+    },
+    {
+     "value": "Hall, Bob M",
+     "type": "PERSON"
+    },
+    {
+     "value": "Harwell, Melanie",
+     "type": "PERSON"
+    },
+    {
+     "value": "Heal, Kevin",
+     "type": "PERSON"
+    },
+    {
+     "value": "Howard Camp",
+     "type": "PERSON"
+    },
+    {
+     "value": "Jacobs, Charles",
+     "type": "PERSON"
+    },
+    {
+     "value": "Jaquet, Tammy",
+     "type": "PERSON"
+    },
+    {
+     "value": "John Lopez",
+     "type": "PERSON"
+    },
+    {
+     "value": "Kinsey, Lisa",
+     "type": "PERSON"
+    },
+    {
+     "value": "Lakho, Shahnaz",
+     "type": "PERSON"
+    },
+    {
+     "value": "Lamadrid, Victor",
+     "type": "PERSON"
+    },
+    {
+     "value": "Machleit, Shirley",
+     "type": "PERSON"
+    },
+    {
+     "value": "Mcclure, Mark",
+     "type": "PERSON"
+    },
+    {
+     "value": "McFatridge, Thomas",
+     "type": "PERSON"
+    },
+    {
+     "value": "Olinger, Kimberly S",
+     "type": "PERSON"
+    },
+    {
+     "value": "Palmer, B. Scott",
+     "type": "PERSON"
+    },
+    {
+     "value": "Pinion, Richard",
+     "type": "PERSON"
+    },
+    {
+     "value": "Reeves, Leslie",
+     "type": "PERSON"
+    },
+    {
+     "value": "Smith, George F",
+     "type": "PERSON"
+    },
+    {
+     "value": "Staab, Theresa",
+     "type": "PERSON"
+    },
+    {
+     "value": "Sullivan, Patti",
+     "type": "PERSON"
+    },
+    {
+     "value": "Superty, Robert",
+     "type": "PERSON"
+    },
+    {
+     "value": "Valderrama, Lisa",
+     "type": "PERSON"
+    },
+    {
+     "value": "Wynne, Rita",
+     "type": "PERSON"
+    },
+    {
+     "value": "Cuccia, Michael",
+     "type": "PERSON"
+    },
+    {
+     "value": "Kaspereit, Michael",
+     "type": "PERSON"
+    },
+    {
+     "value": "Laurel, Robert",
+     "type": "PERSON"
+    },
+    {
+     "value": "Mallak, Mutaz",
+     "type": "PERSON"
+    },
+    {
+     "value": "Martinez, Danny",
+     "type": "PERSON"
+    },
+    {
+     "value": "Neal, Steve",
+     "type": "PERSON"
+    },
+    {
+     "value": "Pena, Matt",
+     "type": "PERSON"
+    },
+    {
+     "value": "Roberts, Steve",
+     "type": "PERSON"
+    },
+    {
+     "value": "Smith, Regan M",
+     "type": "PERSON"
+    },
+    {
+     "value": "Stokes, Darren",
+     "type": "PERSON"
+    },
+    {
+     "value": "Ward, Bob",
+     "type": "PERSON"
+    },
+    {
+     "value": "Warner, John",
+     "type": "PERSON"
+    },
+    {
+     "value": "Zwiers, Jeff",
+     "type": "PERSON"
+    },
+    {
+     "value": "Nov 15",
+     "type": "DATE"
+    },
+    {
+     "value": "ENA",
+     "type": "COMPANY"
+    },
+    {
+     "value": "Michael Cuccia",
+     "type": "PERSON"
+    },
+    {
+     "value": "November 13, 2001",
+     "type": "DATE"
+    },
+    {
+     "value": "Hiatt, Wendy",
+     "type": "PERSON"
+    }
+   ]
+  },
+  {
+   "id": "en-enron-08",
+   "lang": "en",
+   "category": "email",
+   "source": "Enron corpus",
+   "url": "corbt/enron-emails:whalley-g/markets/22.",
+   "text": "From: jeff.dasovich@enron.com\nTo: james.steffes@enron.com, paul.kaufman@enron.com, susan.mara@enron.com, kristin.walsh@enron.com, david.delainey@enron.com, greg.whalley@enron.com\nDate: 2001-07-10\nSubject: California Update 07.09.01\n\nThe Bond Legislation\nThe Democrats in the Assembly and Sentate have agreed to language to create a Dedicated Rate Component to repay the budget and de-link the bonds from the DWR contracts. \nBut the Republicans have still not agreed to go along.  \nThe bill would require a 2/3's vote to keep the bond issuance on schedule, so Republican votes are necessary. \nThe Republicans are trying to meet tonite or tomorrow to determine whether to go along.\n\nThe Conference Committee\nSenator Burton does not like the idea of a conference committee and at this point prefers to use the existing committee structure to hear the core/noncore proposal.\nUsing the existing committee structure could take longer to produce a bill than using the conference committee structure, but how much longer is uncertain.\nNo sense yet of when hearings on the core/noncore proposal---in conference committee or otherwise--will take place, though Burton continues to say that he wants to \"give it a chance.\"\n\nThe Core/Noncore Legislative Language\nThe negotiating group continues to work on the language.\nThe language was supposed to be delivered to Hertzberg by COB today, but more work needs to be done and it is now scheduled to be delivered first thing tomorrow morning.\n\nSenator Dunn's Investigative Committee Hearing\nThe hearing's been moved from tomorrow to Wednesday.\n\nBest,\nJeff",
+   "expected": [
+    {
+     "value": "jeff.dasovich@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "james.steffes@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "paul.kaufman@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "susan.mara@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "kristin.walsh@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "david.delainey@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "greg.whalley@enron.com",
+     "type": "EMAIL"
+    },
+    {
+     "value": "2001-07-10",
+     "type": "DATE"
+    },
+    {
+     "value": "California",
+     "type": "ADDRESS"
+    },
+    {
+     "value": "07.09.01",
+     "type": "DATE"
+    },
+    {
+     "value": "Burton",
+     "type": "PERSON"
+    },
+    {
+     "value": "Hertzberg",
+     "type": "PERSON"
+    },
+    {
+     "value": "Dunn",
+     "type": "PERSON"
+    },
+    {
+     "value": "Jeff",
+     "type": "PERSON"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,172 @@
+{
+ "id": "fr-invoice-01",
+ "expected": [
+  {
+   "value": "LE GOFF PLOMBERIE CHAUFFAGE",
+   "type": "COMPANY"
+  },
+  {
+   "value": "8 000 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "17 route de Bénodet, 29000 Quimper",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Quimper",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "02 98 55 41 27",
+   "type": "PHONE"
+  },
+  {
+   "value": "06 72 18 39 04",
+   "type": "PHONE"
+  },
+  {
+   "value": "contact@legoff-plomberie.bzh",
+   "type": "EMAIL"
+  },
+  {
+   "value": "FA-2026-0187",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "11/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "DV-2026-0142",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "28 août 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "10 septembre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Y. Le Goff",
+   "type": "PERSON"
+  },
+  {
+   "value": "Nadia BENHAMOU",
+   "type": "PERSON"
+  },
+  {
+   "value": "14 allée des Glycines",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Résidence Cap Coz, maison n° 6",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "29170 Fouesnant",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Fouesnant",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "06.41.27.80.95",
+   "type": "PHONE"
+  },
+  {
+   "value": "n.benhamou29@laposte.net",
+   "type": "EMAIL"
+  },
+  {
+   "value": "1 150,90 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "115,09 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "1 265,99 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "02/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "4402817",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "380,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "885,99 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Benhamou",
+   "type": "PERSON"
+  },
+  {
+   "value": "Erwan",
+   "type": "PERSON"
+  },
+  {
+   "value": "15 septembre",
+   "type": "DATE"
+  },
+  {
+   "value": "26/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Le Goff Plomberie Chauffage",
+   "type": "COMPANY"
+  },
+  {
+   "value": "EURL LE GOFF PLOMBERIE CHAUFFAGE",
+   "type": "COMPANY"
+  },
+  {
+   "value": "FR76 3041 3842 7091 6888 4719 474",
+   "type": "IBAN"
+  },
+  {
+   "value": "CMBRFR2BXXX",
+   "type": "ID"
+  },
+  {
+   "value": "Yann Le Goff",
+   "type": "PERSON"
+  },
+  {
+   "value": "833 304 132 00032",
+   "type": "ID"
+  },
+  {
+   "value": "833 304 132",
+   "type": "ID"
+  },
+  {
+   "value": "FR84833304132",
+   "type": "ID"
+  },
+  {
+   "value": "MAAF Assurances",
+   "type": "COMPANY"
+  },
+  {
+   "value": "129 445 872 K",
+   "type": "ID"
+  }
+ ]
+}

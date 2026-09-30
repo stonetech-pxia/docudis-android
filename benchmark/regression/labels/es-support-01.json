@@ -1,0 +1,116 @@
+{
+ "id": "es-support-01",
+ "expected": [
+  {
+   "value": "Núria Ferrándiz Gomis",
+   "type": "PERSON"
+  },
+  {
+   "value": "nuria.ferrandiz88@correuveloc.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "ayuda@casalinea-hogar.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "8 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "4471028",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "CL-2026-338914",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Marta",
+   "type": "PERSON"
+  },
+  {
+   "value": "4852 7150 5970 8861",
+   "type": "CARD"
+  },
+  {
+   "value": "ES11 2782 7869 4113 1769 7479",
+   "type": "IBAN"
+  },
+  {
+   "value": "Carrer de Sant Bartomeu, 23, 2º",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "2ª, 46701 Gandia (Valencia)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "610 22 84 39",
+   "type": "PHONE"
+  },
+  {
+   "value": "Núria",
+   "type": "PERSON"
+  },
+  {
+   "value": "M. Escrivá",
+   "type": "PERSON"
+  },
+  {
+   "value": "Casalínea Hogar",
+   "type": "COMPANY"
+  },
+  {
+   "value": "7 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Ferrándiz",
+   "type": "PERSON"
+  },
+  {
+   "value": "Ribarroja",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "89,95 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "900 12 34 55",
+   "type": "PHONE"
+  },
+  {
+   "value": "Marta Escrivá Sanchís",
+   "type": "PERSON"
+  },
+  {
+   "value": "Casalínea Hogar, S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Camí dels Horts, 6, 46394 Ribarroja del Túria",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "5 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "F-2026/19884",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "80895319H",
+   "type": "ID"
+  },
+  {
+   "value": "208877",
+   "type": "ID"
+  }
+ ]
+}

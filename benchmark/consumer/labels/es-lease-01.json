@@ -1,0 +1,236 @@
+{
+ "id": "es-lease-01",
+ "expected": [
+  {
+   "value": "TGI-2026-0731",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Madrid",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "1 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "BERZOSA ANGUITA PATRIMONIO, S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "B86417203",
+   "type": "ID"
+  },
+  {
+   "value": "C/ de Bravo Murillo, 297, 1º dcha., 28020 Madrid",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "M-561932",
+   "type": "ID"
+  },
+  {
+   "value": "Gonzalo Berzosa Anguita",
+   "type": "PERSON"
+  },
+  {
+   "value": "41680375M",
+   "type": "ID"
+  },
+  {
+   "value": "12 de marzo de 2019",
+   "type": "DATE"
+  },
+  {
+   "value": "Leandro Ibarrola Sáenz de Tejada",
+   "type": "PERSON"
+  },
+  {
+   "value": "684",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Xiaoyan Lin",
+   "type": "PERSON"
+  },
+  {
+   "value": "Xiaoyan",
+   "type": "PERSON"
+  },
+  {
+   "value": "23/01/1995",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "Z8701490C",
+   "type": "ID"
+  },
+  {
+   "value": "655 30 17 82",
+   "type": "PHONE"
+  },
+  {
+   "value": "xiaoyan.lin95@outlook.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Hugo Ferreiro Santalla",
+   "type": "PERSON"
+  },
+  {
+   "value": "Hugo",
+   "type": "PERSON"
+  },
+  {
+   "value": "8 de noviembre de 1992",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "71611923-C",
+   "type": "ID"
+  },
+  {
+   "value": "698 74 12 06",
+   "type": "PHONE"
+  },
+  {
+   "value": "hugo.ferreiro.s@gmail.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "C/ de Francos Rodríguez, 64, 2º A, 28039 Madrid",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "28039 Madrid",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Ramiro Ferreiro Couto",
+   "type": "PERSON"
+  },
+  {
+   "value": "97458998V",
+   "type": "ID"
+  },
+  {
+   "value": "Rúa San Roque, 41, 2º esq., 27002 Lugo",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "982 22 84 19",
+   "type": "PHONE"
+  },
+  {
+   "value": "Tetuán Gestión Inmobiliaria",
+   "type": "COMPANY"
+  },
+  {
+   "value": "TGI Servicios Inmobiliarios, S.L.U.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "B88120457",
+   "type": "ID"
+  },
+  {
+   "value": "C/ de Lope de Haro, 12, local, 28039 Madrid",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Beatriz Montalbán Escudero",
+   "type": "PERSON"
+  },
+  {
+   "value": "Montalbán",
+   "type": "PERSON"
+  },
+  {
+   "value": "91 459 27 30",
+   "type": "PHONE"
+  },
+  {
+   "value": "beatriz@tetuangestion.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Berzosa Anguita Patrimonio, S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "C/ del Marqués de Viana, 38, portal B, 4º, puerta 2",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "0847612VK4704H0012RT",
+   "type": "ID"
+  },
+  {
+   "value": "31.877",
+   "type": "ID"
+  },
+  {
+   "value": "26 de agosto",
+   "type": "DATE"
+  },
+  {
+   "value": "15 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "1.150,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "13.800,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "ES28 9304 4494 5709 6856 2542",
+   "type": "IBAN"
+  },
+  {
+   "value": "MV38-B42",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "30 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "613,33 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "2.300,00 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "4.063,33 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Canal de Isabel II",
+   "type": "COMPANY"
+  },
+  {
+   "value": "administracion@berzosaanguita.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "91 571 06 48",
+   "type": "PHONE"
+  },
+  {
+   "value": "R. Ferreiro Couto",
+   "type": "PERSON"
+  },
+  {
+   "value": "M-662.480",
+   "type": "ID"
+  }
+ ]
+}

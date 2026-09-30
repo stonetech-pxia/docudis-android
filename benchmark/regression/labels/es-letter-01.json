@@ -1,0 +1,98 @@
+{
+ "id": "es-letter-01",
+ "expected": [
+  {
+   "value": "Endesa Energía, S.A.U.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Apartado de Correos 1128",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "41080 Sevilla",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Wiktoria Kowalczyk Serrano",
+   "type": "PERSON"
+  },
+  {
+   "value": "Calle Doctor Fleming, 8, bloque 2",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "bajo C",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "50006 Zaragoza",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "SAC/2026/0771-4432",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Zaragoza",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "4 de septiembre de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Kowalczyk",
+   "type": "PERSON"
+  },
+  {
+   "value": "902547118",
+   "type": "ID"
+  },
+  {
+   "value": "44720193",
+   "type": "ID"
+  },
+  {
+   "value": "ES0021000010441563VL",
+   "type": "ID"
+  },
+  {
+   "value": "57813674T",
+   "type": "ID"
+  },
+  {
+   "value": "Calle Doctor Fleming, 8, bloque 2, bajo C, 50006 Zaragoza",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "ES42 2155 2230 0996 5740 5939",
+   "type": "IBAN"
+  },
+  {
+   "value": "28 de agosto de 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "1 de marzo",
+   "type": "DATE"
+  },
+  {
+   "value": "31 de julio",
+   "type": "DATE"
+  },
+  {
+   "value": "61,38 EUR",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "800 76 09 09",
+   "type": "PHONE"
+  },
+  {
+   "value": "Sergio Montull Aldeanueva",
+   "type": "PERSON"
+  }
+ ]
+}

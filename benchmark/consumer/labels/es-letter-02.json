@@ -1,0 +1,109 @@
+{
+ "id": "es-letter-02",
+ "expected": [
+  {
+   "value": "Uxía Seoane",
+   "type": "PERSON"
+  },
+  {
+   "value": "Uxía",
+   "type": "PERSON"
+  },
+  {
+   "value": "uxia.seoane.r@gmail.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Blanca Ortuño",
+   "type": "PERSON"
+  },
+  {
+   "value": "Blanca",
+   "type": "PERSON"
+  },
+  {
+   "value": "Brais",
+   "type": "PERSON"
+  },
+  {
+   "value": "calle Urzáiz 84, 5º B, 36204 Vigo",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Madrid",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Ovidio Piñeiro",
+   "type": "PERSON"
+  },
+  {
+   "value": "Antón",
+   "type": "PERSON"
+  },
+  {
+   "value": "Mudanzas Couto",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Sabela",
+   "type": "PERSON"
+  },
+  {
+   "value": "140 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "10 de septiembre",
+   "type": "DATE"
+  },
+  {
+   "value": "CEIP Mestre Valcarce",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Iria",
+   "type": "PERSON"
+  },
+  {
+   "value": "Yeray",
+   "type": "PERSON"
+  },
+  {
+   "value": "Noa",
+   "type": "PERSON"
+  },
+  {
+   "value": "Noelia Castiñeira",
+   "type": "PERSON"
+  },
+  {
+   "value": "López Mora",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Clínica Dental Lourido",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Gran Vía",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Matías Lourido",
+   "type": "PERSON"
+  },
+  {
+   "value": "12 de octubre",
+   "type": "DATE"
+  },
+  {
+   "value": "Hugo",
+   "type": "PERSON"
+  },
+  {
+   "value": "698 41 27 35",
+   "type": "PHONE"
+  }
+ ]
+}

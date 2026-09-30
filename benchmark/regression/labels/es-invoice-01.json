@@ -1,0 +1,74 @@
+{
+  "id": "es-invoice-01",
+  "expected": [
+    {
+      "value": "Aitor Zabaleta Nwachukwu",
+      "type": "PERSON"
+    },
+    {
+      "value": "Barrio Ugarte, 7, lonja",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "48901 Barakaldo (Bizkaia)",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "85437585Z",
+      "type": "ID"
+    },
+    {
+      "value": "688 21 55 74",
+      "type": "PHONE"
+    },
+    {
+      "value": "aitor@zabaleta-instal.es",
+      "type": "EMAIL"
+    },
+    {
+      "value": "2026/118",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "15/09/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "30/09/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "Ignacio Duarte Sobral",
+      "type": "PERSON"
+    },
+    {
+      "value": "50098688L",
+      "type": "ID"
+    },
+    {
+      "value": "C/ Zumalabe Kalea, 12, 5.º C",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "48902 Barakaldo (Bizkaia)",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "502,40 €",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "105,50 €",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "607,90 €",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "ES76 2818 6982 9309 4304 9808",
+      "type": "IBAN"
+    }
+  ]
+}

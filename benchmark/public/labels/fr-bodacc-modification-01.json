@@ -1,0 +1,29 @@
+{
+ "id": "fr-bodacc-modification-01",
+ "expected": [
+  {
+   "value": "18/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Rennes",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "802 635 250",
+   "type": "ID"
+  },
+  {
+   "value": "PILLOT EURL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "PILLOT Nathalie Michèle",
+   "type": "PERSON"
+  },
+  {
+   "value": "3 Rue de Verdon, 35500 Erbrée",
+   "type": "ADDRESS"
+  }
+ ]
+}

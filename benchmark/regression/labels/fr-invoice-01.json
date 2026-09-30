@@ -1,0 +1,108 @@
+{
+  "id": "fr-invoice-01",
+  "expected": [
+    {
+      "value": "SARL ATELIER SARRAZIN",
+      "type": "COMPANY"
+    },
+    {
+      "value": "9 chemin du Moulin Rouge, zone artisanale",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "des Aubiers, 33300 Bordeaux",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "05 56 91 44 07",
+      "type": "PHONE"
+    },
+    {
+      "value": "contact@atelier-sarrazin.fr",
+      "type": "EMAIL"
+    },
+    {
+      "value": "417 123 304 00020",
+      "type": "ID"
+    },
+    {
+      "value": "FR84 417123304",
+      "type": "ID"
+    },
+    {
+      "value": "SMABTP",
+      "type": "COMPANY"
+    },
+    {
+      "value": "D-771 4820 09",
+      "type": "ID"
+    },
+    {
+      "value": "2026-0187",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "16/09/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "Marek Kowalczyk",
+      "type": "PERSON"
+    },
+    {
+      "value": "Résidence Les Hauts de Caudéran",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "bâtiment 2, 31 rue Émile Counord",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "33000 Bordeaux",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "29/08/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "DV-2026-0341",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "CL-0912",
+      "type": "ID"
+    },
+    {
+      "value": "02/09/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "4471280",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "01/10/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "FR76 4882 6247 9047 8452 5709 204",
+      "type": "IBAN"
+    },
+    {
+      "value": "40 EUR",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "SARL Atelier Sarrazin",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Alexandre Sarrazin",
+      "type": "PERSON"
+    }
+  ]
+}

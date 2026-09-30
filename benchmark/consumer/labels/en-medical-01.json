@@ -1,0 +1,218 @@
+{
+ "id": "en-medical-01",
+ "expected": [
+  {
+   "value": "Leeds Teaching Hospitals NHS Trust",
+   "type": "COMPANY"
+  },
+  {
+   "value": "St James's University Hospital",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Level 2, Gledhow Wing",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Beckett Street, Leeds LS9 7TF",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "0113 496 0142",
+   "type": "PHONE"
+  },
+  {
+   "value": "J. Pickersgill",
+   "type": "PERSON"
+  },
+  {
+   "value": "0113 496 0177",
+   "type": "PHONE"
+  },
+  {
+   "value": "leedsth-tr.cardiologysecretaries@nhs.net",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Helen Broadbent",
+   "type": "PERSON"
+  },
+  {
+   "value": "Roundhay Road Medical Practice",
+   "type": "COMPANY"
+  },
+  {
+   "value": "214 Roundhay Road",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Leeds",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "LS8 5AA",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "02/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "08/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "RV/KW/H4471926",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "Folasade ADEYEMI-CLARKE",
+   "type": "PERSON"
+  },
+  {
+   "value": "14/03/1958",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "429 528 9264",
+   "type": "ID"
+  },
+  {
+   "value": "H4471926",
+   "type": "ID"
+  },
+  {
+   "value": "Flat 4, 27 Harehills Avenue, Leeds, LS8 4EU",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "0113 496 0358",
+   "type": "PHONE"
+  },
+  {
+   "value": "07700 900417",
+   "type": "PHONE"
+  },
+  {
+   "value": "Broadbent",
+   "type": "PERSON"
+  },
+  {
+   "value": "19/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "11 June 2027",
+   "type": "DATE"
+  },
+  {
+   "value": "Adeyemi-Clarke",
+   "type": "PERSON"
+  },
+  {
+   "value": "Wójcik",
+   "type": "PERSON"
+  },
+  {
+   "value": "Temitope",
+   "type": "PERSON"
+  },
+  {
+   "value": "11 June",
+   "type": "DATE"
+  },
+  {
+   "value": "16 June",
+   "type": "DATE"
+  },
+  {
+   "value": "A. Featherstone",
+   "type": "PERSON"
+  },
+  {
+   "value": "Harehills Lane",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "26/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "21 September",
+   "type": "DATE"
+  },
+  {
+   "value": "Marcia Thompson",
+   "type": "PERSON"
+  },
+  {
+   "value": "0113 496 0263",
+   "type": "PHONE"
+  },
+  {
+   "value": "Chapeltown Health Centre",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Nwosu",
+   "type": "PERSON"
+  },
+  {
+   "value": "9 December 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Gledhow Wing",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Rajesh Venkataraman",
+   "type": "PERSON"
+  },
+  {
+   "value": "4602817",
+   "type": "ID"
+  },
+  {
+   "value": "Katarzyna Wójcik",
+   "type": "PERSON"
+  },
+  {
+   "value": "80-2214",
+   "type": "PHONE"
+  },
+  {
+   "value": "F. Adeyemi-Clarke",
+   "type": "PERSON"
+  },
+  {
+   "value": "Flat 4, 27 Harehills Avenue, Leeds LS8 4EU",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "M. Thompson",
+   "type": "PERSON"
+  },
+  {
+   "value": "Spencer Place, Leeds LS7 4BB",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Imran Hussain",
+   "type": "PERSON"
+  },
+  {
+   "value": "Oakwood Lane Pharmacy",
+   "type": "COMPANY"
+  },
+  {
+   "value": "481 Oakwood Lane, Leeds LS8 3LG",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Adeyemi-Clarke, Folasade",
+   "type": "PERSON"
+  }
+ ]
+}

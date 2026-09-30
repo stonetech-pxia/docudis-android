@@ -1,0 +1,105 @@
+{
+ "id": "en-support-02",
+ "expected": [
+  {
+   "value": "Siobhán Ní Bhraonáin",
+   "type": "PERSON"
+  },
+  {
+   "value": "siobhan.nibhraonain@gmail.com",
+   "type": "EMAIL"
+  },
+  {
+   "value": "billing.queries@electricireland.ie",
+   "type": "EMAIL"
+  },
+  {
+   "value": "14 Sep 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "951 204 873",
+   "type": "ID"
+  },
+  {
+   "value": "10304718265",
+   "type": "ID"
+  },
+  {
+   "value": "4 September 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "€1,186.40",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Apartment 12, Millrace Court, Old Kilmainham, Dublin 8, D08 X4K7",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "1 July 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "11 February",
+   "type": "DATE"
+  },
+  {
+   "value": "31 August",
+   "type": "DATE"
+  },
+  {
+   "value": "Tomasz",
+   "type": "PERSON"
+  },
+  {
+   "value": "Wieczorek",
+   "type": "PERSON"
+  },
+  {
+   "value": "Bill Hanratty",
+   "type": "PERSON"
+  },
+  {
+   "value": "€270",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "€1,186",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "8 September",
+   "type": "DATE"
+  },
+  {
+   "value": "Grace",
+   "type": "PERSON"
+  },
+  {
+   "value": "AIB",
+   "type": "COMPANY"
+  },
+  {
+   "value": "4471",
+   "type": "ID"
+  },
+  {
+   "value": "21 September",
+   "type": "DATE"
+  },
+  {
+   "value": "1 July",
+   "type": "DATE"
+  },
+  {
+   "value": "087 264 9153",
+   "type": "PHONE"
+  },
+  {
+   "value": "Apt 12, Millrace Court, Dublin 8",
+   "type": "ADDRESS"
+  }
+ ]
+}

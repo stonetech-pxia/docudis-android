@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+  <style>
+    body { margin: 0; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; color: #0F1B2D; -webkit-font-smoothing: antialiased; }
+    a { color: #1E5FB8; text-decoration: none; } a:hover { color: #17509E; }
+    .h { font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; }
+    .mono { font-family: 'IBM Plex Mono', 'Consolas', ui-monospace, monospace; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+<div style="width: 900px; min-height: 760px; background: #FFFFFF; display: flex; flex-direction: column; gap: 36px; padding: 40px;">
+  <div style="display: flex; flex-direction: column; gap: 6px;">
+    <span class="h" style="font-size: 24px; font-weight: 800; letter-spacing: -0.02em; color: #0F1B2D;">Docudis style sheet · Harbor</span>
+    <span style="font-size: 14px; color: #4A5568;">Cool neutral surfaces, one marine-blue accent, green reserved for "safe" states. Manrope for headings, IBM Plex Sans for body, IBM Plex Mono for placeholders.</span>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 14px;">
+    <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #64748B;">Color</span>
+    <div style="display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px;">
+      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 56px; border-radius: 10px; background: #1E5FB8;"></div><span style="font-size: 12px; font-weight: 600; color: #0F1B2D;">Primary</span><span class="mono" style="font-size: 11px; color: #64748B;">#1E5FB8</span></div>
+      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 56px; border-radius: 10px; background: #17509E;"></div><span style="font-size: 12px; font-weight: 600; color: #0F1B2D;">Primary pressed</span><span class="mono" style="font-size: 11px; color: #64748B;">#17509E</span></div>
+      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 56px; border-radius: 10px; background: #E7EFFB;"></div><span style="font-size: 12px; font-weight: 600; color: #0F1B2D;">Primary tint</span><span class="mono" style="font-size: 11px; color: #64748B;">#E7EFFB</span></div>
+      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 56px; border-radius: 10px; background: #1F7A4D;"></div><span style="font-size: 12px; font-weight: 600; color: #0F1B2D;">Safe</span><span class="mono" style="font-size: 11px; color: #64748B;">#1F7A4D</span></div>
+      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 56px; border-radius: 10px; background: #A0741C;"></div><span style="font-size: 12px; font-weight: 600; color: #0F1B2D;">Warning</span><span class="mono" style="font-size: 11px; color: #64748B;">#A0741C</span></div>
+      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 56px; border-radius: 10px; background: #0F1B2D;"></div><span style="font-size: 12px; font-weight: 600; color: #0F1B2D;">Ink</span><span class="mono" style="font-size: 11px; color: #64748B;">#0F1B2D</span></div>
+      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 56px; border-radius: 10px; background: #4A5568;"></div><span style="font-size: 12px; font-weight: 600; color: #0F1B2D;">Ink muted</span><span class="mono" style="font-size: 11px; color: #64748B;">#4A5568</span></div>
+      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 56px; border-radius: 10px; background: #F4F6F9; border: 1px solid #E3E8EF;"></div><span style="font-size: 12px; font-weight: 600; color: #0F1B2D;">Canvas</span><span class="mono" style="font-size: 11px; color: #64748B;">#F4F6F9 · border #E3E8EF</span></div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 14px;">
+    <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #64748B;">Entity highlights · same lightness, hue varies</span>
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px;">
+      <span style="padding: 4px 10px; border-radius: 6px; background: #FBE6E1; color: #9A3B2A; font-weight: 500; box-shadow: inset 0 -2px 0 #C24E36;">Person</span>
+      <span style="padding: 4px 10px; border-radius: 6px; background: #E3EAFA; color: #2C4F9E; font-weight: 500; box-shadow: inset 0 -2px 0 #3B62B8;">Email</span>
+      <span style="padding: 4px 10px; border-radius: 6px; background: #DDF2E7; color: #1F6A46; font-weight: 500; box-shadow: inset 0 -2px 0 #2A8A5E;">Phone</span>
+      <span style="padding: 4px 10px; border-radius: 6px; background: #F0E4F8; color: #6A3395; font-weight: 500; box-shadow: inset 0 -2px 0 #8A4BB5;">IBAN / Card</span>
+      <span style="padding: 4px 10px; border-radius: 6px; background: #F6EED6; color: #7A5A10; font-weight: 500; box-shadow: inset 0 -2px 0 #A0741C;">Date</span>
+      <span style="padding: 4px 10px; border-radius: 6px; background: #DDEEF4; color: #1C5F76; font-weight: 500; box-shadow: inset 0 -2px 0 #2A7A93;">Address</span>
+      <span style="padding: 4px 10px; border-radius: 6px; background: #E9EDF3; color: #3F4C63; font-weight: 500; box-shadow: inset 0 -2px 0 #5B6B85;">Company</span>
+      <span style="padding: 4px 10px; border-radius: 6px; background: #FBE9DF; color: #8A3E1E; font-weight: 500; box-shadow: inset 0 -2px 0 #B2542E;">Amount</span>
+      <span style="padding: 4px 10px; border-radius: 6px; background: #FBE1EC; color: #9A2A5A; font-weight: 500; box-shadow: inset 0 -2px 0 #C23E7A;">Secret / API key</span>
+      <span class="mono" style="padding: 4px 10px; border-radius: 6px; background: #E7EFFB; color: #1E5FB8; font-size: 14px;">[PERSON_1] placeholder</span>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px;">
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #64748B;">Type</span>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <span class="h" style="font-size: 26px; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em; color: #0F1B2D;">Display 26 · Manrope 800</span>
+        <span class="h" style="font-size: 22px; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em; color: #0F1B2D;">Title 22 · Manrope 800</span>
+        <span class="h" style="font-size: 17px; font-weight: 700; color: #0F1B2D;">Heading 17 · Manrope 700</span>
+        <span style="font-size: 15px; line-height: 1.5; color: #0F1B2D;">Body 15 · IBM Plex Sans 400, line-height 1.5</span>
+        <span style="font-size: 13px; color: #64748B;">Caption 13 · IBM Plex Sans 400, muted</span>
+        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #64748B;">Label 12 · 600 · tracked</span>
+        <span class="mono" style="font-size: 13px; color: #1E5FB8;">Mono 13 · IBM Plex Mono 500</span>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #64748B;">Controls · 52px primary, 44px minimum</span>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div class="h" style="display: flex; align-items: center; justify-content: center; height: 52px; border-radius: 14px; background: #1E5FB8; color: #FFFFFF; font-size: 16px; font-weight: 700;">Primary</div>
+        <div class="h" style="display: flex; align-items: center; justify-content: center; height: 52px; border-radius: 14px; background: #FFFFFF; border: 1.5px solid #CBD5E1; color: #0F1B2D; font-size: 16px; font-weight: 700;">Secondary</div>
+        <div class="h" style="display: flex; align-items: center; justify-content: center; height: 52px; border-radius: 14px; background: #E8ECF2; color: #94A3B8; font-size: 16px; font-weight: 700;">Disabled</div>
+        <div style="display: flex; flex-direction: row; align-items: center; gap: 10px;">
+          <div style="display: flex; flex-direction: row; align-items: center; gap: 6px; height: 32px; padding: 0 12px 0 10px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E3E8EF; font-size: 13px; font-weight: 600; color: #0F1B2D;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #C24E36;"></span>Chip<span style="color: #64748B; font-weight: 500;">2</span></div>
+          <div style="display: flex; flex-direction: row; align-items: center; gap: 6px; height: 32px; padding: 0 12px 0 10px; border-radius: 999px; background: #E7EFFB; border: 1px solid #1E5FB8; font-size: 13px; font-weight: 600; color: #1E5FB8;">Chip selected</div>
+          <div style="display: flex; flex-direction: row; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: #E6F4EC; color: #1F7A4D; font-size: 12px; font-weight: 600;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #1F7A4D;"></span>On-device</div>
+          <div style="display: flex; flex-direction: row; align-items: center; width: 48px; height: 28px; padding: 3px; border-radius: 999px; background: #1E5FB8; justify-content: flex-end;"><span style="width: 22px; height: 22px; border-radius: 50%; background: #FFFFFF;"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 14px;">
+    <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #64748B;">Surfaces · radius 16, border 1px, shadow barely there</span>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding: 20px; background: #F4F6F9; border-radius: 16px;">
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 14px; padding: 16px; background: #FFFFFF; border: 1px solid #E3E8EF; border-radius: 16px; box-shadow: 0 1px 2px rgba(15, 27, 45, 0.04);">
+        <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: #E7EFFB; color: #1E5FB8; flex-shrink: 0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v13H7z"></path><path d="M14 3v5h5"></path></svg>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <span class="h" style="font-size: 16px; font-weight: 700; color: #0F1B2D;">Action card</span>
+          <span style="font-size: 13px; color: #64748B;">Icon tile 44 · tint bg</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 12px; padding: 14px 16px; background: #E6F4EC; border-radius: 14px; color: #1F6A46;">
+        <div style="display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #1F7A4D; color: #FFFFFF; flex-shrink: 0;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"></path></svg>
+        </div>
+        <span style="font-size: 14px; font-weight: 500;">Success banner</span>
+      </div>
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 8px; padding: 12px 14px; border-radius: 10px; background: #FBF3E2; color: #7A5A10; font-size: 13px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 16H3z"></path><path d="M12 10v4M12 17h.01"></path></svg>
+        <span>Warning note</span>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

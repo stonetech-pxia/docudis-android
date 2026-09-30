@@ -1,0 +1,49 @@
+{
+ "id": "fr-bodacc-collective-04",
+ "expected": [
+  {
+   "value": "18/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Puy-en-Velay",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "le Puy en Velay",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "852 650 407",
+   "type": "ID"
+  },
+  {
+   "value": "Net'Pro 43",
+   "type": "COMPANY"
+  },
+  {
+   "value": "81 ZA de Chatimbarbe, 43200 Yssingeaux",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "16/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "3 septembre 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "SARL Mandatum",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Raphaël Petavy",
+   "type": "PERSON"
+  },
+  {
+   "value": "10 rue de la Ronzade 43000 Le Puy-en-Velay",
+   "type": "ADDRESS"
+  }
+ ]
+}

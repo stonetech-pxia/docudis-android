@@ -1,0 +1,77 @@
+{
+ "id": "es-payslip-01",
+ "expected": [
+  {
+   "value": "Talleres Gráficos Monteverde, S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Polígono Industrial Les Comes, nave 14",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "08700 Igualada (Barcelona)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "B-87421903",
+   "type": "ID"
+  },
+  {
+   "value": "25/28688497/56",
+   "type": "ID"
+  },
+  {
+   "value": "NKEMDIRIM OKAFOR, Chinaza",
+   "type": "PERSON"
+  },
+  {
+   "value": "51321845J",
+   "type": "ID"
+  },
+  {
+   "value": "39/36429852/05",
+   "type": "ID"
+  },
+  {
+   "value": "04127",
+   "type": "ID"
+  },
+  {
+   "value": "12/07/1991",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "02/05/2019",
+   "type": "DATE"
+  },
+  {
+   "value": "01/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "31/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "ES51 8990 4432 8135 3997 0003",
+   "type": "IBAN"
+  },
+  {
+   "value": "938 04 17 26",
+   "type": "PHONE"
+  },
+  {
+   "value": "nominas@tgmonteverde.es",
+   "type": "EMAIL"
+  },
+  {
+   "value": "Nerea Oyarzábal Ferrer",
+   "type": "PERSON"
+  },
+  {
+   "value": "02/09/2026",
+   "type": "DATE"
+  }
+ ]
+}

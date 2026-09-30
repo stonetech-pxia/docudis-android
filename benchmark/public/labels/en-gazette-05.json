@@ -1,0 +1,78 @@
+{
+ "id": "en-gazette-05",
+ "expected": [
+  {
+   "value": "Birmingham",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "CR-2026-BHM-0004",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "NOVA CATERING REPAIRS LTD",
+   "type": "COMPANY"
+  },
+  {
+   "value": "12846107",
+   "type": "ID"
+  },
+  {
+   "value": "34 Dudley Road, Brierley Hill, DY5 1LH",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "11 September 2026",
+   "type": "DATE"
+  },
+  {
+   "value": "David Griffiths",
+   "type": "PERSON"
+  },
+  {
+   "value": "22930",
+   "type": "ID"
+  },
+  {
+   "value": "bk plus Limited",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Azzurri House, Walsall Business Park, Walsall Road, Walsall, West Midlands, WS9 0RB",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "01922 667 204",
+   "type": "PHONE"
+  },
+  {
+   "value": "Margaret Carter",
+   "type": "PERSON"
+  },
+  {
+   "value": "020730",
+   "type": "ID"
+  },
+  {
+   "value": "01922 660 929",
+   "type": "PHONE"
+  },
+  {
+   "value": "Geraldine Harvey",
+   "type": "PERSON"
+  },
+  {
+   "value": "01922 922050",
+   "type": "PHONE"
+  },
+  {
+   "value": "geraldine.harvey@bkplus.co.uk",
+   "type": "EMAIL"
+  },
+  {
+   "value": "14 September 2026",
+   "type": "DATE"
+  }
+ ]
+}

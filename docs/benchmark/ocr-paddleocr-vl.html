@@ -1,0 +1,1974 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OCR benchmark (local server)</title>
+<style>:root{color-scheme:light}
+body{margin:0;font:14px/1.5 -apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;color:#25221f;background:#f3efe9}
+header{padding:20px 24px 8px}h1{margin:0 0 4px;font-size:22px}.meta,.legend{margin:4px 0;color:#6b6259}.overall{font-size:16px}
+.summary{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 24px}@media(max-width:900px){.summary{grid-template-columns:1fr}}
+h2{font-size:16px;margin:8px 0}table{border-collapse:collapse;width:100%;background:#fffdf9;font-size:12px}th,td{padding:5px 7px;border-bottom:1px solid #e8dfd4;text-align:right}th:first-child,td:first-child{text-align:left}
+.filters{position:sticky;top:0;z-index:2;display:flex;gap:16px;align-items:center;padding:10px 24px;background:#f3efe9;border-bottom:1px solid #ded5ca}
+main{padding:12px 24px 40px}.case{margin:12px 0;padding:12px 16px;border-radius:14px;background:#fffdf9;box-shadow:0 6px 20px rgba(80,60,40,.08)}.case[data-fail="true"] h3:before{content:"⚠ ";color:#b33b2e}
+h3{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;margin:0 0 10px;font-size:15px}h3 small{color:#83766b;font-weight:400}.stats{margin-left:auto;color:#6b6259;font-size:12px;font-weight:400}
+.case-grid{display:grid;grid-template-columns:minmax(220px,34%) 1fr;gap:14px}@media(max-width:900px){.case-grid{grid-template-columns:1fr}}
+figure{margin:0;padding:8px;border-radius:9px;background:#f7f2ec}figure img{display:block;max-width:100%;max-height:400px;margin:auto;border-radius:5px}figure.missing{min-height:110px}figure.missing:before{content:"Image unavailable from this report location";display:block;padding:28px 8px;color:#9a897c;text-align:center}figure.missing img{display:none}figcaption{margin-top:6px;color:#83766b;font-size:11px;overflow-wrap:anywhere}
+.panes{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:1100px){.panes{grid-template-columns:1fr}}h4{margin:0 0 4px;color:#83766b;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+pre{box-sizing:border-box;min-height:100px;margin:0;padding:10px;border-radius:8px;background:#f8f4ef;white-space:pre-wrap;word-break:break-word;font:13px/1.65 ui-monospace,"SFMono-Regular",Consolas,monospace}.empty{color:#a49990;font-style:italic}
+.issues{margin:10px 0 0;padding-left:20px;color:#6b6259}.issues i{font-size:11px;color:#9a897c}.grade{display:inline-block;min-width:18px;padding:0 5px;border-radius:6px;color:#fff;text-align:center;font-size:11px;font-weight:700}.g-A{background:#4e6644}.g-B{background:#6b7f62}.g-C{background:#b8926a}.g-D{background:#a84e2c}.hidden{display:none}
+</style></head><body>
+<header><h1>OCR benchmark (local server)</h1>
+<p class="meta">Recognizer <b>PaddlePaddle/PaddleOCR-VL-1.6 (whole page, prompt 'OCR:', no layout model)</b> · Windows-11-10.0.26200-SP0 NVIDIA GeForce RTX 3080 (bfloat16) · 15 cases · 0 errors</p>
+<p class="overall">strict CER 88.9% · normalized CER 85.6% <span class="grade g-D">D</span> · WER 139.2% · line F1 11.6% · critical recall 85.9% · exact 7/15 · 28134 ms/MP</p>
+<p class="legend">Strict CER preserves whitespace after line-ending canonicalization. Normalized metrics collapse whitespace. CER counts Unicode code points, not grapheme clusters; case, punctuation, diacritics, symbols and digits remain significant.</p></header>
+<section class="summary"><div>
+<h2>By language</h2>
+<table><thead><tr><th>Group</th><th>Cases</th><th>Strict CER</th><th>Normalized CER</th><th>WER</th><th>Line F1</th><th>Critical</th><th>Exact</th><th>Errors</th><th>ms/MP</th></tr></thead><tbody>
+<tr><td>zh-Hans</td><td>2</td><td>1.2%</td><td>0.0% <span class="grade g-A">A</span></td><td>0.0%</td><td>100.0%</td><td>100.0%</td><td>2/2</td><td>0</td><td>11685</td></tr>
+<tr><td>en</td><td>10</td><td>95.1%</td><td>91.8% <span class="grade g-D">D</span></td><td>150.6%</td><td>9.2%</td><td>82.4%</td><td>4/10</td><td>0</td><td>29832</td></tr>
+<tr><td>fr</td><td>1</td><td>2.8%</td><td>0.0% <span class="grade g-A">A</span></td><td>0.0%</td><td>100.0%</td><td>100.0%</td><td>1/1</td><td>0</td><td>14236</td></tr>
+<tr><td>multi</td><td>1</td><td>9.1%</td><td>9.1% <span class="grade g-D">D</span></td><td>10.0%</td><td>83.3%</td><td>80.0%</td><td>0/1</td><td>0</td><td>14053</td></tr>
+<tr><td>hi</td><td>1</td><td>11.7%</td><td>7.2% <span class="grade g-C">C</span></td><td>10.5%</td><td>0.0%</td><td>100.0%</td><td>0/1</td><td>0</td><td>15539</td></tr>
+</tbody></table>
+</div><div>
+<h2>By category</h2>
+<table><thead><tr><th>Group</th><th>Cases</th><th>Strict CER</th><th>Normalized CER</th><th>WER</th><th>Line F1</th><th>Critical</th><th>Exact</th><th>Errors</th><th>ms/MP</th></tr></thead><tbody>
+<tr><td>clean_print</td><td>1</td><td>0.0%</td><td>0.0% <span class="grade g-A">A</span></td><td>0.0%</td><td>100.0%</td><td>100.0%</td><td>1/1</td><td>0</td><td>12387</td></tr>
+<tr><td>perspective</td><td>1</td><td>2.6%</td><td>0.0% <span class="grade g-A">A</span></td><td>0.0%</td><td>100.0%</td><td>100.0%</td><td>1/1</td><td>0</td><td>12544</td></tr>
+<tr><td>low_contrast</td><td>1</td><td>2.8%</td><td>0.0% <span class="grade g-A">A</span></td><td>0.0%</td><td>100.0%</td><td>100.0%</td><td>1/1</td><td>0</td><td>14236</td></tr>
+<tr><td>mixed_script_glare</td><td>1</td><td>9.1%</td><td>9.1% <span class="grade g-D">D</span></td><td>10.0%</td><td>83.3%</td><td>80.0%</td><td>0/1</td><td>0</td><td>14053</td></tr>
+<tr><td>dense_label</td><td>1</td><td>0.0%</td><td>0.0% <span class="grade g-A">A</span></td><td>0.0%</td><td>100.0%</td><td>100.0%</td><td>1/1</td><td>0</td><td>13942</td></tr>
+<tr><td>handwriting</td><td>1</td><td>0.0%</td><td>0.0% <span class="grade g-A">A</span></td><td>0.0%</td><td>100.0%</td><td>100.0%</td><td>1/1</td><td>0</td><td>9355</td></tr>
+<tr><td>screen_glare</td><td>1</td><td>0.0%</td><td>0.0% <span class="grade g-A">A</span></td><td>0.0%</td><td>100.0%</td><td>100.0%</td><td>1/1</td><td>0</td><td>12430</td></tr>
+<tr><td>devanagari</td><td>1</td><td>11.7%</td><td>7.2% <span class="grade g-C">C</span></td><td>10.5%</td><td>0.0%</td><td>100.0%</td><td>0/1</td><td>0</td><td>15539</td></tr>
+<tr><td>real_receipt_photo</td><td>1</td><td>14.3%</td><td>13.5% <span class="grade g-D">D</span></td><td>39.0%</td><td>21.4%</td><td>75.0%</td><td>0/1</td><td>0</td><td>17212</td></tr>
+<tr><td>real_business_card_perspective</td><td>1</td><td>6.2%</td><td>3.1% <span class="grade g-C">C</span></td><td>9.5%</td><td>82.4%</td><td>100.0%</td><td>0/1</td><td>0</td><td>17405</td></tr>
+<tr><td>real_bilingual_card_photo</td><td>1</td><td>1.9%</td><td>0.0% <span class="grade g-A">A</span></td><td>0.0%</td><td>100.0%</td><td>100.0%</td><td>1/1</td><td>0</td><td>10787</td></tr>
+<tr><td>real_contact_card</td><td>1</td><td>3.9%</td><td>3.0% <span class="grade g-B">B</span></td><td>30.3%</td><td>72.7%</td><td>60.0%</td><td>0/1</td><td>0</td><td>25318</td></tr>
+<tr><td>a4_bank_statement_photo</td><td>1</td><td>214.5%</td><td>208.3% <span class="grade g-D">D</span></td><td>386.1%</td><td>0.2%</td><td>20.0%</td><td>0/1</td><td>0</td><td>60067</td></tr>
+<tr><td>a4_lease_photo_handwriting</td><td>1</td><td>9.0%</td><td>4.2% <span class="grade g-C">C</span></td><td>12.9%</td><td>19.7%</td><td>83.3%</td><td>0/1</td><td>0</td><td>31269</td></tr>
+<tr><td>a4_medical_form_photo</td><td>1</td><td>35.8%</td><td>34.7% <span class="grade g-D">D</span></td><td>45.1%</td><td>54.3%</td><td>83.3%</td><td>0/1</td><td>0</td><td>6122</td></tr>
+</tbody></table>
+</div></section>
+<section class="filters">
+<label>Language <select id="lang"><option value="">All</option><option>zh-Hans</option><option>en</option><option>fr</option><option>multi</option><option>hi</option></select></label>
+<label>Category <select id="cat"><option value="">All</option><option>clean_print</option><option>perspective</option><option>low_contrast</option><option>mixed_script_glare</option><option>dense_label</option><option>handwriting</option><option>screen_glare</option><option>devanagari</option><option>real_receipt_photo</option><option>real_business_card_perspective</option><option>real_bilingual_card_photo</option><option>real_contact_card</option><option>a4_bank_statement_photo</option><option>a4_lease_photo_handwriting</option><option>a4_medical_form_photo</option></select></label>
+<label><input type="checkbox" id="fail"> Problems only</label><span id="count"></span></section><main>
+<article class="case" data-lang="zh-Hans" data-cat="clean_print" data-fail="false">
+<h3>zh-clean-notice <small>zh-Hans · clean_print · easy</small><span class="stats">strict CER 0.0% · normalized CER 0.0% <span class="grade g-A">A</span> · WER 0.0% · line F1 100.0% · critical 4/4 · 19484 ms · 12387 ms/MP</span></h3>
+<div class="case-grid">
+<figure><img loading="lazy" src="../../benchmark/ocr/images/zh-clean-notice.png" data-fallback="benchmark/ocr/images/zh-clean-notice.png" alt="zh-clean-notice OCR fixture" onerror="if(this.dataset.retry!=='1'){this.dataset.retry='1';this.src=this.dataset.fallback}else{this.parentElement.classList.add('missing')}"><figcaption>benchmark/ocr/images/zh-clean-notice.png · 1055×1491</figcaption></figure>
+<div class="panes">
+<div class="pane"><h4>Expected</h4><pre>访客登记通知
+日期：2026年9月16日
+姓名：林晓雨
+公司：星河数据科技有限公司
+电话：138 2468 1357
+请在前台领取访客证。</pre></div>
+<div class="pane"><h4>Recognized</h4><pre>访客登记通知
+日期：2026年9月16日
+姓名：林晓雨
+公司：星河数据科技有限公司
+电话：138 2468 1357
+请在前台领取访客证。</pre></div>
+</div></div>
+</article>
+<article class="case" data-lang="en" data-cat="perspective" data-fail="false">
+<h3>en-perspective-invoice <small>en · perspective · medium</small><span class="stats">strict CER 2.6% · normalized CER 0.0% <span class="grade g-A">A</span> · WER 0.0% · line F1 100.0% · critical 6/6 · 19725 ms · 12544 ms/MP</span></h3>
+<div class="case-grid">
+<figure><img loading="lazy" src="../../benchmark/ocr/images/en-perspective-invoice.png" data-fallback="benchmark/ocr/images/en-perspective-invoice.png" alt="en-perspective-invoice OCR fixture" onerror="if(this.dataset.retry!=='1'){this.dataset.retry='1';this.src=this.dataset.fallback}else{this.parentElement.classList.add('missing')}"><figcaption>benchmark/ocr/images/en-perspective-invoice.png · 1086×1448</figcaption></figure>
+<div class="panes">
+<div class="pane"><h4>Expected</h4><pre>INVOICE 4471
+Bill to: Robert Johnson
+Acme Trading Ltd
+12 High Street, Bristol
+Date: 16 Sep 2026
+Total: GBP 1,250.00</pre></div>
+<div class="pane"><h4>Recognized</h4><pre>INVOICE 4471
+
+Bill to: Robert Johnson
+Acme Trading Ltd
+12 High Street, Bristol
+
+Date: 16 Sep 2026
+
+Total: GBP 1,250.00</pre></div>
+</div></div>
+</article>
+<article class="case" data-lang="fr" data-cat="low_contrast" data-fail="false">
+<h3>fr-low-contrast-receipt <small>fr · low_contrast · hard</small><span class="stats">strict CER 2.8% · normalized CER 0.0% <span class="grade g-A">A</span> · WER 0.0% · line F1 100.0% · critical 4/4 · 22391 ms · 14236 ms/MP</span></h3>
+<div class="case-grid">
+<figure><img loading="lazy" src="../../benchmark/ocr/images/fr-low-contrast-receipt.png" data-fallback="benchmark/ocr/images/fr-low-contrast-receipt.png" alt="fr-low-contrast-receipt OCR fixture" onerror="if(this.dataset.retry!=='1'){this.dataset.retry='1';this.src=this.dataset.fallback}else{this.parentElement.classList.add('missing')}"><figcaption>benchmark/ocr/images/fr-low-contrast-receipt.png · 1024×1536</figcaption></figure>
+<div class="panes">
+<div class="pane"><h4>Expected</h4><pre>CAFÉ LUMIÈRE
+Reçu n° 0837
+2 croissants  7,80 €
+Café au lait  4,20 €
+Total TTC  12,00 €
+Merci et à bientôt !</pre></div>
+<div class="pane"><h4>Recognized</h4><pre>CAFÉ LUMIÈRE
+Reçu n° 0837
+2 croissants 7,80 €
+Café au lait 4,20 €
+Total TTC 12,00 €
+Merci et à bientôt !</pre></div>
+</div></div>
+</article>
+<article class="case" data-lang="multi" data-cat="mixed_script_glare" data-fail="true">
+<h3>multi-screen-glare <small>multi · mixed_script_glare · medium</small><span class="stats">strict CER 9.1% · normalized CER 9.1% <span class="grade g-D">D</span> · WER 10.0% · line F1 83.3% · critical 4/5 · 22104 ms · 14053 ms/MP</span></h3>
+<div class="case-grid">
+<figure><img loading="lazy" src="../../benchmark/ocr/images/multi-screen-glare.png" data-fallback="benchmark/ocr/images/multi-screen-glare.png" alt="multi-screen-glare OCR fixture" onerror="if(this.dataset.retry!=='1'){this.dataset.retry='1';this.src=this.dataset.fallback}else{this.parentElement.classList.add('missing')}"><figcaption>benchmark/ocr/images/multi-screen-glare.png · 1536×1024</figcaption></figure>
+<div class="panes">
+<div class="pane"><h4>Expected</h4><pre>会议提醒 / MEETING REMINDER
+时间 / Time: 14:30
+地点 / Room: B-204
+联系人 / Contact: 王芳
+Wi-Fi: Docudis_Guest
+Code: Q7M9-K2</pre></div>
+<div class="pane"><h4>Recognized</h4><pre>会议提醒 / MEETING REMINDER
+时间 / Time: 14:30
+地点 / Room: B-204
+联系人 / Contact: 王芳
+Wi-Fi: Docudis\(_	ext{Guest}\)
+Code: Q7M9-K2</pre></div>
+</div></div>
+<ul class="issues">
+<li><b>Missed critical span</b> Docudis_Guest <i>SECRET</i></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="dense_label" data-fail="false">
+<h3>shipping-label-dense <small>en · dense_label · medium</small><span class="stats">strict CER 0.0% · normalized CER 0.0% <span class="grade g-A">A</span> · WER 0.0% · line F1 100.0% · critical 5/5 · 21924 ms · 13942 ms/MP</span></h3>
+<div class="case-grid">
+<figure><img loading="lazy" src="../../benchmark/ocr/images/shipping-label-dense.png" data-fallback="benchmark/ocr/images/shipping-label-dense.png" alt="shipping-label-dense OCR fixture" onerror="if(this.dataset.retry!=='1'){this.dataset.retry='1';this.src=this.dataset.fallback}else{this.parentElement.classList.add('missing')}"><figcaption>benchmark/ocr/images/shipping-label-dense.png · 1448×1086</figcaption></figure>
+<div class="panes">
+<div class="pane"><h4>Expected</h4><pre>PRIORITY MAIL
+Tracking: ZX-2048-7719-FR
+From: 8 Rue des Lilas, Lyon
+To: 42 King Street, London
+Weight: 2.35 kg
+Ref: A9C-0316</pre></div>
+<div class="pane"><h4>Recognized</h4><pre>PRIORITY MAIL
+Tracking: ZX-2048-7719-FR
+From: 8 Rue des Lilas, Lyon
+To: 42 King Street, London
+Weight: 2.35 kg
+Ref: A9C-0316</pre></div>
+</div></div>
+</article>
+<article class="case" data-lang="en" data-cat="handwriting" data-fail="false">
+<h3>en-handwritten-note <small>en · handwriting · hard</small><span class="stats">strict CER 0.0% · normalized CER 0.0% <span class="grade g-A">A</span> · WER 0.0% · line F1 100.0% · critical 5/5 · 14711 ms · 9355 ms/MP</span></h3>
+<div class="case-grid">
+<figure><img loading="lazy" src="../../benchmark/ocr/images/en-handwritten-note.png" data-fallback="benchmark/ocr/images/en-handwritten-note.png" alt="en-handwritten-note OCR fixture" onerror="if(this.dataset.retry!=='1'){this.dataset.retry='1';this.src=this.dataset.fallback}else{this.parentElement.classList.add('missing')}"><figcaption>benchmark/ocr/images/en-handwritten-note.png · 1254×1254</figcaption></figure>
+<div class="panes">
+<div class="pane"><h4>Expected</h4><pre>Call Maria at 07 58 21 46 90.
+Send draft before Friday.
+Room 3B, 18 Oak Avenue.
+PIN: 7391</pre></div>
+<div class="pane"><h4>Recognized</h4><pre>Call Maria at 07 58 21 46 90.
+Send draft before Friday.
+Room 3B, 18 Oak Avenue.
+PIN: 7391</pre></div>
+</div></div>
+</article>
+<article class="case" data-lang="en" data-cat="screen_glare" data-fail="false">
+<h3>en-screen-access <small>en · screen_glare · medium</small><span class="stats">strict CER 0.0% · normalized CER 0.0% <span class="grade g-A">A</span> · WER 0.0% · line F1 100.0% · critical 4/4 · 19551 ms · 12430 ms/MP</span></h3>
+<div class="case-grid">
+<figure><img loading="lazy" src="../../benchmark/ocr/images/en-screen-access.png" data-fallback="benchmark/ocr/images/en-screen-access.png" alt="en-screen-access OCR fixture" onerror="if(this.dataset.retry!=='1'){this.dataset.retry='1';this.src=this.dataset.fallback}else{this.parentElement.classList.add('missing')}"><figcaption>benchmark/ocr/images/en-screen-access.png · 1536×1024</figcaption></figure>
+<div class="panes">
+<div class="pane"><h4>Expected</h4><pre>SECURITY CHECK
+User: ana.lopez@example.es
+Device: Pixel 10
+IP: 192.168.1.24
+Time: 2026-09-16 08:45
+Status: APPROVED</pre></div>
+<div class="pane"><h4>Recognized</h4><pre>SECURITY CHECK
+User: ana.lopez@example.es
+Device: Pixel 10
+IP: 192.168.1.24
+Time: 2026-09-16 08:45
+Status: APPROVED</pre></div>
+</div></div>
+</article>
+<article class="case" data-lang="hi" data-cat="devanagari" data-fail="true">
+<h3>hi-clean-notice <small>hi · devanagari · medium</small><span class="stats">strict CER 11.7% · normalized CER 7.2% <span class="grade g-C">C</span> · WER 10.5% · line F1 0.0% · critical 4/4 · 24446 ms · 15539 ms/MP</span></h3>
+<div class="case-grid">
+<figure><img loading="lazy" src="../../benchmark/ocr/images/hi-clean-notice.png" data-fallback="benchmark/ocr/images/hi-clean-notice.png" alt="hi-clean-notice OCR fixture" onerror="if(this.dataset.retry!=='1'){this.dataset.retry='1';this.src=this.dataset.fallback}else{this.parentElement.classList.add('missing')}"><figcaption>benchmark/ocr/images/hi-clean-notice.png · 1091×1442</figcaption></figure>
+<div class="panes">
+<div class="pane"><h4>Expected</h4><pre>कार्यालय सूचना
+दिनांक: 16 सितंबर 2026
+नाम: राहुल शर्मा
+फ़ोन: +91 98765 43210
+कमरा: 204
+कृपया पहचान पत्र दिखाएँ।</pre></div>
+<div class="pane"><h4>Recognized</h4><pre>कार्यालय सूचना दिनांक: 16 सितंबर 2026 नाम: राहुल शर्मा फ्रांटन: +91 98765 43210 कमरा: 204 कृपया पहचान पत्र दिखार्ण।</pre></div>
+</div></div>
+</article>
+<article class="case" data-lang="en" data-cat="real_receipt_photo" data-fail="true">
+<h3>doc-en-prepaid-receipt <small>en · real_receipt_photo · hard</small><span class="stats">strict CER 14.3% · normalized CER 13.5% <span class="grade g-D">D</span> · WER 39.0% · line F1 21.4% · critical 3/4 · 50141 ms · 17212 ms/MP</span></h3>
+<div class="case-grid">
+<figure><img loading="lazy" src="../../benchmark/ocr/images/documents/doc-en-receipt.jpg" data-fallback="benchmark/ocr/images/documents/doc-en-receipt.jpg" alt="doc-en-prepaid-receipt OCR fixture" onerror="if(this.dataset.retry!=='1'){this.dataset.retry='1';this.src=this.dataset.fallback}else{this.parentElement.classList.add('missing')}"><figcaption>benchmark/ocr/images/documents/doc-en-receipt.jpg · 1280×2276 · <a href="https://commons.wikimedia.org/wiki/File:Receipt.jpg" rel="noopener noreferrer">Deavmi · CC BY-SA 3.0</a></figcaption></figure>
+<div class="panes">
+<div class="pane"><h4>Expected</h4><pre>Pre-paid Voucher
+CLICKS
+11 07 2015 18:34
+Outlet #: 710243
+Supplier: VODACOM
+Product : R110 Vodacom
+Voucher #: 119322644410
+Pin No : 6119 0541 0681
+To Activate:
+How to Recharge:
+-Dial*100*01*PIN# and Press 'Call'
+CASHIER NAME: PHUMELELE
+00005 #0685 18:35:24 11JUL2015</pre></div>
+<div class="pane"><h4>Recognized</h4><pre>Pre-paid Voucher
+CLICKS
+1 07 2015 18:34
+outlet #: 710243
+supplier: VODACOM
+product: R110 Vodago
+touch #: 11932364410
+
+In No : 6119 0541 0681
+
+to Activate:
+How to Recharge:
+Dial*100*01*PIN# and Press 'Call'
+
+ASHIER NAME: PHUMELELE
+0685 18:35:24
+0005 S00211
+
+11JUL2015</pre></div>
+</div></div>
+<ul class="issues">
+<li><b>Missed critical span</b> 119322644410 <i>ID</i></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="real_business_card_perspective" data-fail="true">
+<h3>doc-en-traf-o-data-card <small>en · real_business_card_perspective · hard</small><span class="stats">strict CER 6.2% · normalized CER 3.1% <span class="grade g-C">C</span> · WER 9.5% · line F1 82.4% · critical 5/5 · 21386 ms · 17405 ms/MP</span></h3>
+<div class="case-grid">
+<figure><img loading="lazy" src="../../benchmark/ocr/images/documents/doc-en-business-card.jpg" data-fallback="benchmark/ocr/images/documents/doc-en-business-card.jpg" alt="doc-en-traf-o-data-card OCR fixture" onerror="if(this.dataset.retry!=='1'){this.dataset.retry='1';this.src=this.dataset.fallback}else{this.parentElement.classList.add('missing')}"><figcaption>benchmark/ocr/images/documents/doc-en-business-card.jpg · 1280×960 · <a href="https://commons.wikimedia.org/wiki/File:Traf-O-Data_Business_Card.jpg" rel="noopener noreferrer">Marcin Wichary · CC BY 2.0</a></figcaption></figure>
+<div class="panes">
+<div class="pane"><h4>Expected</h4><pre>Traf-O-Data
+traffic tape processing
+Bill Gates
+Paul Allen
+Paul Gilbert
+19506 RICHMOND BEACH DR NW
+SEATTLE WA 98177
+(206) 542 8591</pre></div>
+<div class="pane"><h4>Recognized</h4><pre>10
+
+Traf-o-Data
+
+traffic tape processing
+
+Bill Gates
+Paul Allen
+Paul Gilbert
+
+19506 RICHMOND BEACH DR NW
+SEATTLE WA 98177
+(206) 542 8591</pre></div>
+</div></div>
+</article>
+<article class="case" data-lang="zh-Hans" data-cat="real_bilingual_card_photo" data-fail="false">
+<h3>doc-zh-boarding-confirmation-card <small>zh-Hans · real_bilingual_card_photo · medium</small><span class="stats">strict CER 1.9% · normalized CER 0.0% <span class="grade g-A">A</span> · WER 0.0% · line F1 100.0% · critical 3/3 · 13254 ms · 10787 ms/MP</span></h3>
+<div class="case-grid">
+<figure><img loading="lazy" src="../../benchmark/ocr/images/documents/doc-zh-boarding-card.jpg" data-fallback="benchmark/ocr/images/documents/doc-zh-boarding-card.jpg" alt="doc-zh-boarding-confirmation-card OCR fixture" onerror="if(this.dataset.retry!=='1'){this.dataset.retry='1';this.src=this.dataset.fallback}else{this.parentElement.classList.add('missing')}"><figcaption>benchmark/ocr/images/documents/doc-zh-boarding-card.jpg · 1280×960 · <a href="https://commons.wikimedia.org/wiki/File:Boarding_Pass_Confirmation_Card,_Baiyun_Airport.jpg" rel="noopener noreferrer">David290 · CC BY-SA 4.0</a></figcaption></figure>
+<div class="panes">
+<div class="pane"><h4>Expected</h4><pre>BAIYUNPORT 白云国际机场股份
+远机位登机复核牌
+Boarding Pass Confirmation Card
+请保留至机下回收
+Please keep it well until recycled</pre></div>
+<div class="pane"><h4>Recognized</h4><pre>BAIYUNPORT 白云国际机场股份
+
+远机位登机复核牌
+Boarding Pass Confirmation Card
+
+请保留至机下回收
+Please keep it well until recycled</pre></div>
+</div></div>
+</article>
+<article class="case" data-lang="en" data-cat="real_contact_card" data-fail="true">
+<h3>doc-en-ziartides-business-card <small>en · real_contact_card · medium</small><span class="stats">strict CER 3.9% · normalized CER 3.0% <span class="grade g-B">B</span> · WER 30.3% · line F1 72.7% · critical 3/5 · 15488 ms · 25318 ms/MP</span></h3>
+<div class="case-grid">
+<figure><img loading="lazy" src="../../benchmark/ocr/images/documents/doc-el-business-card.jpg" data-fallback="benchmark/ocr/images/documents/doc-el-business-card.jpg" alt="doc-en-ziartides-business-card OCR fixture" onerror="if(this.dataset.retry!=='1'){this.dataset.retry='1';this.src=this.dataset.fallback}else{this.parentElement.classList.add('missing')}"><figcaption>benchmark/ocr/images/documents/doc-el-business-card.jpg · 1023×598 · <a href="https://commons.wikimedia.org/wiki/File:Business_Card.jpg" rel="noopener noreferrer">Evnicky · CC BY-SA 4.0</a></figcaption></figure>
+<div class="panes">
+<div class="pane"><h4>Expected</h4><pre>ANDREAS A. ZIARTIDES
+MEMBER OF THE HOUSE
+OF REPRESENTATIVES
+ADDRESS
+Office : 31-35 Archemou Str. Nicosia
+Residence: 7 Acropolis Av.,
+Acropolis - STROVOLOS
+CYPRUS
+PHONES
+Office : 73192 - 96
+Resid. : 43930</pre></div>
+<div class="pane"><h4>Recognized</h4><pre>ANDREAS A. ZIARTIDES
+MEMBER OF THE HOUSE
+OF REPRESENTATIVES
+
+ADDRESS
+Office: 31-35 Archermou Str. Nicosia
+Residence: 7 Acropolis Av.,
+Acropolis - STROVOLOS
+CYPRUS
+
+PHONES
+Office: 73192-96
+Resid.: 43930</pre></div>
+</div></div>
+<ul class="issues">
+<li><b>Missed critical span</b> 31-35 Archemou Str. Nicosia <i>ADDRESS</i></li>
+<li><b>Missed critical span</b> 73192 - 96 <i>PHONE</i></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="a4_bank_statement_photo" data-fail="true">
+<h3>a4-en-bank-statement <small>en · a4_bank_statement_photo · hard</small><span class="stats">strict CER 214.5% · normalized CER 208.3% <span class="grade g-D">D</span> · WER 386.1% · line F1 0.2% · critical 1/5 · 1469845 ms · 60067 ms/MP</span></h3>
+<div class="case-grid">
+<figure><img loading="lazy" src="../../benchmark/ocr/images/documents/a4-en-bank-statement.jpg" data-fallback="benchmark/ocr/images/documents/a4-en-bank-statement.jpg" alt="a4-en-bank-statement OCR fixture" onerror="if(this.dataset.retry!=='1'){this.dataset.retry='1';this.src=this.dataset.fallback}else{this.parentElement.classList.add('missing')}"><figcaption>benchmark/ocr/images/documents/a4-en-bank-statement.jpg · 4284×5712 · <a href="https://huggingface.co/datasets/getomni-ai/ocr-benchmark" rel="noopener noreferrer">getomni-ai / OCR Benchmark · MIT</a></figcaption></figure>
+<div class="panes">
+<div class="pane"><h4>Expected</h4><pre>Account Overview
+
+Current Period YTD Period
+Beginning of Period Value $637,990.00 $776,199.00
+Account Transfers Out $0.00 -$73,579.95
+Dividends $0.00 $14,691.25
+Aggregate Portfolio Movement -$25,497.13 -$217,594.40
+Additional Deposits $70,374.61 $89,254.60
+Performance Fees -$9,514.72 -$50,150.55
+Capital Appreciation $34,310.90 $123,685.00
+Other -$1,125.55 -$27,602.05
+ENDING ACCOUNT VALUE $706,538.11 $634,902.90
+
+1 Net Change in Portfolio is the difference between the ending account value and beginning account value after activity.
+
+ETF Traded As EOD Price YTD Price Change Avg. Daily Volume One Day Change Classification
+Technology Select Sector SPDR Fund XLK 234.47 0.2265 4015302 -0.0127 Equity
+Vanguard Information Technology ETF VGT 627.57 0.305 453405 -0.0125 Equity
+SPDR S&amp;P 500 ETF Trust SPY 588.22 0.2534 46003064 -0.0114 Equity
+Vanguard Growth ETF VUG 414.19 0.339 1145739 -0.0126 Equity
+Invesco QQQ Trust Series I QQQ 515.61 0.2665 29009270 -0.0133 Equity
+iShares Core S&amp;P 500 ETF IVV 590.98 0.2542 5875330 -0.011 Equity
+Vanguard Total International Stock ETF VXUS 59 0.052 3544059 -0.0067 Equity
+Vanguard FTSE Emerging Markets ETF VWO 44.11 0.1076 8214263 -0.0088 Equity
+iShares Core MSCI Emerging Markets ETF IEMG 52.31 0.0667 9449047 -0.0082 Equity
+iShares Core S&amp;P Mid-Cap ETF IJH 62.17 0.1366 7659450 -0.007 Equity
+Vanguard Total Stock Market ETF VTI 290.82 0.2424 3046583 -0.0111 Equity
+iShares Core MSCI EAFE ETF IEFA 70.32 0.0332 8199248 -0.0066 Equity
+Vanguard Value ETF VTV 168.94 0.1571 1827734 -0.0101 Equity
+Vanguard S&amp;P 500 ETF VOO 540.99 0.2548 5594505 -0.0111 Equity
+
+Account statement as of Apr 2020 - Nov 2020
+
+Your Representative
+
+Your Financial Consultant: Dr. Gregory Frami
+
+ID: jUefATevv
+
+212 Beier Walks North Richland Hills Kentucky, 18382-7941
+
+Contact Information
+
+Business: 663 999-5583
+
+Your Account Information
+
+DIVIDEND REINVESTMENT PREFERENCES
+
+Automatically apply dividends toward new share acquisitions: YES
+
+Allow partial share ownership for investments: NO
+
+Daily Balances
+
+Date Amount Date Amount Date Amount Date Amount
+2023-12-30 $707,126.00 2023-12-22 $706,373.00 2023-12-14 $707,309.00 2023-12-06 $708,831.00
+2023-12-29 $707,431.00 2023-12-21 $706,832.00 2023-12-13 $707,955.00 2023-12-05 $709,301.00
+2023-12-28 $701,554.00 2023-12-20 $706,666.00 2023-12-12 $708,475.00 2023-12-02 $709,798.00
+2023-12-27 $706,159.00 2023-12-19 $707,119.00 2023-12-09 $709,146.00 2023-12-01 $709,311.00
+2023-12-26 $705,795.00 2023-12-16 $706,759.00 2023-12-08 $709,423.00
+2023-12-23 $706,412.00 2023-12-15 $706,899.00 2023-12-07 $709,066.00
+
+Get your statements online
+
+App StorePlay Store
+
+84 ... 85
+
+Jefferies</pre></div>
+<div class="pane"><h4>Recognized</h4><pre>Account Overview
+
+Beginning of Period Value
+Account Transfers Out Dividends
+Aggregate Portfolio Movement
+Additional Deposits
+Performance Fees
+Capital Appreciation
+Other
+ENDING ACCOUNT VALUE
+Net Change to Portfolio is the difference between the ending account value and beginning account value after activity.
+
+Current Period
+$837,990.00
+YTD Period
+$724,819.00
+
+Ending Account Value
+Account Transfers Out Dividends
+Aggregate Portfolio Movement
+Additional Deposits
+Additional Deposits
+Capital Appreciation
+Other
+Ending Account Value
+YTD Price Change
+Avg. Daily Volume
+One Day Change
+Classification
+$70,374.61
+-$25,487.13
+-$70,374.61
+-$9,514.72
+-$34,210.80
+-$1,125.55
+$706,538.11
+
+Ending Account Value
+Ending Account Value
+YTD Period
+$724,819.00
+
+YTD Change to Portfolio
+YTD Price Change
+Avg. Daily Volume
+One Day Change
+Classification
+$70,374.61
+-$25,487.13
+-$70,374.61
+-$9,514.72
+-$34,210.80
+-$1,125.55
+$706,538.11
+
+Technology Select Sector SPDR Fund
+Vanguard Information Technology ETF
+SPDR S&amp;P 500 ETF Trust
+Vanguard Growth ETF
+Invesco QQQ Trust Series I
+iShares Core S&amp;P 500 ETF
+Vanguard Total International Stock ETF
+Vanguard FTSE Emerging Markets ETF
+iShares Core MSCI Emerging Markets ETF
+iShares Core S&amp;P Mid-Cap ETF
+Vanguard Total Stock Market ETF
+iShares Core MSCI EAFE ETF
+Vanguard Value ETF
+Vanguard S&amp;P 500 ETF
+Vanguard Value ETF
+VOU
+UHF
+VTI
+IEFA
+VTV
+VOO
+UHI
+VTT
+VTT
+VTO
+VTO
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT
+VTT</pre></div>
+</div></div>
+<ul class="issues">
+<li><b>Missed critical span</b> Dr. Gregory Frami <i>PERSON</i></li>
+<li><b>Missed critical span</b> jUefATevv <i>ID</i></li>
+<li><b>Missed critical span</b> 212 Beier Walks North Richland Hills Kentucky, 18382-7941 <i>ADDRESS</i></li>
+<li><b>Missed critical span</b> 663 999-5583 <i>PHONE</i></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="a4_lease_photo_handwriting" data-fail="true">
+<h3>a4-en-commercial-lease <small>en · a4_lease_photo_handwriting · hard</small><span class="stats">strict CER 9.0% · normalized CER 4.2% <span class="grade g-C">C</span> · WER 12.9% · line F1 19.7% · critical 5/6 · 149129 ms · 31269 ms/MP</span></h3>
+<div class="case-grid">
+<figure><img loading="lazy" src="../../benchmark/ocr/images/documents/a4-en-lease.jpg" data-fallback="benchmark/ocr/images/documents/a4-en-lease.jpg" alt="a4-en-commercial-lease OCR fixture" onerror="if(this.dataset.retry!=='1'){this.dataset.retry='1';this.src=this.dataset.fallback}else{this.parentElement.classList.add('missing')}"><figcaption>benchmark/ocr/images/documents/a4-en-lease.jpg · 1840×2592 · <a href="https://huggingface.co/datasets/getomni-ai/ocr-benchmark" rel="noopener noreferrer">getomni-ai / OCR Benchmark · MIT</a></figcaption></figure>
+<div class="panes">
+<div class="pane"><h4>Expected</h4><pre>CALIFORNIA COMMERCIAL LEASE AGREEMENT
+
+This Lease Agreement made the
+
+2025-12-31
+
+, by and between
+
+Mrs. Patti Fay MD
+
+[name of lessor], of
+
+51323 Unique Village
+
+[street address], State of
+
+California
+
+, hereinafter referred to as "Lessor", and
+
+Weimann Inc
+
+[name of lessee], of
+
+84784 Godfrey Grove
+
+[street address], State of
+
+California
+
+, hereinafter referred to as "Lessee", collectively referred to herein as the "Parties", agree as follows:
+
+1. DESCRIPTION OF LEASED PREMISES:
+
+The Lessor agrees to lease to the Lessee the following described
+
+1543
+
+square feet (SF) of
+
+Warehouse
+
+located at
+
+52577 Hailey Corners
+
+[street address], State of California.
+
+2. TERM OF LEASE:
+
+The term of this Lease shall be for a period of
+
+4
+
+year(s)
+
+2
+
+month(s) commencing on the
+
+31
+
+day of
+
+December 2025
+
+day of
+
+December 2025
+
+, and expiring at Midnight on the
+
+3
+
+day of
+
+March 2030
+
+day of
+
+March 2030
+
+. ("Initial Term")
+
+3. BASE RENT:
+
+The net monthly payment shall be
+
+9750
+
+dollars ($9750) per month. A security deposit of
+
+2317
+
+dollars ($2317) is required. payable monthly with the first payment due upon the is required. payable monthly with the first payment due upon the commencement of the Lease and each monthly installment payable thereafter on the 1st day of each month
+
+4. Options to Renew (Check one):
+
+☑Lessee may not renew the Lease. ☑The Lessee may have the right to renew the Lease with a total of ____ renewal period(s) with each term being ____ year(s) ____ month(s) which may be exercised by giving written notice to Lessor no less than 60 days prior to the expiration of the Lease or renewal period.
+
+Prepared using zipForm® software
+
+Page 5 of 8</pre></div>
+<div class="pane"><h4>Recognized</h4><pre>CALIFORNIA COMMERCIAL LEASE AGREEMENT
+This Lease Agreement made the 2025-12-3, by and between Mrt. Patti Fay MD (name of lessor), of
+51323 Unique Village (street address), State of California, hereinafter referred to as "Lessor", and Weimann Inc.
+(name of lessee), of 84784 Godfrey Grove (street address), State of California, hereinafter referred to as "Lessee",
+collectively referred to herein as the "Parties", agree as follows:
+1. DESCRIPTION OF LEASED PREMISES:
+The Lessor agrees to lease to the Lessee the following described 15A3 square feet (SF) of Warehouse located at
+52577 Hailey Corners (street address), State of California.
+2. TERM OF LEASE:
+The term of this Lease shall be for a period of 4 year(s) 2 month(s) commencing on the
+31 day of December 2025 day of December 2025, and expiring at Midnight on the 3 day of
+March 2030 day of March 2030. ("Initial Term")
+3. BASE RENT:
+The net monthly payment shall be 9750 dollars ($9750) per month. A security deposit of 2317 dollars ($2317) is required. payable monthly with the first payment due upon the first payment due upon the commencement of the Lease and each monthly installment payable thereafter on the 1st day of each month
+4. Options to Renew (Check one):
+☑ Lessee may not renew the Lease.
+☑ The Lessee may have the right to renew the Lease with a total of _ renewal period(s) with each term being _ year(s) _ month(s) which may be exercised by giving written notice to Lessor no less than 60 days prior to the expiration of the Lease or renewal period.
+Prepared using zipForm® software
+Page 5 of 8</pre></div>
+</div></div>
+<ul class="issues">
+<li><b>Missed critical span</b> Mrs. Patti Fay MD <i>PERSON</i></li>
+</ul>
+</article>
+<article class="case" data-lang="en" data-cat="a4_medical_form_photo" data-fail="true">
+<h3>a4-en-patient-information <small>en · a4_medical_form_photo · hard</small><span class="stats">strict CER 35.8% · normalized CER 34.7% <span class="grade g-D">D</span> · WER 45.1% · line F1 54.3% · critical 5/6 · 149809 ms · 6122 ms/MP</span></h3>
+<div class="case-grid">
+<figure><img loading="lazy" src="../../benchmark/ocr/images/documents/a4-en-medical.jpg" data-fallback="benchmark/ocr/images/documents/a4-en-medical.jpg" alt="a4-en-patient-information OCR fixture" onerror="if(this.dataset.retry!=='1'){this.dataset.retry='1';this.src=this.dataset.fallback}else{this.parentElement.classList.add('missing')}"><figcaption>benchmark/ocr/images/documents/a4-en-medical.jpg · 5712×4284 · <a href="https://huggingface.co/datasets/getomni-ai/ocr-benchmark" rel="noopener noreferrer">getomni-ai / OCR Benchmark · MIT</a></figcaption></figure>
+<div class="panes">
+<div class="pane"><h4>Expected</h4><pre>Patient Information Form
+
+First Name: Jessica
+
+Last Name: Smith
+
+Marital Status: Single □ Married □ Divorced □ Separated ☑ Widowed □
+
+Address: 9665A Otter Dr
+
+City: Waldport
+
+State: Oregon
+
+Zip: 97394
+
+Phone: 2719832850
+
+DOB: November 2, 1997
+
+Spouse Name:
+
+Spouse Phone:
+
+Is the requested medication NEW □ or a CONTINUATION ☑ of THERAPY? If so, start date: _____________
+
+Have you been hospitalized in the past year? Yes □ No ☑
+
+Previous Health History
+
+Primary Care Physician: Dr. Emily Brown
+
+Last Seen Date: 03/29/1959
+
+Have you received chiropractic care? Yes □ No ☑
+
+Have you received acupuncture care? Yes □ No ☑
+
+Prescription Drugs:Antidepressants □
+
+Anti Inflammatory ☑
+
+Birth Control Pills □
+
+Blood Pressure Medication □
+
+Diet Pills ☑
+
+Blood Sugar Medication ☑
+
+Muscle Relaxers □
+
+Insulin ☑
+
+Pain Pills □
+
+Sleeping Pills □
+
+Other:
+
+Over-The-Counter Drugs: monistat, motrin
+
+Accidents Or Injuries: dog bite
+
+Vitamins Or Supplements: vitamin b3
+
+Financial Responsibility
+
+Responsible Party: Other
+
+Type Of Insurance: Automobile
+
+Insurance Company: Priority Health
+
+Insurance Address: 5339 Sequoia Square
+
+Insurance Phone: 705 188-7583
+
+Group #: LN59C
+
+Member ID: 1QOSXUU56G
+
+Patient Signature: Jessica Smith
+
+Social Security #: 811476374
+
+Date: 10/30/1957
+
+Guardian Signature: [No Signature]
+
+Guardian Social Security #:
+
+Date:</pre></div>
+<div class="pane"><h4>Recognized</h4><pre>Patient Information Form
+
+First Name: Jessica
+Marital Status: Single ☐ Married ☐ Divorced ☐ Separated ☑ Widowed ☐
+Address: 9665A Otter Dr
+City: Waldport
+Phone: 2719832850
+Spouse Name: _
+State: Oregon
+DOB: November 2, 1997
+Spouse Phone: _
+
+Zip: 97394
+
+Is the requested medication NEW ☐ or a CONTINUATION ☑ of THERAPY? If so, start date: _
+
+Have you been hospitalized in the past year? Yes ☐ No ☑
+
+Previous Health History
+
+Primary Care Physician: Dr. Emily Brown
+Have you received chiropractic care? Yes ☐ No ☑
+Have you received acupuncture care? Yes ☐ No ☑
+
+Prescription Drugs:
+Antidepressants ☐
+Birth Control Pills ☐
+Diet Pills ☑
+Muscle Relaxers ☐
+Pain Pills ☐
+Other: _
+
+Anti-Inflammatory ☑
+Blood Pressure Medication ☐
+Blood Sugar Medication ☑
+Insulin ☑
+Sleeping Pills ☐
+
+Over-The-Counter Drugs: monistat, motrin
+
+Accidents Or Injuries: dog bite
+
+Vitamins Or Supplements: vitamin b3
+
+Financial Responsibility
+
+Responsible Party: Other
+Insurance Address: 5339 Sequoia Square
+Insurance Phone: 705 188-7583
+Patient Signature: _
+Guardian Signature: _
+Group #: LN59C
+Social Security #: 811476374
+Guardian Social Security #: _
+Insurance Company: Priority Health
+Member ID: 1QOSXUU56G
+Date: 10/30/1957
+Date: _</pre></div>
+</div></div>
+<ul class="issues">
+<li><b>Missed critical span</b> Jessica Smith <i>PERSON</i></li>
+</ul>
+</article>
+</main><script>const lang=document.getElementById('lang'),cat=document.getElementById('cat'),fail=document.getElementById('fail'),count=document.getElementById('count');
+function apply(){let n=0;for(const c of document.querySelectorAll('article.case')){const show=(!lang.value||c.dataset.lang===lang.value)&&(!cat.value||c.dataset.cat===cat.value)&&(!fail.checked||c.dataset.fail==='true');c.classList.toggle('hidden',!show);if(show)n++;}count.textContent='Showing '+n+' cases';}
+lang.onchange=cat.onchange=fail.onchange=apply;apply();
+</script>
+</body></html>

@@ -1,0 +1,137 @@
+{
+  "id": "fr-cv-01",
+  "expected": [
+    {
+      "value": "THÉO NGUYEN VAN",
+      "type": "PERSON"
+    },
+    {
+      "value": "42 rue Antoine Charial, escalier B",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "3e étage, 69003 Lyon",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "06 71 04 58 93",
+      "type": "PHONE"
+    },
+    {
+      "value": "theo.nguyenvan@lamaillerie.fr",
+      "type": "EMAIL"
+    },
+    {
+      "value": "17 mars 1994",
+      "type": "BIRTH_DATE"
+    },
+    {
+      "value": "Saint-Étienne",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "linkedin.com/in/theo-nguyenvan-maintenance",
+      "type": "URL"
+    },
+    {
+      "value": "12/02/2026",
+      "type": "DATE"
+    },
+    {
+      "value": "30/06/2029",
+      "type": "DATE"
+    },
+    {
+      "value": "Brasserie du Vieux Pont",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Villefranche-sur-Saône",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "TNV Maintenance",
+      "type": "COMPANY"
+    },
+    {
+      "value": "863 964 755 00012",
+      "type": "ID"
+    },
+    {
+      "value": "31/12/2022",
+      "type": "DATE"
+    },
+    {
+      "value": "Ateliers Ferrandin & Fils",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Chassieu",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "France",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Belgique",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Italie",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Sucrerie de la Plaine",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Bourg-en-Bresse",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Université Claude Bernard Lyon 1",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Lycée La Martinière Monplaisir",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Lyon",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Lycée Étienne Mimard",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Vaulx-en-Velin",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "F. Haddad",
+      "type": "PERSON"
+    },
+    {
+      "value": "04 74 09 32 18",
+      "type": "PHONE"
+    },
+    {
+      "value": "f.haddad@brasserieduvieuxpont.fr",
+      "type": "EMAIL"
+    },
+    {
+      "value": "Gilles Ferrandin",
+      "type": "PERSON"
+    },
+    {
+      "value": "06 12 47 80 26",
+      "type": "PHONE"
+    },
+    {
+      "value": "Nord-Isère",
+      "type": "ADDRESS"
+    }
+  ]
+}

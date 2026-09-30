@@ -1,0 +1,101 @@
+{
+ "id": "es-borme-02-3",
+ "expected": [
+  {
+   "value": "12 de septiembre de 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "ESOJZAID SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "500.000,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "1.546.947,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "UN MILLON QUINIENTOS CUARENTA Y SEIS MIL NOVECIENTOS CUARENTA Y SIETE EUROS",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "1.546.947.- E",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "Calle Galeón, edificio 1, 3ºA, 04711 ALMERIMAR, EL EJIDO, ALMERIA",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "C/ GALEON 3º A EDIFICIO 1. ALMERIMAR. (EJIDO (EL))",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "H AL 33464",
+   "type": "ID"
+  },
+  {
+   "value": "5.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "TRACOTRASA SL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "HERNANDEZ MURCIA JOSE ANGEL",
+   "type": "PERSON"
+  },
+  {
+   "value": "INVER BOAVISTA PM SL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "H AL 14622",
+   "type": "ID"
+  },
+  {
+   "value": "AUDIO MURGIS SL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "RUBIO JIMENEZ JOSE MIGUEL",
+   "type": "PERSON"
+  },
+  {
+   "value": "H AL 37042",
+   "type": "ID"
+  },
+  {
+   "value": "VIATORPLUSULTRA SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "PRAXIS AUDITORES SLP",
+   "type": "COMPANY"
+  },
+  {
+   "value": "H AL 37440",
+   "type": "ID"
+  },
+  {
+   "value": "RUANO SERVICIOS INMOBILIARIOS SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "H AL 49417",
+   "type": "ID"
+  },
+  {
+   "value": "CH.A.Y TRANS ESPAGNE SOCIEDAD LIMITADA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "H AL 63803",
+   "type": "ID"
+  }
+ ]
+}

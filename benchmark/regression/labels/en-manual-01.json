@@ -1,0 +1,8 @@
+{"id": "en-manual-01", "expected": [
+  {"value": "HALVORSEN THERMAL SYSTEMS", "type": "COMPANY"},
+  {"value": "Halvorsen Thermal Systems", "type": "COMPANY"},
+  {"value": "Unit 12 Brantwood Trading Estate, Kelsington, KL9 4TR", "type": "ADDRESS"},
+  {"value": "HTS-IM-0440", "type": "ID", "sub": "reference"},
+  {"value": "12 March 2026", "type": "DATE"},
+  {"value": "04 August 2025", "type": "DATE"}
+]}

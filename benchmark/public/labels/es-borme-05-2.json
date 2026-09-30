@@ -1,0 +1,121 @@
+{
+ "id": "es-borme-05-2",
+ "expected": [
+  {
+   "value": "12 de septiembre de 2024",
+   "type": "DATE"
+  },
+  {
+   "value": "PLATING BRAP SA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "ANDREU COMA",
+   "type": "PERSON"
+  },
+  {
+   "value": "FRANCESC ANDREU COMA",
+   "type": "PERSON"
+  },
+  {
+   "value": "H B 295948",
+   "type": "ID"
+  },
+  {
+   "value": "11.07.24",
+   "type": "DATE"
+  },
+  {
+   "value": "JADE ESPARRAGUERA SL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "H B 185483",
+   "type": "ID"
+  },
+  {
+   "value": "NEKIR SL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "CANO ENCISO MARIA GADOR",
+   "type": "PERSON"
+  },
+  {
+   "value": "H B 41406",
+   "type": "ID"
+  },
+  {
+   "value": "20.04.12",
+   "type": "DATE"
+  },
+  {
+   "value": "PROMOCION ACTIVIDADES UNIVERSITARIAS SA",
+   "type": "COMPANY"
+  },
+  {
+   "value": "SIMON COMALADA JOSEP MARIA",
+   "type": "PERSON"
+  },
+  {
+   "value": "H B 15253",
+   "type": "ID"
+  },
+  {
+   "value": "5.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "REFORMAS DE EDIFICIOS RL Y JC S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "4.09.24",
+   "type": "DATE"
+  },
+  {
+   "value": "CL FLORIDABLANCA NUM.29 P.4 PTA.2 (BADALONA)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "3.000,00",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "LARA MURILLO RAMON DUBLAN",
+   "type": "PERSON"
+  },
+  {
+   "value": "JAVIER ALFREDO CAÑARTE PARRALES",
+   "type": "PERSON"
+  },
+  {
+   "value": "H B 621252",
+   "type": "ID"
+  },
+  {
+   "value": "MIND THE GAP DIGITAL S.L.",
+   "type": "COMPANY"
+  },
+  {
+   "value": "CL TARRAGONA NUM.4 P.3 PTA.4 (MONTGAT)",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "12.300,00 Euros",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "GARCIA PEREZ MONEO MARIA CARLA",
+   "type": "PERSON"
+  },
+  {
+   "value": "MATIAS ANTONIO PIRO",
+   "type": "PERSON"
+  },
+  {
+   "value": "H B 621254",
+   "type": "ID"
+  }
+ ]
+}

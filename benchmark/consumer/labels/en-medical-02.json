@@ -1,0 +1,126 @@
+{
+ "id": "en-medical-02",
+ "expected": [
+  {
+   "value": "CASTELLANO FAMILY PHARMACY",
+   "type": "COMPANY"
+  },
+  {
+   "value": "1842 W Fullerton Ave",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Chicago, IL 60614",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "(773) 555-0136",
+   "type": "PHONE"
+  },
+  {
+   "value": "7740291-03",
+   "type": "ID",
+   "sub": "reference"
+  },
+  {
+   "value": "09/11/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "RAMIREZ, LUZ M",
+   "type": "PERSON"
+  },
+  {
+   "value": "3317 N Kedzie Ave Apt 2R",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "Chicago IL 60618",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "03/10/2027",
+   "type": "DATE"
+  },
+  {
+   "value": "A. Haddad",
+   "type": "PERSON"
+  },
+  {
+   "value": "1548293764",
+   "type": "ID"
+  },
+  {
+   "value": "Mylan",
+   "type": "COMPANY"
+  },
+  {
+   "value": "09/11/2027",
+   "type": "DATE"
+  },
+  {
+   "value": "Lakeview Diagnostic Laboratory, LLC",
+   "type": "COMPANY"
+  },
+  {
+   "value": "2650 N Lincoln Ave Ste 210, Chicago, IL 60614",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "773-555-0189",
+   "type": "PHONE"
+  },
+  {
+   "value": "773-555-0190",
+   "type": "PHONE"
+  },
+  {
+   "value": "14D2087315",
+   "type": "ID"
+  },
+  {
+   "value": "RAMIREZ, LUZ MARIA",
+   "type": "PERSON"
+  },
+  {
+   "value": "08/22/1971",
+   "type": "BIRTH_DATE"
+  },
+  {
+   "value": "00482917",
+   "type": "ID"
+  },
+  {
+   "value": "LK-2291840",
+   "type": "ID"
+  },
+  {
+   "value": "(312) 555-0174",
+   "type": "PHONE"
+  },
+  {
+   "value": "HADDAD, AMIRA",
+   "type": "PERSON"
+  },
+  {
+   "value": "Logan Square Internal Medicine",
+   "type": "COMPANY"
+  },
+  {
+   "value": "09/08/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "09/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Haddad",
+   "type": "PERSON"
+  },
+  {
+   "value": "Gregory P. Osei",
+   "type": "PERSON"
+  }
+ ]
+}

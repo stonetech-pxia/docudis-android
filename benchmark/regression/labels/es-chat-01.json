@@ -1,0 +1,69 @@
+{
+ "id": "es-chat-01",
+ "expected": [
+  {
+   "value": "marta",
+   "type": "PERSON"
+  },
+  {
+   "value": "10/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "yusuf",
+   "type": "PERSON"
+  },
+  {
+   "value": "Y6055360A",
+   "type": "ID"
+  },
+  {
+   "value": "29/74175305/08",
+   "type": "ID"
+  },
+  {
+   "value": "62502416P",
+   "type": "ID"
+  },
+  {
+   "value": "ES63 8612 3381 4264 7321 7880",
+   "type": "IBAN"
+  },
+  {
+   "value": "Fincas Aldabarrena SL",
+   "type": "COMPANY"
+  },
+  {
+   "value": "1.400 €",
+   "type": "AMOUNT"
+  },
+  {
+   "value": "617 92 40 58",
+   "type": "PHONE"
+  },
+  {
+   "value": "Carrer del Molí Nou, 42, esc. B, 4t 2a",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "46022 València",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "1 de octubre",
+   "type": "DATE"
+  },
+  {
+   "value": "Gran Via Ferran, 8",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "11/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Mireia Alcolea",
+   "type": "PERSON"
+  }
+ ]
+}

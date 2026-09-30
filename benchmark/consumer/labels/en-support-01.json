@@ -1,0 +1,171 @@
+{
+  "id": "en-support-01",
+  "expected": [
+    {
+      "value": "British Airways",
+      "type": "COMPANY"
+    },
+    {
+      "value": "customer.relations@contact.ba.com",
+      "type": "EMAIL"
+    },
+    {
+      "value": "Mei-Ling Cheung",
+      "type": "PERSON"
+    },
+    {
+      "value": "meiling.cheung.mcr@gmail.com",
+      "type": "EMAIL"
+    },
+    {
+      "value": "K7XQ2M",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "24918637",
+      "type": "ID",
+      "sub": "reference"
+    },
+    {
+      "value": "15 Sep 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "Cheung",
+      "type": "PERSON"
+    },
+    {
+      "value": "Heathrow",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Manchester",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "28 August",
+      "type": "DATE"
+    },
+    {
+      "value": "MEILING CHEUNG",
+      "type": "PERSON"
+    },
+    {
+      "value": "HO YIN CHEUNG",
+      "type": "PERSON"
+    },
+    {
+      "value": "CHLOE CHEUNG",
+      "type": "PERSON"
+    },
+    {
+      "value": "28 Aug 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "£220",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "£660.00",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "£186.40",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "Aldgate Court Hotel",
+      "type": "COMPANY"
+    },
+    {
+      "value": "£142.00",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "£38.75",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "£367.15",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "£214.62",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "9901",
+      "type": "CARD"
+    },
+    {
+      "value": "£1,027.15",
+      "type": "AMOUNT"
+    },
+    {
+      "value": "0344 493 0787",
+      "type": "PHONE"
+    },
+    {
+      "value": "Nadia Rahman",
+      "type": "PERSON"
+    },
+    {
+      "value": "British Airways Plc",
+      "type": "COMPANY"
+    },
+    {
+      "value": "Waterside, PO Box 365, Harmondsworth, UB7 0GB",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "1777777",
+      "type": "ID"
+    },
+    {
+      "value": "30 August 2026",
+      "type": "DATE"
+    },
+    {
+      "value": "Ho Yin Cheung",
+      "type": "PERSON"
+    },
+    {
+      "value": "Chloe",
+      "type": "PERSON"
+    },
+    {
+      "value": "Hong Kong",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Bernadette",
+      "type": "PERSON"
+    },
+    {
+      "value": "Euston",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "14 Whitelow Road",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Chorlton-cum-Hardy",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "Manchester M21 9HQ",
+      "type": "ADDRESS"
+    },
+    {
+      "value": "07700 900253",
+      "type": "PHONE"
+    },
+    {
+      "value": "38164270",
+      "type": "ID"
+    }
+  ]
+}

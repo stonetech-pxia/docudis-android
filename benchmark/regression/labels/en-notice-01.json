@@ -1,0 +1,15 @@
+{"id": "en-notice-01", "expected": [
+  {"value": "PENNERBRIDGE WATER", "type": "COMPANY"},
+  {"value": "Pennerbridge Water", "type": "COMPANY"},
+  {"value": "Netherfield House, 3 Arkwright Way, Pennerbridge PB2 7QD", "type": "ADDRESS"},
+  {"value": "Ashcombe Green", "type": "ADDRESS"},
+  {"value": "Pellow Hill", "type": "ADDRESS"},
+  {"value": "PW/STW/2026/04872", "type": "ID", "sub": "reference"},
+  {"value": "0492-HG-26-117", "type": "ID", "sub": "reference"},
+  {"value": "TRUNK-RENEW-38", "type": "ID", "sub": "reference"},
+  {"value": "5 October 2026", "type": "DATE"},
+  {"value": "18 December 2026", "type": "DATE"},
+  {"value": "12 October", "type": "DATE"},
+  {"value": "21 September 2026", "type": "DATE"},
+  {"value": "Derek Callaghan", "type": "PERSON"}
+]}

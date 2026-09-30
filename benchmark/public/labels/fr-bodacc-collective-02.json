@@ -1,0 +1,45 @@
+{
+ "id": "fr-bodacc-collective-02",
+ "expected": [
+  {
+   "value": "18/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "Lons-le-Saunier",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "893 120 105",
+   "type": "ID"
+  },
+  {
+   "value": "SO AND CO",
+   "type": "COMPANY"
+  },
+  {
+   "value": "56 rue des Arènes, 39100 Dole",
+   "type": "ADDRESS"
+  },
+  {
+   "value": "11/09/2026",
+   "type": "DATE"
+  },
+  {
+   "value": "1 mai 2025",
+   "type": "DATE"
+  },
+  {
+   "value": "Selarl Guigon Associes",
+   "type": "COMPANY"
+  },
+  {
+   "value": "Pascal Guigon",
+   "type": "PERSON"
+  },
+  {
+   "value": "3 avenue Commandant Marceau 25000 Besançon",
+   "type": "ADDRESS"
+  }
+ ]
+}

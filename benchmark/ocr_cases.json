@@ -1,0 +1,304 @@
+{
+  "version": 1,
+  "description": "Mixed synthetic and real-photo OCR benchmark for Docudis. Scored fixtures have manually verified ground truth. Whitespace is normalized for CER/WER while case, punctuation, accents, symbols and digits remain significant.",
+  "cases": [
+    {
+      "id": "zh-clean-notice",
+      "lang": "zh-Hans",
+      "script": "chinese",
+      "category": "clean_print",
+      "difficulty": "easy",
+      "imagePath": "benchmark/ocr/images/zh-clean-notice.png",
+      "width": 1055,
+      "height": 1491,
+      "expectedText": "访客登记通知\n日期：2026年9月16日\n姓名：林晓雨\n公司：星河数据科技有限公司\n电话：138 2468 1357\n请在前台领取访客证。",
+      "criticalSpans": [
+        {"value": "2026年9月16日", "type": "DATE"},
+        {"value": "林晓雨", "type": "PERSON"},
+        {"value": "星河数据科技有限公司", "type": "COMPANY"},
+        {"value": "138 2468 1357", "type": "PHONE"}
+      ],
+      "generationPrompt": "Straight-on realistic smartphone photo of a clean white A4 office notice pinned to a light gray wall; sharp neutral daylight; large black simplified-Chinese sans-serif; render exactly and only: 访客登记通知 / 日期：2026年9月16日 / 姓名：林晓雨 / 公司：星河数据科技有限公司 / 电话：138 2468 1357 / 请在前台领取访客证。"
+    },
+    {
+      "id": "en-perspective-invoice",
+      "lang": "en",
+      "script": "chinese",
+      "category": "perspective",
+      "difficulty": "medium",
+      "imagePath": "benchmark/ocr/images/en-perspective-invoice.png",
+      "width": 1086,
+      "height": 1448,
+      "expectedText": "INVOICE 4471\nBill to: Robert Johnson\nAcme Trading Ltd\n12 High Street, Bristol\nDate: 16 Sep 2026\nTotal: GBP 1,250.00",
+      "criticalSpans": [
+        {"value": "4471", "type": "ID"},
+        {"value": "Robert Johnson", "type": "PERSON"},
+        {"value": "Acme Trading Ltd", "type": "COMPANY"},
+        {"value": "12 High Street, Bristol", "type": "ADDRESS"},
+        {"value": "16 Sep 2026", "type": "DATE"},
+        {"value": "GBP 1,250.00", "type": "AMOUNT"}
+      ],
+      "generationPrompt": "Realistic smartphone photo of one ivory invoice on a dark wooden desk, rotated clockwise with mild oblique perspective and warm light; black sans-serif; render exactly and only: INVOICE 4471 / Bill to: Robert Johnson / Acme Trading Ltd / 12 High Street, Bristol / Date: 16 Sep 2026 / Total: GBP 1,250.00."
+    },
+    {
+      "id": "fr-low-contrast-receipt",
+      "lang": "fr",
+      "script": "chinese",
+      "category": "low_contrast",
+      "difficulty": "hard",
+      "imagePath": "benchmark/ocr/images/fr-low-contrast-receipt.png",
+      "width": 1024,
+      "height": 1536,
+      "expectedText": "CAFÉ LUMIÈRE\nReçu n° 0837\n2 croissants  7,80 €\nCafé au lait  4,20 €\nTotal TTC  12,00 €\nMerci et à bientôt !",
+      "criticalSpans": [
+        {"value": "0837", "type": "ID"},
+        {"value": "7,80 €", "type": "AMOUNT"},
+        {"value": "4,20 €", "type": "AMOUNT"},
+        {"value": "12,00 €", "type": "AMOUNT"}
+      ],
+      "generationPrompt": "Close realistic photo of a slightly crumpled thermal-paper café receipt on pale stone; faded gray monospaced thermal ink with deliberately low but readable contrast; render exactly and only: CAFÉ LUMIÈRE / Reçu n° 0837 / 2 croissants  7,80 € / Café au lait  4,20 € / Total TTC  12,00 € / Merci et à bientôt !"
+    },
+    {
+      "id": "multi-screen-glare",
+      "lang": "multi",
+      "script": "chinese",
+      "category": "mixed_script_glare",
+      "difficulty": "medium",
+      "imagePath": "benchmark/ocr/images/multi-screen-glare.png",
+      "width": 1536,
+      "height": 1024,
+      "expectedText": "会议提醒 / MEETING REMINDER\n时间 / Time: 14:30\n地点 / Room: B-204\n联系人 / Contact: 王芳\nWi-Fi: Docudis_Guest\nCode: Q7M9-K2",
+      "criticalSpans": [
+        {"value": "14:30", "type": "DATE"},
+        {"value": "B-204", "type": "ID"},
+        {"value": "王芳", "type": "PERSON"},
+        {"value": "Docudis_Guest", "type": "SECRET"},
+        {"value": "Q7M9-K2", "type": "SECRET"}
+      ],
+      "generationPrompt": "Realistic close photo of a landscape tablet at a slight angle on a meeting-room table, clean bilingual reminder UI and one mild diagonal glare band; render exactly and only: 会议提醒 / MEETING REMINDER / 时间 / Time: 14:30 / 地点 / Room: B-204 / 联系人 / Contact: 王芳 / Wi-Fi: Docudis_Guest / Code: Q7M9-K2."
+    },
+    {
+      "id": "shipping-label-dense",
+      "lang": "en",
+      "script": "chinese",
+      "category": "dense_label",
+      "difficulty": "medium",
+      "imagePath": "benchmark/ocr/images/shipping-label-dense.png",
+      "width": 1448,
+      "height": 1086,
+      "expectedText": "PRIORITY MAIL\nTracking: ZX-2048-7719-FR\nFrom: 8 Rue des Lilas, Lyon\nTo: 42 King Street, London\nWeight: 2.35 kg\nRef: A9C-0316",
+      "criticalSpans": [
+        {"value": "ZX-2048-7719-FR", "type": "ID"},
+        {"value": "8 Rue des Lilas, Lyon", "type": "ADDRESS"},
+        {"value": "42 King Street, London", "type": "ADDRESS"},
+        {"value": "2.35 kg", "type": "AMOUNT"},
+        {"value": "A9C-0316", "type": "ID"}
+      ],
+      "generationPrompt": "Realistic close photo of a white parcel label on brown cardboard with compact black print and one barcode without human-readable digits; render exactly and only: PRIORITY MAIL / Tracking: ZX-2048-7719-FR / From: 8 Rue des Lilas, Lyon / To: 42 King Street, London / Weight: 2.35 kg / Ref: A9C-0316."
+    },
+    {
+      "id": "en-handwritten-note",
+      "lang": "en",
+      "script": "chinese",
+      "category": "handwriting",
+      "difficulty": "hard",
+      "imagePath": "benchmark/ocr/images/en-handwritten-note.png",
+      "width": 1254,
+      "height": 1254,
+      "expectedText": "Call Maria at 07 58 21 46 90.\nSend draft before Friday.\nRoom 3B, 18 Oak Avenue.\nPIN: 7391",
+      "criticalSpans": [
+        {"value": "Maria", "type": "PERSON"},
+        {"value": "07 58 21 46 90", "type": "PHONE"},
+        {"value": "Room 3B", "type": "ID"},
+        {"value": "18 Oak Avenue", "type": "ADDRESS"},
+        {"value": "7391", "type": "SECRET"}
+      ],
+      "generationPrompt": "Overhead realistic smartphone photo of a pale yellow sticky note rotated about seven degrees on a dark desk, warm lamp light and neat naturally imperfect blue ballpoint handwriting; render exactly and only: Call Maria at 07 58 21 46 90. / Send draft before Friday. / Room 3B, 18 Oak Avenue. / PIN: 7391."
+    },
+    {
+      "id": "en-screen-access",
+      "lang": "en",
+      "script": "chinese",
+      "category": "screen_glare",
+      "difficulty": "medium",
+      "imagePath": "benchmark/ocr/images/en-screen-access.png",
+      "width": 1536,
+      "height": 1024,
+      "expectedText": "SECURITY CHECK\nUser: ana.lopez@example.es\nDevice: Pixel 10\nIP: 192.168.1.24\nTime: 2026-09-16 08:45\nStatus: APPROVED",
+      "criticalSpans": [
+        {"value": "ana.lopez@example.es", "type": "EMAIL"},
+        {"value": "Pixel 10", "type": "ID"},
+        {"value": "192.168.1.24", "type": "IP"},
+        {"value": "2026-09-16 08:45", "type": "DATE"}
+      ],
+      "generationPrompt": "Close realistic photo of a dark access-control monitor at a shallow side angle in a dim office; light-gray monospaced text, subtle scanlines and mild corner glare; render exactly and only: SECURITY CHECK / User: ana.lopez@example.es / Device: Pixel 10 / IP: 192.168.1.24 / Time: 2026-09-16 08:45 / Status: APPROVED."
+    },
+    {
+      "id": "hi-clean-notice",
+      "lang": "hi",
+      "script": "devanagiri",
+      "category": "devanagari",
+      "difficulty": "medium",
+      "imagePath": "benchmark/ocr/images/hi-clean-notice.png",
+      "width": 1091,
+      "height": 1442,
+      "expectedText": "कार्यालय सूचना\nदिनांक: 16 सितंबर 2026\nनाम: राहुल शर्मा\nफ़ोन: +91 98765 43210\nकमरा: 204\nकृपया पहचान पत्र दिखाएँ।",
+      "criticalSpans": [
+        {"value": "16 सितंबर 2026", "type": "DATE"},
+        {"value": "राहुल शर्मा", "type": "PERSON"},
+        {"value": "+91 98765 43210", "type": "PHONE"},
+        {"value": "204", "type": "ID"}
+      ],
+      "generationPrompt": "Straight-on realistic smartphone photo of a clean white Devanagari office notice on an off-white wall; sharp high-contrast black type; render exactly and only: कार्यालय सूचना / दिनांक: 16 सितंबर 2026 / नाम: राहुल शर्मा / फ़ोन: +91 98765 43210 / कमरा: 204 / कृपया पहचान पत्र दिखाएँ।"
+    },
+    {
+      "id": "doc-en-prepaid-receipt",
+      "lang": "en",
+      "script": "chinese",
+      "category": "real_receipt_photo",
+      "difficulty": "hard",
+      "imagePath": "benchmark/ocr/images/documents/doc-en-receipt.jpg",
+      "width": 1280,
+      "height": 2276,
+      "expectedText": "Pre-paid Voucher\nCLICKS\n11 07 2015 18:34\nOutlet #: 710243\nSupplier: VODACOM\nProduct : R110 Vodacom\nVoucher #: 119322644410\nPin No : 6119 0541 0681\nTo Activate:\nHow to Recharge:\n-Dial*100*01*PIN# and Press 'Call'\nCASHIER NAME: PHUMELELE\n00005 #0685 18:35:24 11JUL2015",
+      "criticalSpans": [
+        {"value": "710243", "type": "ID"},
+        {"value": "119322644410", "type": "ID"},
+        {"value": "6119 0541 0681", "type": "SECRET"},
+        {"value": "PHUMELELE", "type": "PERSON"}
+      ],
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Receipt.jpg",
+      "sourceAuthor": "Deavmi",
+      "sourceLicense": "CC BY-SA 3.0"
+    },
+    {
+      "id": "doc-en-traf-o-data-card",
+      "lang": "en",
+      "script": "chinese",
+      "category": "real_business_card_perspective",
+      "difficulty": "hard",
+      "imagePath": "benchmark/ocr/images/documents/doc-en-business-card.jpg",
+      "width": 1280,
+      "height": 960,
+      "expectedText": "Traf-O-Data\ntraffic tape processing\nBill Gates\nPaul Allen\nPaul Gilbert\n19506 RICHMOND BEACH DR NW\nSEATTLE WA 98177\n(206) 542 8591",
+      "criticalSpans": [
+        {"value": "Bill Gates", "type": "PERSON"},
+        {"value": "Paul Allen", "type": "PERSON"},
+        {"value": "Paul Gilbert", "type": "PERSON"},
+        {"value": "19506 RICHMOND BEACH DR NW", "type": "ADDRESS"},
+        {"value": "(206) 542 8591", "type": "PHONE"}
+      ],
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Traf-O-Data_Business_Card.jpg",
+      "sourceAuthor": "Marcin Wichary",
+      "sourceLicense": "CC BY 2.0"
+    },
+    {
+      "id": "doc-zh-boarding-confirmation-card",
+      "lang": "zh-Hans",
+      "script": "chinese",
+      "category": "real_bilingual_card_photo",
+      "difficulty": "medium",
+      "imagePath": "benchmark/ocr/images/documents/doc-zh-boarding-card.jpg",
+      "width": 1280,
+      "height": 960,
+      "expectedText": "BAIYUNPORT 白云国际机场股份\n远机位登机复核牌\nBoarding Pass Confirmation Card\n请保留至机下回收\nPlease keep it well until recycled",
+      "criticalSpans": [
+        {"value": "白云国际机场股份", "type": "COMPANY"},
+        {"value": "远机位登机复核牌", "type": "OTHER"},
+        {"value": "Boarding Pass Confirmation Card", "type": "OTHER"}
+      ],
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boarding_Pass_Confirmation_Card,_Baiyun_Airport.jpg",
+      "sourceAuthor": "David290",
+      "sourceLicense": "CC BY-SA 4.0"
+    },
+    {
+      "id": "doc-en-ziartides-business-card",
+      "lang": "en",
+      "script": "chinese",
+      "category": "real_contact_card",
+      "difficulty": "medium",
+      "imagePath": "benchmark/ocr/images/documents/doc-el-business-card.jpg",
+      "width": 1023,
+      "height": 598,
+      "expectedText": "ANDREAS A. ZIARTIDES\nMEMBER OF THE HOUSE\nOF REPRESENTATIVES\nADDRESS\nOffice : 31-35 Archemou Str. Nicosia\nResidence: 7 Acropolis Av.,\nAcropolis - STROVOLOS\nCYPRUS\nPHONES\nOffice : 73192 - 96\nResid. : 43930",
+      "criticalSpans": [
+        {"value": "ANDREAS A. ZIARTIDES", "type": "PERSON"},
+        {"value": "31-35 Archemou Str. Nicosia", "type": "ADDRESS"},
+        {"value": "7 Acropolis Av.", "type": "ADDRESS"},
+        {"value": "73192 - 96", "type": "PHONE"},
+        {"value": "43930", "type": "PHONE"}
+      ],
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Business_Card.jpg",
+      "sourceAuthor": "Evnicky",
+      "sourceLicense": "CC BY-SA 4.0"
+    },
+    {
+      "id": "a4-en-bank-statement",
+      "lang": "en",
+      "script": "chinese",
+      "category": "a4_bank_statement_photo",
+      "difficulty": "hard",
+      "imagePath": "benchmark/ocr/images/documents/a4-en-bank-statement.jpg",
+      "width": 4284,
+      "height": 5712,
+      "expectedTextPath": "benchmark/ocr/ground_truth/a4-en-bank-statement.md",
+      "expectedTextFormat": "markdown",
+      "criticalSpans": [
+        {"value": "Dr. Gregory Frami", "type": "PERSON"},
+        {"value": "jUefATevv", "type": "ID"},
+        {"value": "212 Beier Walks North Richland Hills Kentucky, 18382-7941", "type": "ADDRESS"},
+        {"value": "663 999-5583", "type": "PHONE"},
+        {"value": "$706,538.11", "type": "AMOUNT"}
+      ],
+      "sourceUrl": "https://huggingface.co/datasets/getomni-ai/ocr-benchmark",
+      "sourceAuthor": "getomni-ai / OCR Benchmark",
+      "sourceLicense": "MIT"
+    },
+    {
+      "id": "a4-en-commercial-lease",
+      "lang": "en",
+      "script": "chinese",
+      "category": "a4_lease_photo_handwriting",
+      "difficulty": "hard",
+      "imagePath": "benchmark/ocr/images/documents/a4-en-lease.jpg",
+      "width": 1840,
+      "height": 2592,
+      "expectedTextPath": "benchmark/ocr/ground_truth/a4-en-lease.md",
+      "expectedTextFormat": "markdown",
+      "criticalSpans": [
+        {"value": "Mrs. Patti Fay MD", "type": "PERSON"},
+        {"value": "51323 Unique Village", "type": "ADDRESS"},
+        {"value": "Weimann Inc", "type": "COMPANY"},
+        {"value": "84784 Godfrey Grove", "type": "ADDRESS"},
+        {"value": "$9750", "type": "AMOUNT"},
+        {"value": "$2317", "type": "AMOUNT"}
+      ],
+      "sourceUrl": "https://huggingface.co/datasets/getomni-ai/ocr-benchmark",
+      "sourceAuthor": "getomni-ai / OCR Benchmark",
+      "sourceLicense": "MIT"
+    },
+    {
+      "id": "a4-en-patient-information",
+      "lang": "en",
+      "script": "chinese",
+      "category": "a4_medical_form_photo",
+      "difficulty": "hard",
+      "imagePath": "benchmark/ocr/images/documents/a4-en-medical.jpg",
+      "width": 5712,
+      "height": 4284,
+      "expectedTextPath": "benchmark/ocr/ground_truth/a4-en-medical.md",
+      "expectedTextFormat": "markdown",
+      "criticalSpans": [
+        {"value": "Jessica Smith", "type": "PERSON"},
+        {"value": "9665A Otter Dr", "type": "ADDRESS"},
+        {"value": "2719832850", "type": "PHONE"},
+        {"value": "November 2, 1997", "type": "DATE"},
+        {"value": "811476374", "type": "ID"},
+        {"value": "1QOSXUU56G", "type": "ID"}
+      ],
+      "sourceUrl": "https://huggingface.co/datasets/getomni-ai/ocr-benchmark",
+      "sourceAuthor": "getomni-ai / OCR Benchmark",
+      "sourceLicense": "MIT"
+    }
+  ]
+}
