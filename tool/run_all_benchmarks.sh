@@ -6,7 +6,7 @@
 #   PYTHON=/path/to/python tool/run_all_benchmarks.sh [--no-stress]
 #
 # PYTHON must have onnxruntime and numpy (see benchmark/bench_server.py). Needs dart on PATH
-# (it ships with Flutter: <flutter>/bin) and the XLM-R model files (tool/fetch_models.py).
+# (it ships with Flutter: <flutter>/bin) and the XLM-R model files (tool/fetch_models.sh).
 set -euo pipefail
 root="$(cd "$(dirname "$0")/.." && pwd)"
 # Report tags in docs/benchmark/, newest last:

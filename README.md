@@ -27,7 +27,7 @@ tool/
   prepare_docudis_core.sh   Gradle 调用的 Android native 构建入口
 ```
 
-匿名化设计见 [docs/anonymization-design.md](docs/anonymization-design.md)，模型获取方式见 [assets/models/README.md](assets/models/README.md)，基准测试位于 `benchmark/`。
+匿名化设计见 [docs/anonymization-design.md](docs/anonymization-design.md)，模型由 [docudis-ner](https://github.com/stonetech-pxia/docudis-ner) 提供，获取方式见其 [models/README.md](https://github.com/stonetech-pxia/docudis-ner/blob/main/models/README.md)，基准测试位于 `benchmark/`。
 Rust Core 位于独立的
 [`docudis-core`](https://github.com/stonetech-pxia/docudis-core) 仓库。
 `packages/docudis_engine` 在差分迁移期仍是参考实现；其中规则与名单只是固定
@@ -41,7 +41,7 @@ Core revision 的生成快照，不能在本仓库独立编辑。运行
 flutter pub get
 (cd packages/docudis_engine && flutter pub get)
 (cd packages/docudis_pdf && flutter pub get)
-python3 tool/fetch_models.py
+tool/fetch_models.sh
 flutter run
 ```
 
@@ -85,4 +85,4 @@ flutter gen-l10n
 - `android/key.properties`
 - Android release keystore
 - Xcode 自动签名产生的本机配置
-- `assets/models/**/*.onnx` 和 tokenizer 文件（由模型脚本下载）
+- `assets/models/`（由 `tool/fetch_models.sh` 从锁定版本的 docudis-ner 生成）

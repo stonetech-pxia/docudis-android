@@ -164,7 +164,7 @@ OCR 阅读顺序（2026-09-23 起）：不用 ML Kit 的 `result.text`（按块�
    "20250101 y" 这种串不该被遮。同日加 `es:cups`（电费 / 燃气单上的供电点编码，ES + 16 位 + 两个校验字母，指向一户地址），
    带校验器，报 `NUMBER`。
 3. **NER 模型**：`assets/models/xlmr_ner_docudis`，是 `Davlan/xlm-roberta-base-ner-hrl` 在自建英/法/西语料上的
-   全量微调（2026-09-21 起用，量化 ONNX 约 278 MB，训练与导出见 `training/README.md`）。
+   全量微调（2026-09-21 起用，量化 ONNX 约 278 MB，训练与导出见 docudis-ner 的 `training/README.md`）。
    覆盖中/英/法/西等 10 种语言并对印地语零样本可用，标签 PER / ORG / LOC / DATE，许可 AFL-3.0。
    微调前的原模型留在 `assets/models/xlmr_ner_hrl` 做对照。
    推理用 `flutter_onnxruntime`（CPU EP），分词用 `dart_sentencepiece_tokenizer`（读 HF `tokenizer.json`）。

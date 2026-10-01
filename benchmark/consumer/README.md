@@ -8,7 +8,7 @@ large real organisations appear where a real document would name them.
 
 **Frozen.** It is the acceptance test for the NER fine-tune: nothing in it may be used to write training
 templates, inventories or rules, and its leak report is not to be mined for examples while training.
-`training/check_isolation.py` must treat it like the other test sets.
+docudis-ner's `training/check_isolation.py` must treat it like the other test sets.
 
 ## How it was made
 

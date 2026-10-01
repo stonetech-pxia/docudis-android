@@ -27,7 +27,7 @@ class _FakeClassifier implements TokenClassifier {
 
 void main() {
   final tokenizerFile = File('testdata/tokenizers/wordpiece.json');
-  final specFile = File('../../assets/models/distilbert_ner_hrl/model.json');
+  final specFile = File('testdata/models/distilbert_ner_hrl/model.json');
 
   test('capitals become title case for the model without moving any offset', () {
     const text = 'LOPEZ CORCOLES JOSE VICENTE, gérant de JERVIS BAY SARL (RCS Évry), '

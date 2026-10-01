@@ -57,15 +57,9 @@ lib/firebase_options.dart
 **/GoogleService-Info.plist
 ios/firebase_app_id_file.json
 
-# On-device ML model files downloaded from Hugging Face (see assets/models/README.md);
-# model.json specs stay tracked.
-assets/models/**/*.onnx
-assets/models/**/tokenizer.json
-assets/models/**/vocab.txt
-assets/models/**/config.json
-assets/models/**/tokenizer_config.json
-assets/models/**/label_map.json
-assets/models/**/special_tokens_map.json
+# On-device NER models: model.json specs and binaries written by
+# tool/fetch_models.sh from the pinned docudis-ner revision.
+/assets/models/
 
 # Model files synced into the Android asset pack at build time
 android/model_pack/src/main/assets/
@@ -80,6 +74,3 @@ docs/benchmark/*.log
 # Golden-test failure dumps
 test/failures/
 test/store/failures/
-
-# Generated training data (large; rebuild with training/build.py)
-training/out/

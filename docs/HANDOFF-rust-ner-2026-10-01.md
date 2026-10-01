@@ -6,7 +6,7 @@
 
 | 仓库 | 地址 | 状态 |
 |---|---|---|
-| Android | <https://github.com/stonetech-pxia/docudis-android> | `26984e5`，Core 锁定在 `8743fd8`（`tool/docudis_core_version.json`、`pubspec.yaml`、`.github/workflows/android.yml` 的 `CORE_REVISION`） |
+| Android | <https://github.com/stonetech-pxia/docudis-android> | `26984e5`，Core 锁定在 `8743fd8`（`tool/docudis_core_version.json`、`pubspec.yaml`、`.github/workflows/android.yml` 的 `CORE_REVISION`）。阶段 0 完成后见下文 |
 | Core | <https://github.com/stonetech-pxia/docudis-core> | main = `fb41dd1`（"Move model code out of Core"）：已删除 `ner.rs`、`tokenizers` 依赖和 `testdata/tokenizers/` |
 | NER | <https://github.com/stonetech-pxia/docudis-ner> | main = `33b1383`：Rust crate（tokenizer 对齐、分窗、softmax、窗口合并、BIO 解码）、模型 manifest 和 `model.json`、`tool/fetch_models.py`、`training/`。**还没有 C ABI、Dart 绑定和推理** |
 
@@ -88,6 +88,14 @@ git log --oneline -n 10
 3. **模型文件怎么交给 Rust**：`ModelLocator` 已经把模型复制到 app support 目录，Rust 直接按文件路径加载即可，不要再复制一份。
 
 ## 阶段 0：升级到 Core `fb41dd1`，模型资料改由 docudis-ner 提供
+
+> **已完成（2026-10-01，分支 `phase0-core-ner-pins`）**：
+> - Core 锁定在 `7244cd3`（包含 NER 拆分和浮点修复），docudis-ner 锁定在 `ec73943`（`tool/docudis_ner_version.json`）。
+> - `assets/models/` 整个改为 git 忽略，由 `tool/fetch_models.sh` 调用 docudis-ner 的 `fetch_models.py --dest` 写入。
+> - `ner_detector_test` 用到的 distilbert `model.json` 快照放在 `packages/docudis_engine/testdata/models/`，由 `tool/verify_ner_snapshot.sh` 校验。
+> - 已执行：flutter analyze 无问题；flutter test 128 项通过；引擎 482 项通过；PDF 3 项通过；Core 和 NER 快照校验通过；Debug APK 三个 ABI 都包含 `libdocudis_capi.so` 和模型文件。
+> - **未执行**：真机复测浮点修复（当时没有连接设备），以及 CI 上的实际运行。
+> - **已知的遗留问题**：`ner_detector_test.dart` 的 "the XLM-R tokenizer keeps every word on its own text" 读取 git 忽略的 `assets/models/xlmr_ner_docudis/tokenizer.json`，没有跳过条件，CI 的 "Dart reference engine" 步骤会因此失败。这个问题在阶段 0 之前就存在。
 
 - 把 Core 锁定升级到 `fb41dd1` 或更新的版本，三处版本号同时改。
 - `tool/verify_core_snapshot.sh` 第 31–40 行会因为 `testdata/tokenizers/wordpiece.json` 已删除而失败。删掉对 tokenizer 的检查，并从 `tool/docudis_core_version.json` 移除 `wordpiece_sha256`。

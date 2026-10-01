@@ -1,10 +1,9 @@
 {
   "repository": "https://github.com/stonetech-pxia/docudis-core.git",
-  "revision": "8743fd84bc16ba90e5dae70ec97b580ab5171a89",
+  "revision": "7244cd35964995368bb87fc189723dd90b2a8d30",
   "abi_version": 1,
   "schema_version": 1,
   "rules_sha256": "31ec9c2cb3f2b9f5d4a97a8a8a515c0eb43a300f399cc9194886862d93224fd3",
   "lists_sha256": "716b100a10aeb0a571654e0e20ee8a6a35069a93c4ce40b1102e4372c8d86b26",
-  "fixtures_sha256": "df6a6a7726674e85227e2fe1b49e8376de3238b558448ef4e7679c26e5737406",
-  "wordpiece_sha256": "bf1b59b7b11c95f194f51708d918eea378e09d05f84c0e1656dc5180e8117088"
+  "fixtures_sha256": "df6a6a7726674e85227e2fe1b49e8376de3238b558448ef4e7679c26e5737406"
 }

@@ -21,10 +21,10 @@ flutter doctor --android-licenses
 flutter pub get
 (cd packages/docudis_engine && flutter pub get)
 (cd packages/docudis_pdf && flutter pub get)
-python3 tool/fetch_models.py
+tool/fetch_models.sh
 ```
 
-模型文件不提交到 Git。具体文件和下载源见 [assets/models/README.md](assets/models/README.md)。
+`assets/models/` 不提交到 Git：`tool/fetch_models.sh` 按 `tool/docudis_ner_version.json` 锁定的 docudis-ner 版本写入 `model.json` 和校验过的模型文件。具体文件和下载源见 docudis-ner 的 [models/README.md](https://github.com/stonetech-pxia/docudis-ner/blob/main/models/README.md)。
 
 ## 3. 本机调试
 

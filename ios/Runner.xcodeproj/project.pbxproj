@@ -423,7 +423,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Copies the NER model from assets/models into the app bundle, where\n# ModelAssets.swift finds it (same asset names as Android). The ONNX file is\n# git-ignored: run tool/fetch_models.py first. Without it the app runs on\n# rules only, like Android without the model.\nsrc=\"${SRCROOT}/../assets/models/xlmr_ner_docudis\"\ndst=\"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/models/xlmr_ner_docudis\"\nif [ ! -f \"${src}/model_quantized.onnx\" ]; then\n  echo \"warning: ${src}/model_quantized.onnx missing (run tool/fetch_models.py); building without the NER model\"\n  rm -rf \"${dst}\"\n  exit 0\nfi\nmkdir -p \"${dst}\"\nfor f in model.json tokenizer.json model_quantized.onnx; do\n  rsync -a \"${src}/${f}\" \"${dst}/${f}\"\ndone\n";
+			shellScript = "# Copies the NER model from assets/models into the app bundle, where\n# ModelAssets.swift finds it (same asset names as Android). The ONNX file is\n# git-ignored: run tool/fetch_models.sh first. Without it the app runs on\n# rules only, like Android without the model.\nsrc=\"${SRCROOT}/../assets/models/xlmr_ner_docudis\"\ndst=\"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/models/xlmr_ner_docudis\"\nif [ ! -f \"${src}/model_quantized.onnx\" ]; then\n  echo \"warning: ${src}/model_quantized.onnx missing (run tool/fetch_models.sh); building without the NER model\"\n  rm -rf \"${dst}\"\n  exit 0\nfi\nmkdir -p \"${dst}\"\nfor f in model.json tokenizer.json model_quantized.onnx; do\n  rsync -a \"${src}/${f}\" \"${dst}/${f}\"\ndone\n";
 		};
 		3B06AD1E1E4923F5004D2608 /* Thin Binary */ = {
 			isa = PBXShellScriptBuildPhase;

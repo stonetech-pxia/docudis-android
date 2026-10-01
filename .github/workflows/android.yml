@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 env:
-  CORE_REVISION: 8743fd84bc16ba90e5dae70ec97b580ab5171a89
+  CORE_REVISION: 7244cd35964995368bb87fc189723dd90b2a8d30
 
 jobs:
   analyze-test-build:
@@ -33,12 +33,17 @@ jobs:
       - name: PDF package
         working-directory: packages/docudis_pdf
         run: dart test
-      - name: Verify Core data snapshot
+      - name: Verify Core and NER data snapshots
         run: |
           git clone --no-checkout https://github.com/stonetech-pxia/docudis-core.git .dart_tool/pinned-core
           git -C .dart_tool/pinned-core fetch --depth 1 origin "$CORE_REVISION"
           git -C .dart_tool/pinned-core checkout --detach FETCH_HEAD
           DOCUDIS_CORE_SOURCE="$PWD/.dart_tool/pinned-core" ./tool/verify_core_snapshot.sh
+          ner_revision="$(sed -n 's/.*"revision": "\([^"]*\)".*/\1/p' tool/docudis_ner_version.json)"
+          git clone --no-checkout https://github.com/stonetech-pxia/docudis-ner.git .dart_tool/pinned-ner
+          git -C .dart_tool/pinned-ner fetch --depth 1 origin "$ner_revision"
+          git -C .dart_tool/pinned-ner checkout --detach FETCH_HEAD
+          DOCUDIS_NER_SOURCE="$PWD/.dart_tool/pinned-ner" ./tool/verify_ner_snapshot.sh
           (cd packages/docudis_engine && dart run tool/embed_rules.dart && dart run tool/embed_lists.dart)
           git diff --exit-code -- packages/docudis_engine
       - name: Build debug APK with native Core

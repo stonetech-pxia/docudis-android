@@ -132,8 +132,8 @@ packages:
     dependency: "direct main"
     description:
       path: "bindings/dart"
-      ref: "8743fd84bc16ba90e5dae70ec97b580ab5171a89"
-      resolved-ref: "8743fd84bc16ba90e5dae70ec97b580ab5171a89"
+      ref: "7244cd35964995368bb87fc189723dd90b2a8d30"
+      resolved-ref: "7244cd35964995368bb87fc189723dd90b2a8d30"
       url: "https://github.com/stonetech-pxia/docudis-core.git"
     source: git
     version: "0.1.0"

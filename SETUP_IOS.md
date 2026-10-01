@@ -12,7 +12,7 @@ Docudis 的全部功能免费开放，不需要 Firebase 或额外的商店配�
 
 ```bash
 flutter pub get
-python3 tool/fetch_models.py
+tool/fetch_models.sh
 ```
 
 ## 2. CocoaPods
