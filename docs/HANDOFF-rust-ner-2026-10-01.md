@@ -113,6 +113,11 @@ git log --oneline -n 10
 
 ## 阶段 1：docudis-ner 提供 C ABI、Dart 绑定和 Android 产物
 
+> **已完成（2026-10-01）**：docudis-ner `66bd2c6` 提供 `NerModel`（`onnxruntime` feature，`ort` 2.0.0-rc.13 运行时加载）、`docudis_ner_v1_*` C ABI、`docudis_ner_ffi` Dart 绑定和 Android 构建脚本（API 26，三个 ABI）。App 通过 `tool/prepare_docudis_ner.sh` 和 Gradle 任务 `prepareDocudisNer{Debug,Release}Native` 打包 `libdocudis_ner_capi.so`，并通过文件名加载 onnxruntime-android 自带的 `libonnxruntime.so`（迁移期与 `flutter_onnxruntime` 共用同一份）。
+> - 实测（Samsung SM-S948B）：Rust 67–77 ms/千字符，Dart 98.6；加载 0.9–1.0 s。tokenizer 解析后约 268 MB 常驻，加载后用 `mallopt` 归还空闲页（约 90 MB）；ONNX 会话约 316 MB。
+> - 实测发现并修复：XLM-R 在 CJK 前切出零宽的 `▁` token，Rust `validate` 原先拒绝它，导致所有中文、日文输入无法解码（docudis-ner `47b3e3f`）。
+> - `ort` rc.13 的两个限制见 docudis-ner README：首次加载失败后不能在同一进程重试；命令行进程在 Android 上退出时会在 ONNX Runtime 析构中 abort（App 进程不受影响）。
+
 - 新增 `docudis-ner-capi` crate，导出 `docudis_ner_v1_*` 前缀的函数，并提供 `docudis_ner_v1_abi_version()`。复用 Core C ABI 的约定：JSON 请求和响应带 `schema_version: 1`；offset 用 UTF-8 字节；输出由 Rust 分配，并且只能用同一个库的 free 函数释放；有线程局部的错误信息；任何 panic 都不能跨过 ABI 边界。
 - 在 docudis-ner 里实现推理（`ort`，CPU execution provider），沿用现有的分窗、合并、解码逻辑。
 - ABI 至少要有三个函数：`load`（传入 `model.json` 路径，返回模型句柄）、`detect`（传入句柄和文本，返回 v1 `Detection` 列表，UTF-8 offset）、`close`（释放句柄）。句柄要支持同时加载多个模型。不要在每个窗口上都跨一次 FFI。
@@ -126,6 +131,9 @@ git log --oneline -n 10
 - APK 里每个 ABI 都同时包含 `libdocudis_capi.so` 和 `libdocudis_ner.so`。
 
 ## 阶段 2：NER 差分，然后切换
+
+> **已完成大部分（2026-10-01）**：没有做运行时差分开关，改为用设备测试证明一致：108 段语料（1884 处）以及 `integration_test/docudis_ner_ffi_test.dart` 的 48 个 `ner_cases`（152 处）上，Rust 与 Dart 的类型、跨度、文本、置信度逐位相同。App 现在**默认使用 Rust NER**（`RustNerDetector`），Rust 加载失败时回退到 Dart `NerDetector`；`--dart-define=DOCUDIS_DART_NER=true` 强制走 Dart。
+> - 尚未做：删除 `onnx_token_classifier.dart`、`flutter_onnxruntime` 和引擎里的 Dart NER（需用户确认，且要先把 `libonnxruntime.so` 改为来自 Gradle 直接依赖的 onnxruntime-android）；`tool/run_all_benchmarks.sh` 仍通过 Dart 运行 NER。
 
 - 新增开关 `--dart-define=DOCUDIS_RUST_NER`。打开后同时跑 Dart `NerDetector`（加上 `flutter_onnxruntime`）和 Rust NER，比较 `detections`：类型、跨度、enabled。confidence 允许有很小的误差，因为两边的推理引擎和浮点路径不同，误差上限要根据实测数据定下来并写进文档。
 - 已知风险：Dart 的 SentencePiece 用 `dart_sentencepiece_tokenizer` 加绕过方案，Rust 用 HF `tokenizers` 加 `realign_sentencepiece`，token id 和 offset 可能不一致。要在 `benchmark/` 的全部语料上，先比较 token 序列，再比较 detection。

@@ -61,14 +61,18 @@ android {
         // gets the same files as regular assets, synced from assets/models.
         getByName("debug") {
             assets.srcDir(layout.buildDirectory.get().asFile.resolve("debug-model-assets"))
-            jniLibs.srcDir(
-                layout.buildDirectory.get().asFile.resolve("generated/docudis-core/debug/jniLibs"),
-            )
+            for (component in listOf("docudis-core", "docudis-ner")) {
+                jniLibs.srcDir(
+                    layout.buildDirectory.get().asFile.resolve("generated/$component/debug/jniLibs"),
+                )
+            }
         }
         getByName("release") {
-            jniLibs.srcDir(
-                layout.buildDirectory.get().asFile.resolve("generated/docudis-core/release/jniLibs"),
-            )
+            for (component in listOf("docudis-core", "docudis-ner")) {
+                jniLibs.srcDir(
+                    layout.buildDirectory.get().asFile.resolve("generated/$component/release/jniLibs"),
+                )
+            }
         }
     }
 
@@ -94,11 +98,13 @@ android {
     }
 }
 
-fun registerDocudisNativeTask(variant: String, profile: String) =
-    tasks.register<Exec>("prepareDocudis${variant}Native") {
-        val output = layout.buildDirectory.dir("generated/docudis-core/$profile/jniLibs")
-        inputs.file(rootProject.file("../tool/docudis_core_version.json"))
-        inputs.file(rootProject.file("../tool/prepare_docudis_core.sh"))
+// Builds a pinned Rust library (Core, or the NER inference library) for every
+// app ABI from its versioned source; see tool/prepare_docudis_<name>.sh.
+fun registerDocudisNativeTask(name: String, taskName: String, profile: String) =
+    tasks.register<Exec>(taskName) {
+        val output = layout.buildDirectory.dir("generated/docudis-$name/$profile/jniLibs")
+        inputs.file(rootProject.file("../tool/docudis_${name}_version.json"))
+        inputs.file(rootProject.file("../tool/prepare_docudis_$name.sh"))
         outputs.dir(output)
         // cargo-ndk only finds the NDK through the environment; hand it the one
         // this build resolved from ndkVersion so a bare shell works too.
@@ -106,20 +112,22 @@ fun registerDocudisNativeTask(variant: String, profile: String) =
         doFirst { environment("ANDROID_NDK_HOME", ndkDirectory.get().asFile.absolutePath) }
         commandLine(
             "bash",
-            rootProject.file("../tool/prepare_docudis_core.sh").absolutePath,
+            rootProject.file("../tool/prepare_docudis_$name.sh").absolutePath,
             profile,
             output.get().asFile.absolutePath,
         )
     }
 
-val prepareDocudisDebugNative = registerDocudisNativeTask("Debug", "debug")
-val prepareDocudisReleaseNative = registerDocudisNativeTask("Release", "release")
+val prepareDocudisDebugNative = registerDocudisNativeTask("core", "prepareDocudisDebugNative", "debug")
+val prepareDocudisReleaseNative = registerDocudisNativeTask("core", "prepareDocudisReleaseNative", "release")
+val prepareDocudisNerDebugNative = registerDocudisNativeTask("ner", "prepareDocudisNerDebugNative", "debug")
+val prepareDocudisNerReleaseNative = registerDocudisNativeTask("ner", "prepareDocudisNerReleaseNative", "release")
 
 tasks.matching { it.name == "mergeDebugJniLibFolders" }.configureEach {
-    dependsOn(prepareDocudisDebugNative)
+    dependsOn(prepareDocudisDebugNative, prepareDocudisNerDebugNative)
 }
 tasks.matching { it.name == "mergeReleaseJniLibFolders" }.configureEach {
-    dependsOn(prepareDocudisReleaseNative)
+    dependsOn(prepareDocudisReleaseNative, prepareDocudisNerReleaseNative)
 }
 
 val syncDebugModelAssets by tasks.registering(Sync::class) {

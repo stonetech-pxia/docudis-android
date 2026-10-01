@@ -36,6 +36,7 @@ class ModelLocator {
     final tokenizerPath = await _materialize(spec.tokenizerFile, dir);
     return LocatedModel(
       spec: spec,
+      specJson: specJson,
       modelPath: modelPath,
       tokenizerPath: tokenizerPath,
     );
@@ -58,11 +59,15 @@ class ModelLocator {
 class LocatedModel {
   const LocatedModel({
     required this.spec,
+    required this.specJson,
     required this.modelPath,
     required this.tokenizerPath,
   });
 
   final NerModelSpec spec;
+
+  /// The `model.json` source [spec] was parsed from.
+  final String specJson;
   final String modelPath;
   final String tokenizerPath;
 }

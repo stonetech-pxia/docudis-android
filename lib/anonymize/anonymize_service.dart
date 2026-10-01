@@ -13,6 +13,7 @@ import 'input/input_source.dart';
 import 'input/text_extractor.dart';
 import 'model/model_locator.dart';
 import 'model/onnx_token_classifier.dart';
+import 'model/rust_ner_detector.dart';
 import 'output/document_redaction.dart';
 import 'core_differential.dart';
 import 'storage/anonymization_record.dart';
@@ -80,16 +81,31 @@ class AnonymizeService {
   /// "Hide only this list"; read at each run.
   final bool Function() listOnly;
 
-  Future<NerDetector>? _ner;
+  Future<Detector>? _ner;
   final _languages = const LanguageDetector();
   final _core = DocudisCoreDifferential();
   _DetectionPlan? _lastDetectionPlan;
 
-  /// Loads the model once; a failure is logged and the model is skipped.
-  Future<NerDetector?> _nerDetector() async {
+  /// Runs the Dart reference NER instead of the Rust library, for
+  /// comparisons: `--dart-define=DOCUDIS_DART_NER=true`.
+  static const _dartNer = bool.fromEnvironment('DOCUDIS_DART_NER');
+
+  /// Loads the model once: through the Rust library, or the Dart reference
+  /// when that is requested or Rust cannot load. A failure of both is logged
+  /// and the model is skipped.
+  Future<Detector?> _nerDetector() async {
     try {
       return await (_ner ??= () async {
         final located = await modelLocator.locate();
+        if (!_dartNer) {
+          try {
+            final rust = await RustNerDetector.load(located);
+            debugPrint('[anonymize] NER runs in Rust (${rust.name})');
+            return rust;
+          } catch (e, st) {
+            debugPrint('Rust NER unavailable, using the Dart model: $e\n$st');
+          }
+        }
         final tokenizer = NerTokenizer.fromSpec(
           located.spec.tokenizerKind,
           await _readBytes(located.tokenizerPath),

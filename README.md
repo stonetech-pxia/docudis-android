@@ -25,7 +25,14 @@ packages/
 tool/
   docudis_core_version.json  固定的 Core revision、ABI 与数据摘要
   prepare_docudis_core.sh   Gradle 调用的 Android native 构建入口
+  docudis_ner_version.json   固定的 docudis-ner revision
+  prepare_docudis_ner.sh    Gradle 调用的 NER 推理库构建入口
+  fetch_models.sh           按固定 revision 写入 assets/models
 ```
+
+NER 默认通过 docudis-ner 的 Rust 库（`libdocudis_ner_capi.so`）和 APK 自带的
+ONNX Runtime 运行，见 `lib/anonymize/model/rust_ner_detector.dart`；Rust 库加载失败时
+自动回退到 Dart 参考实现，`--dart-define=DOCUDIS_DART_NER=true` 可强制使用 Dart 实现做对照。
 
 匿名化设计见 [docs/anonymization-design.md](docs/anonymization-design.md)，模型由 [docudis-ner](https://github.com/stonetech-pxia/docudis-ner) 提供，获取方式见其 [models/README.md](https://github.com/stonetech-pxia/docudis-ner/blob/main/models/README.md)，基准测试位于 `benchmark/`。
 Rust Core 位于独立的

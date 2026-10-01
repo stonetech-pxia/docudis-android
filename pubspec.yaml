@@ -32,6 +32,11 @@ dependencies:
       url: https://github.com/stonetech-pxia/docudis-core.git
       ref: 7244cd35964995368bb87fc189723dd90b2a8d30
       path: bindings/dart
+  docudis_ner_ffi:
+    git:
+      url: https://github.com/stonetech-pxia/docudis-ner.git
+      ref: 66bd2c6f84c7d3c2561b7cb929978adc1708713f
+      path: bindings/dart
   docudis_pdf:
     path: packages/docudis_pdf
   xml: ^7.0.1

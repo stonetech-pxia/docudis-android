@@ -86,4 +86,4 @@ jobs:
         with:
           api-level: 35
           arch: x86_64
-          script: DOCUDIS_ANDROID_ABIS=x86_64 flutter test integration_test/docudis_core_ffi_test.dart -d emulator-5554
+          script: DOCUDIS_ANDROID_ABIS=x86_64 flutter test integration_test/docudis_core_ffi_test.dart integration_test/docudis_ner_ffi_test.dart -d emulator-5554
