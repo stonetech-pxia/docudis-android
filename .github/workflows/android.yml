@@ -7,6 +7,11 @@ on:
 permissions:
   contents: read
 
+# A new push to the same branch supersedes the run still in progress.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   CORE_REVISION: 7244cd35964995368bb87fc189723dd90b2a8d30
 
@@ -71,6 +76,12 @@ jobs:
           targets: x86_64-linux-android
       - run: cargo install cargo-ndk --locked
       - run: flutter pub get
+      # Without KVM the emulator runs in software and the job takes over 20 minutes.
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
       - uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 35
