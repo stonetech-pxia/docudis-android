@@ -19,6 +19,8 @@ flutter doctor --android-licenses
 
 ```bash
 flutter pub get
+(cd packages/docudis_engine && flutter pub get)
+(cd packages/docudis_pdf && flutter pub get)
 python3 tool/fetch_models.py
 ```
 

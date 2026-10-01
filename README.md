@@ -39,9 +39,13 @@ Core revision 的生成快照，不能在本仓库独立编辑。运行
 
 ```bash
 flutter pub get
+(cd packages/docudis_engine && flutter pub get)
+(cd packages/docudis_pdf && flutter pub get)
 python3 tool/fetch_models.py
 flutter run
 ```
+
+`flutter analyze` 也会分析 `packages/*`，因此全新 clone 需要先解析这两个包的依赖。
 
 Android Gradle 构建会自动为 `arm64-v8a`、`armeabi-v7a` 与 `x86_64`
 准备 `libdocudis_capi.so`，需要 Android NDK、Rust Android targets 和

@@ -100,6 +100,10 @@ fun registerDocudisNativeTask(variant: String, profile: String) =
         inputs.file(rootProject.file("../tool/docudis_core_version.json"))
         inputs.file(rootProject.file("../tool/prepare_docudis_core.sh"))
         outputs.dir(output)
+        // cargo-ndk only finds the NDK through the environment; hand it the one
+        // this build resolved from ndkVersion so a bare shell works too.
+        val ndkDirectory = androidComponents.sdkComponents.ndkDirectory
+        doFirst { environment("ANDROID_NDK_HOME", ndkDirectory.get().asFile.absolutePath) }
         commandLine(
             "bash",
             rootProject.file("../tool/prepare_docudis_core.sh").absolutePath,

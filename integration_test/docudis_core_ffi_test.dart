@@ -12,7 +12,7 @@ void main() {
   ) async {
     expect(Platform.isAndroid, isTrue);
     final core = DocudisNative.open();
-    expect(core.abiVersion, DocudisNative.expectedAbiVersion);
+    expect(core.abiVersion, 1);
 
     const text = '😀 张三\u00a0e\u0301 alice@example.com';
     final personStart = text.indexOf('张三');
@@ -37,11 +37,25 @@ void main() {
       ],
     };
 
+    // Rule detection alone: the email span must come back in Dart UTF-16
+    // offsets despite the emoji, CJK, NBSP and combining mark before it.
+    final detected = core.detect({...request, 'detections': <Object?>[]});
+    final email = (detected['detections']! as List<Object?>)
+        .cast<Map<Object?, Object?>>()
+        .singleWhere((d) => d['type'] == 'EMAIL');
+    expect(email['value'], 'alice@example.com');
+    expect(email['start'], text.indexOf('alice@'));
+    expect(email['end'], text.length);
+
     Map<String, Object?>? processed;
     for (var i = 0; i < 50; i++) {
       processed = core.process(request);
-      expect(processed['text'], contains('[PERSON_1]'));
-      expect(processed['text'], contains('[EMAIL_1]'));
+      expect(processed['text'], '😀 [PERSON_1]\u00a0e\u0301 [EMAIL_1]');
+      final person = (processed['detections']! as List<Object?>)
+          .cast<Map<Object?, Object?>>()
+          .singleWhere((d) => d['type'] == 'PERSON');
+      expect(person['start'], personStart);
+      expect(person['end'], personStart + 2);
     }
 
     final restored = core.restore({
@@ -51,13 +65,24 @@ void main() {
     });
     expect(restored['text'], text);
 
+    final invalidSchema = throwsA(
+      isA<DocudisException>().having(
+        (e) => e.status,
+        'status',
+        DocudisStatus.invalidArgument,
+      ),
+    );
+    expect(
+      () => core.process({...request, 'schema_version': 99}),
+      invalidSchema,
+    );
     expect(
       () => core.restore({
         'schema_version': 99,
         'text': 'x',
         'mappings': <Object?>[],
       }),
-      throwsA(isA<DocudisException>()),
+      invalidSchema,
     );
   });
 }
