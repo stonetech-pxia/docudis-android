@@ -25,6 +25,10 @@ jobs:
       - uses: android-actions/setup-android@v4
       - run: cargo install cargo-ndk --locked
       - run: flutter pub get
+      # flutter analyze also covers packages/*, which resolve their own dependencies.
+      - run: |
+          (cd packages/docudis_engine && flutter pub get)
+          (cd packages/docudis_pdf && flutter pub get)
       - run: flutter analyze
       - run: flutter test
       - name: Dart reference engine
