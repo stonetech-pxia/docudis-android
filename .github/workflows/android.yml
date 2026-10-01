@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 env:
-  CORE_REVISION: 396228b723cce78d98dc2873de05e862b02a3efb
+  CORE_REVISION: 8743fd84bc16ba90e5dae70ec97b580ab5171a89
 
 jobs:
   analyze-test-build:
