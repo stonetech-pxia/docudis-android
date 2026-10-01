@@ -23,7 +23,11 @@ git log --oneline -n 10
 
 ## 已经定下的决定（不要重新讨论）
 
+- **分工**：用哪个模型由 App 决定；推理由模型完成，代码在 `docudis-ner`；推理结果怎么使用（合并、重叠处理、匿名化）由 Core 决定。Core 自己从不加载或调用模型。
 - 模型相关代码属于 `docudis-ner`，用 Rust 实现。依赖方向只能是 `docudis-ner → docudis-core`，Core 永远不依赖模型。
+- **Android 直接用 Rust 推理**：分词、分窗、推理、解码全部在 `docudis-ner` 里完成，推理用 `ort` crate 调用 ONNX Runtime。不做"Rust 解码 + Dart 推理"的过渡方案；切换完成后删除 `flutter_onnxruntime` 和 `onnx_token_classifier.dart`。
+- chunker（`chunkText`）和 reply_match（`ReplyMatcher`/`ReplyCheck`）迁到 Core 的 Rust 代码，并通过 C ABI 暴露。
+- Dart 侧的类型化模型（`Detection`、`DetectionSource`、`EntityType`、`AnonymizedText`、`PlaceholderMap`、`MappingEntry`）放进 Core 的 `bindings/dart`，作为契约的一部分。App 和 docudis-ner 的 Dart 绑定都使用这套类型。
 - **两个原生库各自独立**：`libdocudis_capi.so`（Core）和 `libdocudis_ner.so`（NER）。两者之间只通过 v1 JSON 交换 `Detection`，不共享 Rust 结构体。
 - Core 通过请求里的 `detections` 字段（`source: "model"`，用 `detector` 区分模型）接收一个或多个模型的结果。以后 Windows 版（Flutter Desktop）会接入 OpenAI Privacy Filter（BIOES + Viterbi 解码），所以 NER 接口不能写死只支持 XLM-R 和 BIO。
 - ML Kit（实体识别、语言识别、OCR）留在 App 里，作为 App 侧的检测器，不进入 docudis-ner。
@@ -77,13 +81,11 @@ git log --oneline -n 10
 - Dart 侧的类型化模型（`Detection`、`DetectionSource`、`EntityType`、`AnonymizedText`、`PlaceholderMap`）：`docudis_ffi` 目前只有无类型的 Map，而 UI、主题和存储都需要这些类型。
 - benchmark 库（`lib/benchmark.dart` 和 OCR benchmark 的辅助代码）。
 
-## 开工前必须先和用户确认的事项
+## 开工前必须先验证的技术点（结论写进 docudis-ner README）
 
-1. **推理放在哪里？**
-   - **A. 两段式（推荐先做）**：tokenize、分窗、解码在 Rust，推理暂时仍用 Dart 的 `flutter_onnxruntime`。每个窗口要多走一次 FFI，但不用动 ONNX Runtime 的打包。
-   - **B. 一步到位**：推理也放进 Rust（`ort` crate）。需要链接 Android 上的 `libonnxruntime.so`（App 现在通过 `onnxruntime-android` 1.30.0 已经带了一份），注意版本必须一致，避免同一进程里出现两份 ONNX Runtime。Windows 版最终需要的是 B。
-2. **chunker 和 reply_match 放在哪里？** 放进 Core（纯算法，以后 Windows 版也能复用），还是作为 App 代码留在 Dart 里？
-3. **类型化的 Dart 模型放在哪里？** 放进 Core 的 `bindings/dart`（契约的一部分，推荐），还是 App 自己定义？
+1. **ONNX Runtime 原生库怎么来**：`ort` 没有为 Android 提供可直接下载的预编译库。优先考虑 `ort` 的动态加载方式，在运行时加载 App 打包的 `libonnxruntime.so`，库文件来自 Gradle 直接依赖的 `com.microsoft.onnxruntime:onnxruntime-android`。版本不能低于 1.28（1.23.0 在部分设备上会 SIGILL，见 `android/app/build.gradle.kts:135-139`），并且必须和所用 `ort` 版本支持的 ORT API 版本匹配。迁移期间 `flutter_onnxruntime` 还在，进程里只能有一份 `libonnxruntime.so`，两边必须共用同一份。
+2. **体积和速度**：在真机 arm64 上对比 Rust 和 Dart 两条推理路径的首次加载时间、单次推理耗时和峰值内存。Rust 不能比现状明显更差。
+3. **模型文件怎么交给 Rust**：`ModelLocator` 已经把模型复制到 app support 目录，Rust 直接按文件路径加载即可，不要再复制一份。
 
 ## 阶段 0：升级到 Core `fb41dd1`，模型资料改由 docudis-ner 提供
 
@@ -104,11 +106,12 @@ git log --oneline -n 10
 ## 阶段 1：docudis-ner 提供 C ABI、Dart 绑定和 Android 产物
 
 - 新增 `docudis-ner-capi` crate，导出 `docudis_ner_v1_*` 前缀的函数，并提供 `docudis_ner_v1_abi_version()`。复用 Core C ABI 的约定：JSON 请求和响应带 `schema_version: 1`；offset 用 UTF-8 字节；输出由 Rust 分配，并且只能用同一个库的 free 函数释放；有线程局部的错误信息；任何 panic 都不能跨过 ABI 边界。
-- 接口粒度按"开工前确认"第 1 条的结论来定。如果选 A，至少需要：从 `model.json` 和 tokenizer 加载一个模型句柄，`encode` 并返回窗口列表，把每个窗口的 logits 传回去 `decode`，最后得到 `Detection` 列表。
+- 在 docudis-ner 里实现推理（`ort`，CPU execution provider），沿用现有的分窗、合并、解码逻辑。
+- ABI 至少要有三个函数：`load`（传入 `model.json` 路径，返回模型句柄）、`detect`（传入句柄和文本，返回 v1 `Detection` 列表，UTF-8 offset）、`close`（释放句柄）。句柄要支持同时加载多个模型。不要在每个窗口上都跨一次 FFI。
 - 在 Rust 里解析 `model.json`。现在的 `NerDecodeConfig` 只有 `model_name`、`labels`、`label_map`、`threshold`。要为 BIOES 和 Viterbi 预留扩展点（比如 `scheme`、`decoder` 字段），但**这一阶段不要实现** Privacy Filter。
 - 参照 Core 的 `scripts/build-android.sh`，为 docudis-ner 写 Android 构建脚本，覆盖 `arm64-v8a`、`armeabi-v7a`、`x86_64` 三个 ABI，并检查导出符号。
-- 在 docudis-ner 里新增 `bindings/dart`：校验 ABI 版本、做 UTF-16 和 UTF-8 offset 转换、保证 buffer 所有权安全，参照 Core 的 `bindings/dart`。
-- Android 侧：参照 `prepare_docudis_core.sh` 新建 `tool/prepare_docudis_ner.sh` 和对应的 Gradle 任务；`tool/verify_android_package.sh` 要同时检查两个 `.so`。
+- 在 docudis-ner 里新增 `bindings/dart`：校验 ABI 版本、做 UTF-16 和 UTF-8 offset 转换、保证 buffer 所有权安全，参照 Core 的 `bindings/dart`。推理很慢，`detect` 不能阻塞 UI isolate。
+- Android 侧：参照 `prepare_docudis_core.sh` 新建 `tool/prepare_docudis_ner.sh` 和对应的 Gradle 任务；`tool/verify_android_package.sh` 要同时检查 `libdocudis_capi.so`、`libdocudis_ner.so` 和 `libonnxruntime.so`。
 
 验收：
 - docudis-ner 的 CI 通过：fmt、clippy、test、release 构建、C 头文件 smoke test、Dart FFI 测试。
@@ -116,11 +119,11 @@ git log --oneline -n 10
 
 ## 阶段 2：NER 差分，然后切换
 
-- 新增开关 `--dart-define=DOCUDIS_RUST_NER`。打开后同时跑 Dart `NerDetector` 和 Rust NER，比较 `detections`：类型、跨度、enabled，confidence 按阶段 0 修好后的精度比较。
+- 新增开关 `--dart-define=DOCUDIS_RUST_NER`。打开后同时跑 Dart `NerDetector`（加上 `flutter_onnxruntime`）和 Rust NER，比较 `detections`：类型、跨度、enabled。confidence 允许有很小的误差，因为两边的推理引擎和浮点路径不同，误差上限要根据实测数据定下来并写进文档。
 - 已知风险：Dart 的 SentencePiece 用 `dart_sentencepiece_tokenizer` 加绕过方案，Rust 用 HF `tokenizers` 加 `realign_sentencepiece`，token id 和 offset 可能不一致。要在 `benchmark/` 的全部语料上，先比较 token 序列，再比较 detection。
 - `titleCased` 预处理和"保留最居中预测"的窗口合并规则，必须和 Dart 完全一致。
 - 不一致时回退到 Dart。日志只能记录 case 摘要、类型、长度、offset 和错误码，**不能记录原文或检测出的值**。
-- 真机差分覆盖充分之后，再把 Rust NER 设为默认。用户确认后，删除 `onnx_token_classifier.dart` 的 Dart 解码路径；如果选的是 B，还要删除 `flutter_onnxruntime`。
+- 真机差分覆盖充分之后，再把 Rust NER 设为默认。用户确认后，删除 `onnx_token_classifier.dart`、`flutter_onnxruntime` 和引擎里的 Dart NER（`packages/docudis_engine/lib/src/ner/`）。`libonnxruntime.so` 改为来自 Gradle 直接依赖的 `onnxruntime-android`；`proguard-rules.pro` 里的 `ai.onnxruntime.**` 是否还需要，要实测确认。
 
 验收：
 - `tool/run_all_benchmarks.sh` 的 NER 分数和切换前一致，差异要逐条解释。
@@ -128,7 +131,7 @@ git log --oneline -n 10
 
 ## 阶段 3：Rust Core 成为生产路径
 
-- 补齐上面"Core 的 C ABI 还缺什么"里列出的缺口，具体放在哪里按"开工前确认"第 2、3 条的结论。新增 ABI 函数时保持 `docudis_v1_*` 已有函数的行为不变；如果要做破坏性修改，就新开版本命名空间。
+- 补齐上面"Core 的 C ABI 还缺什么"里列出的缺口：chunker、reply_match、按语言选地区、只合并不检测，都放进 Core 的 Rust 代码；类型化模型放进 Core 的 `bindings/dart`。chunker 和 reply_match 迁移前，先用 Dart 的现有行为生成 conformance fixtures。新增 ABI 函数时保持 `docudis_v1_*` 已有函数的行为不变；如果要做破坏性修改，就新开版本命名空间。
 - `reapply`、review 预览、`restore` 也接入 Rust，同样先经过差分。
 - **持久化兼容**：`record_store` 里保存的是 `Detection.toJson`（UTF-16 offset）和 `PlaceholderMap.toJson`。切换后必须还能读出旧记录，要写迁移测试。
 - 差分覆盖充分后，把 `DOCUDIS_RUST_DIFFERENTIAL` 换成"默认用 Rust，出错时报错"。至于是否保留 Dart 作为回退，由用户决定。
@@ -164,4 +167,4 @@ git log --oneline -n 10
 - 每个阶段实际执行过的命令和测试数量。
 - 真机和模拟器的验证矩阵。
 - 剩下的 feature flag 以及各自的回退条件。
-- 没有执行的验证，以及"开工前确认"三个问题的最终结论。
+- 没有执行的验证，以及"开工前必须先验证的技术点"的结论。
