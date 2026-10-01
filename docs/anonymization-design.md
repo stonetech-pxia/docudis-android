@@ -451,4 +451,3 @@ PERSON、PHONE、EMAIL、ID（身份证 / 护照）、CREDIT_CARD / IBAN、ADDRE
 
 - `packages/docudis_engine/`：检测、替换、还原、规则包（纯 Dart）。
 - `lib/anonymize/`：Flutter 侧的输入提取（文件 / OCR / 相机）、模型加载、存储、分享、Riverpod 状态。
-- 不进 `stonetech_app_kit`（该包为跨 app 通用逻辑）。
