@@ -54,10 +54,12 @@ void main() {
       );
     });
 
+    // The shipped tokenizer comes from a private Hugging Face repo, so CI has no copy.
+    final xlmrTokenizer = File('../../assets/models/xlmr_ner_docudis/tokenizer.json');
     test('the XLM-R tokenizer keeps every word on its own text', () {
       final tokenizer = NerTokenizer.fromSpec(
         'sentencepiece',
-        File('../../assets/models/xlmr_ner_docudis/tokenizer.json').readAsBytesSync(),
+        xlmrTokenizer.readAsBytesSync(),
       );
       const tail = ' Control por Dr. Tomás Garrido Lucena.';
       for (final head in [
@@ -77,7 +79,7 @@ void main() {
         }
         expect(enc.ends.last, text.length, reason: head);
       }
-    });
+    }, skip: xlmrTokenizer.existsSync() ? false : 'run tool/fetch_models.sh for the XLM-R tokenizer');
   });
 
   group('NerDetector with the bundled tokenizer', () {
