@@ -140,6 +140,15 @@ tasks.matching { it.name == "mergeDebugAssets" }.configureEach {
     dependsOn(syncDebugModelAssets)
 }
 
+// The benchmark files are Flutter assets only so the integration tests can read
+// them through rootBundle; they include third-party photos of real documents.
+// Release and profile builds leave them out.
+tasks.withType<Copy>().matching {
+    it.name == "copyFlutterAssetsRelease" || it.name == "copyFlutterAssetsProfile"
+}.configureEach {
+    exclude("flutter_assets/benchmark/**")
+}
+
 // flutter_onnxruntime pins onnxruntime-android 1.23.0, which crashes with SIGILL
 // on SoCs that have SME but not SME2 (Snapdragon 8 Elite Gen 5 / SM8850, Android 16;
 // microsoft/onnxruntime#26377). Fixed upstream in 1.28.0; force a fixed release.

@@ -195,5 +195,7 @@
   "privacyPolicy": "Politique de confidentialité",
   "privacyPolicyHint": "Comment vos documents sont traités",
   "contactUs": "Contact",
+  "openSourceLicenses": "Licences open source",
+  "openSourceLicensesHint": "Les licences de Docudis et des logiciels qu’il utilise",
   "appVersion": "Docudis {version} ({build})"
 }

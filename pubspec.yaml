@@ -35,7 +35,7 @@ dependencies:
   docudis_ner_ffi:
     git:
       url: https://github.com/stonetech-pxia/docudis-ner.git
-      ref: 66bd2c6f84c7d3c2561b7cb929978adc1708713f
+      ref: 7b33900f8665ec25c22be75523d0410040e4e0ee
       path: bindings/dart
   docudis_pdf:
     path: packages/docudis_pdf
@@ -57,11 +57,14 @@ flutter:
   assets:
     # The NER model is NOT a Flutter asset: it ships as an Android asset pack
     # (android/model_pack) / debug source set, see lib/anonymize/model/model_locator.dart.
+    # benchmark/ is for the integration tests only; Android release builds drop
+    # it (android/app/build.gradle.kts).
     - benchmark/ner_cases.json
     - benchmark/ocr_cases.json
     - benchmark/ocr/ground_truth/
     - benchmark/ocr/images/
     - assets/ai_logos/
+    - assets/licenses/
     - benchmark/ocr/images/documents/
   fonts:
     - family: Sora

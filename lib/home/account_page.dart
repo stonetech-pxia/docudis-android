@@ -8,6 +8,7 @@ import '../anonymize/anonymize_service.dart';
 import '../anonymize/providers.dart';
 import '../anonymize/ui/anonymize_messages.dart';
 import '../l10n/app_localizations.dart';
+import '../licenses.dart';
 import '../theme/clay_theme.dart';
 import '../theme/clay_widgets.dart';
 import 'app_locale.dart';
@@ -22,8 +23,8 @@ final _versionProvider = FutureProvider<PackageInfo>(
 );
 
 /// Account tab: the "Always hide" and "Never hide" lists, the interface
-/// language, the on-device data control, then the privacy policy and a
-/// contact address, and the app version at the bottom.
+/// language, the on-device data control, then the privacy policy, a contact
+/// address and the open-source licenses, and the app version at the bottom.
 class AccountPage extends ConsumerWidget {
   const AccountPage({super.key});
 
@@ -171,6 +172,20 @@ class AccountPage extends ConsumerWidget {
               context,
               Uri(scheme: 'mailto', path: contactEmail),
               contactEmail,
+            ),
+          ),
+          const SizedBox(height: 16),
+          _AccountRow(
+            icon: Icons.article_outlined,
+            color: Clay.secondaryTint,
+            foreground: Clay.secondaryText,
+            title: l10n.openSourceLicenses,
+            caption: l10n.openSourceLicensesHint,
+            onTap: () => showLicensePage(
+              context: context,
+              applicationName: 'Docudis',
+              applicationVersion: ref.read(_versionProvider).value?.version,
+              applicationLegalese: appLegalese,
             ),
           ),
           if (ref.watch(_versionProvider).value case final info?) ...[

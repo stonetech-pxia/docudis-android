@@ -6,10 +6,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'anonymize/process_text.dart';
 import 'anonymize/providers.dart';
 import 'app.dart';
+import 'licenses.dart';
 import 'preferences.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  registerBundledLicenses();
 
   // Every region's date formats, not only the interface languages', so
   // History can write dates the way the phone's region does.

@@ -96,7 +96,7 @@ flutter gen-l10n
 
 ## 许可证
 
-[GNU AGPL-3.0](LICENSE)，版权归 stonetech 所有。另附一条附加许可，允许和 Google ML Kit 一起分发，见 [NOTICE](NOTICE)。自带许可证声明的文件（例如源自 DocCloak.Core 的部分）沿用各自的许可证。
+[GNU AGPL-3.0](LICENSE)，版权归 stonetech 所有。另附一条附加许可，允许和 Google ML Kit、Google Play services 客户端库及 iOS 的 ML Kit 框架一起分发，见 [NOTICE](NOTICE)。应用内「开源许可」页列出所用第三方软件的许可证，由 `tool/generate_licenses.py` 生成。自带许可证声明的文件（例如源自 DocCloak.Core 的部分）沿用各自的许可证。
 
 需要不受 AGPL 约束的商业授权，请联系 stonetechdigital@gmail.com。
 
