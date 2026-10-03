@@ -1,4 +1,4 @@
-// Copyright 2026 the Docudis contributors. Licensed under Apache-2.0.
+// Copyright 2026 stonetech. Licensed under AGPL-3.0.
 
 import 'dart:convert';
 import 'dart:io';
