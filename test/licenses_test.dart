@@ -15,7 +15,8 @@ void main() {
       expect(
         packages,
         containsAll([
-          'docudis-core',
+          'Docudis',
+        'docudis-core',
           'docudis-ner',
           'ort',
           'ONNX Runtime',

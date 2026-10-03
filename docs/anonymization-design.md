@@ -184,7 +184,7 @@ OCR 阅读顺序（2026-09-23 起）：不用 ML Kit 的 `result.text`（按块�
    "loi n° 89-462"、"Ley 29/1994"；以法律命名的街道（"Rue de la Loi 16"）没有法律编号，照旧算地址。
    ML Kit 不在任何桌面基准里，这几条只能在真机上看（前两条 2026-09-23 真机验证过）。
 5. **内置名单**（2026-09-18）：`BundledListDetector`，随包携带的知名公司名和中国地名，补模型对无后缀专有名词的漏检
-   （阿里巴巴、El Corte Inglés、深圳）。数据来自 Wikidata（CC0），由仓库根目录 `tool/fetch_bundled_lists.py` 生成
+   （阿里巴巴、El Corte Inglés、深圳）。数据来自 Wikidata（CC0），由 docudis-core 的 `scripts/fetch_bundled_lists.py` 生成
    `packages/docudis_engine/lists/*.json`，再由 `tool/embed_lists.dart` 嵌入为 Dart 常量（约 1.6 MB）：
    - 公司：business 的全部子类实体，国家在目标市场（英语：英美加澳新；法语：法比瑞；中文：中港台；西语：西班牙），
      维基站点链接数 ≥ 5（英语）或 ≥ 3（其他），取 en/fr/es/zh 标签和别名。约 17500 家、72000 条名称。

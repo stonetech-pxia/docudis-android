@@ -1,5 +1,5 @@
 // Post-match validators for the rule packs, ported from DocCloak.Core
-// (src/regex/validators.ts, Apache-2.0). Behaviour is kept identical so the
+// (src/regex/validators.ts, Apache-2.0) and modified by stonetech. Behaviour is kept identical so the
 // packs' `examples` remain valid across runtimes.
 
 import 'dart:math' as math;

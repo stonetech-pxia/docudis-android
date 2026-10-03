@@ -1,5 +1,5 @@
 // Tolerant placeholder matching for restore, after DocCloak.Core
-// src/restore-tokens.ts (Apache-2.0).
+// src/restore-tokens.ts (Apache-2.0), modified by stonetech.
 //
 // LLM replies mangle placeholders: "[person_1]", "[PERSON 1]", "**[PERSON_1]**",
 // "PERSON_1", "[PERSON_1.]". Every candidate and every map key is reduced to

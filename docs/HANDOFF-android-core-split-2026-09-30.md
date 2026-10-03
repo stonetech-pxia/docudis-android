@@ -216,6 +216,8 @@ Android CI 至少运行 Flutter analyze、现有 Dart/Flutter 测试、PDF 测�
 
 ### 8. 许可证与来源
 
+> 2026-10-03 起 docudis-android 以 AGPL-3.0 授权（另有商业授权），docudis-core 仍是 Apache-2.0。下面的 Apache-2.0 说明指 DocCloak.Core 的许可证和署名，两个仓库都仍需保留。
+
 两个仓库都必须保留：
 
 - Apache-2.0 说明

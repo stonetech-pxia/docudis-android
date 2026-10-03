@@ -1,10 +1,26 @@
 [
  {
-  "packages": ["ONNX Runtime"],
-  "files": ["tool/licenses/onnxruntime/LICENSE", "tool/licenses/onnxruntime/ThirdPartyNotices.txt"]
+  "packages": [
+   "Docudis"
+  ],
+  "files": [
+   "NOTICE",
+   "LICENSE"
+  ]
  },
  {
-  "packages": ["PDFium"],
+  "packages": [
+   "ONNX Runtime"
+  ],
+  "files": [
+   "tool/licenses/onnxruntime/LICENSE",
+   "tool/licenses/onnxruntime/ThirdPartyNotices.txt"
+  ]
+ },
+ {
+  "packages": [
+   "PDFium"
+  ],
   "files": [
    "tool/licenses/pdfium/LICENSE",
    "tool/licenses/pdfium/pdfium.txt",
@@ -28,23 +44,44 @@
   ]
  },
  {
-  "packages": ["Docudis name-recognition model"],
-  "files": ["tool/licenses/model/NOTICE", "tool/licenses/model/AFL-3.0.txt", "tool/licenses/model/xlm-roberta-LICENSE"]
+  "packages": [
+   "Docudis name-recognition model"
+  ],
+  "files": [
+   "tool/licenses/model/NOTICE",
+   "tool/licenses/model/AFL-3.0.txt",
+   "tool/licenses/model/xlm-roberta-LICENSE"
+  ]
  },
  {
-  "packages": ["Sora font"],
-  "files": ["assets/fonts/OFL-Sora.txt"]
+  "packages": [
+   "Sora font"
+  ],
+  "files": [
+   "assets/fonts/OFL-Sora.txt"
+  ]
  },
  {
-  "packages": ["Karla font"],
-  "files": ["assets/fonts/OFL-Karla.txt"]
+  "packages": [
+   "Karla font"
+  ],
+  "files": [
+   "assets/fonts/OFL-Karla.txt"
+  ]
  },
  {
-  "packages": ["LobeHub icons"],
-  "files": ["assets/ai_logos/LICENSE"]
+  "packages": [
+   "LobeHub icons"
+  ],
+  "files": [
+   "assets/ai_logos/LICENSE"
+  ],
+  "notice": "ChatGPT, Claude, Gemini, Perplexity, DeepSeek and the other AI apps shown are trademarks of their owners. Docudis is not affiliated with or endorsed by them; their icons only show where a protected copy can be sent."
  },
  {
-  "packages": ["Google ML Kit"],
+  "packages": [
+   "Google ML Kit"
+  ],
   "notice": "Text recognition, language identification and entity extraction use Google ML Kit and the Google Play services client libraries (on iOS, the ML Kit frameworks). They are not open source and are used under the ML Kit Terms of Service (https://developers.google.com/ml-kit/terms) and the Google APIs Terms of Service (https://developers.google.com/terms). What ML Kit sends to Google is described at https://developers.google.com/ml-kit/android-data-disclosure."
  }
 ]

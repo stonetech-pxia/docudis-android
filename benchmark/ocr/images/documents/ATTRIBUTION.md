@@ -25,6 +25,9 @@ converted from lightweight Markdown to visible plain text before scoring.
 | `a4-en-lease.jpg` | `lease_000` | Commercial lease | Mobile scan, paper texture, printed and handwritten text |
 | `a4-en-medical.jpg` | `medical_000` | Patient information form | Desk photo, slight perspective, checkboxes and signature |
 
-The local files are resized Commons versions. No text was composited or
-rewritten. Preserve attribution and share-alike requirements when redistributing
-the affected fixtures or derivatives.
+The `doc-*` files are resized versions of the Commons files above; the
+`a4-*` files are resized versions of the getomni-ai/ocr-benchmark images (MIT
+License). No text was composited or rewritten. Preserve attribution and
+share-alike requirements when redistributing the affected fixtures or
+derivatives. These files are test data only: Android release builds leave out
+`benchmark/`.
