@@ -96,9 +96,15 @@ flutter gen-l10n
 
 ## 许可证
 
-[GNU AGPL-3.0](LICENSE)，版权归 stonetech 所有。另附一条附加许可，允许和 Google ML Kit、Google Play services 客户端库及 iOS 的 ML Kit 框架一起分发，见 [NOTICE](NOTICE)。应用内「开源许可」页列出所用第三方软件的许可证，由 `tool/generate_licenses.py` 生成。自带许可证声明的文件（例如源自 DocCloak.Core 的部分）沿用各自的许可证。
+[GNU AGPL-3.0](LICENSE)，版权归 Pengda Xia（stonetech）所有。另附一条附加许可，允许和 Google ML Kit、Google Play services 客户端库及 iOS 的 ML Kit 框架一起分发，见 [NOTICE](NOTICE)。应用内「开源许可」页列出所用第三方软件的许可证，由 `tool/generate_licenses.py` 生成。自带许可证声明的文件（例如源自 DocCloak.Core 的部分）沿用各自的许可证。
 
 需要不受 AGPL 约束的商业授权，请联系 stonetechdigital@gmail.com。
+
+在公司里使用：员工在本公司的设备上使用 Docudis、不做修改，不承担任何 AGPL 义务；只有把 Docudis 分发给别人，或者修改后通过网络提供给别人使用时，才需要按 AGPL 提供源代码。
+
+## 安全
+
+发现安全问题请私下报告，不要开公开 issue，见 [SECURITY.md](SECURITY.md)。
 
 ## 参与
 

@@ -1,4 +1,4 @@
-// Copyright 2026 stonetech. Licensed under AGPL-3.0.
+// Copyright 2026 Pengda Xia (stonetech). Licensed under AGPL-3.0.
 //
 // Generates the shared Rust/Dart regex conformance fixture from the current
 // working-tree rule packs. Rule definitions derive from DocCloak.Core;

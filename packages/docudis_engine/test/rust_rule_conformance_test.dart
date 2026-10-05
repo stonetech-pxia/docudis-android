@@ -1,4 +1,4 @@
-// Copyright 2026 stonetech. Licensed under AGPL-3.0.
+// Copyright 2026 Pengda Xia (stonetech). Licensed under AGPL-3.0.
 
 import 'dart:convert';
 import 'dart:io';
