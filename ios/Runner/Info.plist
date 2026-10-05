@@ -35,6 +35,9 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<!-- No encryption of its own, only the system's HTTPS (ML Kit): App Store Connect stops asking about export compliance on every upload. -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<!-- image_picker: "Scan a photo" and picking an image. iOS kills the app without these. -->
 	<key>NSCameraUsageDescription</key>
 	<string>Docudis reads the text in the photo you take and anonymizes it on this iPhone. The photo never leaves the device.</string>

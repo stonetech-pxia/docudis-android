@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -14,7 +15,10 @@ import '../theme/clay_widgets.dart';
 import 'app_locale.dart';
 import 'dictionary_page.dart';
 
-const privacyPolicyUrl = 'https://docudis.com/privacy/';
+/// The iPhone app has its own policy; the Android one is at /privacy/.
+String get privacyPolicyUrl => defaultTargetPlatform == TargetPlatform.iOS
+    ? 'https://docudis.com/privacy/ios/'
+    : 'https://docudis.com/privacy/';
 const contactEmail = 'stonetechdigital@gmail.com';
 
 final _versionProvider = FutureProvider<PackageInfo>(
