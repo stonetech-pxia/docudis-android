@@ -16,7 +16,7 @@ Docudis for Android is in testing on Google Play, and the iPhone app is being pr
 
 - Detection runs on the device: rules from [docudis-core](https://github.com/stonetech-pxia/docudis-core), a name-recognition model from [docudis-ner](https://github.com/stonetech-pxia/docudis-ner) that ships inside the app, and Google ML Kit for text recognition, language identification and entity extraction. Your documents are never uploaded, and Docudis has no server that receives them.
 - Google ML Kit downloads its entity-extraction model on first use and sends Google diagnostic and usage information (device model, OS and app version, performance metrics, error codes, a per-installation identifier). It does not send your text or images.
-- Your latest 100 documents are kept in the app's private storage; "Clear data on this device" on the Account tab deletes them. On Android they are excluded from cloud backup and device transfer; on iPhone they are part of the device's backups, like other app data.
+- Your latest 100 documents are kept in the app's private storage; "Clear data on this device" on the Account tab deletes them. They are excluded from cloud backups (iCloud, Android) and, on Android, from device transfer.
 - No ads, no advertising identifiers, no analytics of our own.
 - Privacy policies: [Android](https://docudis.com/privacy/), [iPhone](https://docudis.com/privacy/ios/).
 

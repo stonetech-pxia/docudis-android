@@ -106,8 +106,13 @@ final class ShareViewController: UIViewController {
     guard let group = FileManager.default.containerURL(
       forSecurityApplicationGroupIdentifier: Self.appGroup)
     else { throw CocoaError(.fileNoSuchFile) }
-    let entry = group.appendingPathComponent("Inbox/\(UUID().uuidString)", isDirectory: true)
+    var inbox = group.appendingPathComponent("Inbox", isDirectory: true)
+    let entry = inbox.appendingPathComponent(UUID().uuidString, isDirectory: true)
     try FileManager.default.createDirectory(at: entry, withIntermediateDirectories: true)
+    // What was shared waits here until the app opens it; keep it out of backups.
+    var values = URLResourceValues()
+    values.isExcludedFromBackup = true
+    try? inbox.setResourceValues(values)
     return entry
   }
 
